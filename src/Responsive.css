@@ -1,0 +1,273 @@
+:root {
+    color: white;
+    font-family: 'serif', Times, serif;
+    background-color: black;
+}
+.container {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+/* css for mobile sizing begins */
+@media only screen and (min-width: 375px){
+.container {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+.img1 {
+    position: fixed;
+    left: 20px;
+    top: 28px;
+    height: 50px;
+        }
+.fadeinlogo {
+    color: #ccc;
+    font-style: italic;
+    font-weight: 1;
+    position: fixed;
+    right: 180px;
+    }      
+.fade-in-image {
+    animation: fadeIn 10s;
+        }  
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    120% {opacity: 2;}
+}
+
+
+.card {
+    border-radius: 25px;
+    position: relative;
+    top: 0px;
+    padding: 35px 25px;
+    margin: 10px;
+    box-shadow: 0 2px 100px #ccc;
+    text-align: center; 
+  }
+  .name {
+    position : absolute;
+    left: 70px;
+    top: 320px;
+    font-size: 4em;
+    margin: 10% 20px 50px 60px;
+    padding: 10px 20px;
+    /* border: solid yellow 1px; */
+}
+  .circle-img {
+      border-radius: 50%;
+      border: 1px solid #fff;
+      width: 300px;
+      height: 300px; 
+      margin: 60px 30px;
+  }
+  .wrapper {
+      /* border: solid 1px yellow; */
+      box-shadow: 0 2px 30px #ccc;
+      border-radius: 25px;
+      position: relative;
+      top: 40px;
+      padding: 35px 25px;
+      margin: 90px;
+      text-align: left;
+  }
+.social-container {
+    background:black;
+    padding:25px 50px;
+}
+a.social {
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+a.social:hover {
+    transform: translateY(-2px);
+    color: green;
+}
+}
+/* css for mobile sizing ends */
+
+@media only screen and (max-width: 768px) {
+body {
+    background-color: grey;
+}
+.container {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    border: solid 2px red;
+    }
+ 
+ul {
+    display: inline;
+    margin: 0 0 0 -60px;
+}
+
+ul li {
+    list-style-type: none;
+    padding: 2px;
+    display: inline;
+}
+li a {
+    padding: 50px;
+}
+
+.Burger {
+    display:none; 
+}
+
+.name {
+    font-size: 3em;
+    flex: 1;
+    margin: 10% 20px 0;
+        }
+.card {
+    border-radius: 25px;
+    position: relative;
+    top: 40px;
+    padding: 35px 25px;
+    margin: 90px;
+    box-shadow: 0 2px 30px #ccc;
+    text-align: left;
+                }
+.card.img2 {
+    margin: 30px 0px 0 0;
+    }
+.bottom {
+    margin-top: 120px;
+    }
+.circle-img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 150px;
+    height: 250px;
+    position: absolute;
+    right: 50px;
+    top: 35px;
+        }
+
+        
+.top {
+    border-radius: 25px 25px 0 0;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    }
+ .bottom {
+    margin-top: 120px;
+        }
+        
+.info {
+    margin: 20px 0;
+    color: #74f908;
+    }
+
+.footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        text-align: center;
+        }
+}
+@media only screen and (min-width:1024px) {
+body {
+    margin: 0 100px;
+    padding: 0;
+    background-color: greenyellow;
+    border: solid 2px rgb(38, 0, 255);
+        }
+                
+        
+.container {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+                }
+.App {
+   
+    max-height: 200px;
+    
+        }
+ul {
+    margin: 0 0 0 -60px;
+}
+        
+ul li {
+    list-style-type: none;
+    padding: 2px;
+    display: inline;
+}
+        
+li a {
+    padding: 50px;
+     }
+
+.img1 {
+    position: absolute;
+            left: -30px;
+            top: 10px;
+            height: 50px;
+        }
+.card.img2 {
+     margin: auto;
+}
+.bottom {
+    margin-top: 140px;
+}
+.circle-img {
+    border-radius: 25%;
+    border: 7px solid #fff;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    border: 100px;
+    top: 55px;
+}
+.info {
+    margin: 20px 0;
+    color: #74f908;
+}
+.card {
+    border-radius: 25px;
+    position: relative;
+    top: -10px;
+    padding: 35px 25px;
+    background-color: black;
+    margin: 90px 0;
+    box-shadow: 0 2px 30px #ccc;
+    text-align: left;
+}
+
+.top {
+    border-radius: 25px 25px 0 0;
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: prime;
+    text-align: center;
+}
+}
+
+
+
+
+
