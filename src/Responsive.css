@@ -2,20 +2,22 @@
     color: white;
     font-family: 'serif', Times, serif;
     background-color: black;
-}
-.container {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    margin: 0 auto;
-}
+    font-size: 10ems;
+    
+}  
+
 /* css for mobile sizing begins */
-@media only screen and (min-width: 375px){
+@media only screen and (min-width:300px){
+    body {
+        border: solid 12px rgb(237, 97, 179);
+        font-size: 2vw;
+    }
 .container {
         width: 100%;
+        display: flex;
         text-align: center;
         justify-content: center;
-        margin: 0 auto;
+        margin: 0 auto;  
     }
 .img1 {
     position: fixed;
@@ -37,8 +39,9 @@
     0% {opacity: 0;}
     120% {opacity: 2;}
 }
-
-
+.list {
+    display: none;
+}
 .card {
     border-radius: 25px;
     position: relative;
@@ -47,6 +50,10 @@
     margin: 10px;
     box-shadow: 0 2px 100px #ccc;
     text-align: center; 
+  }
+  .picture {
+    width: 80%;
+    border: 2px yellow solid;
   }
   .name {
     position : absolute;
@@ -65,7 +72,7 @@
       margin: 60px 30px;
   }
   .wrapper {
-      /* border: solid 1px yellow; */
+      border: solid 1px yellow;
       box-shadow: 0 2px 30px #ccc;
       border-radius: 25px;
       position: relative;
@@ -79,9 +86,10 @@
     padding:25px 50px;
 }
 a.social {
-    margin: 0 1rem;
+    margin: 0 auto;
     transition: transform 250ms;
     display: inline-block;
+    padding: 0px 20px;
 }
 a.social:hover {
     transform: translateY(-2px);
@@ -90,37 +98,26 @@ a.social:hover {
 }
 /* css for mobile sizing ends */
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 768px) {
 body {
-    background-color: grey;
+    border: solid 12px orange;
+    margin: 0 ;
+    padding: 0;
 }
 .container {
     width: 100%;
     text-align: center;
     margin: auto;
-    border: solid 2px red;
-    }
- 
-ul {
-    display: inline;
-    margin: 0 0 0 -60px;
+    border: solid 12px red;
+    }   
+.BurgerIcon {
+    display:none;
 }
-
-ul li {
-    list-style-type: none;
-    padding: 2px;
-    display: inline;
+.list {
+    display: none;
 }
-li a {
-    padding: 50px;
-}
-
-.Burger {
-    display:none; 
-}
-
 .name {
-    font-size: 3em;
+    font-size: 2em;
     flex: 1;
     margin: 10% 20px 0;
         }
@@ -180,23 +177,29 @@ li a {
 }
 @media only screen and (min-width:1024px) {
 body {
-    margin: 0 100px;
+    display :flex;
+    justify-content:center;
+    align-items: center;
+    margin:0;
+    /* height: 100vh; */
     padding: 0;
-    background-color: greenyellow;
+    font-size:2em; 
     border: solid 2px rgb(38, 0, 255);
         }
-                
-        
+                       
 .container {
-        width: 100%;
-        text-align: center;
-        margin: auto;
+        /* width: 100%; */
+        height: 100vh;
+        /* text-align: center; */
+        /* margin:0 auto; */
                 }
-.App {
-   
+/* .App {
     max-height: 200px;
-    
-        }
+        } */
+.list {
+    display: inline;
+}
+
 ul {
     margin: 0 0 0 -60px;
 }
@@ -204,38 +207,21 @@ ul {
 ul li {
     list-style-type: none;
     padding: 2px;
-    display: inline;
+    
 }
         
 li a {
-    padding: 50px;
+    padding:10px 50px;
+    font-size: 1rem
      }
 
 .img1 {
     position: absolute;
-            left: -30px;
-            top: 10px;
-            height: 50px;
+            display: none;
         }
-.card.img2 {
+/* .card.img2 {
      margin: auto;
-}
-.bottom {
-    margin-top: 140px;
-}
-.circle-img {
-    border-radius: 25%;
-    border: 7px solid #fff;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    border: 100px;
-    top: 55px;
-}
-.info {
-    margin: 20px 0;
-    color: #74f908;
-}
+} */
 .card {
     border-radius: 25px;
     position: relative;
@@ -245,6 +231,30 @@ li a {
     margin: 90px 0;
     box-shadow: 0 2px 30px #ccc;
     text-align: left;
+}
+/* .bottom {
+    margin-top: 140px;
+} */
+.circle-img {
+    border-radius: 50%;
+    border: 7px solid #fff;
+    width: 4em;
+    height: 5em;
+    position: absolute;
+    border: 100px;
+    top: 5px;
+}
+.info {
+    margin: 20px 0;
+    color: #74f908;
+}
+
+.name {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 50px;
+    margin: 0px;
 }
 
 .top {
@@ -257,6 +267,31 @@ li a {
     left: 0;
     display: flex;
 }
+.projectcard {
+    position: relative;
+    text-align: center;
+        padding: 35px 25px;
+        background-color: black;
+        margin: 90px 0;
+        box-shadow: 0 2px 30px #ccc;
+        text-align: left;
+}
+.projectcard .picture {
+    position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+}
+.projectcard .title {
+    position: relative;
+    top: 30px;
+    text-align: center;
+    color: blue;
+}
+/* .projectcard .info {
+    text-align: center;
+} */
+
 .footer {
     position: fixed;
     left: 0;

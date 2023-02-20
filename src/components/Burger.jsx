@@ -2,17 +2,20 @@
 import React from "react";
 import { slide as Menu } from 'react-burger-menu';
 
+
 function Burger() {
     return<>
     <Menu styles={styles} className="BurgerIcon">
+            
         <a href="/contact" id="contact" className="menu-item">Contact</a>
         <a href="/info" id="info" className="menu-item">Info</a>
         <a href="/about" id="about" className="menu-item">About</a>
-        <a onClick={Burger} className="menu-item--small" href="/">Settings</a>
+        <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
     </Menu>
     </>
 }
 const styles = {
+   
     bmBurgerButton: {
         position: 'fixed',
         width: '36px',

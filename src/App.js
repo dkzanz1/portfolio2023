@@ -10,11 +10,17 @@ import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 
 function createCard(projectInfo) {
-  return<ProjectCard title={projectInfo.title} 
-    img = {projectInfo.imgURL}
-    description = {projectInfo.description}
-  />;
+  return(
+     <ProjectCard
+      key={projectInfo.id}
+      id={projectInfo.id}
+      title={projectInfo.title} 
+      img = {projectInfo.imgURL}
+      description = {projectInfo.description}
+  />  
+  );
 }
+
 function App(){
   return(
       <>

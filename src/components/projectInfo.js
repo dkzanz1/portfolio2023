@@ -4,8 +4,8 @@ const ProjectInfo= [
         id: 1,
         title: "PROJECT 1",
         imgURL: "https://images.pexels.com/photos/372787/pexels-photo-372787.jpeg?auto=compress&cs=tinysrgb&w=600",
-        description:"RTYUIOLKJHGTFYGUHJ"
-},
+        description: "This project is the genius child of Sir Issac Newton.It is built with a small horse called charlie"
+     },
     {
         id: 2,
         title: "PROJECT 2",
