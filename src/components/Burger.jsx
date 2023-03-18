@@ -6,7 +6,6 @@ import { slide as Menu } from 'react-burger-menu';
 function Burger() {
     return<>
     <Menu styles={styles} className="BurgerIcon">
-            
         <a href="/contact" id="contact" className="menu-item">Contact</a>
         <a href="/info" id="info" className="menu-item">Info</a>
         <a href="/about" id="about" className="menu-item">About</a>
@@ -14,14 +13,16 @@ function Burger() {
     </Menu>
     </>
 }
+
+ 
 const styles = {
    
     bmBurgerButton: {
-        position: 'fixed',
+        position: 'absolute',
         width: '36px',
         height: '36px',
         right: '36px',
-        top: '36px'
+        top: '40px'
     },
     bmBurgerBars: {
         background: '#fff'
@@ -37,7 +38,7 @@ const styles = {
         background: '#bdc3c7'
     },
     bmMenuWrap: {
-        postion: 'fixed'
+        position: 'fixed'
     },
     bmMenu: {
         background: '#373a47',

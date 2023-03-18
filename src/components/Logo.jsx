@@ -4,7 +4,7 @@ function Logo() {
     return<>
         <div className="fade-in-image">
             <h2 className="fadeinlogo">The Zogg creation company</h2>
-            <img src="*" alt="logo" className="img1"/> 
+            <img src="*" alt="logo" className="romanimg1"/> 
         </div>
     </>
 }

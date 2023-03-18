@@ -3,306 +3,446 @@
     font-family: 'serif', Times, serif;
     background-color: black;
     font-size: 10ems;
-    
-}  
+}
 
 /* css for mobile sizing begins */
-@media only screen and (min-width:300px){
+@media only screen and (min-width:300px) {
     body {
-        border: solid 12px rgb(237, 97, 179);
+        /* border: solid 12px rgb(237, 97, 179); */
         font-size: 2vw;
     }
-.container {
+
+    .container {
         width: 100%;
         display: flex;
         text-align: center;
         justify-content: center;
-        margin: 0 auto;  
+        margin: 0 auto;
     }
-.img1 {
-    position: fixed;
-    left: 20px;
-    top: 28px;
-    height: 50px;
+
+    .romanimg1 {
+        /* position: fixed;
+        left: 20px;
+        top: 28px; */
+        height: 20px;
+    }
+
+    .fadeinlogo {
+        color: #ccc;
+        font-style: italic;
+        font-weight: 1;
+        position: absolute;
+        left: 32%;
+    }
+
+    .fade-in-image {
+        animation: fadeIn 10s;
+    }
+
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
         }
-.fadeinlogo {
-    color: #ccc;
-    font-style: italic;
-    font-weight: 1;
-    position: fixed;
-    right: 180px;
-    }      
-.fade-in-image {
-    animation: fadeIn 10s;
-        }  
-@keyframes fadeIn {
-    0% {opacity: 0;}
-    120% {opacity: 2;}
+
+        120% {
+            opacity: 2;
+        }
+    }
+
+    .list {
+        display: none;
+    }
+
+    .Herocard {
+        border-radius: 25px;
+        position: relative;
+        top: 0px;
+        padding: 35px 25px;
+        margin: 10px;
+        box-shadow: 0 2px 100px #ccc;
+        text-align: center;
+    }
+
+    .circle-img {
+        border-radius: 50%;
+        border: 1px solid #fff;
+        width: 300px;
+        height: 300px;
+        margin: 40px auto;
+    }
+
+    .name {
+        position: absolute;
+        left: 40px;
+        top: 350px;
+        font-size: 4em;
+        margin: 10% 20px 0px 60px;
+        padding: 10px 20px;
+        /* border: solid yellow 1px; */
+    }
+
+    .Herobottom {
+        position: relative;
+        left: -20px;
+        margin: 10% 20px 0px 60px;
+        padding: 10px 20px;
+    }
+
+    .aboutblurb {
+        box-shadow: 0 2px 30px #ccc;
+        width: 80%;
+        margin: 40px auto;
+        border-radius: 25px;
+        top: 40px;
+        padding: 35px 25px;
+
+        text-align: center;
+    }
+
+    .projectcard {
+        margin: 0 auto;
+        width: 80%;
+        /* border: solid 1px rgb(0, 247, 255); */
+    }
+
+    /* .wrapperproject {
+        border-radius: 25px;
+        padding: 35px 25px;
+    } */
+
+    .content {
+        position: relative;
+        margin: 0  auto;
+        width: 100%;
+        text-align : center;
+
+    }
+
+.projectPicture {
+        position: relative;
+        width: 100%;
+    }
+
+.project-title {
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        color: white;
+        margin: 10px 0;
+        padding: 0 12px;
+        
+        background-color: rgb(0, 0, 0, .4);
+    }
+    .project-info {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(0, 0, 0, .4);
+        color: rgb(248, 242, 242);
+        font-size: 1.1em;
+        border: solid silver 4px;   
+    }
+
+
+
+
+    
+    .columns, input[type="submit"] {
+        width:100%;
+        margin-top: 0;
+    }
+    .contactForm {
+        margin: auto 0;
+        
+    }
+    .input[type="text"],[type="email"] textarea p h1{
+        width: 100%;
+        margin: 20px 20px;
+    }
+
+    .social-container {
+        background: black;
+        padding: 25px 50px;
+    }
+
+
+    a.social {
+        margin: 0 auto;
+        transition: transform 250ms;
+        display: inline-block;
+        padding: 0px 20px;
+    }
+
+    a.social:hover {
+        transform: translateY(-2px);
+        color: green;
+    }
 }
-.list {
-    display: none;
-}
-.card {
-    border-radius: 25px;
-    position: relative;
-    top: 0px;
-    padding: 35px 25px;
-    margin: 10px;
-    box-shadow: 0 2px 100px #ccc;
-    text-align: center; 
-  }
-  .picture {
-    width: 80%;
-    border: 2px yellow solid;
-  }
-  .name {
-    position : absolute;
-    left: 70px;
-    top: 320px;
-    font-size: 4em;
-    margin: 10% 20px 50px 60px;
-    padding: 10px 20px;
-    /* border: solid yellow 1px; */
-}
-  .circle-img {
-      border-radius: 50%;
-      border: 1px solid #fff;
-      width: 300px;
-      height: 300px; 
-      margin: 60px 30px;
-  }
-  .wrapper {
-      border: solid 1px yellow;
-      box-shadow: 0 2px 30px #ccc;
-      border-radius: 25px;
-      position: relative;
-      top: 40px;
-      padding: 35px 25px;
-      margin: 90px;
-      text-align: left;
-  }
-.social-container {
-    background:black;
-    padding:25px 50px;
-}
-a.social {
-    margin: 0 auto;
-    transition: transform 250ms;
-    display: inline-block;
-    padding: 0px 20px;
-}
-a.social:hover {
-    transform: translateY(-2px);
-    color: green;
-}
-}
+
 /* css for mobile sizing ends */
 
 @media only screen and (min-width: 768px) {
-body {
-    border: solid 12px orange;
-    margin: 0 ;
-    padding: 0;
-}
-.container {
-    width: 100%;
-    text-align: center;
-    margin: auto;
-    border: solid 12px red;
-    }   
-.BurgerIcon {
-    display:none;
-}
-.list {
-    display: none;
-}
-.name {
-    font-size: 2em;
-    flex: 1;
-    margin: 10% 20px 0;
-        }
-.card {
-    border-radius: 25px;
-    position: relative;
-    top: 40px;
-    padding: 35px 25px;
-    margin: 90px;
-    box-shadow: 0 2px 30px #ccc;
-    text-align: left;
-                }
-.card.img2 {
-    margin: 30px 0px 0 0;
-    }
-.bottom {
-    margin-top: 120px;
-    }
-.circle-img {
-    border-radius: 50%;
-    border: 7px solid #fff;
-    width: 150px;
-    height: 250px;
-    position: absolute;
-    right: 50px;
-    top: 35px;
-        }
-
-        
-.top {
-    border-radius: 25px 25px 0 0;
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    }
- .bottom {
-    margin-top: 120px;
-        }
-        
-.info {
-    margin: 20px 0;
-    color: #74f908;
+    body {
+        border: solid 12px orange;
+        margin: 0;
+        padding: 0;
     }
 
-.footer {
+    .container {
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        border: solid 12px red;
+    }
+
+    .list {
+        display: none;
+    }
+
+    .name {
+        font-size: 2em;
+        flex: 1;
+        margin: 10% 20px 0;
+    }
+
+    .card {
+        border-radius: 25px;
+        position: relative;
+        top: 40px;
+        padding: 35px 25px;
+        margin: 90px;
+        box-shadow: 0 2px 30px #ccc;
+        text-align: left;
+    }
+
+    .card.img2 {
+        margin: 30px 0px 0 0;
+    }
+
+    .bottom {
+        margin-top: 120px;
+    }
+
+    .circle-img {
+        border-radius: 50%;
+        border: 7px solid #fff;
+        width: 150px;
+        height: 250px;
+        position: absolute;
+        right: 50px;
+        top: 35px;
+    }
+
+
+    .top {
+        border-radius: 25px 25px 0 0;
+        height: 100px;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+    }
+
+    .bottom {
+        margin-top: 120px;
+    }
+
+    .info {
+        margin: 20px 0;
+        color: #74f908;
+    }
+
+    .footer {
         position: fixed;
         left: 0;
         bottom: 0;
         width: 100%;
         background-color: red;
         text-align: center;
-        }
+    }
 }
+
 @media only screen and (min-width:1024px) {
-body {
-    display :flex;
-    justify-content:center;
-    align-items: center;
-    margin:0;
-    /* height: 100vh; */
-    padding: 0;
-    font-size:2em; 
-    border: solid 2px rgb(38, 0, 255);
-        }
-                       
-.container {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        /* height: 100vh; */
+        padding: 0;
+        font-size: 2em;
+        border: solid 2px rgb(38, 0, 255);
+    }
+
+    .container {
         /* width: 100%; */
         height: 100vh;
-        /* text-align: center; */
-        /* margin:0 auto; */
-                }
-/* .App {
-    max-height: 200px;
-        } */
-.list {
-    display: inline;
-}
+    }
 
-ul {
-    margin: 0 0 0 -60px;
-}
-        
-ul li {
-    list-style-type: none;
-    padding: 2px;
-    
-}
-        
-li a {
-    padding:10px 50px;
-    font-size: 1rem
-     }
+    .fadeinlogo {
+        font-size: 1rem;
+        opacity: 1;
+    }
 
-.img1 {
-    position: absolute;
-            display: none;
-        }
-/* .card.img2 {
+    .list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        list-style: none;
+
+    }
+
+    ul {
+        margin: 0 0 0 -60px;
+    }
+
+    li a {
+        padding: 10px 50px;
+        font-size: 1rem;
+        width: auto;
+    }
+
+    .img1 {
+        display: none;
+    }
+
+    /* .card.img2 {
      margin: auto;
 } */
-.card {
-    border-radius: 25px;
-    position: relative;
-    top: -10px;
-    padding: 35px 25px;
-    background-color: black;
-    margin: 90px 0;
-    box-shadow: 0 2px 30px #ccc;
-    text-align: left;
-}
-/* .bottom {
-    margin-top: 140px;
-} */
-.circle-img {
-    border-radius: 50%;
-    border: 7px solid #fff;
-    width: 4em;
-    height: 5em;
-    position: absolute;
-    border: 100px;
-    top: 5px;
-}
-.info {
-    margin: 20px 0;
-    color: #74f908;
-}
-
-.name {
-    position: relative;
-    top: 0;
-    left: 0;
-    padding: 50px;
-    margin: 0px;
-}
-
-.top {
-    border-radius: 25px 25px 0 0;
-    height: 100px;
-    width: 100%;
-    background-color: black;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-}
-.projectcard {
-    position: relative;
-    text-align: center;
+    .card {
+        border-radius: 25px;
+        position: relative;
+        top: -10px;
         padding: 35px 25px;
         background-color: black;
-        margin: 90px 0;
+        margin: 0;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
+    }
+
+    .circle-img {
+        border-radius: 50%;
+        border: 7px solid #fff;
+        width: 12em;
+        height: 12em;
+        position: absolute;
+        right: 120px;
+        top: -10px;
+    }
+
+    .info {
+        margin: 20px 0;
+        color: #74f908;
+    }
+
+    .name {
+        position: relative;
+        top: 0;
+        left: 0;
+        padding: 50px;
+        margin: 0px;
+    }
+
+    .top {
+        border-radius: 25px 25px 0 0;
+        height: 100px;
+        width: 100%;
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+    }
+
+    /* Hero finishes */
+    .projectcard {
+        /* text-align: center; */
+        display: inline-block;
+        width: 49%;
+        background-color: black;
+        box-shadow: 0 2px 30px #d0cdcd;
+        border: green 1px solid;
+
+        /* text-align: right;    */
+    }
+
+    .projectcard .picture {
+        position: absolute;
+        /* object-fit: cover; */
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+    }
+
+    .wrapper {
+        border: rgb(179, 125, 152) 6px solid;
+        width: 49%;
+        margin: 0 auto;
+        ;
+        /* display: inline-block; */
+    }
+
+    .content {
+        position: relative;
+        margin: auto;
+        border: red 3px solid;
+    }
+
+
+
+    .projectcard .title {
+        position: relative;
+        top: 25%;
+        left: 30%;
+        color: blue;
+    }
+
+    .projectcard .info {
+        position: relative;
+        /* overflow: hidden; */
+        text-align: center;
+        margin: auto;
+    }
+
+
+
+
+
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        color: prime;
+        text-align: center;
+    }
+
+    .social-container {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        background: black;
+        padding: 0;
+        /* border: yellow 2px solid; */
+    }
+
+    .fade-in-image {
+        text-align: center;
+    }
+
+    a.social {
+        margin: 0 auto;
+        transition: transform 250ms;
+        display: inline-block;
+        padding: 0px 20px;
+    }
+
+    .dynocopy {
+        text-align: center;
+    }
+
 }
-.projectcard .picture {
-    position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-}
-.projectcard .title {
-    position: relative;
-    top: 30px;
-    text-align: center;
-    color: blue;
-}
-/* .projectcard .info {
-    text-align: center;
-} */
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: prime;
-    text-align: center;
-}
-}
-
-
-
-
-

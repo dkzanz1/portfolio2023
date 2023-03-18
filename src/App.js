@@ -8,6 +8,8 @@ import projectInfo from "./components/projectInfo"
 import SocialFollow from "./SocialFollow.js";
 import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
+import About from "./components/About";
+import ContactForm from "./components/Contact";
 
 function createCard(projectInfo) {
   return(
@@ -28,16 +30,13 @@ function App(){
         <Nav />
         <Burger />
         <HeroCard />
+        <About />
     {/*mapping throu projectInfo to create 
     dynamic resaponse rather than hard coded
     via jsx array loop created before
     hard code example below*/}
       {projectInfo.map(createCard)}
-      {/* <ProjectCard
-      title = {projectInfo[0].title}
-      img = {projectInfo[0].imgURL}
-      description={projectInfo[0].description}
-       /> */}
+      <ContactForm />
       <SocialFollow />
       <Footer />
     </>   //container ends
