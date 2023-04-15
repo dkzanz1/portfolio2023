@@ -1,25 +1,37 @@
 import React from "react";
+import {useState} from "react"
+// import ReactDOM from 'react-dom/client';
 
 function ContactForm() {
-    return<><div className="container">
-    <div>
-        <h1>Contact Form</h1>
-        <p>Making Contact</p>
-    </div>
-    <div className="row"><div className="columns">
-    <form className="contactForm">
-        <label for= "Fname">First Name</label>
-        <input type="text" placeholder="First Name"/>
-        <label for="Lname">Last Name</label>
-        <input type="text" placeholder="Last Name" />
-        <input type="email" placeholde="enter email"/>
-        <textarea>Subject</textarea>
-        <input type="submit">Submit</input>
-    </form>
-    </div>
-    </div>
-     </div>
-    </>
+    const [inputs, setInputs ] = useState({});
+
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setInputs(values => ({...values, [name]: value}))
+    }
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        alert(inputs);
+    } 
+    return (
+    <form onSubmit = {handleSubmit} className="contactform">
+        <h3>Contact</h3>
+        <label className="contactInput">Enter your name :-<span style={{color: "black"}}>-----</span>
+            <input type="text" name="username" value= {inputs.username || ""} onChange={handleChange} placeholder="First name" className="c"/>
+        </label>
+        <label className="contactInput">Enter your Surname  :-
+            <input type="text" name="username" value= {inputs.username || ""} onChange={handleChange} placeholder="Surname"/>
+        </label>
+        <label className="contactInput">Enter your Email :-<span style={{color: "black"}}>-----</span>
+            <input type="text" name="username" value= {inputs.username || ""} onChange={handleChange} placeholder="Email"/>
+        </label>
+ </form>
+    )
 }
+
+    
+
 
 export default ContactForm;

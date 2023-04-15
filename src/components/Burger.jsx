@@ -1,17 +1,19 @@
-
-import React from "react";
 import { slide as Menu } from 'react-burger-menu';
+//if screen is smaller than laptop size renderhamburger
+//use boolean var to set if screen size greater than 
 
+//if the screen size is lessthan that laptop 1024px size do not show burger
 
-function Burger() {
+ function Burger()  {
     return<>
-    <Menu styles={styles} className="BurgerIcon">
+        <Menu styles={styles} className="BurgerIcon">
         <a href="/contact" id="contact" className="menu-item">Contact</a>
         <a href="/info" id="info" className="menu-item">Info</a>
         <a href="/about" id="about" className="menu-item">About</a>
         <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
     </Menu>
     </>
+         
 }
 
  
@@ -19,10 +21,10 @@ const styles = {
    
     bmBurgerButton: {
         position: 'absolute',
-        width: '36px',
-        height: '36px',
+        width: '46px',
+        height: '46px',
         right: '36px',
-        top: '40px'
+        top: '30px'
     },
     bmBurgerBars: {
         background: '#fff'
@@ -51,9 +53,13 @@ const styles = {
     bmItemList: {
         color: '#b8b7ad',
         padding: '0.8em'
+        
     },
     bmItem: {
-        display: 'inline-block'
+        display: 'block',
+        fontSize: '3.15em',
+        textDecoration: 'none'
+
     },
     bmOverlay:{
         background: 'rgba(0, 0, 0, 0.3)'
@@ -61,6 +67,5 @@ const styles = {
 }
 
 export default Burger;
-
 
 

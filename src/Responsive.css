@@ -1,66 +1,33 @@
 :root {
     color: white;
     font-family: 'serif', Times, serif;
-    background-color: black;
-    font-size: 10ems;
+    background-color: rgb(7, 8, 8);
+    
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    width: 1240px;
+    
 }
 
 /* css for mobile sizing begins */
 @media only screen and (min-width:300px) {
-    body {
-        /* border: solid 12px rgb(237, 97, 179); */
-        font-size: 2vw;
-    }
 
-    .container {
-        width: 100%;
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    .romanimg1 {
-        /* position: fixed;
-        left: 20px;
-        top: 28px; */
-        height: 20px;
-    }
-
-    .fadeinlogo {
-        color: #ccc;
-        font-style: italic;
-        font-weight: 1;
-        position: absolute;
-        left: 32%;
-    }
-
-    .fade-in-image {
-        animation: fadeIn 10s;
-    }
-
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-        }
-
-        120% {
-            opacity: 2;
-        }
-    }
-
-    .list {
-        display: none;
-    }
-
-    .Herocard {
+    .hero-content {
         border-radius: 25px;
         position: relative;
         top: 0px;
-        padding: 35px 25px;
-        margin: 10px;
-        box-shadow: 0 2px 100px #ccc;
+        left: 0px;
+        box-shadow: 0 4px 100px #0ee1ac;
         text-align: center;
+        border: 3px solid purple;
     }
 
     .circle-img {
@@ -69,13 +36,15 @@
         width: 300px;
         height: 300px;
         margin: 40px auto;
+        position : relative;
+        top: 100px;
     }
 
     .name {
+        margin: 0 auto;
         position: absolute;
-        left: 40px;
-        top: 350px;
-        font-size: 4em;
+        top: 30px;
+        font-size: 6em;
         margin: 10% 20px 0px 60px;
         padding: 10px 20px;
         /* border: solid yellow 1px; */
@@ -84,31 +53,31 @@
     .Herobottom {
         position: relative;
         left: -20px;
+        font-size: 1.7em;
         margin: 10% 20px 0px 60px;
-        padding: 10px 20px;
+        padding: 10px 50px;
     }
-
-    .aboutblurb {
+    /*hero ends */
+/*about begins*/
+    .Aboutblurb {
         box-shadow: 0 2px 30px #ccc;
-        width: 80%;
-        margin: 40px auto;
+        width: 85%;
+        margin: 140px auto;
         border-radius: 25px;
-        top: 40px;
+        
         padding: 35px 25px;
-
-        text-align: center;
+        text-align: center;  
     }
-
+    .blurb {
+        font-size: 20px;
+    }
+/*blurb finishes*/
+    
     .projectcard {
         margin: 0 auto;
         width: 80%;
-        /* border: solid 1px rgb(0, 247, 255); */
+        
     }
-
-    /* .wrapperproject {
-        border-radius: 25px;
-        padding: 35px 25px;
-    } */
 
     .content {
         position: relative;
@@ -143,29 +112,27 @@
         font-size: 1.1em;
         border: solid silver 4px;   
     }
-
-
-
-
+ 
+    .contactform {
+        /* border: solid 1px white; */
+        padding-bottom: 60px; 
+    }
+    .contactform h3 {
+        text-align: center;
+        font-size: 30px;
+    }
     
-    .columns, input[type="submit"] {
-        width:100%;
-        margin-top: 0;
-    }
-    .contactForm {
-        margin: auto 0;
-        
-    }
-    .input[type="text"],[type="email"] textarea p h1{
+    .contactInput {
+        margin: 10px;
+        text-align: center;
         width: 100%;
-        margin: 20px 20px;
+        display: inline-block;  
     }
 
     .social-container {
         background: black;
         padding: 25px 50px;
     }
-
 
     a.social {
         margin: 0 auto;
@@ -178,81 +145,69 @@
         transform: translateY(-2px);
         color: green;
     }
+    .footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        text-align: center;
+    }
 }
 
 /* css for mobile sizing ends */
 
 @media only screen and (min-width: 768px) {
-    body {
-        border: solid 12px orange;
-        margin: 0;
-        padding: 0;
-    }
 
-    .container {
-        width: 100%;
-        text-align: center;
-        margin: auto;
-        border: solid 12px red;
-    }
-
-    .list {
-        display: none;
+    .Herocard {
+        margin-top :10%;
+        
+        padding: 150px;
     }
 
     .name {
-        font-size: 2em;
-        flex: 1;
-        margin: 10% 20px 0;
+        font-size: 4.5em;
+        margin: 15%  0;
+        left: 0%;
     }
-
-    .card {
+    .circle-img {
+        border-radius: 50%;
+        border: 7px solid #fff;
+        width: 295px;
+        height: 375px;
+        position: absolute;
+        right: 40px;
+        top: 20px;
+    }
+    .Herobottom {
+        margin: 10%  0;
+        left: -40%;
+        text-align: left;
+    }
+    .Aboutblurb {
         border-radius: 25px;
         position: relative;
         top: 40px;
-        padding: 35px 25px;
-        margin: 90px;
+        margin: 60px;
+        padding: 3px 25px;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
     }
 
-    .card.img2 {
-        margin: 30px 0px 0 0;
+
+    .contactform {
+        /* border: solid 1px white; */
+        padding-bottom: 60px; 
     }
-
-    .bottom {
-        margin-top: 120px;
+    .contactform h3 {
+        text-align: center;
+        font-size: 30px;
     }
-
-    .circle-img {
-        border-radius: 50%;
-        border: 7px solid #fff;
-        width: 150px;
-        height: 250px;
-        position: absolute;
-        right: 50px;
-        top: 35px;
-    }
-
-
-    .top {
-        border-radius: 25px 25px 0 0;
-        height: 100px;
+    
+    .contactInput { 
+        margin: 10px;
+        text-align: center;
         width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-    }
-
-    .bottom {
-        margin-top: 120px;
-    }
-
-    .info {
-        margin: 20px 0;
-        color: #74f908;
+        display: inline-block;  
     }
 
     .footer {
@@ -265,133 +220,155 @@
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 @media only screen and (min-width:1024px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    .section {
+        border:rgb(11, 84, 231) 3px solid;
+        position: relative;
+        top: 100px;
+        left: 0px;
         margin: 0;
-        /* height: 100vh; */
+        padding : 0;
+        border-radius: 25px;
+        height: 800px;
+        margin-bottom: 30px;
+        
+        
+        /* background: url(components/videobg.mp4); */   
+    }
+    .Herocard {
+        border: 3px rgb(237, 131, 16) solid;
+        position: relative;
+        top: -125px;
+        left: 0px;
+        height: 700px;
+        
+        
+        
+    }
+    .hero-content {
+            position: static;
+            top: 200px;
+            left:0;
+            border: red 2px solid;
+            height: 500px;
+            
+
+    }
+    .circle-img {
+            border-radius: 50%;
+            border: 7px solid #d51919;
+            width: 18em;
+            height: 25em;
+            position:relative;
+            left: 190px;
+            top: 0px;
+    }
+    .name {
+        /* border: 3px rgb(222, 48, 208) solid; */
+        position:relative;
+        top: -550px;
+        left: 70px;
+        text-align: left;
+    }
+    .hero-blurb {
+        /* border: 3px rgb(100, 222, 48) solid; */
+        position:relative;
+        top: -700px;
+        left: 85px;
+        text-align: left;
+    }
+    .HeroInfo {
+        /* border: 3px rgb(80, 74, 79) solid; */
+        position: relative;
+        top: 10px;
+        left: 0px;
+    }
+    .videobg-wrapper {
+        margin: 0;
         padding: 0;
-        font-size: 2em;
-        border: solid 2px rgb(38, 0, 255);
+        position: static;
+        /* top: 1000px;
+        left: 100px; */
+        /* border: orange 3px solid; */
+      
+        
+   
     }
-
-    .container {
-        /* width: 100%; */
-        height: 100vh;
-    }
-
-    .fadeinlogo {
-        font-size: 1rem;
-        opacity: 1;
-    }
-
-    .list {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        list-style: none;
+    .Watervideo {
+        position: absolute;
+        /* top: 0px;
+        left: 0px; */
+        margin: 0;
+        padding: 0;
+        object-fit: cover;  
+        border-radius: 25px;
 
     }
 
-    ul {
-        margin: 0 0 0 -60px;
-    }
 
-    li a {
-        padding: 10px 50px;
-        font-size: 1rem;
-        width: auto;
+    /* Hero finishes */
+    .wrapper {
+        margin: 0;
+        padding: 0;
+        
     }
-
-    .img1 {
-        display: none;
-    }
-
-    /* .card.img2 {
-     margin: auto;
-} */
-    .card {
+    .Aboutblurb {
         border-radius: 25px;
         position: relative;
         top: -10px;
-        padding: 35px 25px;
-        background-color: black;
-        margin: 0;
+        left:2%;
+        padding-bottom: 30px;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
+        font-size: 2em;
     }
-
-    .circle-img {
-        border-radius: 50%;
-        border: 7px solid #fff;
-        width: 12em;
-        height: 12em;
-        position: absolute;
-        right: 120px;
-        top: -10px;
+    .blurb {
+        font-size: 1em;
     }
+    /* about finishes */
+    /* project section begins */
+    
 
-    .info {
-        margin: 20px 0;
-        color: #74f908;
+    .grid-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        width: 49%;
+        justify-content: center;
+        /* border: solid 3px red; */
+        margin-top: 130px;
+        gap: 20px;
+        
     }
-
-    .name {
-        position: relative;
-        top: 0;
-        left: 0;
-        padding: 50px;
-        margin: 0px;
-    }
-
-    .top {
-        border-radius: 25px 25px 0 0;
-        height: 100px;
-        width: 100%;
-        background-color: black;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-    }
-
-    /* Hero finishes */
     .projectcard {
-        /* text-align: center; */
-        display: inline-block;
-        width: 49%;
-        background-color: black;
+        display: flex;
+        width: 86%;
+        padding :1em;
+        margin: 0 0 1em 0;
         box-shadow: 0 2px 30px #d0cdcd;
-        border: green 1px solid;
+        /* border: green 1px solid; */
 
-        /* text-align: right;    */
     }
-
-    .projectcard .picture {
-        position: absolute;
-        /* object-fit: cover; */
-        width: 100%;
-        height: 100%;
-        border-radius: 15px;
-    }
-
-    .wrapper {
-        border: rgb(179, 125, 152) 6px solid;
-        width: 49%;
-        margin: 0 auto;
-        ;
-        /* display: inline-block; */
-    }
-
     .content {
-        position: relative;
+        display:flex;
         margin: auto;
-        border: red 3px solid;
+        /* border: rgb(127, 131, 239) 3px solid; */
+        padding: 0px;
     }
-
-
+    .projectcard .picture {
+        object-fit: cover;
+        margin: 0.5em 0;
+    }
 
     .projectcard .title {
         position: relative;
@@ -402,16 +379,23 @@
 
     .projectcard .info {
         position: relative;
-        /* overflow: hidden; */
         text-align: center;
         margin: auto;
     }
-
-
-
-
-
-
+    /* projectcard finishes */
+    .contactform {
+        margin: 20px;
+        padding: 20px;
+    }
+    .contactform h3 {
+        font-size: 4em;
+    }
+    .contactInput input {
+        font-size: 1.5em;
+    }
+    .social-container {
+        font-size: 2em;
+    }
     .footer {
         position: fixed;
         left: 0;

@@ -1,8 +1,6 @@
 import React from "react";
-import Nav from "./components/Nav";
 import './Responsive.css';
-import HeroCard from "./components/HeroCard";
-import Logo from "./components/Logo";
+import Card from "./components/HeroCard";
 import Burger from "./components/Burger";
 import projectInfo from "./components/projectInfo"
 import SocialFollow from "./SocialFollow.js";
@@ -10,6 +8,8 @@ import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 import About from "./components/About";
 import ContactForm from "./components/Contact";
+import Water from "./components/Video";
+
 
 function createCard(projectInfo) {
   return(
@@ -26,10 +26,12 @@ function createCard(projectInfo) {
 function App(){
   return(
       <>
-        <Logo />
-        <Nav />
+        
         <Burger />
-        <HeroCard />
+        
+        <Card />
+        <Water />
+
         <About />
     {/*mapping throu projectInfo to create 
     dynamic resaponse rather than hard coded
