@@ -12,8 +12,8 @@
 body {
     margin: 0 auto;
     padding: 0;
-    overflow-x: hidden;
-    width: 1240px;
+    /* overflow-x: hidden; */
+    width: 1500px;
     
 }
 
@@ -233,7 +233,7 @@ body {
 @media only screen and (min-width:1024px) {
 
     .section {
-        border:rgb(11, 84, 231) 3px solid;
+        /* border:rgb(11, 84, 231) 3px solid; */
         position: relative;
         top: 100px;
         left: 0px;
@@ -247,11 +247,12 @@ body {
         /* background: url(components/videobg.mp4); */   
     }
     .Herocard {
-        border: 3px rgb(237, 131, 16) solid;
+        /* border: 3px rgb(237, 131, 16) solid; */
         position: relative;
-        top: -125px;
+        top: -290px;
         left: 0px;
         height: 700px;
+        z-index: 10;
         
         
         
@@ -260,33 +261,35 @@ body {
             position: static;
             top: 200px;
             left:0;
-            border: red 2px solid;
+            /* border: red 2px solid; */
             height: 500px;
             
 
     }
     .circle-img {
             border-radius: 50%;
-            border: 7px solid #d51919;
+            /* border: 7px solid #d51919; */
             width: 18em;
-            height: 25em;
+            height: 27em;
             position:relative;
-            left: 190px;
+            left: 240px;
             top: 0px;
     }
     .name {
         /* border: 3px rgb(222, 48, 208) solid; */
         position:relative;
-        top: -550px;
-        left: 70px;
+        top: -650px;
+        left: 160px;
         text-align: left;
+        font-size: 6em;
     }
     .hero-blurb {
         /* border: 3px rgb(100, 222, 48) solid; */
         position:relative;
-        top: -700px;
-        left: 85px;
+        top: -820px;
+        left: 190px;
         text-align: left;
+        font-size: 1em;
     }
     .HeroInfo {
         /* border: 3px rgb(80, 74, 79) solid; */
@@ -307,12 +310,16 @@ body {
     }
     .Watervideo {
         position: absolute;
-        /* top: 0px;
-        left: 0px; */
+        top: 110px;
+        left: 168px;
+        height: 497px;
+        width: 1199px;
         margin: 0;
         padding: 0;
         object-fit: cover;  
         border-radius: 25px;
+        overflow: hidden;
+        z-index: 2;
 
     }
 
@@ -321,32 +328,44 @@ body {
     .wrapper {
         margin: 0;
         padding: 0;
+        width: 900px;
+        position: relative;
+        top: -270px;
+        left: 5%;
+        /* box-shadow: 0 4px 100px #0ee1ac; */
         
     }
     .Aboutblurb {
         border-radius: 25px;
         position: relative;
-        top: -10px;
-        left:2%;
+        top: 0px;
+        left:0%;
         padding-bottom: 30px;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
         font-size: 2em;
+        width: 1199px;
+        box-shadow: 0 4px 100px #0ee1ac;
+        
     }
     .blurb {
         font-size: 1em;
     }
     /* about finishes */
-    /* project section begins */
-    
 
+
+
+    /*==== project section begins==== */
+    
     .grid-container {
         display: inline-flex;
         flex-wrap: wrap;
         width: 49%;
         justify-content: center;
+        position:relative;
+        top: -16C0px;
         /* border: solid 3px red; */
-        margin-top: 130px;
+        /* margin-top: -10px; */
         gap: 20px;
         
     }
@@ -354,9 +373,12 @@ body {
         display: flex;
         width: 86%;
         padding :1em;
-        margin: 0 0 1em 0;
+        margin-bottom: 20px;
+        margin-top: 20px;
         box-shadow: 0 2px 30px #d0cdcd;
         /* border: green 1px solid; */
+        box-shadow: 0 4px 100px #0ee1ac;
+        border-radius: 20px;
 
     }
     .content {
@@ -368,6 +390,7 @@ body {
     .projectcard .picture {
         object-fit: cover;
         margin: 0.5em 0;
+        border-radius: 20px;
     }
 
     .projectcard .title {
