@@ -1,4 +1,4 @@
-import { slide as Menu } from 'react-burger-menu';
+import { bubble as Menu } from 'react-burger-menu';
 //if screen is smaller than laptop size renderhamburger
 //use boolean var to set if screen size greater than 
 
@@ -6,6 +6,7 @@ import { slide as Menu } from 'react-burger-menu';
 
  function Burger()  {
     return<>
+    
         <Menu styles={styles} className="BurgerIcon">
         <a href="/contact" id="contact" className="menu-item">Contact</a>
         <a href="/info" id="info" className="menu-item">Info</a>
@@ -23,8 +24,8 @@ const styles = {
         position: 'absolute',
         width: '46px',
         height: '46px',
-        right: '36px',
-        top: '30px'
+        right: '50px',
+        top: '40px'
     },
     bmBurgerBars: {
         background: '#fff'
@@ -58,7 +59,8 @@ const styles = {
     bmItem: {
         display: 'block',
         fontSize: '3.15em',
-        textDecoration: 'none'
+        textDecoration: 'none',
+        color: 'white'
 
     },
     bmOverlay:{

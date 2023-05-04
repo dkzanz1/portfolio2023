@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import './Responsive.css';
 import Card from "./components/HeroCard";
 import Burger from "./components/Burger";
+import Sectionpart from "./components/section";
 import projectInfo from "./components/projectInfo"
 import SocialFollow from "./SocialFollow.js";
 import Footer from "./components/Footer";
@@ -17,6 +18,7 @@ function createCard(projectInfo) {
       key={projectInfo.id}
       id={projectInfo.id}
       title={projectInfo.title} 
+      url={projectInfo.url}
       img = {projectInfo.imgURL}
       description = {projectInfo.description}
   />  
@@ -25,23 +27,21 @@ function createCard(projectInfo) {
 
 function App(){
   return(
-      <>
-        
+      <Fragment className="container">
         <Burger />
-        
         <Card />
         <Water />
-
         <About />
+        <Sectionpart />
     {/*mapping throu projectInfo to create 
-    dynamic resaponse rather than hard coded
+    dynamic response rather than hard coded
     via jsx array loop created before
     hard code example below*/}
       {projectInfo.map(createCard)}
       <ContactForm />
       <SocialFollow />
       <Footer />
-    </>   //container ends
+    </Fragment>   //container ends
   );
 }
 

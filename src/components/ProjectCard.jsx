@@ -2,19 +2,26 @@ import React from "react";
 
 
 
-function ProjectCard(props) {
-return (<div className="grid-container">
-             <div className="projectcard">
-                 <div className="content">
-                    <img className="projectPicture" src={props.img} alt="man"/>
-                       <h2 className="project-title">{props.title}</h2>
-                       <p>{props.id}</p>
-                       <p className="project-info">{props.description}</p>
+
+
+ const ProjectCard = ({id, title, img, url, description }) => {
+   // const  url  = props;
+   const link = React.createElement('a', {href:url, target: '_blank'},'Visit Project');
+return (<div className="projectcard-container">
+              
+                <div className="projectcard-item">
+                 
+                    <img className="projectcard-item img" src={img} alt="man"/>
+                       <h2 className="projectcard-item-title">{title}</h2>
+                       <p className="projectcard-id">{id}</p>
+                       <a className="project-card-link" href={url} target='_blank' rel="noopener noreferrer">{link}</a>
+                       <p className="projectcard-item-info">{description}</p>
                  </div>
             </div>
-         </div>
+         
     );
+    
 }
 
-
+console.log( ProjectCard);
 export default ProjectCard;

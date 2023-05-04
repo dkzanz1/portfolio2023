@@ -3,7 +3,7 @@ import React from "react";
 
 function Footer() {
     return<>
-        <div className ="fade-in-image">
+        <div className="footer" >
             
             {/* <ul>
                <li><a href="*">link-ed</a></li> 

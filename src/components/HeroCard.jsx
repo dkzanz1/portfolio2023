@@ -10,8 +10,8 @@ function Card() {
         <div className="Herocard">
             <div className="hero-content">
                 <img src={img} alt="Avatar" className="circle-img" />
-                     <h1 className="name"><span>Hi,<br/></span><span>I'm Paul</span></h1>
-                     <div className="hero-blurb">
+                     <h1 className="name"><span>Hi,   </span><span>I'm Paul</span></h1>
+                     <div className="HeroBlurb">
                     <h2>Web Developer<br /> who lives by the Sea, <br/>based in Christchurch,<br/>Dorset</h2>
                     <p className="HeroInfo">I build Crafted Bespoke Webpages<br/>
                     using both<strong> Front end and Backend</strong></p>

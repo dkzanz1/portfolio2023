@@ -1,8 +1,7 @@
 :root {
     color: white;
     font-family: 'serif', Times, serif;
-    background-color: rgb(7, 8, 8);
-    
+    background-color: rgb(2, 0, 9);   
 }
 * {
     box-sizing: border-box;
@@ -10,76 +9,152 @@
     padding: 0;
 }
 body {
+    width: 100%;
     margin: 0 auto;
     padding: 0;
-    /* overflow-x: hidden; */
-    width: 1500px;
-    
+    line-height: 1.2;
+    font-size: 16px;
+    /* background:green; */
+}
+.container {
+    margin: 0 auto;
+    width: 80%;
+    /* padding: 10px;   */
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 0;
+margin-bottom: 10px;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
+/* .title {
+    font-size: 24px;
+} */
+
+/* ============================ */
 /* css for mobile sizing begins */
-@media only screen and (min-width:300px) {
+/* ====********************==== */
+.section {
+    height: 1000px;
+    width: 80%;
+    align-items: center;
+    /* border: yellow 10px solid; */
+}
 
     .hero-content {
         border-radius: 25px;
-        position: relative;
-        top: 0px;
-        left: 0px;
-        box-shadow: 0 4px 100px #0ee1ac;
+        position: absolute;
+        top: 120px;
+        left: 70px;
+        box-shadow: 0 4px 50px #0ee1ac;
         text-align: center;
-        border: 3px solid purple;
+        /* border: 10px solid purple; */
+        width:78%;
+        height:600px;
+        /* margin: 0 auto; */
+        z-index:100;
+        /* object-fit: cover;   */
+        /* overflow: hidden; */
+
     }
 
     .circle-img {
         border-radius: 50%;
         border: 1px solid #fff;
-        width: 300px;
-        height: 300px;
-        margin: 40px auto;
+        width: 18em;
+        height: 20em;
+        margin: 30px auto;
+        /* margin-top: 40px;
+        margin-bottom:0px; */
         position : relative;
-        top: 100px;
+        top:70px;
+        left:10px;
     }
 
     .name {
         margin: 0 auto;
-        position: absolute;
-        top: 30px;
-        font-size: 6em;
-        margin: 10% 20px 0px 60px;
+        position: relative;
+        top: -370px;
+        left: -30px;
+        font-size: 3em;
+        margin: 0px 0px 0px 60px;
         padding: 10px 20px;
         /* border: solid yellow 1px; */
     }
 
-    .Herobottom {
+    .HeroBlurb {
         position: relative;
-        left: -20px;
-        font-size: 1.7em;
-        margin: 10% 20px 0px 60px;
-        padding: 10px 50px;
+        
+        left: -30px;
+        top: -50px;
+        font-size: 1em;
+        margin: 0 20px 100px 60px;
+        padding: 20px 50px;
     }
-    /*hero ends */
-/*about begins*/
+    /* .heroInfo{
+        color:green;
+    } */
+    .videobg-wrapper {
+        border-radius:25%;
+    }
+    
+    .Watervideo {
+        position: absolute;
+        top: 120px;
+        left: 70px;
+        height: 600px;
+        width: 78%;
+        margin: 0;
+        padding: 0;
+        object-fit: cover;  
+        border-radius: 25px;
+        overflow: hidden;
+        z-index: 2;
+
+    }
+/*========hero ends========= */
+/*========About begins=======*/
+
+    /* .wrapper {
+        border: 13px solid rgb(116, 236, 12);    
+} */
     .Aboutblurb {
+        position: relative;
+        top:-230px;
         box-shadow: 0 2px 30px #ccc;
         width: 85%;
-        margin: 140px auto;
+        margin: 0px auto;
         border-radius: 25px;
-        
-        padding: 35px 25px;
+        padding: 65px 25px;
         text-align: center;  
     }
     .blurb {
         font-size: 20px;
     }
-/*blurb finishes*/
-    
-    .projectcard {
+/*=========blurb finishes=======*/
+
+    .projectcard-container {
         margin: 0 auto;
         width: 80%;
-        
+        border-radius: 25px;
+        box-shadow: 0 10px 30px #0ee1ac;
+        margin-top: 50px;
+        position:relative;
+        top: -150px;   
+    }
+    .projectcard-item-title {
+        position: absolute;
+        top: 30%;
+        left: 38%;
+        color: white;
+        padding: 20px 12px;
+        background-color: rgb(0, 0, 0, .4);
     }
 
-    .content {
+    .projectcard-item {
         position: relative;
         margin: 0  auto;
         width: 100%;
@@ -87,24 +162,17 @@ body {
 
     }
 
-.projectPicture {
+    .projectcard-item img {
         position: relative;
-        width: 100%;
+        width: 95%;
+        margin-top: 50px;
+        border-radius: 25px;
     }
 
-.project-title {
+ 
+    .projectcard-item-info {
         position: absolute;
-        top: 0%;
-        left: 5%;
-        color: white;
-        margin: 10px 0;
-        padding: 0 12px;
-        
-        background-color: rgb(0, 0, 0, .4);
-    }
-    .project-info {
-        position: absolute;
-        top: 40%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: rgb(0, 0, 0, .4);
@@ -112,96 +180,216 @@ body {
         font-size: 1.1em;
         border: solid silver 4px;   
     }
- 
-    .contactform {
-        /* border: solid 1px white; */
-        padding-bottom: 60px; 
-    }
-    .contactform h3 {
-        text-align: center;
-        font-size: 30px;
-    }
+    /*=======project ends============*/
+    /*=======contactform begins======*/
     
-    .contactInput {
-        margin: 10px;
-        text-align: center;
-        width: 100%;
-        display: inline-block;  
-    }
+    .contactform {
+        /* border: solid 1px white;  */
+        padding-bottom: 60px;  
+  } 
+  .contactform h3{
+    /* border: solid 1px white;  */
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align:center;  
+} 
 
-    .social-container {
-        background: black;
+  
+   .contactInput { 
+       margin: 10px;
+       text-align: center;
+       width: 100%;
+       display: inline-block;  
+   }
+   
+
+    /* =====contact section end */
+    .social-container  {
+        margin: 0 auto;
+        text-align: center;
         padding: 25px 50px;
     }
-
+    .social-container h3 {
+        text-align: center;
+        padding: 25px 50px;
+    }
     a.social {
-        margin: 0 auto;
+        
+        /* margin: 0 auto; */
         transition: transform 250ms;
         display: inline-block;
         padding: 0px 20px;
+        text-align: center;
     }
 
     a.social:hover {
         transform: translateY(-2px);
         color: green;
     }
-    .footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        background-color: red;
+    .dynocopy {
+        
+        margin: 20px 0;
+        color: rgb(98, 98, 95);
         text-align: center;
     }
-}
+    .footer {
+        /* position: static; */
+        /* bottom: 0; */
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
 
 /* css for mobile sizing ends */
+/* ========================== */
 
 @media only screen and (min-width: 768px) {
+    body{
+        /* background-color: red; */
+        width:100%;
+        /* margin: 0 auto; */
+        /* font-size: 18px; */
+    }
+   
+    .container {
+        max-width: 768px;
+        
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    p {
+    margin-top: 0;
+    margin-bottom: 10px;
+    }
+    /* .title {
+        font-size: 36px;
+    } */
+    .section {
+        /* position: relative; */
+        width:  80%;
+        height: 1000px;
+        /* border: rgb(237, 174, 15) 6px solid; */
+    }
 
     .Herocard {
-        margin-top :10%;
-        
-        padding: 150px;
+        position: relative;
+        top: 10px;
+        right:112px;
+        height: 100%;
+        margin:100px;
+        width: 950px;   
+    }
+    .hero-content {
+        border-radius: 25px;
+        position: absolute;
+        top: 10px;
+        left: 60px;
+        box-shadow: 0 4px 50px #0ee1ac;
+        /* text-align: center; */
+        width: 88.5%;
+        height:390px;
+        margin: 0 auto;
+        z-index:100;
     }
 
     .name {
-        font-size: 4.5em;
-        margin: 15%  0;
+        margin: 0 auto;
+        position: absolute;
+        font-size: 3.7em;
+        margin: 10% 20px 0px 60px;
         left: 0%;
+        top: -10%;
+        font-size: 4.5em;
+        
     }
     .circle-img {
         border-radius: 50%;
         border: 7px solid #fff;
-        width: 295px;
-        height: 375px;
+        width: 14em;
+        height: 20em;
         position: absolute;
-        right: 40px;
-        top: 20px;
+        right: -400px;
+        top: -10px;
     }
-    .Herobottom {
-        margin: 10%  0;
-        left: -40%;
+    .HeroBlurb {
+        position: relative;
+        text-align:left;
+        top: 140px;
+        left: -30px;
+        font-size: 1em;
+        margin: 0 20px 100px 60px;
+        padding: 20px 50px;
+    }
+    .HeroInfo {  
+        position:absolute;
+        margin: 0;
+        left: 7%;
+        top: 95%;
         text-align: left;
     }
+        
+    .Watervideo {
+        position: absolute;
+        top: 120px;
+        left: 48px;
+        height: 389px;
+        width: 87%;
+        margin: 0;
+        padding: 0;
+        object-fit: cover;  
+        border-radius: 25px;
+        overflow: hidden;
+        z-index: 2;
+    }
+    
+
+    /* Hero finishes */
+    /* About begins */
     .Aboutblurb {
         border-radius: 25px;
         position: relative;
-        top: 40px;
-        margin: 60px;
+        top: -450px;
+        /* margin: 60px; */
+        margin: 0px auto;
         padding: 3px 25px;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
+    } 
+    /* ======blurb finishes======== */
+    .projectcard-container {
+      margin :0 auto;
+        width: 80%;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px #0ee1ac;
+        position:relative;
+        top: -400px;   
     }
-
+    .projectcard-item-title {
+        position: absolute;
+        top: 30%;
+        left: 40%;
+        /* color: white;
+        padding: 20px 12px;
+        background-color: rgb(0, 0, 0, .4); */
+    }
 
     .contactform {
-        /* border: solid 1px white; */
-        padding-bottom: 60px; 
-    }
-    .contactform h3 {
-        text-align: center;
-        font-size: 30px;
-    }
+        /* border: solid 1px white;  */
+        padding-bottom: 60px;  
+        position: relative;
+        top: -300px;
+   } 
+   .contactform h3{
+    
+        margin-top: 60px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        text-align:center;  
+}
     
     .contactInput { 
         margin: 10px;
@@ -209,16 +397,29 @@ body {
         width: 100%;
         display: inline-block;  
     }
-
+    .social-container  {
+        position: relative;
+        top:-300px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 50px;
+    }
     .footer {
-        position: fixed;
+        position: relative;
+        top:-300px;
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: red;
+        
         text-align: center;
     }
 }
+
+
+
+
+
+
 
 
 
@@ -232,37 +433,43 @@ body {
 
 @media only screen and (min-width:1024px) {
 
+ body {
+    /* background-color:blue; */
+    width: 100%;
+    margin:0 auto;
+ }
+    .container {
+        max-width: 1024px;
+    }
+
     .section {
-        /* border:rgb(11, 84, 231) 3px solid; */
-        position: relative;
-        top: 100px;
-        left: 0px;
+        /* position: relative;
+        top: 12px;
+        left: 30px;
         margin: 0;
-        padding : 0;
-        border-radius: 25px;
-        height: 800px;
-        margin-bottom: 30px;
-        
-        
-        /* background: url(components/videobg.mp4); */   
+        padding : 0; */
+        /* border-radius: 25px; */
+        height: 1em;
+        width: 94%;
+        /* margin-bottom: 0px;
+        color: white; */
+        /* background: url(components/videobg.mp4);    */
     }
     .Herocard {
         /* border: 3px rgb(237, 131, 16) solid; */
         position: relative;
-        top: -290px;
-        left: 0px;
-        height: 700px;
-        z-index: 10;
-        
-        
-        
+        top: 10px;
+        right: 32px;
+        height: 100%;
+        width: 94%;
+        z-index: 100;   
     }
     .hero-content {
-            position: static;
-            top: 200px;
-            left:0;
-            /* border: red 2px solid; */
+            position: absolute;
+            top: 10px;
+            left: 60px;
             height: 500px;
+           
             
 
     }
@@ -277,19 +484,18 @@ body {
     }
     .name {
         /* border: 3px rgb(222, 48, 208) solid; */
-        position:relative;
-        top: -650px;
-        left: 160px;
+        position: absolute;
+        top: -100px;
+        left: 50px;
         text-align: left;
         font-size: 6em;
     }
-    .hero-blurb {
-        /* border: 3px rgb(100, 222, 48) solid; */
-        position:relative;
-        top: -820px;
-        left: 190px;
+    .HeroBlurb {
+        position: absolute;
+        top: 150px;
+        left: 30px;
         text-align: left;
-        font-size: 1em;
+        font-size: 1.5em;
     }
     .HeroInfo {
         /* border: 3px rgb(80, 74, 79) solid; */
@@ -300,20 +506,14 @@ body {
     .videobg-wrapper {
         margin: 0;
         padding: 0;
-        position: static;
-        /* top: 1000px;
-        left: 100px; */
-        /* border: orange 3px solid; */
-      
-        
-   
+        /* position: static; */
     }
     .Watervideo {
-        position: absolute;
-        top: 110px;
-        left: 168px;
+        position: relative;
+        top: 0px;
+        left: 131px;
         height: 497px;
-        width: 1199px;
+        width: 1200px;
         margin: 0;
         padding: 0;
         object-fit: cover;  
@@ -321,135 +521,125 @@ body {
         overflow: hidden;
         z-index: 2;
 
-    }
-
-
-    /* Hero finishes */
-    .wrapper {
-        margin: 0;
-        padding: 0;
-        width: 900px;
-        position: relative;
-        top: -270px;
-        left: 5%;
-        /* box-shadow: 0 4px 100px #0ee1ac; */
-        
-    }
+    } 
     .Aboutblurb {
-        border-radius: 25px;
         position: relative;
-        top: 0px;
-        left:0%;
+        top: 10px;
+        border-radius: 25px;
+        margin: 0 auto;
+        margin-top: 140px;
+        margin-bottom: 60px;
         padding-bottom: 30px;
         box-shadow: 0 2px 30px #ccc;
         text-align: left;
         font-size: 2em;
         width: 1199px;
-        box-shadow: 0 4px 100px #0ee1ac;
-        
+        box-shadow: 0 4px 100px #0ee1ac;  
     }
     .blurb {
         font-size: 1em;
     }
     /* about finishes */
+/* ===========sectionpart begins============ */
+  /*==== project section begins====  */
+
+.projectcard-container {
+    display: inline-block;
+    position:relative;
+    top: -40px;
+    left: 60px;
+    margin: 15px auto;
+    padding: 10px;
+    border-radius: 25px;
+    width: 45%;
+}
 
 
+/* .projectcard-item-title {
+    position: absolute;
+    top:30%;
+    left: 40%;
+} */
 
-    /*==== project section begins==== */
+/* .projectcard-item {
+    margin: 0;
     
-    .grid-container {
-        display: inline-flex;
-        flex-wrap: wrap;
-        width: 49%;
-        justify-content: center;
-        position:relative;
-        top: -16C0px;
-        /* border: solid 3px red; */
-        /* margin-top: -10px; */
-        gap: 20px;
+} */
+/* .projectcard-item img {
+    margin: 0;
+    padding:0;
+  
+} */
+
+
+.projectcard-id {
+    position: absolute;
+    top: 100px;
+    left:50%;
+    color: white;  
+}
+
+    
+/*===== projectcard finishes===== */
+form {
+    /* clear: both; */
+    margin-top: 0px;
+    padding: 0px;
+    
+}
+    form h3{
+        margin-top: 20px;
+        padding: 20px;
         
     }
-    .projectcard {
-        display: flex;
-        width: 86%;
-        padding :1em;
-        margin-bottom: 20px;
-        margin-top: 20px;
-        box-shadow: 0 2px 30px #d0cdcd;
-        /* border: green 1px solid; */
-        box-shadow: 0 4px 100px #0ee1ac;
-        border-radius: 20px;
-
-    }
-    .content {
-        display:flex;
-        margin: auto;
-        /* border: rgb(127, 131, 239) 3px solid; */
-        padding: 0px;
-    }
-    .projectcard .picture {
-        object-fit: cover;
-        margin: 0.5em 0;
-        border-radius: 20px;
-    }
-
-    .projectcard .title {
-        position: relative;
-        top: 25%;
-        left: 30%;
-        color: blue;
-    }
-
-    .projectcard .info {
-        position: relative;
-        text-align: center;
-        margin: auto;
-    }
-    /* projectcard finishes */
-    .contactform {
-        margin: 20px;
-        padding: 20px;
-    }
+  .contactform {
+    /* clear: both; */
+    /* border: solid 1px white;  */
+    padding-bottom: 60px;  
+    position: relative;
+    top: -100px;
+   }
     .contactform h3 {
         font-size: 4em;
     }
     .contactInput input {
         font-size: 1.5em;
     }
-    .social-container {
-        font-size: 2em;
-    }
-    .footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        color: prime;
-        text-align: center;
-    }
+    
+  
 
     .social-container {
         position: relative;
+        top: -60px;
+        left: 0px;
         width: 100%;
         text-align: center;
-        background: black;
+        background: rgb(1, 1, 1);
         padding: 0;
         /* border: yellow 2px solid; */
     }
 
-    .fade-in-image {
-        text-align: center;
-    }
+    
 
     a.social {
         margin: 0 auto;
         transition: transform 250ms;
         display: inline-block;
         padding: 0px 20px;
+        font-size: 30px;
     }
 
     .dynocopy {
         text-align: center;
+    }
+    .footer {
+        position: static;
+        left: 0;
+        bottom: 0;
+        width: 80%;
+        color: rgb(232, 14, 10);
+        text-align: center;
+        margin: 20px auto;
     }
 
 }
