@@ -10,7 +10,7 @@ const ProjectInfo= [
 },
     {
         id: 2,
-        title: "yelpcamp",
+        title: "Yelpcamp",
         url: "https://github.com/dkzanz1/YelpCamp.git",
         imgURL: "https://images.pexels.com/photos/1462011/pexels-photo-1462011.jpeg?auto=compress&cs=tinysrgb&w=600",
         description: "frlgdp;gpfg;sf;sfs;fl;sfrfopppflldf i just need to check that the message were t same size until they react the top"
