@@ -183,6 +183,7 @@ p {
     /*=======project ends============*/
     /*=======contactform begins======*/
     
+<<<<<<< HEAD
 .contactform {
         border: solid 1px white; 
         margin : 0 auto; 
@@ -194,6 +195,17 @@ p {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 30px;
+=======
+    .contactform {
+        /* border: solid 1px white;  */
+        padding-bottom: 60px;  
+  } 
+  .contactform h3{
+    /* border: solid 1px white;  */
+    margin-top: 60px;
+    margin-bottom: 20px;
+    font-size: 40px;
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
     text-align:center;  
 } 
 
@@ -201,12 +213,18 @@ p {
    .contactInput { 
        margin: 10px;
        text-align: center;
+<<<<<<< HEAD
        width: 80%;
        display: inline-block;  
    }
    .button {
     margin-bottom: 10px;
    }
+=======
+       width: 100%;
+       display: inline-block;  
+   }
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
    
 
     /* =====contact section end */

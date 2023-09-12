@@ -8,8 +8,12 @@ import SocialFollow from "./SocialFollow.js";
 import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 import About from "./components/About";
+<<<<<<< HEAD
 // import ContactForm from "./components/Contact";
 import ContactForm from "./components/ContactForm";
+=======
+import ContactForm from "./components/Contact";
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
 import Water from "./components/Video";
 
 
@@ -28,7 +32,11 @@ function createCard(projectInfo) {
 
 function App(){
   return(
+<<<<<<< HEAD
       <Fragment>
+=======
+      <Fragment className="container">
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
         <Burger />
         <Card />
         <Water />
@@ -40,7 +48,10 @@ function App(){
     hard code example below*/}
       {projectInfo.map(createCard)}
       <ContactForm />
+<<<<<<< HEAD
      
+=======
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
       <SocialFollow />
       <Footer />
     </Fragment>   //container ends
