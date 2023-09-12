@@ -8,11 +8,19 @@ import { bubble as Menu } from 'react-burger-menu';
     return<>
     
         <Menu styles={styles} className="BurgerIcon">
+<<<<<<< HEAD
+            <a href="/contact" id="contact" className="menu-item">Contact</a>
+            <a href="/info" id="info" className="menu-item">Info</a>
+            <a href="/about" id="about" className="menu-item">About</a>
+            <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
+        </Menu>
+=======
         <a href="/contact" id="contact" className="menu-item">Contact</a>
         <a href="/info" id="info" className="menu-item">Info</a>
         <a href="/about" id="about" className="menu-item">About</a>
         <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
     </Menu>
+>>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
     </>
          
 }
