@@ -14,11 +14,7 @@ return (<div className="projectcard-container">
                     <img className="projectcard-item img" src={img} alt="man"/>
                        <h2 className="projectcard-item-title">{title}</h2>
                        <p className="projectcard-id">{id}</p>
-<<<<<<< HEAD
-                       <p className="project-card-link" href={url} target='_blank' rel="noopener noreferrer">{link}</p>
-=======
                        <a className="project-card-link" href={url} target='_blank' rel="noopener noreferrer">{link}</a>
->>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
                        <p className="projectcard-item-info">{description}</p>
                  </div>
             </div>
@@ -27,9 +23,5 @@ return (<div className="projectcard-container">
     
 }
 
-<<<<<<< HEAD
-// console.log( ProjectCard);
-=======
 console.log( ProjectCard);
->>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
 export default ProjectCard;
