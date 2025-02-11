@@ -1,26 +1,18 @@
 import { bubble as Menu } from 'react-burger-menu';
 //if screen is smaller than laptop size renderhamburger
-//use boolean var to set if screen size greater than 
+//Used boolean var to set if screen size greater than 
 
-//if the screen size is lessthan that laptop 1024px size do not show burger
+//if the screen size is less than that laptop 1024px size do not show burger
 
  function Burger()  {
     return<>
     
         <Menu styles={styles} className="BurgerIcon">
-<<<<<<< HEAD
             <a href="/contact" id="contact" className="menu-item">Contact</a>
             <a href="/info" id="info" className="menu-item">Info</a>
             <a href="/about" id="about" className="menu-item">About</a>
             <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
         </Menu>
-=======
-        <a href="/contact" id="contact" className="menu-item">Contact</a>
-        <a href="/info" id="info" className="menu-item">Info</a>
-        <a href="/about" id="about" className="menu-item">About</a>
-        <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
-    </Menu>
->>>>>>> af17b5e11282af90b7bda7c7e2df27f79d19b662
     </>
          
 }

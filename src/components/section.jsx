@@ -1,6 +1,6 @@
 import React from "react";
 
-
+//Component waiting to be added in future development no css currently so does not show
 function Sectionpart() {
     <div  className="wrapper">
         <div className="item">A</div>
