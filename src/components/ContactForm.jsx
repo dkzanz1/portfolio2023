@@ -1,13 +1,14 @@
+//This component is built with react-form-hook
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 function ContactForm() {
   const {register, handleSubmit } = useForm();
-  // const { errors } = formState;
+  
  
 
   const onSubmit = async (data) => {
-    //convert data to json
+    //Statement below converts data to json
     const jsonData = JSON.stringify(data);
     // Stage 5: Simulated Server Interaction
     const response = await fetch('http://localhost:8000/api/contact', {

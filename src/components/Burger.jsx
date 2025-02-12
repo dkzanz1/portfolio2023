@@ -1,9 +1,9 @@
 import React from "react";
 import { bubble as Menu } from 'react-burger-menu';
 //if screen is smaller than laptop size renderhamburger
-//use boolean var to set if screen size greater than 
+//Used boolean var to set if screen size greater than 
 
-//if the screen size is lessthan that laptop 1024px size do not show burger
+//if the screen size is less than that laptop 1024px size do not show burger
 
  function Burger()  {
     return<>
