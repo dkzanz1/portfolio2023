@@ -1,29 +1,28 @@
 import React from "react";
-import img from "../../assets/mephoto.jpg";
-// import Water from "../components/Video";
-import boatImage from "../../assets/boat.svg"; // Assuming boat.svg is in the same directory
-import "./HeroCard.module.css";
+import img from "./assets/mephoto.jpg";
+import boatImage from "./assets/boat.svg"; // Assuming boat.svg is in the same directory
+import styles from "./HeroCard.module.css";
+import Water from "./Video";
 
-function Card() {
-    return <>
-        <div className="section">
-            <div className="Herocard">
-                <div className="hero-content">
-                    <img src={img} alt="Avatar" className="circle-img" />
-                    <h1 className="name"><span>Hi,   </span><span>I'm Paul</span></h1>
-                    <div className="HeroBlurb">
+
+function HeroCard() {
+    return (
+        <div className={styles.section}>
+            <div className={styles.Herocard}>
+                <Water />
+                <div className={styles["hero-content"]}>
+                    <img src={img} alt="Paul's Avatar" className={styles[".circle-img"]} />
+                        <h1 className={styles.name}><span>Hi,   </span><span>I'm Paul</span></h1>
+                    <article className={styles.HeroBlurb}>
                         <h2>Web Developer<br /> who lives by the Sea, <br />I build websites that are as<br /> refreshing as the sea breeze<br />Dorset</h2>
-                        <p className="HeroInfo">I build Crafted Bespoke Webpages<br />
+                        <p className={styles.HeroInfo}>I build Crafted Bespoke Webpages<br />
                             using<strong> full stack development</strong></p>
-                    </div>
-                    <div className="boat-container"> {/* Container for positioning */}
-                        <img src={boatImage} alt="Cartoon Boat" className="boat" />
+                    </article>
+                    <div className={styles["boat-container"]}> {/* Container for positioning */}
+                        <img src={boatImage} alt="Cartoon Boat" className={styles.boat} />
                     </div>
                 </div>
             </div>
         </div>
-    </>
-
-}
-
-export default Card;
+)}
+export default HeroCard;

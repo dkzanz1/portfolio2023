@@ -37,78 +37,6 @@ p {
 
     
 
-.contactform {
-        border: solid 1px white; 
-        margin : 0 auto; 
-        width: 250px;
-        text-align: center;
-  } 
-.contactform h3 {
-    /* border: solid 1px white;  */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    font-size: 30px;
-}
-    .contactform {
-        /* border: solid 1px white;  */
-        padding-bottom: 60px;  
-  } 
-  .contactform h3{
-    /* border: solid 1px white;  */
-    margin-top: 60px;
-    margin-bottom: 20px;
-    font-size: 40px;
-    text-align:center;  
-} 
-
-  
-   .contactInput { 
-       margin: 10px;
-       text-align: center;
-       width: 80%;
-       display: inline-block;  
-   }
-   .button {
-    margin-bottom: 10px;
-   }
-   
-
-    /* =====contact section end */
-    .social-container  {
-        margin: 0 auto;
-        text-align: center;
-        padding: 25px 50px;
-    }
-    .social-container h3 {
-        text-align: center;
-        padding: 25px 50px;
-    }
-    a.social {
-        
-        /* margin: 0 auto; */
-        transition: transform 250ms;
-        display: inline-block;
-        padding: 0px 20px;
-        text-align: center;
-    }
-
-    a.social:hover {
-        transform: translateY(-2px);
-        color: green;
-    }
-    .dynocopy {
-        
-        margin: 20px 0;
-        color: rgb(98, 98, 95);
-        text-align: center;
-    }
-    .footer {
-        /* position: static; */
-        /* bottom: 0; */
-        width: 80%;
-        text-align: center;
-        margin: 0 auto;
-    }
 
 
 /* css for mobile sizing ends */
@@ -137,12 +65,7 @@ p {
     /* .title {
         font-size: 36px;
     } */
-    .section {
-        /* position: relative; */
-        width:  80%;
-        height: 1000px;
-        /* border: rgb(237, 174, 15) 6px solid; */
-    }
+  
 
     .Herocard {
         position: relative;

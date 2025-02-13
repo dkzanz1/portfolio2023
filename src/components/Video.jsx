@@ -1,16 +1,15 @@
 import React from "react";
 import videobg from "./videobg.mp4";
-import  "./Video.module.css";
+import styles from "./Video.module.css";
 
 
 const Water = () => {
-  return (<section>
-  <div className="videobg-wrapper">
-      <div className="Watervideo">
+  return (
+  <div className={styles["videobg-wrapper"]}>
+      <div className={styles["watervideo"]}>
         <video src={videobg} type="video/mp4"  autoPlay loop muted />
       </div>
   </div>
-</section>
   );
 };
 

@@ -1,13 +1,13 @@
 .section {
     /* position: relative; */
     width:  100%;
-    height: 100 px;
+
     /* border: rgb(237, 174, 15) 6px solid; */
 }
 .hero-content {
     position: relative; /* Make this relative for absolute positioning of children */
-    width: 100%; /* Occupy full width on mobile */
-    height: 600px; /* Adjust as needed */
+    width:100%; /* Occupy full width on mobile */
+    height: 100px; /* Adjust as needed */
     overflow: hidden; /* Ensure video stays within container */
     border-radius: 25px; /* Keep the rounded corners */
 }
@@ -16,8 +16,8 @@
     position: relative;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 109%;
+    height: 100vh;
     object-fit: cover;
     z-index: 1; /* Place video behind other content */
     border-radius: 25px;
@@ -61,14 +61,14 @@
     border-radius: 50%;
     border: 1px solid #fff;
     width: 10em; /* Smaller image */
-    height: 10em;
+    height: 8em;
     margin: 20px auto; /* Center the image */
     z-index: 3;
 }
 
 .burger {
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 20px;
     z-index: 3; /* Burger on top */
     /* Add burger styles here */

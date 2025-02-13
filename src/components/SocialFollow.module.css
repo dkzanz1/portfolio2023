@@ -34,3 +34,40 @@
         text-align: center;
         margin: 0 auto;
     }
+
+    /* =====contact section end */
+    .social-container  {
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 50px;
+    }
+    .social-container h3 {
+        text-align: center;
+        padding: 25px 50px;
+    }
+    a.social {
+        
+        /* margin: 0 auto; */
+        transition: transform 250ms;
+        display: inline-block;
+        padding: 0px 20px;
+        text-align: center;
+    }
+
+    a.social:hover {
+        transform: translateY(-2px);
+        color: green;
+    }
+    .dynocopy {
+        
+        margin: 20px 0;
+        color: rgb(98, 98, 95);
+        text-align: center;
+    }
+    .footer {
+        /* position: static; */
+        /* bottom: 0; */
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }
