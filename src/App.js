@@ -28,7 +28,8 @@ function createCard(projectInfo) {
 
 function App(){
   return(
-      <Fragment className="container">
+      <Fragment >
+        <div className="container">
         <Burger />
         <Card />
         <Water />
@@ -43,6 +44,7 @@ function App(){
      
       <SocialFollow />
       <Footer />
+      </div>
     </Fragment>   //container ends
   );
 }

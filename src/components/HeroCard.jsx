@@ -1,9 +1,7 @@
 import React from "react";
 import img from "./image5.jpg";
 // import Water from "../components/Video";
-
-
-
+import boatImage from "./boat.svg"; // Assuming boat.svg is in the same directory
 function Card() {
     return<>
     <div className="section">
@@ -12,10 +10,13 @@ function Card() {
                 <img src={img} alt="Avatar" className="circle-img" />
                      <h1 className="name"><span>Hi,   </span><span>I'm Paul</span></h1>
                      <div className="HeroBlurb">
-                    <h2>Web Developer<br /> who lives by the Sea, <br/>based in Christchurch,<br/>Dorset</h2>
+                    <h2>Web Developer<br /> who lives by the Sea, <br/>I build websites that are as<br/> refreshing as the sea breeze<br/>Dorset</h2>
                     <p className="HeroInfo">I build Crafted Bespoke Webpages<br/>
-                    using both<strong> Front end and Backend</strong></p>
+                    using<strong> full stack development</strong></p>
                     </div>
+                    <div className="boat-container"> {/* Container for positioning */}
+            <img src={boatImage} alt="Cartoon Boat" className="boat" />
+          </div>
             </div>
         </div>
     </div>

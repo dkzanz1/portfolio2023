@@ -1,0 +1,14 @@
+.Aboutblurb {
+    position: relative;
+    top:-230px;
+    box-shadow: 0 2px 30px #ccc;
+    width: 85%;
+    margin: 0px auto;
+    border-radius: 25px;
+    padding: 65px 25px;
+    text-align: center;  
+}
+.blurb {
+    font-size: 20px;
+}
+/*=========blurb finishes=======*/
