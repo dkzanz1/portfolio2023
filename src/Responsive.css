@@ -58,7 +58,6 @@ p {
         z-index:100;
         /* object-fit: cover;   */
         /* overflow: hidden; */
-
     }
 
     .circle-img {
@@ -84,10 +83,8 @@ p {
         padding: 10px 20px;
         /* border: solid yellow 1px; */
     }
-
     .HeroBlurb {
-        position: relative;
-        
+        position: relative;  
         left: -30px;
         top: -50px;
         font-size: 1em;
@@ -121,20 +118,7 @@ p {
     /* .wrapper {
         border: 13px solid rgb(116, 236, 12);    
 } */
-    .Aboutblurb {
-        position: relative;
-        top:-230px;
-        box-shadow: 0 2px 30px #ccc;
-        width: 85%;
-        margin: 0px auto;
-        border-radius: 25px;
-        padding: 65px 25px;
-        text-align: center;  
-    }
-    .blurb {
-        font-size: 20px;
-    }
-/*=========blurb finishes=======*/
+
 
     .projectcard-container {
         margin: 0 auto;
@@ -475,7 +459,7 @@ p {
         /* border: 3px rgb(237, 131, 16) solid; */
         position: relative;
         top: 10px;
-        right: 32px;
+        right: 42px;
         height: 100%;
         width: 94%;
         z-index: 100;   
@@ -485,9 +469,6 @@ p {
             top: 10px;
             left: 60px;
             height: 500px;
-           
-            
-
     }
     .circle-img {
             border-radius: 50%;
@@ -526,10 +507,10 @@ p {
     }
     .Watervideo {
         position: relative;
-        top: 0px;
-        left: 131px;
+        top: 10 px;
+        left: -41px;
         height: 497px;
-        width: 1200px;
+        width: 1000px;
         margin: 0;
         padding: 0;
         object-fit: cover;  
@@ -538,6 +519,34 @@ p {
         z-index: 2;
 
     } 
+   /* Card.css (or your CSS file) */
+.Herocard {
+    /* ... your existing styles ... */
+    position: relative; /* Important for absolute positioning of the boat */
+    overflow: hidden; /* To contain the boat within the hero card */
+  }
+
+  
+  .boat-container {
+    position: absolute; /* Position the boat within the Herocard
+    bottom: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    /* Animation (example using CSS transitions) */
+    animation: float 10s linear infinite; /* Adjust duration and timing */
+  }
+  
+  .boat {
+    width: 100px; /* Adjust boat size */
+    /* Other boat styles */
+  }
+  
+  @keyframes float {
+    0% { transform: translate(0, 0); } /* Start position */
+    50% { transform: translate(10px, -5px); } /* Slight movement */
+    100% { transform: translate(0, 0); } /* Back to start */
+  } */
+
+
     .Aboutblurb {
         position: relative;
         top: 10px;
