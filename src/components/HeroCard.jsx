@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../../assets/image5.jpg";
+import img from "../../assets/mephoto.jpg";
 // import Water from "../components/Video";
 import boatImage from "../../assets/boat.svg"; // Assuming boat.svg is in the same directory
 import "./HeroCard.module.css";
