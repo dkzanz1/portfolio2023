@@ -34,86 +34,7 @@ p {
     font-size: 24px;
 } */
 
-/* ============================ */
-/* css for mobile sizing begins */
-/* ====********************==== */
-.section {
-    height: 1000px;
-    width: 80%;
-    align-items: center;
-    /* border: yellow 10px solid; */
-}
 
-    .hero-content {
-        border-radius: 25px;
-        position: absolute;
-        top: 120px;
-        left: 70px;
-        box-shadow: 0 4px 50px #0ee1ac;
-        text-align: center;
-        /* border: 10px solid purple; */
-        width:78%;
-        height:600px;
-        /* margin: 0 auto; */
-        z-index:100;
-        /* object-fit: cover;   */
-        /* overflow: hidden; */
-    }
-
-    .circle-img {
-        border-radius: 50%;
-        border: 1px solid #fff;
-        width: 18em;
-        height: 20em;
-        margin: 30px auto;
-        /* margin-top: 40px;
-        margin-bottom:0px; */
-        position : relative;
-        top:70px;
-        left:10px;
-    }
-
-    .name {
-        margin: 0 auto;
-        position: relative;
-        top: -370px;
-        left: -30px;
-        font-size: 3em;
-        margin: 0px 0px 0px 60px;
-        padding: 10px 20px;
-        /* border: solid yellow 1px; */
-    }
-    .HeroBlurb {
-        position: relative;  
-        left: -30px;
-        top: -50px;
-        font-size: 1em;
-        margin: 0 20px 100px 60px;
-        padding: 20px 50px;
-    }
-    /* .heroInfo{
-        color:green;
-    } */
-    .videobg-wrapper {
-        border-radius:25%;
-    }
-    
-    .Watervideo {
-        position: absolute;
-        top: 120px;
-        left: 70px;
-        height: 600px;
-        width: 78%;
-        margin: 0;
-        padding: 0;
-        object-fit: cover;  
-        border-radius: 25px;
-        overflow: hidden;
-        z-index: 2;
-
-    }
-/*========hero ends========= */
-/*========About begins=======*/
 
     /* .wrapper {
         border: 13px solid rgb(116, 236, 12);    
@@ -500,25 +421,7 @@ p {
         top: 10px;
         left: 0px;
     }
-    .videobg-wrapper {
-        margin: 0;
-        padding: 0;
-        /* position: static; */
-    }
-    .Watervideo {
-        position: relative;
-        top: 10 px;
-        left: -41px;
-        height: 497px;
-        width: 1000px;
-        margin: 0;
-        padding: 0;
-        object-fit: cover;  
-        border-radius: 25px;
-        overflow: hidden;
-        z-index: 2;
-
-    } 
+ 
    /* Card.css (or your CSS file) */
 .Herocard {
     /* ... your existing styles ... */

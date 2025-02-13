@@ -1,6 +1,6 @@
 import React from "react";
 import videobg from "./videobg.mp4";
-
+import  "./Video.module.css";
 
 
 const Water = () => {
