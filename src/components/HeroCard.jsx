@@ -2,6 +2,7 @@ import React from "react";
 import img from "./image5.jpg";
 // import Water from "../components/Video";
 import boatImage from "./boat.svg"; // Assuming boat.svg is in the same directory
+
 function Card() {
     return<>
     <div className="section">
