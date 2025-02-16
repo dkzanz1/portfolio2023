@@ -1,77 +1,119 @@
 .section {
     /* position: relative; */
-    width:  100%;
-
-    /* border: rgb(237, 174, 15) 6px solid; */
+    box-sizing: border-box;
+    width: 100%;
+    /* height: 40vh; */
+    border: rgb(237, 174, 15) 6px solid;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; */
 }
+.Herocard {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    width: 100%; /* Ensures the card takes full width of its parent */
+    background-color: #f0f0f0; /* Example background color */
+    border-radius: 10px; /* Example border radius */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative; /* For positioning the overlay */
+  }
 .hero-content {
-    position: relative; /* Make this relative for absolute positioning of children */
-    width:100%; /* Occupy full width on mobile */
-    height: 100px; /* Adjust as needed */
-    overflow: hidden; /* Ensure video stays within container */
-    border-radius: 25px; /* Keep the rounded corners */
+    position: relative;
+    /* Make this relative for absolute positioning of children */
+    width: 97%;
+    /* Occupy full width on mobile */
+    height: 45vh;
+    /* Adjust as needed */
+    overflow: hidden;
+    /* Ensure video stays within container */
+    border-radius: 25px;
+    /* Keep the rounded corners */
+    border: rgb(185, 15, 237) 6px solid;
 }
 
 .watervideo {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 109%;
-    height: 100vh;
+    /* position: relative;
+    top: 10;
+    left: 0; */
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: cover;
-    z-index: 1; /* Place video behind other content */
+    z-index: 2;
+    /* Place video behind other content */
     border-radius: 25px;
 }
 
-.overlay {  /* Create an overlay for better text readability */
+.overlay {
+    /* An overlay creates  semi transparent layer for better text readability */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
-    z-index: 2; /* Overlay on top of the video */
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Adjust opacity as needed */
+    z-index: 3;
+    /* Overlay on top of the video */
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    padding: 20px; /* Add some padding */
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
+    padding: 20px;
+    /* Add some padding */
     border-radius: 25px;
+    box-sizing: border-box;
 }
-
 
 .name {
-    font-size: 3em;
-    color: white; /* Ensure text is visible */
-    margin-bottom: 20px; /* Add spacing below name */
-    text-align: center; /* Center the name */
-    z-index: 3; /* Ensure text is on top */
+    font-size: 1.5em;
+    color: white;
+    /* Ensure text is visible */
+    margin-bottom: 20px;
+    /* Add spacing below name */
+    text-align: center;
+    /* Center the name */
+    /* z-index: 1; */
+    /* Ensure text is on top */
 }
 
-.heroblurb {
-    font-size: 1em;
+.HeroBlurb {
+    /* position: relative;
+    top: 10%; */
+    font-size: .5em;
     color: white;
     text-align: center;
-    margin: 0 auto; /* Center the blurb */
-    max-width: 80%; /* Limit blurb width */
-    z-index: 3;
+    margin: 0 auto;
+    /* Center the blurb */
+    max-width: 80%;
+    /* Limit blurb width */
+    z-index: 2;
 }
 
 .circle-img {
     border-radius: 50%;
     border: 1px solid #fff;
-    width: 10em; /* Smaller image */
-    height: 8em;
-    margin: 20px auto; /* Center the image */
-    z-index: 3;
+    width: 4em;
+    /* Smaller image */
+    height: 4em;
+    margin: 20px auto;
+    /* Center the image */
+    z-index: 2;
 }
 
 .burger {
     position: absolute;
     top: 10px;
     right: 20px;
-    z-index: 3; /* Burger on top */
+    z-index: 5;
+    /* Burger on top */
     /* Add burger styles here */
 }
 
-
+.boat-container {
+    height: 1px;
+}
