@@ -23,7 +23,7 @@
     /* Make this relative for absolute positioning of children */
     width: 97%;
     /* Occupy full width on mobile */
-    height: 45vh;
+    height: 55vh;
     /* Adjust as needed */
     overflow: hidden;
     /* Ensure video stays within container */
@@ -104,7 +104,10 @@
     /* Center the image */
     z-index: 2;
 }
-
+.HeroInfo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
 .burger {
     position: absolute;
     top: 10px;
@@ -115,5 +118,21 @@
 }
 
 .boat-container {
-    height: 1px;
+    position: relative;
+    width: 200px; 
+    height: 100px;/* Or a specific width if needed */
+
 }
+.boat {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    animation: bob 4s infinite ease-in-out; /* Adjust timing */
+    position: absolute; /* Needed for positioning */
+    }
+    @keyframes bob {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-7px); } /* Adjust height */
+        100% { transform: translateY(0px); }
+    }
+ 
+  
