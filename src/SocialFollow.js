@@ -6,11 +6,12 @@ import {
      faTwitter, 
      faInstagram,
      faGithub
-} from '@fortawesome/free-brands-svg-icons'
+} from '@fortawesome/free-brands-svg-icons';
+// import styles from './socialFollow.module.css';
 
 function SocialFollow() {
     return<>
-        <div className="social-container">
+        <div className="container">
             <h3>Social Follow</h3>
             <a href="https://www.youtube.com/c/jamesqquick"
                 className="youtube social">

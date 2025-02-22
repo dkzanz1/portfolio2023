@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import './Responsive.css';
-import Card from "./components/HeroCard";
+import "./App.css";
+import HeroCard from "./components/HeroCard";
 import Burger from "./components/Burger";
 import Sectionpart from "./components/section";
 import projectInfo from "./components/projectInfo"
@@ -10,7 +10,7 @@ import ProjectCard from "./components/ProjectCard";
 import About from "./components/About";
 // import ContactForm from "./components/Contact";
 import ContactForm from "./components/ContactForm";
-import Water from "./components/Video";
+// import Water from "./components/Video";
 
 
 function createCard(projectInfo) {
@@ -31,8 +31,7 @@ function App(){
       <Fragment >
         <div className="container">
         <Burger />
-        <Card />
-        <Water />
+        <HeroCard />
         <About />
         <Sectionpart />
     {/*mapping throu projectInfo to create 

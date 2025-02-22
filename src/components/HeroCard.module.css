@@ -1,69 +1,163 @@
+/* HeroCard.module.css breakpoints */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/* body {
+    margin-left: 5%;
+    margin-right: 5%;
+} */
+:root {
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+}
+.section {
+    /* position: relative; */
+    box-sizing: border-box;
+    width: 100%;
+    border: rgb(237, 174, 15) 6px solid;
+    
+}
+.Herocard {
+    display: flex;
+    flex-direction: column; /* Stacks elements vertically */
+    width: 100%; /* Ensures the card takes full width of its parent */
+    background-color: #f0f0f0; /* Example background color */
+    border-radius: 10px; /* Example border radius */
+    overflow: hidden; /* Hide any overflowing content */
+    position: relative; /* For positioning the overlay */
+  }
 .hero-content {
+    position: relative;
+    /* Make this relative for absolute positioning of children */
+    width: 99%;
+    /* Occupy full width on mobile content needs to be 100% to fill screen */
+    height: auto;
+    /* Adjust as needed */
+    overflow: hidden;
+    /* Ensure video stays within container */
     border-radius: 25px;
-    position: absolute;
-    top: 120px;
-    left: 70px;
-    box-shadow: 0 4px 50px #0ee1ac;
+    /* Keep the rounded corners */
+    border: rgb(185, 15, 237) 1px solid;
+}
+
+.watervideo {
+    /* height: auto; */
+    /* display: block; */
+    /* object-fit: cover; */
+    /* z-index: 2; */
+    /* Place video behind other content */
+    border-radius: 25px;
+}
+
+.overlay {
+    /* An overlay creates  semi transparent layer for better text readability */
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Adjust opacity as needed */
+    z-index: 3;
+    /* Overlay on top of the video */
+    display: flex;
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    /* Center horizontally */
+    justify-content: center;
+    /* Center vertically */
+    padding: 20px;
+    /* Add some padding */
+    border-radius: 25px;
+    box-sizing: border-box;
+}
+/* Mobile-first styles (no media query) */
+.name {
+    font-size: 1.5em;
+    color: white;
+    /* Ensure text is visible */
+    margin-bottom: 20px;
+    /* Add spacing below name */
     text-align: center;
-    /* border: 10px solid purple; */
-    width:78%;
-    height:600px;
-    /* margin: 0 auto; */
-    z-index:100;
-    /* object-fit: cover;   */
-    /* overflow: hidden; */
+    /* Center the name */
+    /* z-index: 1; */
+    /* Ensure text is on top */
+}
+
+.HeroBlurb {
+    position: relative;
+    top: -5%;
+    font-size: .8em;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    /* Center the blurb */
+    max-width: 80%;
+    /* Limit blurb width */
+    z-index: 2;
 }
 
 .circle-img {
     border-radius: 50%;
     border: 1px solid #fff;
-    width: 18em;
-    height: 20em;
-    margin: 30px auto;
-    /* margin-top: 40px;
-    margin-bottom:0px; */
-    position : relative;
-    top:70px;
-    left:10px;
-}
-
-.name {
-    margin: 0 auto;
-    position: relative;
-    top: -370px;
-    left: -30px;
-    font-size: 3em;
-    margin: 0px 0px 0px 60px;
-    padding: 10px 20px;
-    /* border: solid yellow 1px; */
-}
-.HeroBlurb {
-    position: relative;  
-    left: -30px;
-    top: -50px;
-    font-size: 1em;
-    margin: 0 20px 100px 60px;
-    padding: 20px 50px;
-}
-/* .heroInfo{
-    color:green;
-} */
-.videobg-wrapper {
-    border-radius:25%;
-}
-
-.Watervideo {
-    position: absolute;
-    top: 120px;
-    left: 70px;
-    height: 600px;
-    width: 78%;
-    margin: 0;
-    padding: 0;
-    object-fit: cover;  
-    border-radius: 25px;
-    overflow: hidden;
+    width: 4em;
+    /* Smaller image */
+    height: 4em;
+    /* margin: 20px auto; */
+    /* Center the image */
     z-index: 2;
+}
+.HeroInfo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+.burger {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 5;
+    /* Burger on top */
+    /* Add burger styles here */
+}
+
+.boat-container {
+    position: relative;
+    width: 200px; 
+    height: 100px;/* Or a specific width if needed */
 
 }
-/*========hero ends========= */
+.boat {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    animation: bob 4s infinite ease-in-out; /* Adjust timing */
+    position: absolute; /* Needed for positioning */
+    }
+    @keyframes bob {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-7px); } /* Adjust height */
+        100% { transform: translateY(0px); }
+    }
+ /*****************************************
+  Medium screens (tablets, 768px and up) 
+  *****************************************/
+
+/* @media (min-width: var(--breakpoint-md)) {
+    .name {
+        font-size: 2.5em;
+    }
+} */
+
+/*****************************************
+ Large screens (desktops, 992px and up) 
+ *****************************************/
+
+/* @media (min-width: var(--breakpoint-lg)) {
+    .name {
+        font-size: 3em;
+    }
+} */
+  

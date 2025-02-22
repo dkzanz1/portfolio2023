@@ -1,6 +1,7 @@
 //This component is built with react-form-hook
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form'
+import "./ContactForm.module.css";
 
 function ContactForm() {
   const {register, handleSubmit } = useForm();
