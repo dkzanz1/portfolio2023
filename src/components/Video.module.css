@@ -1,15 +1,18 @@
 .videobg-wrapper {
+    width: 100vw;
+    height: 100vh;
+    overflow:hidden;
+    position: absolute;
     margin: 0;
     padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 0; /* Place behind other content */
 }
 
 .watervideo { /* This style should be in Video.module.css */
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: 90%;
     object-fit: cover;
-    z-index: 1; /* Place video behind other content */
     border-radius: 25px;
 }

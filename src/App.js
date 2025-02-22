@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-
+import "./App.css";
 import HeroCard from "./components/HeroCard";
 import Burger from "./components/Burger";
 import Sectionpart from "./components/section";

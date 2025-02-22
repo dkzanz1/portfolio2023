@@ -1,13 +1,12 @@
-
 /* HeroCard.module.css breakpoints */
 html, body {
     margin: 0;
     padding: 0;
 }
-body {
+/* body {
     margin-left: 5%;
     margin-right: 5%;
-}
+} */
 :root {
     --breakpoint-sm: 576px;
     --breakpoint-md: 768px;
@@ -33,30 +32,29 @@ body {
 .hero-content {
     position: relative;
     /* Make this relative for absolute positioning of children */
-    width: 100%;
+    width: 99%;
     /* Occupy full width on mobile content needs to be 100% to fill screen */
-    height: 55vh;
+    height: auto;
     /* Adjust as needed */
     overflow: hidden;
     /* Ensure video stays within container */
     border-radius: 25px;
     /* Keep the rounded corners */
-    border: rgb(185, 15, 237) 6px solid;
+    border: rgb(185, 15, 237) 1px solid;
 }
 
 .watervideo {
-    width: 97%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    z-index: 2;
+    /* height: auto; */
+    /* display: block; */
+    /* object-fit: cover; */
+    /* z-index: 2; */
     /* Place video behind other content */
     border-radius: 25px;
 }
 
 .overlay {
     /* An overlay creates  semi transparent layer for better text readability */
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -109,7 +107,7 @@ body {
     width: 4em;
     /* Smaller image */
     height: 4em;
-    margin: 20px auto;
+    /* margin: 20px auto; */
     /* Center the image */
     z-index: 2;
 }
@@ -147,19 +145,19 @@ body {
   Medium screens (tablets, 768px and up) 
   *****************************************/
 
-@media (min-width: var(--breakpoint-md)) {
+/* @media (min-width: var(--breakpoint-md)) {
     .name {
         font-size: 2.5em;
     }
-}
+} */
 
 /*****************************************
  Large screens (desktops, 992px and up) 
  *****************************************/
 
-@media (min-width: var(--breakpoint-lg)) {
+/* @media (min-width: var(--breakpoint-lg)) {
     .name {
         font-size: 3em;
     }
-}
+} */
   
