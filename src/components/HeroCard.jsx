@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import img from "./assets/mephoto.jpg";
 import boatImage from "./assets/boat.svg"; // Assuming boat.svg is in the same directory
 import styles from "./HeroCard.module.css";
@@ -8,13 +8,14 @@ import Water from "./Video";
 function HeroCard() {
     const boatRef = useRef(null); // Ref for the boat element
     const videoContainerRef = useRef(null); // Ref for the video container
-    const [boatLoaded, setBoatLoaded]= useState(false);
+    // const [boatLoaded, setBoatLoaded]= useState(false);
 
     useEffect(() => { // Use useEffect to run code after render
         const boat = boatRef.current;
         const videoContainer = videoContainerRef.current;
+
 const handleMouseMove = (e) => { // Separate function
-        if  (!boatLoaded || !boat || !videoContainer) return; // Check if elements exist
+        if  (!boat || !videoContainer) return; // Check if elements exist
             
                 const rect = videoContainer.getBoundingClientRect();
                 const x = e.clientX - rect.left;
@@ -26,22 +27,20 @@ const handleMouseMove = (e) => { // Separate function
                 const clampedX = Math.max(0, Math.min(x, maxX));
                 const clampedY = Math.max(0, Math.min(y, maxY));
 
-                boat.style.transform = `translate(${clampedX}px, ${clampedY}px)`;
+                boat.style.left = `${clampedX}px`;
+                boat.style.top = `${clampedY}px`;
 };
-if (boat && videoContainer) {
-    boat.onload = () => setBoatLoaded(true); // Set state when boat loads
+if (videoContainer) {
     videoContainer.addEventListener('mousemove', handleMouseMove);
      return ()=> { 
         videoContainer.removeEventListener('mousemove', handleMouseMove);
-     }
+     };
     }
-
-    }, [boatLoaded]);
-
+}, []);
     return (
         <div className={styles.section}>
             <div className={styles.Herocard}>
-                <div className={styles["hero-content"]}>
+                <div className={styles["hero-content"]} ref={videoContainerRef}>
                     <Water className={styles.watervideo} />
                     <div className={styles.overlay}>
                         <img src={img} alt="Paul's Avatar" className={styles["circle-img"]} />
@@ -52,7 +51,13 @@ if (boat && videoContainer) {
                                 using<strong> full stack development</strong></p>
                         </article>
                         <div className={styles["boat-container"]}> {/* Container for positioning */}
-                            <img src={boatImage} alt="Cartoon Boat" className={styles.boat} ref={boatRef} />
+                            <img
+                             src={boatImage} 
+                             alt="Cartoon Boat" 
+                             className={styles.boat} 
+                             ref={boatRef}
+                             />
+                             
                         </div>
                     </div>
                 </div>
