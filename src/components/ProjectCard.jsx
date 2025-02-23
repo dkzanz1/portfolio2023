@@ -1,10 +1,6 @@
 import React from "react";
 import styles from "./ProjectCard.module.css";
 
-
-
-
-
  const ProjectCard = ({id, title, img, url, description }) => {
    // const  url  = props;
    const link = React.createElement('a', {href:url, target: '_blank'},'Visit Project');
@@ -22,7 +18,7 @@ return (
                 >
                 {link}
                 </a>
-                <p className="projectcard-item-info">{description}</p>
+                <p className="projectcardItemInfo">{description}</p>
             </div>
           </div>
         
