@@ -11,13 +11,17 @@ import styles from "./ProjectCard.module.css";
 return (
           <div className={styles.projectcardContainer}>
             <div className={styles.projectcardItem}>    
-              <img className="projectcard-item img" src={img} alt="man"/>
-                <h2 className="projectcard-item-title">{title}</h2>
-                <p className="projectcard-id">{id}</p>
-                <a className="project-card-link" 
+              <img className={styles.projectcardItemImg} src={img} alt="man"/>
+                <h2 className={styles.projectcardItemTitle}>{title}</h2>
+                <p className={styles.projectcardId}>{id}</p>
+                <a
+                 className={styles.projectcardLink} 
                 href={url} 
                 target='_blank' 
-                rel="noopener noreferrer">{link}</a>
+                rel="noopener noreferrer"
+                >
+                {link}
+                </a>
                 <p className="projectcard-item-info">{description}</p>
             </div>
           </div>
