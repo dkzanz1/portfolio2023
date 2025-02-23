@@ -1,5 +1,5 @@
 import React from "react";
-// import "./ProjectCard.module.css";
+import styles from "./ProjectCard.module.css";
 
 
 
@@ -9,12 +9,15 @@ import React from "react";
    // const  url  = props;
    const link = React.createElement('a', {href:url, target: '_blank'},'Visit Project');
 return (
-          <div className="projectcard-container">
-            <div className="projectcard-item">    
+          <div className={styles.projectcardContainer}>
+            <div className={styles.projectcardItem}>    
               <img className="projectcard-item img" src={img} alt="man"/>
                 <h2 className="projectcard-item-title">{title}</h2>
                 <p className="projectcard-id">{id}</p>
-                <div className="project-card-link" href={url} target='_blank' rel="noopener noreferrer">{link}</div>
+                <a className="project-card-link" 
+                href={url} 
+                target='_blank' 
+                rel="noopener noreferrer">{link}</a>
                 <p className="projectcard-item-info">{description}</p>
             </div>
           </div>

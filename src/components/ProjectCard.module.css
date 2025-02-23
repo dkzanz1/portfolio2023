@@ -1,5 +1,5 @@
 
-.projectcard-container {
+.projectcardContainer {
     margin: 0 auto;
     width: 80%;
     border-radius: 25px;
@@ -8,7 +8,7 @@
     position:relative;
     top: -150px;   
 }
-.projectcard-item-title {
+.projectcardItem .title {
     position: absolute;
     top: 30%;
     left: 38%;

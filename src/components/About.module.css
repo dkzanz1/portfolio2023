@@ -1,14 +1,23 @@
-.Aboutblurb {
-    position: relative;
-    top:-230px;
-    box-shadow: 0 2px 30px #ccc;
-    width: 85%;
-    margin: 0px auto;
+.wrapper {
+    margin: 50% auto;
+    width: 80%;
     border-radius: 25px;
-    padding: 65px 25px;
-    text-align: center;  
+    box-shadow: 0 10px 30px #0ee1ac;
+    margin-top: 50px;
+}
+.Aboutblurb {
+   color:rgb(217, 223, 217); 
+   padding-left: 15px;
+   padding-top:5px;
+   position: relative;
+   top: 0px;
+   text-align: center; /* Center text within the wrapper */
 }
 .blurb {
-    font-size: 20px;
+    color:rgb(217, 223, 217);
+    padding : 10px;
+    font-size: 1.2rem;
+    margin: 20px;
+    padding-bottom: 20px;
 }
 /*=========blurb finishes=======*/
