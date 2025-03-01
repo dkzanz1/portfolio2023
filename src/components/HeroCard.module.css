@@ -29,7 +29,7 @@ html, body {
     overflow: hidden; /* Hide any overflowing content */
     position: relative; /* For positioning the overlay */
   }
-.hero-content {
+.heroContent {
     position: relative;
     /* Make this relative for absolute positioning of children */
     width: 99%;

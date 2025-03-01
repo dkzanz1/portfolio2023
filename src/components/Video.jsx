@@ -5,8 +5,8 @@ import styles from "./Video.module.css";
 
 const Water = () => {
   return (
-  <div className={styles["videobg-wrapper"]}>
-      <div className={styles["watervideo"]}>
+  <div className={styles.videobgWrapper}>
+      <div className={styles.waterVideo}>
         <video src={videobg} type="video/mp4"  autoPlay loop muted />
       </div>
   </div>

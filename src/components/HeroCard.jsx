@@ -39,7 +39,7 @@ function HeroCard() {
     return (
         <div className={styles.section}>
             <div className={styles.Herocard}>
-                <div className={styles["hero-content"]} ref={videoContainerRef}>
+                <div className={styles.heroContent} ref={videoContainerRef}>
                     <Water className={styles.watervideo} />
                     <div className={styles.overlay}>
                         <img src={img} alt="Paul's Avatar" className={styles["circle-img"]} />
