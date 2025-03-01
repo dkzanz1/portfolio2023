@@ -1,5 +1,6 @@
 
 .projectcardContainer {
+    height: auto;
     margin: 0 auto;
     width: 80%;
     border-radius: 25px;
@@ -9,15 +10,19 @@
     top: 0px;   
 }
 .projectcardItemTitle {
-    position: absolute;
-    top: 30%;
-    left: 38%;
+    position: relative;
+    top: 0%;
+    bottom: 10px;
+    left: 50%;
+    transform:translate(-50%, 50%);
     color: white;
     padding: 20px 12px;
     background-color: rgb(0, 0, 0, .4);
+   
 }
 
 .projectcardItem {
+    /* height: 100%; */
     position: relative;
     margin: 0  auto;
     width: 100%;
@@ -26,9 +31,13 @@
 }
 
 .projectcardItem img {
-    position: relative;
-    width: 95%;
-    margin-top: 50px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* object-fit: cover; */
+    margin-top: 0px;
     border-radius: 25px;
 }
 

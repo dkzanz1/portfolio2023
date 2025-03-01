@@ -13,7 +13,7 @@ const ProjectInfo= [
         title: "Yelpcamp",
         url: "https://github.com/dkzanz1/YelpCamp.git",
         imgURL: "https://images.pexels.com/photos/1462011/pexels-photo-1462011.jpeg?auto=compress&cs=tinysrgb&w=600",
-        description: ""
+        description: "dynamic web site for phones and tech equipment"
 },
      {
         id: 3,

@@ -3,7 +3,7 @@ import styles from "./ProjectCard.module.css";
 
  const ProjectCard = ({id, title, img, url, description }) => {
    // const  url  = props;
-   const link = React.createElement('a', {href:url, target: '_blank'},'Visit Project');
+  //  const link = React.createElement('a', {href:url, target: '_blank'},'Visit Project');
 return (
           <div className={styles.projectcardContainer}>
             <div className={styles.projectcardItem}>    
@@ -16,9 +16,9 @@ return (
                 target='_blank' 
                 rel="noopener noreferrer"
                 >
-                {link}
+                Visit Project
                 </a>
-                <p className="projectcardItemInfo">{description}</p>
+                <p className={styles.projectcardItemInfo}>{description}</p>
             </div>
           </div>
         
