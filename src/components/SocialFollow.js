@@ -7,7 +7,7 @@ import {
      faInstagram,
      faGithub
 } from '@fortawesome/free-brands-svg-icons';
-import styles from './SocialFollow.module.css';
+import styles from './components/SocialFollow.module.css';
 
 function SocialFollow() {
     return<>
