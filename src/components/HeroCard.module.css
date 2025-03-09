@@ -29,7 +29,7 @@ html, body {
     overflow: hidden; /* Hide any overflowing content */
     position: relative; /* For positioning the overlay */
   }
-.hero-content {
+.heroContent {
     position: relative;
     /* Make this relative for absolute positioning of children */
     width: 99%;
@@ -135,11 +135,12 @@ html, body {
     height: auto;
     animation: bob 4s infinite ease-in-out; /* Adjust timing */
     position: absolute; /* Needed for positioning */
-    }
+    transform-origin: bottom center; /* Sets the rotation point */
+}
     @keyframes bob {
-        0% { transform: translateY(0); }
-        50% { transform: translateY(-7px); } /* Adjust height */
-        100% { transform: translateY(0px); }
+        0% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(7px) rotate(5deg); } /* Adjust height */
+        100% { transform: translateY(0px) rotate(-3deg); }
     }
  /*****************************************
   Medium screens (tablets, 768px and up) 

@@ -1,9 +1,11 @@
 import React from "react";
+import styles from "./Footer.module.css";
+
 
 
 function Footer() {
     return<>
-        <div className="footer" >
+        <div className={styles.footer} >
             
             {/* <ul>
                <li><a href="*">link-ed</a></li> 

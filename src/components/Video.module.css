@@ -1,4 +1,4 @@
-.videobg-wrapper {
+.videobgWrapper {
     width: 100vw;
     height: 100vh;
     overflow:hidden;
@@ -10,9 +10,8 @@
     z-index: 0; /* Place behind other content */
 }
 
-.watervideo { /* This style should be in Video.module.css */
-    width: auto;
-    height: 90%;
+.waterVideo { /* This style should be in Video.module.css */
+  
     object-fit: cover;
     border-radius: 25px;
 }

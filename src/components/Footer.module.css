@@ -1,0 +1,19 @@
+.footer {
+    border: yellow 2px solid;
+    height: 0px auto;
+}
+  
+
+    .dynocopy {
+        
+        margin: 20px 0;
+        color: rgb(98, 98, 95);
+        text-align: center;
+    }
+    .footer {
+        /* position: static; */
+        /* bottom: 0; */
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+    }

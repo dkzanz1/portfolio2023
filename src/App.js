@@ -4,7 +4,7 @@ import HeroCard from "./components/HeroCard";
 import Burger from "./components/Burger";
 import Sectionpart from "./components/section";
 import projectInfo from "./components/projectInfo"
-import SocialFollow from "./SocialFollow.js";
+import SocialFollow from "./components/SocialFollow.js";
 import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 import About from "./components/About";
