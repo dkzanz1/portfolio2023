@@ -20,10 +20,10 @@ function SocialFollow() {
 
     return (
          <>
-            <div className={styles.iconContainer}>
-                <h3>Social Links</h3>
+            <div className={styles['icon-container']}>
+                <h3 className={styles['social-container-title']}>Social Links</h3>
                     {icons.map((icon) => (
-                    <a key={icon.id} href={icon.href} className={styles.iconLink}> 
+                    <a key={icon.id} href={icon.href} className={styles['social-container-icon-link']}> 
                        <FontAwesomeIcon icon = {icon.icon} size="2x" />
                     </a>
                 ))}

@@ -1,24 +1,22 @@
-
-    .socialContainer  {
-        display: border-box;
-        margin: 0 auto;
-        text-align: center;
+.icon-container {
+    display:flex;
+       flex-direction: row;
+        /* margin: 20px auto;
         border: 2px solid blue;
-        width: 100%;
+        width: 80%; */
     }
-    .socialContainer h3 {
+.social-container-title {
         text-align: center;
-        padding: 25px 50px;
+        padding: 1rem 2rem;
         color:yellow;
+        bottom: 1rem;
     }
-    .socialContainer a {
-        display: flex;
-        justify-content: space-evenly;
-        direction: row;
+.social-container-icon-link {
+        padding: 25px 10px;
         transition: transform 250ms;
     }
 
-    a.social:hover {
+    .social-container-icon-link:hover {
         transform: translateY(-2px);
         color: green;
     }

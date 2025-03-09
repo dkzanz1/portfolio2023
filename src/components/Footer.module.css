@@ -4,12 +4,10 @@
 }
 .dynocopy {
         margin: 20px 0;
-        color: rgb(255, 255, 10);
+        color: rgb(15, 192, 124);
         text-align: center;
     }
 .footer {
-        /* position: static; */
-        /* bottom: 0; */
         width: 100%;
         text-align: center;
         margin: 0 auto;
