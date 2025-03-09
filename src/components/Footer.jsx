@@ -15,7 +15,7 @@ function Footer() {
             </ul> */}
         
           
-            <h3 className="dynocopy">@Copyright 2023 All rights reserved</h3>
+            <h3 className={styles.dynocopy}>@Copyright 2023 All rights reserved</h3>
         </div>
         </>
 }

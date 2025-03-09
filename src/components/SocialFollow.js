@@ -1,5 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styles from './SocialFollow.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
      faYoutube,
      faFacebook, 
@@ -7,34 +8,27 @@ import {
      faInstagram,
      faGithub
 } from '@fortawesome/free-brands-svg-icons';
-import styles from './components/SocialFollow.module.css';
 
 function SocialFollow() {
-    return<>
-        <div className={styles.socialContainer}>
-            <h3>Social Follow</h3>
-            <a href="https://www.youtube.com/c/jamesqquick"
-                className="youtube social">
-            <FontAwesomeIcon icon={faYoutube} size="2x" />
-            </a>
-             <a href="https://www.facebook.com/learnbuildteach"
-                className="facebook social"> 
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-            </a>
-            <a href="https://www.twitter.com/jamesqquick"
-                className="twitter social">
-                <FontAwesomeIcon icon={faTwitter} size="2x" />
-            </a>
-            <a href="https://www.instagram.com/c/learnbuildteach"
-                className="instagram social">
-                <FontAwesomeIcon icon={faInstagram} size="2x" />
-            </a>
-            <a href="https://www.github.com/c/learnbuildteach"
-                className="github social">
-                <FontAwesomeIcon icon={faGithub} size="2x" />
-            </a>
-        </div>
-    </>
-}
+    const icons =  [
+            { id:1, href:'https://www.youtube.com/c/learnbuildteach', icon: faYoutube},
+            { id:2, href:'https://www.facebook.com/learnbuildteach', icon: faFacebook},
+            { id:3, href:'https://www.twitter.com/jamesqquick', icon: faTwitter},                        
+            { id:4, href:'https://www.instagram.com/c/learnbuildteach', icon: faInstagram},
+            { id:5, href:'https://www.github.com/c/learnbuildteach', icon: faGithub},
+        ];
 
+    return (
+         <>
+            <div className={styles.iconContainer}>
+                <h3>Social Links</h3>
+                    {icons.map((icon) => (
+                    <a key={icon.id} href={icon.href} className={styles.iconLink}> 
+                       <FontAwesomeIcon icon = {icon.icon} size="2x" />
+                    </a>
+                ))}
+            </div>            
+        </>
+    );
+}
 export default SocialFollow;

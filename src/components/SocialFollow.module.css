@@ -1,31 +1,27 @@
 
     .socialContainer  {
+        display: border-box;
         margin: 0 auto;
         text-align: center;
-        padding: 25px 50px;
+        border: 2px solid blue;
+        width: 100%;
     }
-    .social-container h3 {
+    .socialContainer h3 {
         text-align: center;
         padding: 25px 50px;
+        color:yellow;
     }
-    a.social {
-        
-        /* margin: 0 auto; */
+    .socialContainer a {
+        display: flex;
+        justify-content: space-evenly;
+        direction: row;
         transition: transform 250ms;
-        display: inline-block;
-        padding: 0px 20px;
-        text-align: center;
     }
 
     a.social:hover {
         transform: translateY(-2px);
         color: green;
     }
-    .dynocopy {
-        
-        margin: 20px 0;
-        color: rgb(98, 98, 95);
-        text-align: center;
-    }
+
   
     
