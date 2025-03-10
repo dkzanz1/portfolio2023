@@ -7,12 +7,12 @@
     }
 .social-container-title {
         text-align: center;
-        padding: 1rem 2rem;
-        color:yellow;
+        padding: 1rem 1rem;
+        color: rgb(15, 192, 124);
         bottom: 1rem;
     }
 .social-container-icon-link {
-        padding: 25px 10px;
+        padding: 25px 5px;
         transition: transform 250ms;
     }
 

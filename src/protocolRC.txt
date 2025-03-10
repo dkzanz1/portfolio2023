@@ -12,4 +12,6 @@ Clarity: Clear explanations.
 Verification: Double-check code."
 Application of the Update:
 
-From now on, when you use the word "ReactCraft," I will follow this concise definition.
+From now on, when you use the word
+ "ReactCraft," I will follow this
+  concise definition.

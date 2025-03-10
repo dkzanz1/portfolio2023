@@ -14,20 +14,22 @@ html, body {
     --breakpoint-xl: 1200px;
 }
 .section {
-    /* position: relative; */
+    margin: 20% auto;
+    width: 80%;
     box-sizing: border-box;
-    width: 100%;
-    border: rgb(237, 174, 15) 6px solid;
-    
+    border-radius: 35px;
+    box-shadow: 0 10px 30px #0ee1ac;
 }
 .Herocard {
     display: flex;
     flex-direction: column; /* Stacks elements vertically */
     width: 100%; /* Ensures the card takes full width of its parent */
     background-color: #f0f0f0; /* Example background color */
-    border-radius: 10px; /* Example border radius */
+    /* border-radius: 10px; Example border radius */
     overflow: hidden; /* Hide any overflowing content */
     position: relative; /* For positioning the overlay */
+    border-radius: 35px;
+    box-shadow: 0 10px 30px #0ee1ac;
   }
 .heroContent {
     position: relative;
@@ -40,7 +42,7 @@ html, body {
     /* Ensure video stays within container */
     border-radius: 25px;
     /* Keep the rounded corners */
-    border: rgb(185, 15, 237) 1px solid;
+    /* border: rgb(185, 15, 237) 1px solid; */
 }
 
 .watervideo {

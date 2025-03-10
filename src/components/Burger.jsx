@@ -18,14 +18,12 @@ import { bubble as Menu } from 'react-burger-menu';
          
 }
 
- 
 const styles = {
-   
     bmBurgerButton: {
         position: 'absolute',
-        width: '46px',
-        height: '46px',
-        right: '50px',
+        width: '36px',
+        height: '36px',
+        right: '70px',
         top: '40px'
     },
     bmBurgerBars: {
@@ -46,8 +44,8 @@ const styles = {
     },
     bmMenu: {
         background: '#373a47',
-        padding: '2.5em 1.5em 0',
-        fontSize: '1.15 em'
+        padding: '.5em .5em 0',
+        fontSize: '.5 em'
     },
     bmMorphShape: {
         fill: '#373a47'
@@ -59,7 +57,7 @@ const styles = {
     },
     bmItem: {
         display: 'block',
-        fontSize: '3.15em',
+        fontSize: '1.15em',
         textDecoration: 'none',
         color: 'white'
 

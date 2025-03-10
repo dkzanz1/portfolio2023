@@ -7,7 +7,9 @@ import styles from "./ProjectCard.module.css";
 return (
           <div className={styles.projectcardContainer}>
             <div className={styles.projectcardItem}>    
-              <img className={styles.projectcardItemImg} src={img} alt="man"/>
+              <img className={styles.projectcardItemImg} 
+              src={img} 
+              alt="avitar of author"/>
                 <h2 className={styles.projectcardItemTitle}>{title}</h2>
                 <p className={styles.projectcardId}>{id}</p>
                 <a
