@@ -15,3 +15,16 @@ Application of the Update:
 From now on, when you use the word
  "ReactCraft," I will follow this
   concise definition.
+
+  media QUERIES CODE NOTE CHOOSEN SIZE
+  /*===== Styles for tablets===== */
+  @media (min-width: 768px) {
+      .container {
+        padding: 20px;
+        
+      }
+    /*===== Styles for laptops=====*/
+    @media (min-width: 1024px) {
+      .container {
+        padding: 30px;
+      }

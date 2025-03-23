@@ -1,0 +1,62 @@
+/* Burger.module.css */
+
+.bmBurgerButton {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    right: 70px;
+    top: 40px;
+
+  }
+  
+  .bmBurgerBars   {
+    background: #fbfafa;
+  }
+
+  
+  .bmBurgerBarsHover {
+    background: rgb(255, 47, 0);
+  }
+  
+  .bmCrossButton {
+    height: 24px;
+    width: 24px;
+  }
+  
+  .bmCross {
+    background: #bdc3c7;
+  }
+  
+  .bmMenuWrap {
+    position: fixed;
+    width: 40%;
+    height: 40%;
+    
+  }
+  
+  .bmMenu {
+    background: #373a47;
+    padding: 0.5em 0.5em 0;
+    font-size: 0.5em;
+  }
+  
+  .bmMorphShape {
+    fill: #373a47;
+  }
+  
+  .bmItemList {
+    color: #b8b7ad;
+    padding: 1.8em;
+  }
+  
+  .bmItem {
+    display: block;
+    padding: 20px 0;
+    font-size: 1.15em;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .bmOverlay {
+    background: rgba(143, 148, 142, 0.3);
+  }

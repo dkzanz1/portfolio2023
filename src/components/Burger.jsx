@@ -1,75 +1,39 @@
+
 import React from "react";
-import { bubble as Menu } from 'react-burger-menu';
-//if screen is smaller than laptop size renderhamburger
-//Used boolean var to set if screen size greater than 
+import { bubble as Menu } from "react-burger-menu";
+import styles from "./Burger.module.css";
 
-//if the screen size is less than that laptop 1024px size do not show burger
-
- function Burger()  {
-    return<>
-    
-        <Menu styles={styles} className="BurgerIcon">
-            <a href="/contact" id="contact" className="menu-item">Contact</a>
-            <a href="/info" id="info" className="menu-item">Info</a>
-            <a href="/about" id="about" className="menu-item">About</a>
-            <a onClick={Burger} className="menu-item-small" href="/">Settings</a>
-        </Menu>
-    </>
-         
-}
-
-const styles = {
-    bmBurgerButton: {
-        position: 'absolute',
-        width: '36px',
-        height: '36px',
-        right: '70px',
-        top: '40px'
-    },
-    bmBurgerBars: {
-        background: '#fff'
-    },
-    bmBurgerBarsHover: {
-        background: 'red'
-    },
-    bmCrossButton: {
-        height: '24px',
-        width: '24px'
-    },
-    bmCross: {
-        background: '#bdc3c7'
-    },
-    bmMenuWrap: {
-        position: 'fixed',
-        width: '40%',
-        height: '40%'
-    },
-    bmMenu: {
-        background: '#373a47',
-        padding: '.5em .5em 0',
-        fontSize: '.5 em'
-    },
-    bmMorphShape: {
-        fill: '#373a47'
-    },
-    bmItemList: {
-        color: '#b8b7ad',
-        padding: '1.8em'
-        
-    },
-    bmItem: {
-        display: 'block',
-        padding: '20px 0',
-        fontSize: '1.15em',
-        textDecoration: 'none',
-        color: 'white'
-
-    },
-    bmOverlay:{
-        background: 'rgba(0, 0, 0, 0.3)'
-    }
+function Burger() {
+  return (
+    <Menu
+      outerContainerId={"outer-container"}
+      pageWrapId={"page-wrap"}
+      burgerButtonClassName={styles.bmBurgerButton}
+      burgerBarsClassName={styles.bmBurgerBars}
+      burgerBarsHoverClassName={styles.bmBurgerBarsHover}
+      crossButtonClassName={styles.bmCrossButton}
+      crossClassName={styles.bmCross}
+      menuWrapClassName={styles.bmMenuWrap}
+      menuClassName={styles.bmMenu}
+      morphShapeClassName={styles.bmMorphShape}
+      itemListClassName={styles.bmItemList}
+      itemClassName={styles.bmItem}
+      overlayClassName={styles.bmOverlay}
+    >
+      <a href="/contact" id="contact" className={styles.bmItem}>
+        Contact
+      </a>
+      <a href="/info" id="info" className={styles.bmItem}>
+        Info
+      </a>
+      <a href="/about" id="about" className={styles.bmItem}>
+        About
+      </a>
+      <a href="/settings" className={styles.bmItem}>
+        Settings
+      </a>
+    </Menu>
+  );
 }
 
 export default Burger;
-
-
