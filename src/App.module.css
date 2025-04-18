@@ -2,7 +2,9 @@
     width: 100vw;
     height: 100vh;
     position: relative; 
+  
 }
+
 /*===== Styles for tablets===== */
 @media (min-width: 768px) {
     .container {
@@ -15,8 +17,8 @@
 @media (min-width: 1024px) {
     .container {
         padding: 30px; /* Adjust padding for laptops */
-        max-width: 1200px; /* Example: add a max-width on larger screens */
-        margin: 0 auto; /* Example: center the container if it has a max-width */
+        max-width: 1200px; /*Adds a max-width on larger screens */
+        margin: 0 auto; /* Centers the container if it has a max-width */
         /* Add any other laptop-specific styles for .container here */
     }
 }

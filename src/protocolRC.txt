@@ -27,7 +27,6 @@ paulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I "node_modules"
 ├── public
 │   └── index.html
 ├── README.md
-
 └── src
     ├── App.js
     ├── App.module.css
@@ -41,8 +40,6 @@ paulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I "node_modules"
     │   ├── Burger.module.css
     │   ├── ContactForm.jsx
     │   ├── ContactForm.module.css
-    │   ├── Contact.jsx
-    │   ├── Contact.module.css
     │   ├── face.jpg
     │   ├── Footer.jsx
     │   ├── Footer.module.css
@@ -61,7 +58,4 @@ paulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I "node_modules"
     │   └── Video.module.css
     ├── index.css
     ├── index.js
-    ├── protocolRC.txt
-    └── Responsive.css
-
-5 directories, 37 files
+    └── protocolRC.txt
