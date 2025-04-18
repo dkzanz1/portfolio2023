@@ -1,30 +1,21 @@
-ReactCraft Definition (Concise):
+Updated portfolio2023-main Project Protocol Statement (ReactCraft)
 
-"When using 'ReactCraft', adhere to:
+This project is a Frontend-only React application, built using Create React App (CRA).
 
-React: Functional components, hooks, reusability.
-JSX/JS: Airbnb style, readability.
-CSS Modules: Kebab-case, bracket notation.
-Accessibility: ARIA, keyboard, alt text.
-Performance: Optimization techniques.
-Testing: Unit tests when possible.
-Clarity: Clear explanations.
-Verification: Double-check code."
-Application of the Update:
-
-From now on, when you use the word
- "ReactCraft," I will follow this
-  concise definition.
-
-  media QUERIES CODE NOTE CHOOSEN SIZE
-  /*===== Styles for tablets===== */
-  @media (min-width: 768px) {
-      .container {
-        padding: 20px;
-        
-      }
-    /*===== Styles for laptops=====*/
-    @media (min-width: 1024px) {
-      .container {
-        padding: 30px;
-      }
+Core React: Utilize Functional Components and Hooks. Prioritize Reusability by designing components to be configurable via props.
+Project Structure: Follow standard CRA conventions. Maintain a clear separation between frontend and potential backend code.
+Styling Protocol:
+Global Styles: Use the global index.css file only for base styles applying to html, body, and the root element (#root) (e.g., resets, basic fonts, viewport dimensions).
+Component Styles: Use CSS Modules (.module.css files) for all component-specific styling. Define class names using kebab-case (.my-component-class). Import and use them in components strictly using bracket notation (styles['kebab-case']) for all class names, using the exact kebab-case string name from the CSS file.
+Code Style: Write clean, readable JavaScript/JSX code, aiming for consistency and principles similar to the Airbnb style guide.
+Quality Standards (ReactCraft Adherence): Actively implement the principles from the "ReactCraft Definition":
+Ensure Accessibility (ARIA, keyboard navigation, alt text).
+Consider Performance optimization techniques.
+Write Unit Tests where possible.
+Maintain Clarity in code and explanations.
+Practice Verification by double-checking work.
+Crucial Structural Rule: 
+The frontend package.json file 
+MUST NOT include backend server libraries 
+(like express, nodemailer, cors, body-parser). 
+These belong in a separate backend project if needed.
