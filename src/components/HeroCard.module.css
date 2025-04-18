@@ -24,7 +24,7 @@ html, body {
     display: flex;
     flex-direction: column; /* Stacks elements vertically */
     width: 100%; /* Ensures the card takes full width of its parent */
-    background-color: #f0f0f0; /* Example background color */
+    background-color: #2e4325; /* Example background color */
     /* border-radius: 10px; Example border radius */
     overflow: hidden; /* Hide any overflowing content */
     position: relative; /* For positioning the overlay */
@@ -117,14 +117,7 @@ html, body {
     text-align: center;
     margin-bottom: 20px;
   }
-.burger {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    z-index: 5;
-    /* Burger on top */
-    /* Add burger styles here */
-}
+
 
 .boat-container {
     position: relative;

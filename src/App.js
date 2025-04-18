@@ -51,7 +51,7 @@
 // export default App;
 // App.js
 import React, { Fragment } from "react";
-import "./App.css";
+import styles from "./App.modules.css";//imported as a module object
 import HeroCard from "./components/HeroCard";
 import Burger from "./components/Burger";
 import Sectionpart from "./components/section";
@@ -65,7 +65,7 @@ import ContactForm from "./components/ContactForm";
 function App() {
   return (
     <Fragment>
-      <div className="container">
+      <div className={styles.container}>
         <Burger />
         <HeroCard />
         <About />

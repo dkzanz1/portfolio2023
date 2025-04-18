@@ -1,23 +1,47 @@
 /* Burger.module.css */
 
-.bmBurgerButton {
+/* .bmBurgerButton {
     position: absolute;
     width: 36px;
     height: 36px;
-    right: 70px;
+    right: 150px;
     top: 40px;
+    background:rgb(244, 244, 248);
+  } */
+  /* .bmBurgerBars {
+    background:rgb(42, 30, 30);
+}  */
+  /* .bmBurgerBarsHover {
+    background: rgb(68, 255, 0);
+  } */
+  /* Burger.module.css */
 
-  }
-  
-  .bmBurgerBars   {
-    background: #fbfafa;
-  }
+.bmBurgerButton {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  right: 150px;
+  top: 40px;
+  background: rgb(244, 244, 248);
+  display: flex; /* Use flexbox to center bars */
+  flex-direction: column; /* Stack bars vertically */
+  justify-content: space-around; /* Distribute space evenly between bars */
+  padding: 6px; /* Add some padding around the bars */
+  box-sizing: border-box; /* Include padding in width/height */
+}
 
-  
-  .bmBurgerBarsHover {
-    background: rgb(255, 47, 0);
-  }
-  
+.container .bmBurgerButton .bmBurgerBars {
+  display: block; /* Make sure bars are block-level elements */
+  height: 4px; /* Adjust height of bars */
+  background-color: rgb(42, 30, 30); /* Color of bars */
+  border-radius: 2px; /* Optional: round the corners of the bars */
+}
+
+.bmBurgerBarsHover {
+  background: rgb(255, 42, 0);
+}
+
+/* ... rest of your CSS ... */
   .bmCrossButton {
     height: 24px;
     width: 24px;

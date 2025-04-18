@@ -20,6 +20,7 @@ function Burger() {
       itemClassName={styles.bmItem}
       overlayClassName={styles.bmOverlay}
     >
+      
       <a href="/contact" id="contact" className={styles.bmItem}>
         Contact
       </a>
