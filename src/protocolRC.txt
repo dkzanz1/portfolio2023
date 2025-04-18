@@ -19,3 +19,49 @@ The frontend package.json file
 MUST NOT include backend server libraries 
 (like express, nodemailer, cors, body-parser). 
 These belong in a separate backend project if needed.
+now locate in parent folder react-projects
+paulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I "node_modules"
+.
+├── package.json
+├── package-lock.json
+├── public
+│   └── index.html
+├── README.md
+
+└── src
+    ├── App.js
+    ├── App.module.css
+    ├── components
+    │   ├── About.jsx
+    │   ├── About.module.css
+    │   ├── assets
+    │   │   ├── boat.svg
+    │   │   └── mephoto.jpg
+    │   ├── Burger.jsx
+    │   ├── Burger.module.css
+    │   ├── ContactForm.jsx
+    │   ├── ContactForm.module.css
+    │   ├── Contact.jsx
+    │   ├── Contact.module.css
+    │   ├── face.jpg
+    │   ├── Footer.jsx
+    │   ├── Footer.module.css
+    │   ├── HeroCard.jsx
+    │   ├── HeroCard.module.css
+    │   ├── image4.jpeg
+    │   ├── ProjectCard.jsx
+    │   ├── ProjectCard.module.css
+    │   ├── projectInfo.js
+    │   ├── section.jsx
+    │   ├── Section.module.css
+    │   ├── SocialFollow.js
+    │   ├── SocialFollow.module.css
+    │   ├── videobg.mp4
+    │   ├── Video.jsx
+    │   └── Video.module.css
+    ├── index.css
+    ├── index.js
+    ├── protocolRC.txt
+    └── Responsive.css
+
+5 directories, 37 files
