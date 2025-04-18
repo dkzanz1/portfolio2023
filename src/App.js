@@ -51,7 +51,7 @@
 // export default App;
 // App.js
 import React, { Fragment } from "react";
-import styles from "./App.modules.css";//imported as a module object
+import styles from "./App.module.css";//imported as a module object
 import HeroCard from "./components/HeroCard";
 import Burger from "./components/Burger";
 import Sectionpart from "./components/section";
