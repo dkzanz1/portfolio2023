@@ -49,7 +49,7 @@
 // }
 
 // export default App;
-// App.js
+App.js
 import React, { Fragment } from "react";
 import styles from "./App.module.css";//imported as a module object
 import HeroCard from "./components/HeroCard";
@@ -89,3 +89,4 @@ function App() {
 }
 
 export default App;
+
