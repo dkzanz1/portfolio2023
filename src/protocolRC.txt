@@ -87,3 +87,5 @@ portfolio2023-main/
 - **Blog Section**: Include a blog to share your learning journey and insights.
 - **Case Studies**: Add detailed case studies for key projects, highlighting challenges and solutions.
 - **Analytics**: Integrate Google Analytics or Plausible to track visitor interactions.
+- **add flavicon.ico <link rel="icon" href="/favicon.ico" />
+to creat tab icon
