@@ -52,15 +52,15 @@
 App.js
 import React, { Fragment } from "react";
 import styles from "./App.module.css";//imported as a module object
-import HeroCard from "./components/HeroCard";
-import Burger from "./components/Burger";
-import Sectionpart from "./components/section";
-import projectInfo from "./components/projectInfo";
-import SocialFollow from "./components/SocialFollow.js";
-import Footer from "./components/Footer";
-import ProjectCard from "./components/ProjectCard";
-import About from "./components/About";
-import ContactForm from "./components/ContactForm";
+import HeroCard from "./components/HeroCard.jsx";
+import Burger from "./components/Burger.jsx";
+import Sectionpart from "./components/section.jsx";
+import projectInfo from "./components/projectInfo.js";
+import SocialFollow from "./components/SocialFollow.jsx";
+import Footer from "./components/Footer.jsx";
+import ProjectCard from "./components/ProjectCard.jsx";
+import About from "./components/About.jsx";
+import ContactForm from "./components/ContactForm.jsx";
 
 function App() {
   return (
