@@ -33,3 +33,13 @@ code {/*Global code font */
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.bm-burger-bars {
+  display: block; /* Make sure bars are block-level elements */
+  height: 4px; /* Adjust height of bars */
+  background-color: rgb(250, 248, 248); /* Color of bars */
+  border-radius: 2px; /* Optional: round the corners of the bars */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+.bm-burger-bars-hover {
+  background: rgb(0, 255, 8);
+}

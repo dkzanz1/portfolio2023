@@ -2,11 +2,11 @@
 
 .bm-burger-button {
   position: absolute;
-  width: 36px;
-  height: 36px;
+  width: 30px;
+  height: 30px;
   right: 80px;
   top: 40px;
-  background: rgb(241, 234, 234);
+  background: rgba(14, 14, 14, 0.0);
   display: flex; /* Use flexbox to center bars */
   flex-direction: column; /* Stack bars vertically */
   justify-content: space-around; /* Distribute space evenly between bars */
@@ -14,19 +14,10 @@
   box-sizing: border-box; /* Include padding in width/height */
 }
 
-.react-burger-menu-btn .bm-burger-bars {
-  display: block; /* Make sure bars are block-level elements */
-  height: 4px; /* Adjust height of bars */
-  background-color: rgb(42, 30, 30); /* Color of bars */
-  border-radius: 2px; /* Optional: round the corners of the bars */
-  color:rgb(247, 243, 243); /* Color of bars */
-  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
+/*burger button and bar held in global index.css*/
 
 
-.bm-burger-bars-hover {
-  background: rgb(255, 42, 0);
-}
+
 
 /* ... rest of your CSS ... */
 .bm-cross-button  {

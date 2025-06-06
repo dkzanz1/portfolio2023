@@ -10,7 +10,7 @@ function Burger() {
       outerContainerId={'outer-container'}
       pageWrapId={'page-wrap'}
       burgerButtonClassName={styles['bm-burger-button']}
-      burgerBarsClassName={styles['bm-burger-bars']} 
+      // burgerBarsClassName={styles['bm-burger-bars']} 
       burgerBarsHoverClassName={styles['bm-burger-bars-hover']} 
       crossButtonClassName={styles['bm-cross-button']}
       crossClassName={styles['bm-cross']}
