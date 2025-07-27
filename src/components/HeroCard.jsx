@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
-import img from "./assets/mephoto.jpg";
-import boatImage from "./assets/boat.svg";
+import img from "../assets/mephoto.jpg";
+import boatImage from "../assets/boat.svg";
 import styles from "./HeroCard.module.css";
 import Water from "./Video";
 

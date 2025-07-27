@@ -1,18 +1,16 @@
 
 .projectcardContainer {
-    height: auto;
-    margin: 0 auto;
-    width: 80%;
+    max-width: 80%;
     border-radius: 25px;
-    box-shadow: 0 10px 30px #0ee1ac;
-    margin-top: 10px;
+    box-shadow: 10px 10px 10px 10px #0ee1ac;
+    margin: 10px auto 50px;
+
     position:relative;
-    top: 0px;   
+       
 }
 .projectcardItemTitle {
     position: relative;
     top: 0%;
-    bottom: 10px;
     left: 50%;
     transform:translate(-50%, 50%);
     color: white;
@@ -22,11 +20,11 @@
 }
 
 .projectcardItem {
-    /* height: 100%; */
     position: relative;
     margin: 0  auto;
     width: 100%;
     text-align : center;
+    padding-bottom: 50px;
 
 }
 
@@ -36,8 +34,6 @@
     height: 100%;
     top: 0;
     left: 0;
-    /* object-fit: cover; */
-    margin-top: 0px;
     border-radius: 25px;
 }
 

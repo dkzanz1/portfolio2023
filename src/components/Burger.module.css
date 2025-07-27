@@ -1,0 +1,63 @@
+/* Burger.module.css */
+
+.bm-burger-button {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 80px;
+  top: 40px;
+  background: rgba(14, 14, 14, 0.0);
+  display: flex; /* Use flexbox to center bars */
+  flex-direction: column; /* Stack bars vertically */
+  justify-content: space-around; /* Distribute space evenly between bars */
+  padding: 6px; /* Add some padding around the bars */
+  box-sizing: border-box; /* Include padding in width/height */
+}
+
+/*burger button and bar held in global index.css*/
+
+
+
+
+/* ... rest of your CSS ... */
+.bm-cross-button  {
+    height: 24px;
+    width: 24px;
+  }
+  
+.bm-cross {
+    background: #bdc3c7;
+  }
+  
+.bm-menu-wrap {
+    position: fixed;
+    width: 40%;
+    height: 40%;
+  }
+  
+.bm-menu {
+    background: #373a47;
+    padding: 0.5em 0.5em 0;
+    font-size: 0.5em;
+  }
+  
+.bm-morph-shape {
+    fill: #373a47;
+  }
+  
+.bm-item-list {
+    color: #b8b7ad;
+    padding: 1.8em;
+  }
+  
+.bm-item {
+    display: block;
+    padding: 20px 0;
+    font-size: 1.15em;
+    text-decoration: none;
+    color: white;
+  }
+  
+.bm-overlay {
+    background: rgba(126, 135, 124, 0.3);
+  }
