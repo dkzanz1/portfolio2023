@@ -1,11 +1,15 @@
-ReactCraft Project Protocol (portfolio2023-main)
+# ReactCraft Project Protocol (portfolio2023-main)
+
 Version: 1.6 (Last Updated: July 27, 2025)
 Purpose
 This protocol serves as a comprehensive guide for maintaining consistency,
 adhering to best practices, and documenting key decisions made during the development
 of the portfolio2023-main project.
 
-Project Overview
+###project current tech:react,vite,css,html,node,express and mongo still to be added as back end###
+
+# Project Overview
+
 Type: Frontend-only React application, transitioned from Create React App (CRA)
 to Vite for improved development experience and performance.
 Core Principles:
@@ -35,6 +39,8 @@ CSS Module Naming:
 
 Use CamelCase for all CSS class names (e.g. style.myComponentContainer)
 for consistency and best professional practices.
+### css Tailwind Integration (Future)if faster prototyping is required
+i introduced tailwind for light mode to be intergrated.
 
 Dependencies: The package.json file must not include backend libraries (e.g., express, nodemailer). Backend dependencies are managed in a separate repository.
 
