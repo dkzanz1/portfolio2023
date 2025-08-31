@@ -1,11 +1,13 @@
 ReactCraft Project Protocol (portfolio2023-main)
-Version: 1.1 (Last Updated: July 27, 2025)
+Version: 1.6 (Last Updated: July 27, 2025)
 Purpose
-This protocol serves as a comprehensive guide for maintaining consistency, adhering to best practices, and documenting key decisions made during the development of the portfolio2023-main project.
+This protocol serves as a comprehensive guide for maintaining consistency,
+adhering to best practices, and documenting key decisions made during the development
+of the portfolio2023-main project.
 
 Project Overview
-Type: Frontend-only React application, transitioned from Create React App (CRA) to Vite for improved development experience and performance.
-
+Type: Frontend-only React application, transitioned from Create React App (CRA)
+to Vite for improved development experience and performance.
 Core Principles:
 
 Utilize Functional Components and Hooks for stateful logic and side effects.
@@ -22,16 +24,17 @@ Write clean, readable JavaScript/JSX.
 
 All React components will use the .jsx file extension to clearly indicate JSX syntax.
 
-Adhere strictly to coding standards inspired by the Airbnb style guide. To enforce this, ESLint with the Airbnb configuration will be used, along with Prettier for consistent code formatting.
+Adhere strictly to coding standards inspired by the Airbnb style guide.
+To enforce this, ESLint with the Airbnb configuration will be used, 
+along with Prettier for consistent code formatting.
 
 TypeScript Integration (Future): The project aims to transition .jsx files to .tsx for static typing, enhancing code robustness and maintainability.
 
 2. Structural Rules & Naming Conventions
 CSS Module Naming:
 
-Use kebab-case for all CSS class names (e.g., my-component-container, button-primary).
-
-Access styles in components using bracket notation: styles['kebab-case'] for consistency.
+Use CamelCase for all CSS class names (e.g. style.myComponentContainer)
+for consistency and best professional practices.
 
 Dependencies: The package.json file must not include backend libraries (e.g., express, nodemailer). Backend dependencies are managed in a separate repository.
 
@@ -56,6 +59,7 @@ src/index.css is reserved exclusively for base styles, such as CSS resets, font 
 Component Styles:
 
 All component-specific styles will use CSS Modules (.module.css). Each React component will have an accompanying CSS Module file.
+Future Task:- AS BEST PRACTICE EACH COMPONENT AND ITS RELEVENT FILES WILL BE PLACED IN ITS OWN FOLDER
 
 Future Styling Exploration: Tailwind CSS will be evaluated as an alternative utility-first styling approach for future iterations.
 
@@ -98,12 +102,12 @@ portfolio2023-main/
 │   ├── index.css
 │   └── index.js
 │   └── protocolRC.txt
-Retrospective
+lesson Learned & Best Practices
 Challenges: Managing CSS Modules for large components can be complex.
 
 Lessons Learned: Breaking down components into smaller, more focused, and reusable pieces significantly improves maintainability and reduces styling conflicts.
 
-Future Enhancements
+Continuous Improvements
 Favicon: Add favicon.ico to the public/ directory and link it in index.html (<link rel="icon" href="/favicon.ico" />) to create a custom tab icon.
 
 Responsive Design: Ensure the portfolio is fully responsive across all devices (mobile, tablet, desktop).
