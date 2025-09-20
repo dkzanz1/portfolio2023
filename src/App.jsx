@@ -20,7 +20,7 @@ const DarkModeToggle = ({ toggleTheme, theme }) => (
 );
 
 function App() {
-  const [theme, toggleTheme] = useTheme(); // Use the custom hook
+  const [theme, toggleTheme] = useTheme(); // Using the custom hook
 
   return (
     <Fragment>

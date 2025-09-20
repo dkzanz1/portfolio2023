@@ -12,7 +12,7 @@ export const useTheme = () => {
   };
 
   useEffect(() => {
-    // Apply the theme attribute to the body element
+    // Applying the theme attribute to the body element below
     document.body.setAttribute('data-theme', theme);
     // Save the theme to localStorage for persistence
     localStorage.setItem('theme', theme);

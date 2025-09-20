@@ -1,93 +1,47 @@
+Updated, concise version of your project protocol.
+
+```
 # ReactCraft Project Protocol (portfolio2023-main)
 
-Version: 1.6 (Last Updated: July 27, 2025)
-Purpose
-This protocol serves as a comprehensive guide for maintaining consistency,
-adhering to best practices, and documenting key decisions made during the development
-of the portfolio2023-main project.
+Version: 2.0 (Last Updated: September 20, 2025)
 
-###project current tech:react,vite,css,html,node,express and mongo still to be added as back end###
+## Purpose
+To guide project development with clear standards, maintain consistency, and document key architectural decisions.
 
-# Project Overview
+---
 
-Type: Frontend-only React application, transitioned from Create React App (CRA)
-to Vite for improved development experience and performance.
-Core Principles:
+## 🛠️ Technology Stack
+* **Frontend:** React, Vite
+* **Styling:** CSS Modules and CSS Custom Properties (Variables) for robust theming.
+* **Future Backend:** Node.js, Express, MongoDB
 
-Utilize Functional Components and Hooks for stateful logic and side effects.
+---
 
-Design reusable components that are configurable via props.
+## 📝 Code Standards & Structure
+1.  **File Naming:**
+    * `.jsx` for all React components (UI files).
+    * `.js` for all pure JavaScript files (e.g., custom hooks, data).
+2.  **Styling:**
+    * **Global (`src/index.css`):** Reserved for CSS resets, fonts, and global CSS variables only.
+    * **Component-Specific:** All component styles must use CSS Modules (.module.css).
+    * **Theme Management:** All theme-related styling will use CSS Custom Properties (e.g., `var(--background-color)`).
+3.  **Project Organization:**
+    * `src/components/`: For reusable UI components.
+    * `src/hooks/`: For all custom React hooks and stateful logic.
+    * `src/`: For top-level files like `App.jsx` and `index.js`.
+4.  **Path Map:**
+    * All new components and their related files must be placed in their own subdirectory within `src/components/`. Example: `src/components/NewComponent/NewComponent.jsx`.
 
-Adhere to industry-standard professional coding conventions.
+---
 
-Maintain a clear separation of concerns between frontend and backend logic.
+## 🚀 Project Path Map
+```
 
-Code Standards
-1. Code Style & Quality
-Write clean, readable JavaScript/JSX.
-
-All React components will use the .jsx file extension to clearly indicate JSX syntax.
-
-Adhere strictly to coding standards inspired by the Airbnb style guide.
-To enforce this, ESLint with the Airbnb configuration will be used, 
-along with Prettier for consistent code formatting.
-
-TypeScript Integration (Future): The project aims to transition .jsx files to .tsx for static typing, enhancing code robustness and maintainability.
-
-2. Structural Rules & Naming Conventions
-CSS Module Naming:
-
-Use CamelCase for all CSS class names (e.g. style.myComponentContainer)
-for consistency and best professional practices.
-### css Tailwind Integration (Future)if faster prototyping is required
-i introduced tailwind for light mode to be intergrated.
-
-Dependencies: The package.json file must not include backend libraries (e.g., express, nodemailer). Backend dependencies are managed in a separate repository.
-
-Absolute Imports (Future): Configure Vite to support clean absolute imports (e.g., import Component from '@/components/Component.jsx').
-
-3. General Best Practices
-React Fragments: Use <>...</> to avoid introducing unnecessary DOM elements.
-
-Custom Hooks: Extract and encapsulate reusable stateful logic into custom hooks.
-
-Semantic HTML & Accessibility (A11y): Prioritize the use of semantic HTML tags. Ensure full accessibility by implementing ARIA attributes, robust keyboard navigation, and descriptive alt text for images.
-
-Performance Optimization (Future): Employ React.memo(), useMemo, and useCallback to prevent unnecessary component re-renders. Utilize React.lazy() and Suspense for code splitting and lazy loading components.
-
-State Management (Future): Use React Context strategically for local or component-tree specific state. For more complex or global state needs, lightweight libraries like Zustand will be evaluated.
-
-Styling Guidelines
-Global Styles:
-
-src/index.css is reserved exclusively for base styles, such as CSS resets, font definitions, and viewport dimensions. It must remain minimal and free of component-specific styles.
-
-Component Styles:
-
-All component-specific styles will use CSS Modules (.module.css). Each React component will have an accompanying CSS Module file.
-Future Task:- AS BEST PRACTICE EACH COMPONENT AND ITS RELEVENT FILES WILL BE PLACED IN ITS OWN FOLDER
-
-Future Styling Exploration: Tailwind CSS will be evaluated as an alternative utility-first styling approach for future iterations.
-I now realised i have made a mistake and have decide not swap to tailwind 
-due to the conflict that have arisen during the process tranfer while introducing darkmode
-
-Quality Standards
-Accessibility: Rigorously ensure ARIA compliance, comprehensive keyboard navigation, and appropriate alt text for all images.
-
-Performance: Optimize loading times and rendering efficiency.
-
-Clarity: Write code and documentation that is clear, concise, and easy to understand.
-
-Verification: Double-check all outputs and functionality before considering work complete.
-
-Unit Tests (Future): Implement unit tests using Jest and React Testing Library for critical components and logic.
-
-Project Structure
 portfolio2023-main/
 ├── package.json
 ├── public/
 │   └── index.html
-│   └── favicon.ico  // Tab icon
+│   └── favicon.ico
 ├── src/
 │   ├── App.jsx
 │   ├── App.module.css
@@ -96,38 +50,40 @@ portfolio2023-main/
 │   │   │   ├── About.jsx
 │   │   │   └── About.module.css
 │   │   ├── assets/
-│   │   │   ├── boat.svg
-│   │   │   └── mephoto.jpg
 │   │   ├── Burger.jsx
 │   │   ├── ContactForm.jsx
 │   │   ├── Footer.jsx
 │   │   ├── HeroCard.jsx
 │   │   ├── ProjectCard.jsx
 │   │   ├── Section.jsx
-│   │   ├── SocialFollow.jsx // Renamed to .jsx for consistency
-│   │   ├── Video.jsx
-│   │   └── Video.module.css
+│   │   ├── SocialFollow.jsx
+│   │   └── Video.jsx
+│   ├── hooks/
+│   │   └── useTheme.js
 │   ├── index.css
 │   └── index.js
-│   └── protocolRC.txt
-lesson Learned & Best Practices
-Challenges: Managing CSS Modules for large components can be complex.
 
-Lessons Learned: Breaking down components into smaller, more focused, and reusable pieces significantly improves maintainability and reduces styling conflicts.
+```
+```
 
-Continuous Improvements
-Favicon: Add favicon.ico to the public/ directory and link it in index.html (<link rel="icon" href="/favicon.ico" />) to create a custom tab icon.
+-----
 
-Responsive Design: Ensure the portfolio is fully responsive across all devices (mobile, tablet, desktop).
+## ✅ Best Practices
 
-Dark Mode: Implement a toggle for light/dark themes using CSS variables or a library like use-dark-mode.
+  * **Functional Components:** Use functional components and hooks for state logic.
+  * **Accessibility (A11y):** Prioritize semantic HTML and ARIA compliance.
+  * **Code Quality:** Enforce a strict code style with ESLint and Prettier.
+  * **Verification:** All work is double-checked for functionality before completion.
 
-Animations: Add smooth transitions and interactive animations using Framer Motion or React Spring.
+-----
 
-SEO Optimization: Implement meta tags, Open Graph tags, and improve page titles for enhanced search engine visibility.
+## 🔮 Future Enhancements
 
-Blog Section: Integrate a blog to share your learning journey and insights.
+  * **TypeScript:** Migrate to `.tsx` for static typing.
+  * **Performance:** Implement code splitting (`React.lazy`) and memoization (`React.memo`, `useCallback`).
+  * **Testing:** Introduce unit tests using Jest and React Testing Library.
 
-Case Studies: Add detailed case studies for key projects, highlighting challenges and solutions.
+<!-- end list -->
 
-Analytics: Integrate Google Analytics or Plausible to track visitor interactions.
+```
+```
