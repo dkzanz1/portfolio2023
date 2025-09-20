@@ -1,7 +1,4 @@
-Global styles only is this file
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Global styles only is this file */
 
 html, body, #root {
   margin: 0;
@@ -9,8 +6,9 @@ html, body, #root {
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;/*Prevents horizontal scroll */
-  background:black;/*Global background */
-  color: white;/*Global base text color */
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #007bff;
   font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; /*font stack */   
   font-size: 1rem;
 }
@@ -19,6 +17,16 @@ body {
   -webkit-font-smoothing: antialiased;/*Global smoothing */
   -moz-osx-font-smoothing: grayscale;/*Global smoothing */
   line-height: 1.2;
+  --background-color: #ffffff;
+  --text-color: #333333;
+  --primary-color: #007bff;
+  --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+body[data-theme='dark'] {
+  /* Dark theme variables */
+  --background-color: #1a202c;
+  --text-color: #f7fafc;
+  --primary-color: #61dafb;
 }
 /*Global element selectors*/
 

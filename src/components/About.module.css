@@ -1,23 +1,35 @@
-.wrapper {
-    margin: -5% auto;
-    width: 80%;
-    border-radius: 25px;
-    box-shadow: 10px 10px 10px 10px #0ee1ac;
-    margin-top: 30px;
+/* About.module.css */
+.aboutContainer {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 2rem;
+  margin: -5% auto;
+  width: 80%;
+  border-radius: 25px;
+  /* Use the CSS variable for box-shadow */
+  box-shadow: 10px 10px 10px 10px var(--box-shadow-color);
+  margin-top: 30px;
 }
+
+/* Explicitly style the text colors */
 .Aboutblurb {
-   color:rgb(217, 223, 217); 
-   padding-left: 15px;
-   padding-top:5px;
-   position: relative;
-   top: 0px;
-   text-align: center; /* Center text within the wrapper */
+  color: var(--text-color); 
+  padding-left: 15px;
+  padding-top: 5px;
+  position: relative;
+  top: 0px;
+  text-align: center;
 }
+
+.Aboutblurb h1 {
+  color: var(--text-color); /* Explicitly target the h1 tag */
+}
+
 .blurb {
-    color:rgb(217, 223, 217);
-    padding : 10px;
-    font-size: 1.2rem;
-    margin: 20px;
-    padding-bottom: 20px;
+  color: var(--text-color);
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 20px;
+  padding-bottom: 20px;
 }
-/*=========blurb finishes=======*/

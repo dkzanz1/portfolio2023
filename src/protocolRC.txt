@@ -68,6 +68,8 @@ All component-specific styles will use CSS Modules (.module.css). Each React com
 Future Task:- AS BEST PRACTICE EACH COMPONENT AND ITS RELEVENT FILES WILL BE PLACED IN ITS OWN FOLDER
 
 Future Styling Exploration: Tailwind CSS will be evaluated as an alternative utility-first styling approach for future iterations.
+I now realised i have made a mistake and have decide not swap to tailwind 
+due to the conflict that have arisen during the process tranfer while introducing darkmode
 
 Quality Standards
 Accessibility: Rigorously ensure ARIA compliance, comprehensive keyboard navigation, and appropriate alt text for all images.
