@@ -87,3 +87,17 @@ portfolio2023-main/
 
 ```
 ```
+current issue being worked on 
+paste into gemini 
+**ReactCraft ProjectCard Issue - Layout & Positioning Fix**
+
+**Goal:** Restore vertical stacking of ProjectCards. Cards must respect the parent container's height (`80vh`) and scroll internally if content overflows. Image and text overlays must display correctly inside each card.
+
+**Problem Summary:** All images are moving to the top of the page, behind other components. The cards are collapsing to zero height. This is due to incorrect **absolute positioning** of the image inside a flex container.
+
+**Code Context (CSS from Parent/Container):**
+- **.projectcardContainer:** `display: flex; flex-direction: column; max-height: 80vh;`
+- **.projectcardItem:** `position: relative;`
+- **.projectcardItem img:** `position: absolute; width: 100%; height: 100%; top: 0; left: 0;`
+
+**Next Step (Suggested Fix):** **Remove** `position: absolute;`, `top: 0;`, 

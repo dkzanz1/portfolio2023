@@ -2,10 +2,10 @@
 
 /* Define all CSS variables on the :root pseudo-class for global access */
 :root {
-  --background-color: #ffffff;
+  --background-color: #a6a2a2;
   --text-color: #333333;
   --primary-color: #007bff;
-  --box-shadow-color: rgba(0, 0, 0, 0.1);
+  --box-shadow-color: rgba(64, 236, 227, 0.1);
 }
 
 /* Override variables for the DARK theme on the body selector */
@@ -34,7 +34,7 @@ body {
   /* Apply global colors using variables and a smooth transition */
   background-color: var(--background-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.7s ease, color 0.7s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
