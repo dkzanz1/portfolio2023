@@ -84,20 +84,15 @@ portfolio2023-main/
   * **Testing:** Introduce unit tests using Jest and React Testing Library.
 
 <!-- end list -->
+Resume Session: ProjectCard Styling
 
-```
-```
-current issue being worked on 
-paste into gemini 
-**ReactCraft ProjectCard Issue - Layout & Positioning Fix**
+Hi! I'm back and ready to continue with the ProjectCard styling.
 
-**Goal:** Restore vertical stacking of ProjectCards. Cards must respect the parent container's height (`80vh`) and scroll internally if content overflows. Image and text overlays must display correctly inside each card.
+Current Status:
 
-**Problem Summary:** All images are moving to the top of the page, behind other components. The cards are collapsing to zero height. This is due to incorrect **absolute positioning** of the image inside a flex container.
+We've updated the CSS for .projectcardItem to use Flexbox.
 
-**Code Context (CSS from Parent/Container):**
-- **.projectcardContainer:** `display: flex; flex-direction: column; max-height: 80vh;`
-- **.projectcardItem:** `position: relative;`
-- **.projectcardItem img:** `position: absolute; width: 100%; height: 100%; top: 0; left: 0;`
+We've also adjusted the HTML in ProjectCard.js to introduce an imageWrapper around the img and h2 (title) for overlaying the title on the image.
 
-**Next Step (Suggested Fix):** **Remove** `position: absolute;`, `top: 0;`, 
+Next Task:
+Now we need to update the CSS to correctly style the new imageWrapper, projectcardItemImg, and projectcardItemTitle to achieve the effect of the title being centered over the image.

@@ -2,62 +2,48 @@
 .projectcardContainer {
     display: flex;
     flex-direction: column;/*this forces stacking*/
+    max-height: 80vh; 
     align-items: center;/* this centers the card*/
     gap: 20px;
     padding: 4rem;
-    max-height: 80vh; 
     overflow-y:auto   
 }
 .projectcardItemTitle {
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform:translate(-50%, -50%);
-    color: white;
+    /* color:white; */
     padding: 20px 12px;
     z-index:10;
     background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
-      color: var(--text-color-light, white); /* Used protocol variables */
+    color: var(--text-color-light, white); /* Used protocol variables */
     border-radius: 8px;
     width: 90%; /* Ensure it doesn't spill over card edges */-color: rgb(0, 0, 0, .4);
 }
 
 .projectcardItem {
-  .projectcardItem {
-    /* position: relative; <--- REMOVED */
+    display: flex;
+    flex-direction: column;/*this forces stacking*/
+    justify-content: center;
+    align-items: center;/* this centers the card*/
     margin: 0 auto;
     width: 90%; /* Use a specific percentage width to ensure it scales nicely */
     max-width: 600px; /* Cap the width for large screens */
     text-align: center;
-    /* padding-bottom: 50px; <--- REMOVED */
-    /* NEW: Ensuring the card maintains a size */
-    min-height: 300px; 
+  
     border-radius: 25px; /* Moved from the image to the card for full effect */
     overflow: hidden; /* Important for containing children that might overflow borders */
     background-color: var(--card-background, #fff); /* Use your protocol variables */
     border-radius: 25px;
 }
     
-
-}
-
 .projectcardItem img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    object-fit:cover;
-    z-index: -1; /* Ensure the image is behind text */
+    width:100%;
+    object-fit:cover; /* Ensure the image covers the area without distortion */
+   
+    flex-grow: 1; /* Allow image to grow and fill available space */
+    
     
 }
 
-
 .projectcardItemInfo {
-    position: absolute;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     z-index: 10;
     background-color:var(--overlay-dark, rgba(0, 0, 0, .6));
     color:var(--text-color-light, white);
