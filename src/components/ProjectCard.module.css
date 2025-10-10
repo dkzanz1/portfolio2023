@@ -86,7 +86,7 @@
 /* end *//* Use a Media Query for larger screens (e.g., tablets and desktops) */
 @media (min-width: 768px) {
     .projectcardItem {
-        width: 70%; /* Increase width for larger screens */
+        width: 90%; /* Increase width for larger screens */
     }
     .projectcardItemTitle {
         font-size: 2em; /* Increase font size for larger screens */
@@ -95,17 +95,12 @@
         font-size: 1.5em; /* Slightly larger text for better readability */
     }
 
-.projectcardItem {
-    display: flex;
-    flex-direction: column;/*this forces stacking*/
-    max-height: 70vh; 
-    align-items: center;/* this centers the card*/
-    margin: 0 auto;
-    width: 100%; /* Use a specific percentage width to ensure it scales nicely */
-    max-width: 800px; /* Cap the width for large screens */
-    text-align: center;
-    border-radius: 25px; /* Moved from the image to the card for full effect */
-    overflow: hidden; /* Important for containing children that might overflow borders */
-    background-color: var(--card-background, #bbc7ee); /* Use your protocol variables */
 }
+@media (min-width: 922px) {
+    .projectcardContainer { 
+        width: calc(50% - 20px);
+        max-width: none;
+        margin: 0;
+    }
+   
 }

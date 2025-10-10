@@ -6,6 +6,11 @@
   --text-color: #333333;
   --primary-color: #007bff;
   --box-shadow-color: rgba(64, 236, 227, 0.1);
+  /* this sets Global Breakpoint Values */
+  --screen-xs: 576px;
+  --screen-sm: 768px; /* Your Tablet breakpoint */
+  --screen-md: 992px; /* Your Desktop breakpoint */
+  --screen-lg: 1200px; /* Your Large Desktop breakpoint */
 }
 
 /* Override variables for the DARK theme on the body selector */
@@ -57,5 +62,5 @@ code {
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 .bm-burger-bars-hover {
-  background: rgb(0, 255, 8);
+  background: rgb(79, 220, 233);
 }

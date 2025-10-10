@@ -32,11 +32,16 @@
 }
 
 /*===== Styles for laptops=====*/
-@media (min-width: 1024px) {
+@media (min-width: 922px) {
     .container {
-        padding: 30px;
-        max-width: 1800px;
-        margin: 0 auto;
-        height:auto;
+    display: flex;
+    flex-wrap: wrap;/*allows iten to align to the next line*/
+    justify-content: center;
+    column-gap: 40px;
+    row-gap: 40px;
+     /* Ensures no unwanted width constraints are carried over from base styles */
+    max-width: 1400px; /* Allow wide display */
+    margin: 0 auto;
+    
     }
 }
