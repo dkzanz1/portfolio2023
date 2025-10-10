@@ -12,9 +12,8 @@ const ProjectCard = ({ id, title, img, url, description }) => {
       <div className={styles.imageWrapper}>
         <img className={styles.projectcardItemImg} src={img} alt="project" />
         <h2 className={styles.projectcardItemTitle}>{title}</h2>
-        </div>
-        <p className={styles.projectcardId}>{id}</p>
-        <a
+        <p className={styles.projectcardItemInfo}>{description}</p>
+         <a
           className={styles.projectcardLink}
           href={url}
           target="_blank"
@@ -22,7 +21,11 @@ const ProjectCard = ({ id, title, img, url, description }) => {
         >
           Visit Project
         </a>
-        <p className={styles.projectcardItemInfo}>{description}</p>
+        <p className={styles.projectcardId}>{id}</p>
+      </div>
+      
+       
+        
       </div>
     </div>
   );

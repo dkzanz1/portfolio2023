@@ -10,7 +10,7 @@
     top: 20px; /* Positions it 20px from the top */
     right: 20px; /* Positions it 20px from the right */
     z-index: 1000; /* Ensures the button is on top of other content */
-    background-color: var(--background-color);
+     background-color: var(--background-color);/*global colors */
     color: var(--text-color);
     border: 1px solid var(--primary-color);
     padding: 10px 20px;
@@ -35,7 +35,8 @@
 @media (min-width: 1024px) {
     .container {
         padding: 30px;
-        max-width: 1200px;
+        max-width: 1800px;
         margin: 0 auto;
+        height:auto;
     }
 }

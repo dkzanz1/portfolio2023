@@ -79,7 +79,7 @@ html, body {
 }
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: 1.5em;
+    font-size: 2em;
     color: white;
     /* Ensure text is visible */
     margin-bottom: 20px;
@@ -93,7 +93,7 @@ html, body {
 .HeroBlurb {
     position: relative;
     top: -5%;
-    font-size: .8em;
+    font-size: 1em;
     color: white;
     text-align: center;
     margin: 0 auto;
@@ -141,19 +141,23 @@ html, body {
   Medium screens (tablets, 768px and up) 
   *****************************************/
 
-/* @media (min-width: var(--breakpoint-md)) {
+@media (min-width: var(--breakpoint-md)) {
     .name {
-        font-size: 2.5em;
+        font-size: 4em;
     }
-} */
+
+.HeroBlurb {
+    font-size: 2.5em;
+}
+}
 
 /*****************************************
  Large screens (desktops, 992px and up) 
  *****************************************/
 
-/* @media (min-width: var(--breakpoint-lg)) {
+@media (min-width: var(--breakpoint-lg)) {
     .name {
-        font-size: 3em;
+        font-size: 4em;
     }
-} */
+}
   

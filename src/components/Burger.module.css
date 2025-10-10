@@ -4,8 +4,8 @@
   position: absolute;
   width: 30px;
   height: 30px;
-  right: 80px;
-  top: 40px;
+  left: 50px;
+  top: 20px;
   background: rgba(14, 14, 14, 0.0);
   display: flex; /* Use flexbox to center bars */
   flex-direction: column; /* Stack bars vertically */
@@ -19,7 +19,7 @@
 
 
 
-/* ... rest of your CSS ... */
+/* ...CSS for dropbox... */
 .bm-cross-button  {
     height: 24px;
     width: 24px;
