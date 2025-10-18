@@ -101,6 +101,6 @@
         width: calc(50% - 20px);
         max-width: none;
         margin: 0;
-    }
+    }/* This section should ensure that the boxes load side by side but does,t work */
    
 }
