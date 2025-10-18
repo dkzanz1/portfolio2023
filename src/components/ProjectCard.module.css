@@ -97,10 +97,20 @@
 
 }
 @media (min-width: 922px) {
-    .projectcardContainer { 
-        width: calc(50% - 20px);
-        max-width: none;
-        margin: 0;
-    }/* This section should ensure that the boxes load side by side but does,t work */
-   
+    .projectcardContainer {
+    width: 100%;
+    align-items: flex-start;/* this centers the card*/
+    flex-direction: row;/*change main axis to horizontal*/
+    flex-wrap: wrap; /* CRITICAL: Allow cards to wrap to the next row */
+    max-height: none; 
+    overflow-y: visible;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 2rem;
+}
+.projectcardItem {
+flex-basis: calc(50% - 40px);
+margin: 0; /* Remove auto margin for proper alignment */
+max-width: none; /* Remove max-width cap to allow them to scale */
+}
 }

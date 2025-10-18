@@ -7,7 +7,6 @@ const ProjectCard = ({ id, title, img, url, description }) => {
   console.log("ProjectCard props:", { id, title, img, url, description });
 
   return (
-    <div className={styles.projectcardContainer}>
       <div className={styles.projectcardItem}>
       <div className={styles.imageWrapper}>
         <img className={styles.projectcardItemImg} src={img} alt="project" />
@@ -22,10 +21,6 @@ const ProjectCard = ({ id, title, img, url, description }) => {
           Visit Project
         </a>
         <p className={styles.projectcardId}>{id}</p>
-      </div>
-      
-       
-        
       </div>
     </div>
   );
