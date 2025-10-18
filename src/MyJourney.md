@@ -17,8 +17,9 @@ Learning to ask the right questions saves time and prevents the development of b
 
 ## Embracing Modern Tools
 
- My decision to focus on the MERN stack and a modern styling approach like Tailwind CSS is a strategic move that aligns with professional industry standards and to help progress quicker.
-It's a step toward becoming a more efficient and hirable developer.
+ My decision to focus on the MERN stack and a modern styling approach like Tailwind CSS is a strategic move that aligns with professional industry standards and to help progress quicker.however recently when i tried to i nstall tailwind.css into project it did not meet with the parameters of my project.I base it on css modules but will use it in one of my new projects.
+
+It's a step toward becoming a more efficient and a possible hirable developer.I want to make my self worthy but my ultimate goal is to this for a living and an income.
 
 ## Turning Experience into an Advantage
 
