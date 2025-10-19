@@ -2,7 +2,7 @@ import  React from "react";
 import styles from "./About.module.css";
 
 function About() {
-    return<><div className={styles.wrapper}>
+    return<><div className={styles.aboutContainer }>
     <div className={styles.Aboutblurb}>
         <h1>About:-</h1>
         <p className={styles.blurb}>

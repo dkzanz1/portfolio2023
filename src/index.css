@@ -1,37 +1,58 @@
-/*Global styles only is this file*/
+/* Global styles only in this file */
+
+/* Define all CSS variables on the :root pseudo-class for global access */
+:root {
+  --background-color: #a6a2a2;
+  --text-color: #333333;
+  --primary-color: #007bff;
+  --box-shadow-color: rgba(64, 236, 227, 0.1);
+  /* this sets Global Breakpoint Values */
+  --screen-xs: 576px;
+  --screen-sm: 768px; /* Your Tablet breakpoint */
+  --screen-md: 992px; /* Your Desktop breakpoint */
+  --screen-lg: 1200px; /* Your Large Desktop breakpoint */
+}
+
+/* Override variables for the DARK theme on the body selector */
+body[data-theme='dark'] {
+  --background-color: #1a202c;
+  --text-color: #f7fafc;
+  --primary-color: #61dafb;
+  --box-shadow-color: rgba(0, 0, 0, 0.5); /* Correctly define the dark shadow color here */
+}
+
 html, body, #root {
   margin: 0;
   padding: 0;
   width: 100vw;
   min-height: 100vh;
-  overflow-x: hidden;/*Prevents horizontal scroll */
-  background:black;/*Global background */
-  color: white;/*Global base text color */
-  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; /*font stack */   
+  overflow-x: hidden;
+  font-family: 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
 }
+
 body {
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;/*Global smoothing */
-  -moz-osx-font-smoothing: grayscale;/*Global smoothing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   line-height: 1.2;
+  /* Apply global colors using variables and a smooth transition */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.7s ease, color 0.7s ease;
 }
-/*Global element selectors*/
 
-h1 {
-    font-size: 2rem;
-}
 h1, h2, h3, h4, h5, h6 {
-margin-top: 0;
-margin-bottom: 1rem;
-}
-p {
-    margin-bottom: 1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
-code {/*Global code font */
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+p {
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 .bm-burger-bars {
   display: block; /* Make sure bars are block-level elements */
@@ -41,5 +62,5 @@ code {/*Global code font */
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 .bm-burger-bars-hover {
-  background: rgb(0, 255, 8);
+  background: rgb(79, 220, 233);
 }

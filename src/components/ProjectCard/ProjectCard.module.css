@@ -1,0 +1,116 @@
+
+.projectcardContainer {
+    display: flex;
+    flex-direction: column;/*this forces stacking*/
+    max-height: 80vh; 
+    width: 80%;
+    margin: -5% auto;
+    align-items: center;/* this centers the card*/
+    gap: 20px;
+    padding: 2rem 1rem;
+    overflow-y:auto   
+}
+
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    height:0;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    border-radius: 25px; /* Match the card's border radius */   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.projectcardItemTitle {
+    position:absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .7); /* Improved readability */  
+    /* color:white; */
+    padding: 20px 12px;
+    z-index:10;
+    background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
+    color: var(--text-color-light, white); /* Used protocol variables */
+    border-radius: 8px;
+    width: 80%; /* Ensure it doesn't spill over card edges */-color: rgb(0, 0, 0, .4);
+}
+
+.projectcardItem {
+    display: flex;
+    flex-direction: column;/*this forces stacking*/
+    max-height: 80vh; 
+    align-items: center;/* this centers the card*/
+    margin: 0 auto;
+    width: 90%; /* Use a specific percentage width to ensure it scales nicely */
+    max-width: 600px; /* Cap the width for large screens */
+    text-align: center;
+    border-radius: 25px; /* Moved from the image to the card for full effect */
+    overflow: hidden; /* Important for containing children that might overflow borders */
+    background-color: var(--card-background, #fff); /* Use your protocol variables */
+    border-radius: 25px;
+}
+    
+.projectcardItemImg {
+    position :absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    object-fit:cover; /* Ensure the image covers the area without distortion */
+    border-radius: 25px; /* Match the card's border radius */
+    z-index: 1; /* Ensure the image is behind the text */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+.projectcardItemInfo {
+    position:absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background-color:var(--overlay-dark, rgba(0, 0, 0, .6));
+    color:var(--text-color-light, white);
+    font-size: 1.1em;
+    /* border: solid var(--border-color-light,silver) 1px;    */
+    padding-bottom: 1rem;
+    border-radius: 8px;
+    width: 90%; /* Ensure it doesn't spill over card edges */
+    box-sizing: border-box; /* Ensure padding doesn't affect overall width */
+}
+/* end *//* Use a Media Query for larger screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    .projectcardItem {
+        width: 90%; /* Increase width for larger screens */
+    }
+    .projectcardItemTitle {
+        font-size: 2em; /* Increase font size for larger screens */
+    }
+    .projectcardItemInfo {
+        font-size: 1.5em; /* Slightly larger text for better readability */
+    }
+
+}
+@media (min-width: 922px) {
+    .projectcardContainer {
+    width: 100%;
+    align-items: flex-start;/* this centers the card*/
+    flex-direction: row;/*change main axis to horizontal*/
+    flex-wrap: wrap; /* CRITICAL: Allow cards to wrap to the next row */
+    max-height: none; 
+    overflow-y: visible;
+    margin: 0 auto;
+    gap: 20px;
+    padding: 2rem;
+}
+.projectcardItem {
+flex-basis: calc(50% - 40px);
+margin: 0; /* Remove auto margin for proper alignment */
+max-width: none; /* Remove max-width cap to allow them to scale */
+}
+}

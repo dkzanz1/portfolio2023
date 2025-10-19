@@ -1,24 +1,47 @@
 .container {
     width: 100vw;
     height: 100vh;
-    position: relative; 
-  
+    position: relative;
+}
+
+/* Add styles for the dark mode toggle button */
+.darkModeToggle {
+    position: fixed; /* Positions the button relative to the viewport */
+    top: 20px; /* Positions it 20px from the top */
+    right: 20px; /* Positions it 20px from the right */
+    z-index: 1000; /* Ensures the button is on top of other content */
+     background-color: var(--background-color);/*global colors */
+    color: var(--text-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Optional: Add hover styles for better user experience */
+.darkModeToggle:hover {
+  filter: brightness(1.2);
 }
 
 /*===== Styles for tablets===== */
 @media (min-width: 768px) {
     .container {
-        padding: 20px; /* Adjust padding for tablets */
-        /* Add any other tablet-specific styles for .container here */
+        padding: 20px;
     }
 }
 
 /*===== Styles for laptops=====*/
-@media (min-width: 1024px) {
+@media (min-width: 922px) {
     .container {
-        padding: 30px; /* Adjust padding for laptops */
-        max-width: 1200px; /*Adds a max-width on larger screens */
-        margin: 0 auto; /* Centers the container if it has a max-width */
-        /* Add any other laptop-specific styles for .container here */
+    display: flex;
+    flex-wrap: wrap;/*allows iten to align to the next line*/
+    justify-content: center;
+    column-gap: 40px;
+    row-gap: 40px;
+     /* Ensures no unwanted width constraints are carried over from base styles */
+    max-width: 1400px; /* Allow wide display */
+    margin: 0 auto;
+    
     }
 }

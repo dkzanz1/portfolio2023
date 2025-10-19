@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import img from "../assets/mephoto.jpg";
-import boatImage from "../assets/boat.svg";
+import img from "../../assets/images/mephoto.jpg";
+import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
-import Water from "./Video";
+import Water from "../Video";
+
+
 
 function HeroCard() {
     const boatRef = useRef(null);
@@ -42,6 +44,7 @@ function HeroCard() {
                 <div className={styles.heroContent} ref={videoContainerRef}>
                     <Water className={styles.watervideo} />
                     <div className={styles.overlay}>
+                
                         <img src={img} alt="Paul's Avatar" className={styles["circle-img"]} />
                         <h1 className={styles.name}><span>Hi,   </span><span>I'm Paul</span></h1>
                         <article className={styles.HeroBlurb}>
