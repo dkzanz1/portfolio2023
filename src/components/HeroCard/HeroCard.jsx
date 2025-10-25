@@ -2,9 +2,7 @@ import React, { useEffect, useRef } from "react";
 import img from "../../assets/images/mephoto.jpg";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
-import Water from "../Video";
-
-
+import Water from "../Water/Video.jsx";
 
 function HeroCard() {
     const boatRef = useRef(null);
@@ -20,10 +18,8 @@ function HeroCard() {
             const rect = videoContainer.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-
             const maxX = videoContainer.offsetWidth - boat.offsetWidth;
             const maxY = videoContainer.offsetHeight - boat.offsetHeight;
-
             const clampedX = Math.max(0, Math.min(x, maxX));
             const clampedY = Math.max(0, Math.min(y, maxY));
 

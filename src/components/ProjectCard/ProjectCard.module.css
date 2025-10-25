@@ -4,12 +4,14 @@
     flex-direction: column;/*this forces stacking*/
     max-height: 80vh; 
     width: 80%;
-    margin: -5% auto;
+    margin: 15% auto;
     align-items: center;/* this centers the card*/
-    gap: 20px;
+    gap: 2rem;
     padding: 2rem 1rem;
-    overflow-y:auto   
+    overflow-y:auto;
+  
 }
+
 
 
 .imageWrapper {
@@ -22,6 +24,7 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+   
 }
 .projectcardItemTitle {
     position:absolute;

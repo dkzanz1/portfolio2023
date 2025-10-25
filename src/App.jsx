@@ -3,14 +3,16 @@ import React, { Fragment } from "react";
 import styles from "./App.module.css";
 import HeroCard from "./components/HeroCard/HeroCard.jsx";
 import Burger from "./components/Burger/Burger.jsx";
-import Sectionpart from "./components/Section/section.jsx";
+import Sectionpart from "./components/Section/Section.jsx";
 import projectInfo from "./components/ProjectCard/projectInfo.js";
-import SocialFollow from "./components/Social/SocialFollow.jsx";
+import SocialFollow from "./components/SocialFollow/SocialFollow.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import ProjectCard from "./components/ProjectCard/ProjectCard.jsx";
+import ProjectCardRender from "./components/ProjectCard/ProjectCardRender.jsx";
+// import ProjectCard from "./components/ProjectCard/ProjectCard.jsx";
 import About from "./components/About/About.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import { useTheme } from "./hooks/useTheme.js"; // Correct import of the custom hook
+// import ProjectInfo from "./components/ProjectCard/projectInfo.js";
 
 // A separate, reusable component for the toggle button
 const DarkModeToggle = ({ toggleTheme, theme }) => (
@@ -33,16 +35,7 @@ function App() {
           <HeroCard />
           <About />
           <Sectionpart />
-          {projectInfo.map((project) => (
-            <ProjectCard
-              key={project.id}
-              id={project.id}
-              title={project.title}
-              img={project.imgURL}
-              url={project.url}
-              description={project.description}
-            />
-          ))}
+          <ProjectCardRender/>
           <ContactForm />
           <SocialFollow />
           <Footer />

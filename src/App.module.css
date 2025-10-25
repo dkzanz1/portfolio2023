@@ -1,7 +1,13 @@
 .container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
+   /* Flexbox is used for vertical stacking */
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  /* this ensures the content is centered and contained */
+  width: 90%; 
+  max-width: 1400px; 
+  margin: 0 auto; 
+  padding: 2rem 0; /* Add vertical padding so components aren't touching page edges */
 }
 
 /* Add styles for the dark mode toggle button */
