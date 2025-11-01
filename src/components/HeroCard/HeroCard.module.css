@@ -1,19 +1,6 @@
-/* HeroCard.module.css breakpoints */
-html, body {
-    margin: 0;
-    padding: 0;
-}
-/* body {
-    margin-left: 5%;
-    margin-right: 5%;
-} */
-:root {
-    --breakpoint-sm: 576px;
-    --breakpoint-md: 768px;
-    --breakpoint-lg: 992px;
-    --breakpoint-xl: 1200px;
-}
-.section {
+/* Herocard */
+/* This is the outer div */
+.heroSection {
     margin: 20% auto;
     width: 80%;
     box-sizing: border-box;
@@ -104,25 +91,25 @@ html, body {
 }
 
 .circle-img {
-    border-radius: 50%;
+    border-radius: 40%;
     border: 1px solid #fff;
-    width: 4em;
+    width: 6em;
     /* Smaller image */
-    height: 4em;
+    height: 6em;
     /* margin: 20px auto; */
     /* Center the image */
     z-index: 2;
 }
 .HeroInfo {
     text-align: center;
-    margin-bottom: 20px;
+    
   }
 
 
 .boat-container {
     position: relative;
     width: 200px; 
-    height: 100px;/* Or a specific width if needed */
+    height: 90px;/* Or a specific width if needed */
 
 }
 .boat {

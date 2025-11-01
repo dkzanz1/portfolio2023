@@ -7,21 +7,23 @@ const ProjectCard = ({ id, title, img, url, description }) => {
   console.log("ProjectCard props:", { id, title, img, url, description });
 
   return (
-      <div className={styles.projectcardItem}>
-      <div className={styles.imageWrapper}>
-        <img className={styles.projectcardItemImg} src={img} alt="project" />
-        <h2 className={styles.projectcardItemTitle}>{title}</h2>
-        <p className={styles.projectcardItemInfo}>{description}</p>
+    <div className={styles.projectCardGrid}>
+      <div className={styles.projectCardContainer}>
+      <div className={styles.projectCardContentWrapper}>
+        <img className={styles.projectCardImg} src={img} alt="project" />
+        <h2 className={styles.projectCardTitle}>{title}</h2>
+        <p className={styles.projectCardInfo}>{description}</p>
          <a
-          className={styles.projectcardLink}
+          className={styles.projectCardLink}
           href={url}
           target="_blank"
           rel="noopener noreferrer"
         >
           Visit Project
         </a>
-        <p className={styles.projectcardId}>{id}</p>
+        <p className={styles.projectCardId}>{id}</p>
       </div>
+    </div>
     </div>
   );
 };

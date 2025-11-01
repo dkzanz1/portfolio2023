@@ -35,7 +35,7 @@ function HeroCard() {
     }, []);
 
     return (
-        <div className={styles.section}>
+        <div className={styles.heroSection}>
             <div className={styles.Herocard}>
                 <div className={styles.heroContent} ref={videoContainerRef}>
                     <Water className={styles.watervideo} />

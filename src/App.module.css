@@ -2,7 +2,7 @@
    /* Flexbox is used for vertical stacking */
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 5rem;
   /* this ensures the content is centered and contained */
   width: 90%; 
   max-width: 1400px; 
@@ -40,14 +40,14 @@
 /*===== Styles for laptops=====*/
 @media (min-width: 922px) {
     .container {
-    display: flex;
-    flex-wrap: wrap;/*allows iten to align to the next line*/
     justify-content: center;
-    column-gap: 40px;
-    row-gap: 40px;
      /* Ensures no unwanted width constraints are carried over from base styles */
     max-width: 1400px; /* Allow wide display */
     margin: 0 auto;
-    
+    }
+    .projectCardGrid {
+        display: flex;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px; /* Space between cards */
     }
 }
