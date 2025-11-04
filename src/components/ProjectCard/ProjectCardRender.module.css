@@ -1,1 +1,31 @@
+/* 1. Mobile-First Default: Single Column Stacking */
 
+.projectsGrid {
+    /* Set up the parent container as a grid */
+    display: grid;
+    
+    /* Mobile-First: By default, stack all cards in a single column. 
+       The 1fr ensures the cards take up the full available width. */
+    grid-template-columns: 1fr;
+    
+    /* Consistent spacing between all items (rows and columns) */
+    gap: 40px; 
+    
+    /* Optional: Add some padding if needed, though this is often handled by the main .container */
+    /* padding: 10px; */
+}
+
+
+/* 2. Large Screen Exception: Two-by-Two Stacking */
+
+/* Use a Media Query to switch the layout ONLY when the screen is wide enough.
+   We'll use 922px to match the breakpoint you mentioned earlier. */
+@media (min-width: 922px) {
+    .projectsGrid {
+        /* Large Screen Requirement: Switch to two equal-width columns. */
+        grid-template-columns: 1fr 1fr;
+        
+        /* You can adjust the gap here if you want different spacing for large screens */
+        /* gap: 60px; */ 
+    }
+}

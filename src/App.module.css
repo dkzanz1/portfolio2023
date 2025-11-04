@@ -46,7 +46,7 @@
     margin: 0 auto;
     }
     .projectCardGrid {
-        display: flex;
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 40px; /* Space between cards */
     }
