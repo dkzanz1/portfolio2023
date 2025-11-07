@@ -23,36 +23,22 @@
     "build": "vite build",
     "test": "vitest",
     "serve": "vite preview",
-    "prepare": "husky install" 
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@babel/preset-react": "^7.18.6",
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
     "@vitejs/plugin-react": "^4.4.1",
-    "vite": "^6.3.5",
     "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.2.5",
+    "eslint-plugin-react-refresh": "^0.4.24",
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2"
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "vite": "^6.3.5"
   },
   "lint-staged": {
     "*.{js,jsx}": [
