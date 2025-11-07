@@ -1,72 +1,197 @@
-📝 Final ReactCraft Project Protocol (V 2.2)
-Version: 2.2 (Last Updated: October 10, 2025)
+📝 Final ReactCraft Project Protocol (V 2.4)
+
+Version: 2.4 (Last Updated: November 7, 2025)
 
 Purpose: To guide project development with clear, industry-standard practices, maintain consistency, and document all key architectural decisions.
 
 1. 🛑 Non-Deviation Mandate (Standard Enforcement)
-This protocol represents the mandatory standard of professional practice for the ReactCraft project.
-No code, structural decision, or architectural change shall be merged that deviates from the rules outlined below. In case of conflicting external advice, this document serves as the single source of truth for all development standards. 
+
+This protocol represents the mandatory standard of professional practice for the ReactCraft project. No code, structural decision, or architectural change shall be merged that deviates from the rules outlined below. In case of conflicting external advice, this document serves as the single source of truth for all development standards.
 All work must pass automated quality checks (Linting, Formatting) and adhere to the Mobile-First strategy.
 
 2. 🛠️ Technology Stack
-Component	Standard	Notes
-Frontend	React, Vite	Modern, high-performance tooling.
-Styling	CSS Modules, CSS Custom Properties	Scoped styling for reusability; global variables for robust theming.
-Backend (Future)	Node.js, Express, MongoDB	Standardized MERN stack for scalable full-stack development.
+
+Component
+
+Standard
+
+Notes
+
+Frontend
+
+React, Vite
+
+Modern, high-performance tooling.
+
+Styling
+
+CSS Modules, CSS Custom Properties
+
+Scoped styling for reusability; global variables for robust theming.
+
+Backend (Future)
+
+Node.js, Express, MongoDB
+
+Standardized MERN stack for scalable full-stack development.
 
 3. 📱 Responsive Design Strategy: Mobile-First Standard
-The project's architecture is based on Progressive Enhancement, 
-starting with the smallest screen and scaling up. 
-This is a mandatory professional standard.
 
-4.Rule	Implementation Standard
-Viewport Meta Tag	The public/index.html file MUST include the standard meta tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">.
-Base Styling	All initial CSS must target the narrowest viewport (mobile), containing only the essential layout and styles.
-Media Queries	MUST exclusively use min-width queries to progressively add complexity for larger screens (e.g., @media (min-width: 768px)). max-width queries are prohibited for main layout adaptation.
->, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility.
-Area,Rule / Standard
-File Naming,"PascalCase.jsx for all React components. camelCase.js for all pure JavaScript files (hooks, utilities, services)."
-Component Architecture,The project uses a Component-Centric Architecture following the principle of Colocation. Every component resides in its own dedicated subdirectory folder.
-Component Entry Point (Barrel Pattern),"For all component directories (e.g., src/components/ProjectCard/), the folder must expose the component via a simple ""Barrel Export"" file named index.js. The main component file should retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity."
-Styling Location,"Global (src/index.css): Reserved only for CSS resets, fonts, and global variables. Component-Specific: All styles must use .module.css for strict scoping."
-Component Type,All components MUST be written as Functional Components utilizing React Hooks for state and logic.
-Accessibility (A11y),"Development MUST prioritize Semantic HTML (using <header>, <nav>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility."
+The project's architecture is based on Progressive Enhancement, starting with the smallest screen and scaling up. This is a mandatory professional standard.
+
+Rule
+
+Implementation Standard
+
+Viewport Meta Tag
+
+The public/index.html file MUST include the standard meta tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">.
+
+Base Styling
+
+All initial CSS must target the narrowest viewport (mobile), containing only the essential layout and styles.
+
+Media Queries
+
+MUST exclusively use min-width queries to progressively add complexity for larger screens (e.g., @media (min-width: 768px)). max-width queries are prohibited for main layout adaptation.
+
+Accessibility (A11y)
+
+Development MUST prioritize Semantic HTML (using <header>, <nav>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility.
+
+4. 📝 Code Standards & Architecture
+
+Area
+
+Rule / Standard
+
+File Naming
+
+PascalCase.jsx for all React components. camelCase.js for all pure JavaScript files (hooks, utilities, services).
+
+Component Architecture
+
+The project uses a Component-Centric Architecture following the principle of Colocation. Every component resides in its own dedicated subdirectory folder.
+
+Component Entry Point (Barrel Pattern)
+
+For all component directories, the folder MUST expose the component via a simple "Barrel Export" file named index.js. The main component file must retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity.
+
+Styling Location
+
+Global (src/index.css): Reserved only for CSS resets, fonts, and global variables. Component-Specific: All styles must use .module.css for strict scoping.
+
+Component Type
+
+All components MUST be written as Functional Components utilizing React Hooks for state and logic.
 
 5. ✅ Professional Quality Enforcement
-Standard	Tool / Action	Rationale
-Code Quality	ESLint (e.g., using Airbnb config) and Prettier.	Enforces consistent structure and auto-formats code to save time and reduce style-related review comments.
-Enforcement	Linting and formatting MUST be integrated via a pre-commit hook (e.g., Husky) or in the CI/CD pipeline. No code is committed unless it passes linting.	Prevents sub-standard code from entering the repository.
-Verification	All new custom hooks, utility functions, and complex logic MUST be covered by Unit Tests (e.g., using Vitest/Jest and React Testing Library).	Prevents regressions (bugs) and ensures long-term stability.
-6. 🚀 Compliant Project Path Map (Example)
+
+Standard
+
+Tool / Action
+
+Rationale
+
+Code Quality
+
+ESLint (e.g., using Airbnb config) and Prettier.
+
+Enforces consistent structure and auto-formats code to save time and reduce style-related review comments.
+
+Enforcement
+
+Linting and formatting MUST be integrated via a pre-commit hook (e.g., Husky) or in the CI/CD pipeline. No code is committed unless it passes linting.
+
+Prevents sub-standard code from entering the repository.
+
+Verification
+
+All new custom hooks, utility functions, and complex logic MUST be covered by Unit Tests (e.g., using Vitest/Jest and React Testing Library).
+
+Prevents regressions (bugs) and ensures long-term stability.
+
+6. 🚀 Compliant Project Path Map (V 2.4 Example)
+
+The following structure is mandatory, reflecting the Barrel Export pattern:
+
 portfolio2023-main/
 ├── package.json
 ├── src/
-│   ├── App.jsx
-│   ├── App.module.css
-│   ├── components/
-│   │   ├── About/
-│   │   │   ├── index.jsx          <-- RENAMED to index.jsx
-│   │   │   └── About.module.css
-│   │   ├── Burger/
-│   │   │   └── index.jsx          <-- RENAMED to index.jsx
-│   │   ├── ContactForm/
-│   │   │   └── index.jsx          <-- RENAMED to index.jsx
-│   │   ├── Footer/
-│   │   │   └── index.jsx          <-- RENAMED to index.jsx
-│   │   ├── ProjectCard/
-│   │   │   ├── index.jsx
-│   │   │   └── ProjectCard.module.css
-│   │   └── SocialFollow/
-│   │       └── index.jsx
-│   ├── hooks/
-│   │   └── useTheme.js
-│   └── index.css
+│   ├── App.jsx
+│   ├── App.module.css
+│   ├── components/
+│   │   ├── About/
+│   │   │   ├── index.js             <-- BARREL ENTRY POINT
+│   │   │   ├── About.jsx            <-- DESCRIPTIVELY NAMED COMPONENT
+│   │   │   └── About.module.css
+│   │   ├── Water/
+│   │   │   ├── index.js             <-- BARREL ENTRY POINT: exports { default } from './Video'
+│   │   │   ├── Video.jsx            <-- Component Logic (per user structure)
+│   │   │   └── Water.module.css
+│   │   ├── ProjectCard/
+│   │   │   ├── index.js
+│   │   │   ├── ProjectCard.jsx
+│   │   │   └── ProjectCard.module.css
+│   ├── hooks/
+│   │   └── useTheme.js
+│   └── index.css
 
-Type,Purpose,Short Explanation
-feat,Features/Enhancements,"Used when adding a new capability, component, or enhancement. (e.g., feat(ui): Add mobile navigation menu)"
-fix,Bug Fixes,Used for all code changes that correct a defect or unexpected behavior.
-refactor,Code Restructuring,"Used for code changes that neither fix a bug nor add a feature, but improve code structure, quality, or readability."
-chore,Maintenance,"Used for routine tasks, dependency updates, and minor build/tooling changes. (e.g., chore(deps): Update Prettier version)"
-style,Formatting,"Used for changes that only affect code style (whitespace, semicolons, missing semicolons, etc.) and not logic."
-docs,Documentation,"Used for changes solely related to documentation, like READMEs or protocol updates."
-test,Testing,Used when adding or correcting unit tests or integration tests.
+
+7. 🏷️ Professional Commit Standard: Conventional Commits
+
+All Git commit messages MUST adhere to the Conventional Commits Specification. This standard ensures a readable, searchable, and automatically parsable project history, which is mandatory for professional software engineering.
+
+📝 Mandatory Commit Message Structure
+
+Commit messages must use the following structure: type(scope): description
+
+Key Types and Explanation
+
+Type
+
+Purpose
+
+Short Explanation
+
+feat
+
+Features/Enhancements
+
+Used when adding a new capability, component, or enhancement. (e.g., feat(ui): Add mobile navigation menu)
+
+fix
+
+Bug Fixes
+
+Used for all code changes that correct a defect or unexpected behavior.
+
+refactor
+
+Code Restructuring
+
+Used for code changes that neither fix a bug nor add a feature, but improve code structure, quality, or readability.
+
+chore
+
+Maintenance
+
+Used for routine tasks, dependency updates, and minor build/tooling changes. (e.g., chore(deps): Update Prettier version)
+
+style
+
+Formatting
+
+Used for changes that only affect code style (whitespace, semicolons, missing semicolons, etc.) and not logic.
+
+docs
+
+Documentation
+
+Used for changes solely related to documentation, like READMEs or protocol updates.
+
+test
+
+Testing
+
+Used when adding or correcting unit tests or integration tests.
