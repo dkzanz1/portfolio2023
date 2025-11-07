@@ -61,3 +61,12 @@ portfolio2023-main/
 │   ├── hooks/
 │   │   └── useTheme.js
 │   └── index.css
+
+Type,Purpose,Short Explanation
+feat,Features/Enhancements,"Used when adding a new capability, component, or enhancement. (e.g., feat(ui): Add mobile navigation menu)"
+fix,Bug Fixes,Used for all code changes that correct a defect or unexpected behavior.
+refactor,Code Restructuring,"Used for code changes that neither fix a bug nor add a feature, but improve code structure, quality, or readability."
+chore,Maintenance,"Used for routine tasks, dependency updates, and minor build/tooling changes. (e.g., chore(deps): Update Prettier version)"
+style,Formatting,"Used for changes that only affect code style (whitespace, semicolons, missing semicolons, etc.) and not logic."
+docs,Documentation,"Used for changes solely related to documentation, like READMEs or protocol updates."
+test,Testing,Used when adding or correcting unit tests or integration tests.
