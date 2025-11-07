@@ -13,24 +13,25 @@ Component	Standard	Notes
 Frontend	React, Vite	Modern, high-performance tooling.
 Styling	CSS Modules, CSS Custom Properties	Scoped styling for reusability; global variables for robust theming.
 Backend (Future)	Node.js, Express, MongoDB	Standardized MERN stack for scalable full-stack development.
-3. 📱 Responsive Design Strategy: Mobile-First Standard
-The project's architecture is based on Progressive Enhancement, starting with the smallest screen and scaling up. This is a mandatory professional standard.
 
-Rule	Implementation Standard
+3. 📱 Responsive Design Strategy: Mobile-First Standard
+The project's architecture is based on Progressive Enhancement, 
+starting with the smallest screen and scaling up. 
+This is a mandatory professional standard.
+
+4.Rule	Implementation Standard
 Viewport Meta Tag	The public/index.html file MUST include the standard meta tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">.
 Base Styling	All initial CSS must target the narrowest viewport (mobile), containing only the essential layout and styles.
 Media Queries	MUST exclusively use min-width queries to progressively add complexity for larger screens (e.g., @media (min-width: 768px)). max-width queries are prohibited for main layout adaptation.
-4. 📝 Code Standards & Architecture
-Area	Rule / Standard
-File Naming
-PascalCase.jsx for all React components.
-camelCase.js for all pure JavaScript files (hooks, utilities, services).
-Component Architecture
-The project uses a Component-Centric Architecture following the principle of Colocation. Every component resides in its own dedicated subdirectory.
-Primary Component File	For all component directories (e.g., src/components/About/), the main component file MUST be named index.jsx for cleaner import statements.
-Styling Location	Global (src/index.css): Reserved only for CSS resets, fonts, and global variables. Component-Specific: All styles must use .module.css for strict scoping.
-Component Type	All components MUST be written as Functional Components utilizing React Hooks for state and logic.
-Accessibility (A11y)	Development MUST prioritize Semantic HTML (using <header>, <nav>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility.
+>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility.
+Area,Rule / Standard
+File Naming,"PascalCase.jsx for all React components. camelCase.js for all pure JavaScript files (hooks, utilities, services)."
+Component Architecture,The project uses a Component-Centric Architecture following the principle of Colocation. Every component resides in its own dedicated subdirectory folder.
+Component Entry Point (Barrel Pattern),"For all component directories (e.g., src/components/ProjectCard/), the folder must expose the component via a simple ""Barrel Export"" file named index.js. The main component file should retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity."
+Styling Location,"Global (src/index.css): Reserved only for CSS resets, fonts, and global variables. Component-Specific: All styles must use .module.css for strict scoping."
+Component Type,All components MUST be written as Functional Components utilizing React Hooks for state and logic.
+Accessibility (A11y),"Development MUST prioritize Semantic HTML (using <header>, <nav>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility."
+
 5. ✅ Professional Quality Enforcement
 Standard	Tool / Action	Rationale
 Code Quality	ESLint (e.g., using Airbnb config) and Prettier.	Enforces consistent structure and auto-formats code to save time and reduce style-related review comments.
