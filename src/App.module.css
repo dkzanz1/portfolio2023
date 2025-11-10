@@ -30,10 +30,15 @@
   filter: brightness(1.2);
 }
 
-/*===== Styles for tablets===== */
+/*===== Styles for tablets===== ipad mini width*/
 @media (min-width: 768px) {
-    .container {
-        padding: 20px;
+  .container {
+    padding: 20px;
+    }
+.projectCardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px; /* Space between cards */
     }
 }
 
@@ -45,9 +50,21 @@
     max-width: 1400px; /* Allow wide display */
     margin: 0 auto;
     }
-    .projectCardGrid {
+    /* .projectCardGrid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 40px; /* Space between cards */
-    }
+        gap: 40px; /* Space between cards 
+    } */
+}
+@media (min-width: 1024px) {
+  .container {
+    /* 1. Sets a readable max-width for content (e.g., 1200px is common) */
+    max-width: 2500px;
+    
+    /* 2. Centers the content in the middle of the large screen */
+    margin: 100 auto; 
+    
+    /* 3. Adjusts padding for desktop space */
+    padding: 0 3rem; 
+  }
 }

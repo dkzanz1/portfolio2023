@@ -1,5 +1,3 @@
-// BEFORE (Verbose path reference)
-// import About from './components/About/index.jsx';
-// swapped to for cleaner more complient code
-// AFTER (Clean, professional path reference)
-import ProjectCard from './components/ProjectCard';
+import ProjectCard from "./ProjectCard";
+
+export default ProjectCard;

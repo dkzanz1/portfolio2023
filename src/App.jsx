@@ -4,10 +4,10 @@ import styles from "./App.module.css";
 import HeroCard from "./components/HeroCard/HeroCard.jsx";
 import Burger from "./components/Burger/Burger.jsx";
 import Sectionpart from "./components/Section/Section.jsx";
-import projectInfo from "./components/ProjectCard/projectInfo.js";
+// import projectInfo from "./components/ProjectCard/projectInfo.js";
 import SocialFollow from "./components/SocialFollow/SocialFollow.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import ProjectCardRender from "./components/ProjectCard/ProjectCardRender.jsx";
+import ProjectCardRender from "./components/ProjectCard/components/ProjectCardRender.jsx";
 // import ProjectCard from "./components/ProjectCard/ProjectCard.jsx";
 import About from "./components/About/About.jsx";
 import ContactForm from "./components/ContactForm/ContactForm.jsx";
@@ -17,7 +17,7 @@ import { useTheme } from "./hooks/useTheme.js"; // Correct import of the custom 
 // A separate, reusable component for the toggle button
 const DarkModeToggle = ({ toggleTheme, theme }) => (
   <button onClick={toggleTheme} className={styles.darkModeToggle}>
-    Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+    Switch to {theme === "light" ? "Dark" : "Light"} Mode
   </button>
 );
 
@@ -30,12 +30,12 @@ function App() {
         <Burger />
         {/* ADD THE BUTTON BACK HERE */}
         <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
-       
+
         <div id="page-wrap" className={styles.container}>
           <HeroCard />
           <About />
           <Sectionpart />
-          <ProjectCardRender/>
+          <ProjectCardRender />
           <ContactForm />
           <SocialFollow />
           <Footer />

@@ -20,12 +20,12 @@
 
 /* Use a Media Query to switch the layout ONLY when the screen is wide enough.
    We'll use 922px to match the breakpoint you mentioned earlier. */
-@media (min-width: 922px) {
+@media (min-width: 768px) {
     .projectsGrid {
-        /* Large Screen Requirement: Switch to two equal-width columns. */
+        /* Large Screen Requirement: Switch to two equal-width columns at mini ipad level. */
         grid-template-columns: 1fr 1fr;
         
         /* You can adjust the gap here if you want different spacing for large screens */
-        /* gap: 60px; */ 
+        gap: 10px; 
     }
 }
