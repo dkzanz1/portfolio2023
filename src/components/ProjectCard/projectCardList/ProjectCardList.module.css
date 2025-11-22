@@ -26,6 +26,6 @@
         grid-template-columns: 1fr 1fr;
         
         /* You can adjust the gap here if you want different spacing for large screens */
-        gap: 10px; 
+        gap: 40px; 
     }
 }

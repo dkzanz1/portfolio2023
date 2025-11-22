@@ -1,7 +1,6 @@
 /* PARENT CONTAINER */
 .projectCardContainer {
     max-height: none; /*content ditated the height*/
-    margin-bottom:30px; 
     padding: 0;
     overflow-y:visable;
 }
@@ -60,9 +59,7 @@
 }
 /* end *//* Use a Media Query for larger screens (e.g., tablets and desktops) */
 @media (min-width: 768px) {
-    .projectCardContainer {
-        width: 90%; /* Increase width for larger screens */
-    }
+    
     .projectCardTitle {
         font-size: 2em; /* Increase font size for larger screens */
     }

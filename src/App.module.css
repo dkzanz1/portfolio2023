@@ -35,11 +35,7 @@
   .container {
     padding: 20px;
     }
-.projectCardGrid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px; /* Space between cards */
-    }
+
 }
 
 /*===== Styles for laptops=====*/
@@ -50,11 +46,7 @@
     max-width: 1400px; /* Allow wide display */
     margin: 0 auto;
     }
-    /* .projectCardGrid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px; /* Space between cards 
-    } */
+  
 }
 @media (min-width: 1024px) {
   .container {

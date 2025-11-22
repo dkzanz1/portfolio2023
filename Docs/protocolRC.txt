@@ -195,3 +195,13 @@ test
 Testing
 
 Used when adding or correcting unit tests or integration tests.
+
+📄 Protocol Addition: Professional Note-Taking
+Mandate: For all new code and major revisions, the codebase MUST incorporate professional, context-providing comments to support learning and maintainability.
+
+Requirements:
+JSDoc: Every function/component (const Component = () => {}) MUST be immediately preceded by a JSDoc block to document its purpose and expected outputs.
+
+Intent Comments: All architectural decisions (e.g., Barrel Export syntax, complex regex, non-obvious API calls) MUST be annotated with a // WHY: comment explaining the rationale.
+
+Action Comments: Use // TODO: to mark necessary future work, and // FIX: to flag temporary code solutions.

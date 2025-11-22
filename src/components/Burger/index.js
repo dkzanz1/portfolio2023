@@ -2,4 +2,4 @@
 // import About from './components/About/index.jsx';
 // swapped to for cleaner more complient code
 // AFTER (Clean, professional path reference)
-import Burger from './components/Burger';
+export { default } from "./Burger.jsx";

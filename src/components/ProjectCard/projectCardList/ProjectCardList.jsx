@@ -1,8 +1,8 @@
-// import the single card and the data
+// imports the single card and the data
 import React from "react";
-import ProjectCard from "../ProjectCard.jsx";
+import ProjectCard from "../ProjectCard";
 import projectInfo from "../projectInfo.js";
-import styles from "./ProjectCardRender.module.css";
+import styles from "./ProjectCardList.module.css";
 
 const ProjectCardRender = () => {
   return (
@@ -22,4 +22,5 @@ const ProjectCardRender = () => {
   );
 };
 
+// ✅ MANDATORY: This line makes the function available for other files to import.
 export default ProjectCardRender;
