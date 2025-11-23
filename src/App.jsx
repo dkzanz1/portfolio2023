@@ -23,6 +23,13 @@ function App() {
 
   return (
     <Fragment>
+      {/* // WHY: This H1 is visually hidden, but provides essential page context 
+        // to screen readers (WCAG 1.3.1) and search engines.so i have created it as the 
+        // first major element on the page.
+      */}
+      <h1 className="visually-hidden">
+        Paul Zolik Aspiring Software Engineer Portfolio
+      </h1>
       <div id="outer-container" className={styles.outerContainer}>
         <Burger />
         {/* ADD THE BUTTON BACK HERE */}
