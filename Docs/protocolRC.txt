@@ -35,6 +35,8 @@ Node.js, Express, MongoDB
 
 Standardized MERN stack for scalable full-stack development.
 
+Environment	Chromebook (Linux/Crostini)	All development commands are executed within the Debian/Linux container.
+
 3. 📱 Responsive Design Strategy: Mobile-First Standard
 
 The project's architecture is based on Progressive Enhancement, starting with the smallest screen and scaling up. This is a mandatory professional standard.
@@ -115,28 +117,105 @@ Prevents regressions (bugs) and ensures long-term stability.
 
 The following structure is mandatory, reflecting the Barrel Export pattern:
 
-portfolio2023-main/
+aulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I 'node_modules|dist|venv'
+.
+├── commitlint.config.js
+├── Docs
+│   ├── currenttask.md
+│   ├── MyJourney.md
+│   ├── protocolRC.txt
+│   ├── svg1.html
+│   ├── svg2.html
+│   ├── svg3.html
+│   ├── svg4.html
+│   ├── svg5.html
+│   ├── svg6.html
+│   └── svgsnake.html
+├── index.html
+├── install.
+│   └── _
+│       ├── applypatch-msg
+│       ├── commit-msg
+│       ├── h
+│       ├── husky.sh
+│       ├── post-applypatch
+│       ├── post-checkout
+│       ├── post-commit
+│       ├── post-merge
+│       ├── post-rewrite
+│       ├── pre-applypatch
+│       ├── pre-auto-gc
+│       ├── pre-commit
+│       ├── pre-merge-commit
+│       ├── prepare-commit-msg
+│       ├── pre-push
+│       └── pre-rebase
 ├── package.json
-├── src/
-│   ├── App.jsx
-│   ├── App.module.css
-│   ├── components/
-│   │   ├── About/
-│   │   │   ├── index.js             <-- BARREL ENTRY POINT
-│   │   │   ├── About.jsx            <-- DESCRIPTIVELY NAMED COMPONENT
-│   │   │   └── About.module.css
-│   │   ├── Water/
-│   │   │   ├── index.js             <-- BARREL ENTRY POINT: exports { default } from './Video'
-│   │   │   ├── Video.jsx            <-- Component Logic (per user structure)
-│   │   │   └── Water.module.css
-│   │   ├── ProjectCard/
-│   │   │   ├── index.js
-│   │   │   ├── ProjectCard.jsx
-│   │   │   └── ProjectCard.module.css
-│   ├── hooks/
-│   │   └── useTheme.js
-│   └── index.css
+├── package-lock.json
+├── public
+│   └── favicon.ico
+├── README.md
+├── src
+│   ├── App.jsx
+│   ├── App.module.css
+│   ├── assets
+│   │   ├── images
+│   │   │   ├── boat.svg
+│   │   │   ├── face.jpg
+│   │   │   ├── image4.jpeg
+│   │   │   └── mephoto.jpg
+│   │   └── videos
+│   │       └── videobg.mp4
+│   ├── components
+│   │   ├── About
+│   │   │   ├── About.jsx
+│   │   │   ├── About.module.css
+│   │   │   └── index.js
+│   │   ├── Burger
+│   │   │   ├── Burger.jsx
+│   │   │   ├── Burger.module.css
+│   │   │   └── index.js
+│   │   ├── ContactForm
+│   │   │   ├── ContactForm.jsx
+│   │   │   ├── ContactForm.module.css
+│   │   │   └── index.js
+│   │   ├── Footer
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Footer.module.css
+│   │   │   └── index.js
+│   │   ├── HeroCard
+│   │   │   ├── HeroCard.jsx
+│   │   │   ├── HeroCard.module.css
+│   │   │   └── index.js
+│   │   ├── ProjectCard
+│   │   │   ├── index.js
+│   │   │   ├── ProjectCard.jsx
+│   │   │   ├── projectCardList
+│   │   │   │   ├── index.js
+│   │   │   │   ├── ProjectCardList.jsx
+│   │   │   │   └── ProjectCardList.module.css
+│   │   │   ├── ProjectCard.module.css
+│   │   │   └── projectInfo.js
+│   │   ├── Section
+│   │   │   ├── index.js
+│   │   │   ├── Section.jsx
+│   │   │   └── Section.module.css
+│   │   ├── SocialFollow
+│   │   │   ├── index.js
+│   │   │   ├── SocialFollow.jsx
+│   │   │   └── SocialFollow.module.css
+│   │   └── Water
+│   │       ├── index.js
+│   │       ├── Video.jsx
+│   │       └── Video.module.css
+│   ├── hooks
+│   │   └── useTheme.js
+│   ├── index.css
+│   └── index.jsx
+└── vite.config.js
 
+21 directories, 74 files
+paulzolik@penguin:~/react-projects/portfolio2023-main$ 
 
 7. 🏷️ Professional Commit Standard: Conventional Commits
 

@@ -1,3 +1,13 @@
+/**
+ * HeroCard Component
+ *
+ * Displays a dynamic hero section with a personal photo, name, blurb,
+ * a background video, and an interactive boat element that follows the mouse.
+ * It leverages React hooks for managing element references and mouse interaction.
+ *
+ * @returns {JSX.Element} The HeroCard component.
+ */
+
 import React, { useEffect, useRef } from "react";
 import img from "../../assets/images/mephoto.jpg";
 import boatImage from "../../assets/images/boat.svg";

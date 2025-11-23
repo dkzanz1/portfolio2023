@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    background-color: #2c3e50; /* Dark background to make the glow pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars from animation */
+  }
+
+  /* Define keyframes for the gradient animation (silver to terracotta) */
+  @keyframes gradient-animate {
+    0% { stop-color: #fefefe; stop-opacity: 1; } /* Bright silver */
+    50% { stop-color: #e67e22; stop-opacity: 1; } /* Terracotta highlight */
+    100% { stop-color: #fefefe; stop-opacity: 1; } /* Back to bright silver */
+  }
+
+  /* Define keyframes for the mid-tone animation */
+  @keyframes mid-tone-animate {
+    0% { stop-color: #bbbbbb; } /* Silver mid-tone */
+    50% { stop-color: #d35400; } /* Darker terracotta */
+    100% { stop-color: #bbbbbb; } /* Back to silver mid-tone */
+  }
+
+  /* Define keyframes for the shadow animation */
+  @keyframes shadow-animate {
+    0% { stop-color: #aaaaaa; } /* Silver shadow */
+    50% { stop-color: #a04000; } /* Deepest terracotta */
+    100% { stop-color: #aaaaaa; } /* Back to silver shadow */
+  }
+
+  /* Define keyframes for the leaf color animation */
+  @keyframes leaf-color-animate {
+    0% { fill: #4CAF50; } /* Original green */
+    50% { fill: #e67e22; } /* Terracotta */
+    100% { fill: #4CAF50; } /* Back to green */
+  }
+
+  /* Define keyframes for the text color animation */
+  @keyframes text-color-animate {
+    0% { fill: #ccc; } /* Light grey */
+    50% { fill: #e67e22; } /* Terracotta */
+    100% { fill: #ccc; } /* Light grey */
+  }
+
+  /* Apply glow to the group containing the icon paths */
+  .icon-glow {
+    filter: url(#glowFilter);
+  }
+
+  /* Apply animation to specific stop elements within the gradient */
+  #stop1 { animation: gradient-animate 4s ease-in-out infinite alternate; }
+  #stop2 { animation: mid-tone-animate 4s ease-in-out infinite alternate; }
+  #stop3 { animation: gradient-animate 4s ease-in-out infinite alternate; }
+  #stop4 { animation: mid-tone-animate 4s ease-in-out infinite alternate; }
+  #stop5 { animation: gradient-animate 4s ease-in-out infinite alternate; }
+  #stop6 { animation: mid-tone-animate 4s ease-in-out infinite alternate; }
+  #stop7 { animation: shadow-animate 4s ease-in-out infinite alternate; }
+
+  /* Apply animation to the leaf path directly */
+  .leaf-path {
+    animation: leaf-color-animate 4s ease-in-out infinite alternate;
+  }
+
+  /* Apply animation to the text */
+  .zolik-text {
+    animation: text-color-animate 4s ease-in-out infinite alternate;
+  }
+
+</style>
+</head>
+<body>
+
+<svg width="400" height="400" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fefefe;stop-opacity:1" id="stop1" />
+      <stop offset="10%" style="stop-color:#bbbbbb;stop-opacity:1" id="stop2" />
+      <stop offset="30%" style="stop-color:#eeeeee;stop-opacity:1" id="stop3" />
+      <stop offset="50%" style="stop-color:#cccccc;stop-opacity:1" id="stop4" />
+      <stop offset="70%" style="stop-color:#dddddd;stop-opacity:1" id="stop5" />
+      <stop offset="90%" style="stop-color:#aaaaaa;stop-opacity:1" id="stop6" />
+      <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" id="stop7" />
+    </linearGradient>
+
+    <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g transform="translate(50, 50)" class="icon-glow">
+    <path id="morphingLetter" 
+          d="M 10,10 L 90,10 L 50,50 L 50,80 L 10,90 Q 50,130 90,90" 
+          stroke="url(#chromeGrad)" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <animate attributeName="d"
+               values="
+                 M 10,10 L 90,10 L 50,50 L 50,80 L 10,90 Q 50,130 90,90;  /* Z */
+                 M 50,10 A 40,40 0 1,1 50,90 A 40,40 0 1,1 50,10;      /* O */
+                 M 10,10 L 10,90 L 90,90 L 90,80 L 20,80 L 20,10;     /* L */
+                 M 50,10 L 50,90 L 50,90 L 50,10 L 50,10 L 50,10;      /* I (simplified to a line) */
+                 M 10,10 L 90,10 L 90,50 L 10,50 L 10,90 L 90,90;      /* K (simplified - for complex K, break it down) */
+                 M 10,10 L 90,10 L 50,50 L 50,80 L 10,90 Q 50,130 90,90  /* Z (back to start) */
+               "
+               keyTimes="0; 0.2; 0.4; 0.6; 0.8; 1"
+               dur="10s"
+               repeatCount="indefinite"
+               calcMode="linear" />
+    </path>
+
+    <path d="M 50,90 Q 50,70 65,70 Q 50,70 50,90" class="leaf-path" />
+  </g>
+
+  <text x="100" y="180" font-family="Courier New, monospace" font-weight="bold" font-size="24" text-anchor="middle" fill="#ccc" letter-spacing="4" class="zolik-text">ZOLIK</text>
+</svg>
+
+</body>
+</html>

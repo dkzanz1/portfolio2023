@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: #1a1a1a; display: flex; justify-content: center; align-items: center; height: 100vh;">
+
+<svg width="400" height="400" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="steel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;" />
+      <stop offset="100%" style="stop-color:#7f8c8d;" />
+    </linearGradient>
+    <filter id="rough">
+      <feTurbulence type="fractalNoise" baseFrequency="0.1" numOctaves="5" result="noise"/>
+      <feDiffuseLighting in="noise" lighting-color="#A0522D" surfaceScale="2">
+        <feDistantLight azimuth="45" elevation="60" />
+      </feDiffuseLighting>
+    </filter>
+  </defs>
+
+  <path d="M 50,30 L 150,30 L 100,80" stroke="url(#steel)" stroke-width="15" fill="none" stroke-linejoin="bevel"/>
+  
+  <circle cx="100" cy="80" r="5" fill="#FFD700" filter="blur(2px)" />
+
+  <path d="M 100,80 L 50,150 L 150,150" stroke="#8B4513" stroke-width="15" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <text x="100" y="190" font-family="Arial, sans-serif" font-weight="900" font-size="28" text-anchor="middle" fill="#E0E0E0" letter-spacing="2">ZOLIK</text>
+</svg>
+
+</body>
+</html>
