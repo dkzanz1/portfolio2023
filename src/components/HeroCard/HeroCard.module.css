@@ -2,7 +2,7 @@
 /* This is the outer div */
 .heroSection {
     margin: 10% auto;
-    width: 60%;
+    width: 90%;
     box-sizing: border-box;
     border-radius: 35px;
     box-shadow: 0 10px 30px #0ee1ac;
@@ -18,36 +18,14 @@
     
   
   }
-  /* Visually hidden class for h1 for accessibility purpose only */
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
-}
+
 .heroContent {
     position: relative;
     /* Make this relative for absolute positioning of children */
     display: block; /* FIX: Guarantees it behaves as a stable block element. */
     width: 100%;
     /* Occupy full width on mobile content needs to be 100% to fill screen */
-   height: 550px; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
+   min-height: 50vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
     /* Adjust as needed */
     overflow: hidden;
     /* Ensure video stays within container */
@@ -78,7 +56,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.85);
     /* Adjust opacity as needed */
     z-index: 2;
     /* Overlay on top of the video */
@@ -110,8 +88,6 @@
 }
 
 .HeroBlurb {
-    position: relative;
-    top: -5%;
     font-size: 1em;
     color: white;
     text-align: center;
@@ -136,22 +112,34 @@
     text-align: center;
     
   }
-
+.boat-container {
+    /* CRITICAL FIX 1: Set positioning context */
+    position: absolute; /* Place it over the video/overlay */
+    top: 0;
+    left: 0;
+    width: 100%; /* Spans the entire interactive area */
+    height: 100%; /* Spans the entire interactive area */
+    
+    /* CRITICAL FIX 2: Ensure it doesn't block the mouse event from reaching the videoContainer/overlay */
+    /* This might need testing based on where the listener is, but let's try 'pointer-events: none;' on the boat container */
+    /* For now, let's omit 'pointer-events' to keep it simple, but remember this if the boat blocks clicks. */
+}
 .boat {
     width: 50px; /* Adjust size as needed */
     height: auto;
+    position :absolute;
     animation: bob 4s infinite ease-in-out; /* Adjust timing */
-    transform-origin: bottom center; /*Sets the rotation point*/
-    position: static; /* Needed for positioning */
-    top: auto; /* WHY: Centers the boat vertically */
-    left: auto; /* WHY: Centers the boat horizontally */
-    transform: none; /* WHY: Centers the element itself */
-    transition: none; /* WHY: Enables the smooth visual "recoil" when the JS updates the position, adhering to the design requirement. */
-    /* @keyframes bob {
+   
+    top: 50%; /* WHY: Centers the boat vertically */
+    left: 50%; /* WHY: Centers the boat horizontally */
+/* CRITICAL FIX 3: Add a smooth transition for visual effect (0.05s is very smooth) */
+    transition: transform 0.05s ease-out;
+    z-index: 3;
+    @keyframes bob {
     0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(7px) rotate(5deg); }  */
-    /* 100% { transform: translateY(0px) rotate(-3deg); }  */
-/* } */
+    50% { transform: translateY(7px) rotate(5deg); }  
+    100% { transform: translateY(0px) rotate(-3deg); }  
+} 
 animation: none; 
     transform-origin: bottom center;
 }

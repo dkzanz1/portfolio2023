@@ -26,15 +26,24 @@ function HeroCard() {
 
     const handleMouseMove = (e) => {
       const rect = videoContainer.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const maxX = videoContainer.offsetWidth - boat.offsetWidth;
-      const maxY = videoContainer.offsetHeight - boat.offsetHeight;
-      const clampedX = Math.max(0, Math.min(x, maxX));
-      const clampedY = Math.max(0, Math.min(y, maxY));
+      // 1.Calculates mouse position relative to the container's center//
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      // 2.Sets boat position to follow mouse, clamped within container bounds//
+      const dx = e.clientX - rect.left - centerX;
+      const dy = e.clientY - rect.top - centerY;
+      // 3.Adjust sensitivity factor for smoother movement//
+      // 4.Dampening factor mean the boat moves 3% of the distance the mouse moves//
+      const dampeningFactor = 0.03;
+      // 3. Calculate the new parallax position (offset from center)
+      // We are *offsetting* the boat relative to its center position// The boat-animation-wrapper should be used to position the boat,
+      // but for simplicity, let's target the boat directly using 'transform'.
 
-      boat.style.left = `${clampedX}px`;
-      boat.style.top = `${clampedY}px`;
+      const offsetX = dx * dampeningFactor;
+      const offsetY = dy * dampeningFactor;
+      // 4. Apply the position using CSS transform for better performance (GPU acceleration)
+      // This centers the boat (translateX/Y(-50%)) and then applies the parallax offset.
+      boat.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px)`;
     };
 
     videoContainer.addEventListener("mousemove", handleMouseMove);
