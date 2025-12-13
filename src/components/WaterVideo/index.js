@@ -2,4 +2,4 @@
 // import About from './components/About/index.jsx';
 // swapped to for cleaner more complient code
 // AFTER (Clean, professional path reference)
-export { default } from "./Video.jsx";
+export { default } from "./waterVideo.jsx";

@@ -351,3 +351,37 @@ If history was rewritten (e.g., post-rebase), use a safe force push:
 Markdown
 
 git push --force-with-lease
+📅 Daily Startup Procedure
+This mandatory routine ensures the local development environment is always synchronized with the remote repository and ready for professional development.
+
+Navigate to Project Directory:
+
+Markdown
+
+# Assume you are in the correct directory (e.g., react-projects/portfolio2023-main)
+# cd ~/react-projects/portfolio2023-main
+Synchronize Code Base (Mandatory):
+
+Always pull the latest changes from the remote to ensure your work is built on the most current code.
+
+Markdown
+
+git pull origin main
+Rationale: Prevents "Pull Before Push" conflicts, minimizes future rebase complexity, and ensures local code is synchronized.
+
+Check for Dependency Updates:
+
+If git pull reports changes to package.json or package-lock.json, or if you are starting a fresh day, run an install to synchronize dependencies.
+
+Markdown
+
+npm install
+# OR (Professional standard for CI/clean installs)
+# npm ci 
+Launch Development Environment:
+
+Start the local development server to begin work.
+
+Markdown
+
+npm run dev

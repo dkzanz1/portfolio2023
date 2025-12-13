@@ -12,7 +12,7 @@ import React, { useEffect, useRef } from "react";
 import img from "../../assets/images/mephoto.jpg";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
-import Water from "../Water/Video.jsx";
+import WaterVideo from "../WaterVideo/WaterVideo.jsx";
 
 function HeroCard() {
   const boatRef = useRef(null);
@@ -48,7 +48,7 @@ function HeroCard() {
     <div className={styles.heroSection}>
       <div className={styles.Herocard}>
         <div className={styles.heroContent} ref={videoContainerRef}>
-          <Water className={styles.watervideo} />
+          <WaterVideo className={styles.watervideo} />
           <div className={styles.overlay}>
             <img
               src={img}
