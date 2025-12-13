@@ -73,15 +73,26 @@ PascalCase.jsx for all React components. camelCase.js for all pure JavaScript fi
 
 Component Architecture
 
-The project uses a Component-Centric Architecture following the principle of Colocation. Every component resides in its own dedicated subdirectory folder.
+The project uses a Component-Centric Architecture following the principle of Colocation.
+Every component resides in its own dedicated directory folder.
 
 Component Entry Point (Barrel Pattern)
 
-For all component directories, the folder MUST expose the component via a simple "Barrel Export" file named index.js. The main component file must retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity.
+For all component directories,
+The folder MUST expose the component via a simple "Barrel Export" file named index.js. 
+The main component file must retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity.
+
+One exception is the projectCardList which is local only to the projectCard
+ and IS "highly-coupled" or "non-reusable" to describe its limited scope.
+Colocation Extension (Highly-Coupled Components): Sub-components, logic, or data (e.g., projectCardList)
+that are highly-coupled to the immediate parent component (ProjectCard) 
+and are explicitly non-reusable outside of that parent are permitted to be nested within
+the parent's directory.
 
 Styling Location
 
-Global (src/index.css): Reserved only for CSS resets, fonts, and global variables. Component-Specific: All styles must use .module.css for strict scoping.
+Global (src/index.css): Reserved only for CSS resets, fonts, and global variables.
+Component-Specific: All styles must use .module.css for strict scoping.
 
 Component Type
 
