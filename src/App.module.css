@@ -9,7 +9,18 @@
   margin: 0 auto; 
   padding: 2rem 0; /* Add vertical padding so components aren't touching page edges */
 }
-
+  /* Visually hidden class for h1 for accessibility purpose only */
+  .visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 /* Add styles for the dark mode toggle button */
 .darkModeToggle {
     position: fixed; /* Positions the button relative to the viewport */

@@ -27,7 +27,7 @@ function App() {
         // to screen readers (WCAG 1.3.1) and search engines.so i have created it as the 
         // first major element on the page.
       */}
-      <h1 className="visually-hidden">
+      <h1 className={styles.visuallyHidden}>
         Paul Zolik Aspiring Software Engineer Portfolio
       </h1>
       <div id="outer-container" className={styles.outerContainer}>
