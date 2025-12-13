@@ -219,7 +219,9 @@ paulzolik@penguin:~/react-projects/portfolio2023-main$
 
 7. 🏷️ Professional Commit Standard: Conventional Commits
 
-All Git commit messages MUST adhere to the Conventional Commits Specification. This standard ensures a readable, searchable, and automatically parsable project history, which is mandatory for professional software engineering.
+All Git commit messages MUST adhere to the Conventional Commits Specification.
+This standard ensures a readable, searchable, and automatically parsable project history,
+which is mandatory for professional software engineering.
 
 📝 Mandatory Commit Message Structure
 
@@ -249,7 +251,8 @@ refactor
 
 Code Restructuring
 
-Used for code changes that neither fix a bug nor add a feature, but improve code structure, quality, or readability.
+Used for code changes that neither fix a bug nor add a feature, 
+but improve code structure, quality, or readability.
 
 chore
 
@@ -283,4 +286,68 @@ JSDoc: Every function/component (const Component = () => {}) MUST be immediately
 
 Intent Comments: All architectural decisions (e.g., Barrel Export syntax, complex regex, non-obvious API calls) MUST be annotated with a // WHY: comment explaining the rationale.
 
-Action Comments: Use // TODO: to mark necessary future work, and // FIX: to flag temporary code solutions.
+📋 Git Professional Protocol & Standard Setup
+A. Initial Git Setup (Standardized Configuration)
+These steps ensure consistent identity and line endings to prevent common conflict types.
+
+Set Global User Name:
+
+Markdown
+
+git config --global user.name "Your Name"
+Set Global User Email:
+
+Markdown
+
+git config --global user.email "your.email@example.com"
+Set Line Endings (CRLF vs LF) - Crucial for Cross-OS Work:
+
+macOS/Linux:
+
+Markdown
+
+git config --global core.autocrlf input
+Windows:
+
+Markdown
+
+git config --global core.autocrlf true
+Set Default Merge Tool (Optional, for advanced users):
+
+Markdown
+
+git config --global merge.tool meld
+B. Conflict Resolution Action Plan
+Protocol for resolving conflicts during rebase or merge operations.
+
+Secure State & Document (Professional Notes):
+
+git status (Confirm operation & list conflicted files)
+
+Professional Note: Document: Conflict Source:, Conflicted Files:, Goal:
+
+Manual Resolution & Staging:
+
+Open all conflicted files.
+
+Resolve manually by removing all Git conflict markers (<<<<<<<, =======, >>>>>>>).
+
+Stage each resolved file:
+
+Markdown
+
+git add <path/to/resolved/file>
+Resumption & Final Push:
+
+Resume operation:
+
+Markdown
+
+git rebase --continue
+# OR
+git merge --continue
+If history was rewritten (e.g., post-rebase), use a safe force push:
+
+Markdown
+
+git push --force-with-lease
