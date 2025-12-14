@@ -83,12 +83,13 @@ function HeroCard() {
               </p>
             </article>
             <div className={styles["boat-container"]}>
-              <img
-                src={boatImage}
-                alt="Cartoon Boat"
-                className={styles.boat}
-                ref={boatRef}
-              />
+              <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
+                <img
+                  src={boatImage}
+                  alt="Cartoon Boat"
+                  className={styles.boat}
+                />
+              </div>
             </div>
           </div>
         </div>
