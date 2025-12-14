@@ -58,7 +58,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     /* Adjust opacity as needed */
-    z-index: 2;
+    z-index: 12;
     /* Overlay on top of the video */
     /* NEW CRITICAL ADDITION */
     pointer-events: auto; /* WHY: Ensures the overlay layer actively captures mouse events (mousemove, click, etc.) and does not pass them through. This is necessary for the event listener to function. */
@@ -133,25 +133,25 @@
     top: 50%; /* WHY: Centers the boat vertically */
     left: 50%; /* WHY: Centers the boat horizontally */
 /* CRITICAL FIX 3: Add a smooth transition for visual effect (0.05s is very smooth) */
-    transition: transform 0.05s ease-out;
-    z-index: 3;
+    transition: none;
+    z-index: 1;
+    transform-origin: bottom center;
+}
     @keyframes bob {
     0% { transform: translateY(0) rotate(0deg); }
     50% { transform: translateY(7px) rotate(5deg); }  
     100% { transform: translateY(0px) rotate(-3deg); }  
 } 
-animation: none; 
-    transform-origin: bottom center;
-}
+
 .boat-animation-wrapper {
     /* WHY: This element is positioned absolutely and receives the JS parallax transform. */
     position: absolute; 
     top: 50%; 
     left: 50%;
-  transform: translate(-50%, -50%); 
-    transition: transform 0.2s ease-out;
-    
-    z-index: 3;
+    transform: translate(-50%, -50%); 
+    transition: transform 5.0s ease-out;
+    z-index: 1;
+    pointer-events: none;/* Ensure it doesn't block mouse events */
 }
     /* @keyframes bob {
         0% { transform: translateY(0) rotate(0deg); }
