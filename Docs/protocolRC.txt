@@ -1,398 +1,60 @@
-📝 Final ReactCraft Project Protocol (V 2.4)
-
-Version: 2.4 (Last Updated: November 7, 2025)
-
-Purpose: To guide project development with clear, industry-standard practices, maintain consistency, and document all key architectural decisions.
-
-1. 🛑 Non-Deviation Mandate (Standard Enforcement)
-
-This protocol represents the mandatory standard of professional practice for the ReactCraft project. No code, structural decision, or architectural change shall be merged that deviates from the rules outlined below. In case of conflicting external advice, this document serves as the single source of truth for all development standards.
-All work must pass automated quality checks (Linting, Formatting) and adhere to the Mobile-First strategy.
-
-2. 🛠️ Technology Stack
-
-Component
-
-Standard
-
-Notes
-
-Frontend
-
-React, Vite
-
-Modern, high-performance tooling.
-
-Styling
-
-CSS Modules, CSS Custom Properties
-
-Scoped styling for reusability; global variables for robust theming.
-
-Backend (Future)
-
-Node.js, Express, MongoDB
-
-Standardized MERN stack for scalable full-stack development.
-
-Environment	Chromebook (Linux/Crostini)	All development commands are executed within the Debian/Linux container.
-
-3. 📱 Responsive Design Strategy: Mobile-First Standard
-
-The project's architecture is based on Progressive Enhancement, starting with the smallest screen and scaling up. This is a mandatory professional standard.
-
-Rule
-
-Implementation Standard
-
-Viewport Meta Tag
-
-The public/index.html file MUST include the standard meta tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">.
-
-Base Styling
-
-All initial CSS must target the narrowest viewport (mobile), containing only the essential layout and styles.
-
-Media Queries
-
-MUST exclusively use min-width queries to progressively add complexity for larger screens (e.g., @media (min-width: 768px)). max-width queries are prohibited for main layout adaptation.
-
-Accessibility (A11y)
-
-Development MUST prioritize Semantic HTML (using <header>, <nav>, <main>, etc.) and adhere to ARIA compliance to ensure screen reader compatibility.
-
-4. 📝 Code Standards & Architecture
-
-Area
-
-Rule / Standard
-
-File Naming
-
-PascalCase.jsx for all React components. camelCase.js for all pure JavaScript files (hooks, utilities, services).
-
-Component Architecture
-
-The project uses a Component-Centric Architecture following the principle of Colocation.
-Every component resides in its own dedicated directory folder.
-
-Component Entry Point (Barrel Pattern)
-
-For all component directories,
-The folder MUST expose the component via a simple "Barrel Export" file named index.js. 
-The main component file must retain its descriptive name (e.g., ProjectCard.jsx) for developer clarity.
-
-One exception is the projectCardList which is local only to the projectCard
- and IS "highly-coupled" or "non-reusable" to describe its limited scope.
-Colocation Extension (Highly-Coupled Components): Sub-components, logic, or data (e.g., projectCardList)
-that are highly-coupled to the immediate parent component (ProjectCard) 
-and are explicitly non-reusable outside of that parent are permitted to be nested within
-the parent's directory.
-
-Styling Location
-
-Global (src/index.css): Reserved only for CSS resets, fonts, and global variables.
-Component-Specific: All styles must use .module.css for strict scoping.
-
-Component Type
-
-All components MUST be written as Functional Components utilizing React Hooks for state and logic.
-
-5. ✅ Professional Quality Enforcement
-
-Standard
-
-Tool / Action
-
-Rationale
-
-Code Quality
-
-ESLint (e.g., using Airbnb config) and Prettier.
-
-Enforces consistent structure and auto-formats code to save time and reduce style-related review comments.
-
-Enforcement
-
-Linting and formatting MUST be integrated via a pre-commit hook (e.g., Husky) or in the CI/CD pipeline. No code is committed unless it passes linting.
-
-Prevents sub-standard code from entering the repository.
-
-Verification
-
-All new custom hooks, utility functions, and complex logic MUST be covered by Unit Tests (e.g., using Vitest/Jest and React Testing Library).
-
-Prevents regressions (bugs) and ensures long-term stability.
-
-6. 🚀 Compliant Project Path Map (V 2.4 Example)
-
-The following structure is mandatory, reflecting the Barrel Export pattern:
-
-aulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I 'node_modules|dist|venv'
-.
-├── commitlint.config.js
-├── Docs
-│   ├── currenttask.md
-│   ├── MyJourney.md
-│   ├── protocolRC.txt
-│   ├── svg1.html
-│   ├── svg2.html
-│   ├── svg3.html
-│   ├── svg4.html
-│   ├── svg5.html
-│   ├── svg6.html
-│   └── svgsnake.html
-├── index.html
-├── install.
-│   └── _
-│       ├── applypatch-msg
-│       ├── commit-msg
-│       ├── h
-│       ├── husky.sh
-│       ├── post-applypatch
-│       ├── post-checkout
-│       ├── post-commit
-│       ├── post-merge
-│       ├── post-rewrite
-│       ├── pre-applypatch
-│       ├── pre-auto-gc
-│       ├── pre-commit
-│       ├── pre-merge-commit
-│       ├── prepare-commit-msg
-│       ├── pre-push
-│       └── pre-rebase
-├── package.json
-├── package-lock.json
-├── public
-│   └── favicon.ico
-├── README.md
-├── src
-│   ├── App.jsx
-│   ├── App.module.css
-│   ├── assets
-│   │   ├── images
-│   │   │   ├── boat.svg
-│   │   │   ├── face.jpg
-│   │   │   ├── image4.jpeg
-│   │   │   └── mephoto.jpg
-│   │   └── videos
-│   │       └── videobg.mp4
-│   ├── components
-│   │   ├── About
-│   │   │   ├── About.jsx
-│   │   │   ├── About.module.css
-│   │   │   └── index.js
-│   │   ├── Burger
-│   │   │   ├── Burger.jsx
-│   │   │   ├── Burger.module.css
-│   │   │   └── index.js
-│   │   ├── ContactForm
-│   │   │   ├── ContactForm.jsx
-│   │   │   ├── ContactForm.module.css
-│   │   │   └── index.js
-│   │   ├── Footer
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Footer.module.css
-│   │   │   └── index.js
-│   │   ├── HeroCard
-│   │   │   ├── HeroCard.jsx
-│   │   │   ├── HeroCard.module.css
-│   │   │   └── index.js
-│   │   ├── ProjectCard
-│   │   │   ├── index.js
-│   │   │   ├── ProjectCard.jsx
-│   │   │   ├── projectCardList
-│   │   │   │   ├── index.js
-│   │   │   │   ├── ProjectCardList.jsx
-│   │   │   │   └── ProjectCardList.module.css
-│   │   │   ├── ProjectCard.module.css
-│   │   │   └── projectInfo.js
-│   │   ├── Section
-│   │   │   ├── index.js
-│   │   │   ├── Section.jsx
-│   │   │   └── Section.module.css
-│   │   ├── SocialFollow
-│   │   │   ├── index.js
-│   │   │   ├── SocialFollow.jsx
-│   │   │   └── SocialFollow.module.css
-│   │   └── Water
-│   │       ├── index.js
-│   │       ├── Video.jsx
-│   │       └── Video.module.css
-│   ├── hooks
-│   │   └── useTheme.js
-│   ├── index.css
-│   └── index.jsx
-└── vite.config.js
-
-21 directories, 74 files
-paulzolik@penguin:~/react-projects/portfolio2023-main$ 
-
-7. 🏷️ Professional Commit Standard: Conventional Commits
-
-All Git commit messages MUST adhere to the Conventional Commits Specification.
-This standard ensures a readable, searchable, and automatically parsable project history,
-which is mandatory for professional software engineering.
-
-📝 Mandatory Commit Message Structure
-
-Commit messages must use the following structure: type(scope): description
-
-Key Types and Explanation
-
-Type
-
-Purpose
-
-Short Explanation
-
-feat
-
-Features/Enhancements
-
-Used when adding a new capability, component, or enhancement. (e.g., feat(ui): Add mobile navigation menu)
-
-fix
-
-Bug Fixes
-
-Used for all code changes that correct a defect or unexpected behavior.
-
-refactor
-
-Code Restructuring
-
-Used for code changes that neither fix a bug nor add a feature, 
-but improve code structure, quality, or readability.
-
-chore
-
-Maintenance
-
-Used for routine tasks, dependency updates, and minor build/tooling changes. (e.g., chore(deps): Update Prettier version)
-
-style
-
-Formatting
-
-Used for changes that only affect code style (whitespace, semicolons, missing semicolons, etc.) and not logic.
-
-docs
-
-Documentation
-
-Used for changes solely related to documentation, like READMEs or protocol updates.
-
-test
-
-Testing
-
-Used when adding or correcting unit tests or integration tests.
-
-📄 Protocol Addition: Professional Note-Taking
-Mandate: For all new code and major revisions, the codebase MUST incorporate professional, context-providing comments to support learning and maintainability.
-
-Requirements:
-JSDoc: Every function/component (const Component = () => {}) MUST be immediately preceded by a JSDoc block to document its purpose and expected outputs.
-
-Intent Comments: All architectural decisions (e.g., Barrel Export syntax, complex regex, non-obvious API calls) MUST be annotated with a // WHY: comment explaining the rationale.
-
-📋 Git Professional Protocol & Standard Setup
-A. Initial Git Setup (Standardized Configuration)
-These steps ensure consistent identity and line endings to prevent common conflict types.
-
-Set Global User Name:
-
-Markdown
-
-git config --global user.name "Your Name"
-Set Global User Email:
-
-Markdown
-
-git config --global user.email "your.email@example.com"
-Set Line Endings (CRLF vs LF) - Crucial for Cross-OS Work:
-
-macOS/Linux:
-
-Markdown
-
-git config --global core.autocrlf input
-Windows:
-
-Markdown
-
-git config --global core.autocrlf true
-Set Default Merge Tool (Optional, for advanced users):
-
-Markdown
-
-git config --global merge.tool meld
-B. Conflict Resolution Action Plan
-Protocol for resolving conflicts during rebase or merge operations.
-
-Secure State & Document (Professional Notes):
-
-git status (Confirm operation & list conflicted files)
-
-Professional Note: Document: Conflict Source:, Conflicted Files:, Goal:
-
-Manual Resolution & Staging:
-
-Open all conflicted files.
-
-Resolve manually by removing all Git conflict markers (<<<<<<<, =======, >>>>>>>).
-
-Stage each resolved file:
-
-Markdown
-
-git add <path/to/resolved/file>
-Resumption & Final Push:
-
-Resume operation:
-
-Markdown
-
-git rebase --continue
-# OR
-git merge --continue
-If history was rewritten (e.g., post-rebase), use a safe force push:
-
-Markdown
-
-git push --force-with-lease
-📅 Daily Startup Procedure
-This mandatory routine ensures the local development environment is always synchronized with the remote repository and ready for professional development.
-
-Navigate to Project Directory:
-
-Markdown
-
-# Assume you are in the correct directory (e.g., react-projects/portfolio2023-main)
-# cd ~/react-projects/portfolio2023-main
-Synchronize Code Base (Mandatory):
-
-Always pull the latest changes from the remote to ensure your work is built on the most current code.
-
-Markdown
-
-git pull origin main
-Rationale: Prevents "Pull Before Push" conflicts, minimizes future rebase complexity, and ensures local code is synchronized.
-
-Check for Dependency Updates:
-
-If git pull reports changes to package.json or package-lock.json, or if you are starting a fresh day, run an install to synchronize dependencies.
-
-Markdown
-
-npm install
-# OR (Professional standard for CI/clean installs)
-# npm ci 
-Launch Development Environment:
-
-Start the local development server to begin work.
-
-Markdown
-
-npm run dev
+# 📝 ReactCraft Project Protocol (V 2.5)
+# Last Updated: January 2026
+
+## 1. 🛑 Standard Enforcement (The ACE Protocol)
+- **Acknowledge:** This document is the single source of truth.
+- **Compliment:** All code must pass Linting/Formatting to maintain professional craft.
+- **Execute:** Follow the Mobile-First strategy and Semantic HTML standards.
+
+---
+
+## 2. 🛠️ Technology Stack & Environment
+- **Frontend:** React + Vite (Functional Components & Hooks).
+- **Styling:** CSS Modules (`.module.css`) + Custom Properties (Variables).
+- **Architecture:** Component-Centric with **Barrel Exports** (`index.js`).
+- **Environment:** Chromebook (Linux/Crostini).
+
+---
+
+## 3. 📱 Mobile-First Standard
+- **Base Style:** Target mobile viewports first.
+- **Expansion:** Use `min-width` queries ONLY. `max-width` is prohibited for layout.
+- **A11y:** Semantic HTML tags (`<main>`, `<nav>`) are mandatory.
+
+---
+
+## 4. 🏷️ Conventional Commits
+Format: `type(scope): description`
+- `feat`: New capabilities or components.
+- `fix`: Resolving bugs or **Git conflicts**.
+- `docs`: Updates to README or this Protocol.
+- `chore`: Maintenance (e.g., updating `package.json`).
+
+---
+
+## 5. ⚠️ Conflict Resolution Action Plan (The "Git Protocol")
+Use this when `git status` shows "Both Modified":
+
+1. **Save State:** `git stash push -m "CONFLICT_SAVE"`
+2. **Open Files:** Manually resolve markers (`<<<<<<<`, `=======`, `>>>>>>>`).
+3. **Stage Fixed Files:** `git add <file-name>`
+4. **Resume:** `git rebase --continue` (or `git merge --continue`).
+5. **Final Push:** `git push --force-with-lease` (if rebasing).
+
+---
+
+## 📅 Daily Startup & Health Routine
+1. **Sync:** `git pull origin main`
+2. **Install:** `npm install` (if `package.json` changed).
+3. **Dev:** `npm run dev`
+4. **Health Check:** - **Nightshade-Free:** Avoid chili, paprika, cayenne.
+   - **Focus:** Use **Chicory** as the primary focus-aid during deep work sessions.
+   - **Remedy:** Prioritize natural recovery; use doctor as last resort.
+
+---
+
+## 📂 Project Structure Map (The Barrel Pattern)
+src/components/ComponentName/
+├── ComponentName.jsx
+├── ComponentName.module.css
+└── index.js (Export { default } from './ComponentName')
