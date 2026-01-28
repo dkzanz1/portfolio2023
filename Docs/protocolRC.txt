@@ -55,28 +55,99 @@ src/components/ComponentName/
 ├── ComponentName.module.css
 └── index.js (Export { default } from './ComponentName')
 
-portfolio2023-main/
-├── public/
-├── src/
-│   ├── assets/             # Font Awesome / Images
-│   ├── components/
-│   │   ├── Navbar/
-│   │   │   ├── Navbar.jsx
-│   │   │   ├── Navbar.module.css
-│   │   │   └── index.js    # Barrel Export
-│   │   ├── Hero/
-│   │   │   ├── Hero.jsx
-│   │   │   ├── Hero.module.css
-│   │   │   └── index.js
-│   │   └── ProjectCard/
-│   │       ├── ProjectCard.jsx
-│   │       ├── ProjectCard.module.css
-│   │       └── index.js
-│   ├── App.jsx             # Imports components via Barrels
-│   ├── main.jsx            # Vite Entry Point
-│   └── index.css           # Global Custom Properties (Variables)
-├── .env                    # API Keys (Git Ignored)
-├── package.json
-└── vite.config.js
+paulzolik@penguin:~/react-projects/portfolio2023-main$ find . -maxdepth 4 -not -path '*/.*' -not -path './node_modules*' -not -path './dist*' | sed -e 's/[^-][^\/]*\// |  /g' -e 's/|  \([^ ]\)/|-- \1/'
+.
+ |-- src
+ |   |-- assets
+ |   |   |-- images
+ |   |   |   |-- boat.svg
+ |   |   |   |-- face.jpg
+ |   |   |   |-- image4.jpeg
+ |   |   |   |-- mephoto.jpg
+ |   |   |-- videos
+ |   |   |   |-- videobg.mp4
+ |   |-- components
+ |   |   |-- About
+ |   |   |   |-- About.jsx
+ |   |   |   |-- About.module.css
+ |   |   |   |-- index.js
+ |   |   |-- Burger
+ |   |   |   |-- Burger.module.css
+ |   |   |   |-- index.js
+ |   |   |   |-- Burger.jsx
+ |   |   |-- ContactForm
+ |   |   |   |-- ContactForm.jsx
+ |   |   |   |-- ContactForm.module.css
+ |   |   |   |-- index.js
+ |   |   |-- Footer
+ |   |   |   |-- Footer.jsx
+ |   |   |   |-- Footer.module.css
+ |   |   |   |-- index.js
+ |   |   |-- HeroCard
+ |   |   |   |-- index.js
+ |   |   |   |-- HeroCard.jsx
+ |   |   |   |-- HeroCard.module.css
+ |   |   |-- ProjectCard
+ |   |   |   |-- projectInfo.js
+ |   |   |   |-- ProjectCard.jsx
+ |   |   |   |-- ProjectCard.module.css
+ |   |   |   |-- index.js
+ |   |   |   |-- projectCardList
+ |   |   |-- Section
+ |   |   |   |-- Section.module.css
+ |   |   |   |-- Section.jsx
+ |   |   |   |-- index.js
+ |   |   |-- SocialFollow
+ |   |   |   |-- SocialFollow.jsx
+ |   |   |   |-- SocialFollow.module.css
+ |   |   |   |-- index.js
+ |   |   |-- WaterVideo
+ |   |   |   |-- index.js
+ |   |   |   |-- WaterVideo.jsx
+ |   |   |   |-- WaterVideo.module.css
+ |   |-- hooks
+ |   |   |-- useTheme.js
+ |   |-- index.css
+ |   |-- index.jsx
+ |   |-- App.module.css
+ |   |-- App.jsx
+ |-- README.md
+ |-- index.html
+ |-- public
+ |   |-- favicon.ico
+ |-- vite.config.js
+ |-- Docs
+ |   |-- MyJourney.md
+ |   |-- currenttask.md
+ |   |-- svg1.html
+ |   |-- svg2.html
+ |   |-- svg3.html
+ |   |-- svg4.html
+ |   |-- svg5.html
+ |   |-- svg6.html
+ |   |-- svgsnake.html
+ |   |-- protocolRC.txt
+ |-- install.
+ |   |-- _
+ |   |   |-- h
+ |   |   |-- pre-commit
+ |   |   |-- pre-merge-commit
+ |   |   |-- prepare-commit-msg
+ |   |   |-- commit-msg
+ |   |   |-- post-commit
+ |   |   |-- applypatch-msg
+ |   |   |-- pre-applypatch
+ |   |   |-- post-applypatch
+ |   |   |-- pre-rebase
+ |   |   |-- post-rewrite
+ |   |   |-- post-checkout
+ |   |   |-- post-merge
+ |   |   |-- pre-push
+ |   |   |-- pre-auto-gc
+ |   |   |-- husky.sh
+ |-- commitlint.config.js
+ |-- package.json
+ |-- package-lock.json
 
-"Upon startup, verify the local file tree against the 📂 Project Structure Map (V 2.5) to ensure architectural integrity before executing npm run dev."
+1/"Upon startup, verify the local file tree against the 📂 Project Structure Map (V 2.5) to ensure architectural integrity before executing npm run dev."
+2/This session is now closed. When you're ready to start again, just say "Startup portfolio2023-main" and we'll dive straight into the code. See you then!
