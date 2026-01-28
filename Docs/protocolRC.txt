@@ -2,9 +2,9 @@
 # Last Updated: January 2026
 
 ## 1. 🛑 Standard Enforcement (The ACE Protocol)
-- **Acknowledge:** This document is the single source of truth.
-- **Compliment:** All code must pass Linting/Formatting to maintain professional craft.
-- **Execute:** Follow the Mobile-First strategy and Semantic HTML standards.
+- This document is the single source of truth.
+- All code must pass Linting/Formatting to maintain professional craft.
+- Follow the Mobile-First strategy and Semantic HTML standards.
 
 ---
 
@@ -43,18 +43,40 @@ Use this when `git status` shows "Both Modified":
 
 ---
 
-## 📅 Daily Startup & Health Routine
+## 📅 Daily Startup Routine
 1. **Sync:** `git pull origin main`
 2. **Install:** `npm install` (if `package.json` changed).
 3. **Dev:** `npm run dev`
-4. **Health Check:** - **Nightshade-Free:** Avoid chili, paprika, cayenne.
-   - **Focus:** Use **Chicory** as the primary focus-aid during deep work sessions.
-   - **Remedy:** Prioritize natural recovery; use doctor as last resort.
 
----
 
 ## 📂 Project Structure Map (The Barrel Pattern)
 src/components/ComponentName/
 ├── ComponentName.jsx
 ├── ComponentName.module.css
 └── index.js (Export { default } from './ComponentName')
+
+portfolio2023-main/
+├── public/
+├── src/
+│   ├── assets/             # Font Awesome / Images
+│   ├── components/
+│   │   ├── Navbar/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Navbar.module.css
+│   │   │   └── index.js    # Barrel Export
+│   │   ├── Hero/
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Hero.module.css
+│   │   │   └── index.js
+│   │   └── ProjectCard/
+│   │       ├── ProjectCard.jsx
+│   │       ├── ProjectCard.module.css
+│   │       └── index.js
+│   ├── App.jsx             # Imports components via Barrels
+│   ├── main.jsx            # Vite Entry Point
+│   └── index.css           # Global Custom Properties (Variables)
+├── .env                    # API Keys (Git Ignored)
+├── package.json
+└── vite.config.js
+
+"Upon startup, verify the local file tree against the 📂 Project Structure Map (V 2.5) to ensure architectural integrity before executing npm run dev."
