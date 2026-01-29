@@ -54,7 +54,11 @@ function HeroCard() {
   }, []);
 
   return (
-    <div className={styles.heroSection}>
+    <section className={styles.heroSection} aria-labelledby="hero-heading">
+      {/* 2. Visually Hidden H1 for SEO/A11y Compliance */}
+      <h1 id="hero-heading" className={styles.srOnly}>
+        Paul - Full Stack Web Developer Portfolio
+      </h1>
       <div className={styles.Herocard}>
         <div className={styles.heroContent} ref={videoContainerRef}>
           <WaterVideo className={styles.watervideo} />
@@ -94,7 +98,7 @@ function HeroCard() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
