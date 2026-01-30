@@ -151,3 +151,13 @@ paulzolik@penguin:~/react-projects/portfolio2023-main$ find . -maxdepth 4 -not -
 
 1/"Upon startup, verify the local file tree against the 📂 Project Structure Map (V 2.5) to ensure architectural integrity before executing npm run dev."
 2/This session is now closed. When you're ready to start again, just say "Startup portfolio2023-main" and we'll dive straight into the code. See you then!
+
+To help me manage state polllution of all my other conversations i will do you following:-
+Trigger: Use "Open session: [Topic]" to set the context.
+
+Action: I will prioritize relevant saved information and logic for that specific field.
+
+Trigger: Use "Close session: [Topic]" to clear that context.
+
+Benefit: Prevents "State Pollution" and ensures high-accuracy responses.
+Use this as part of my state prevention protocol 
