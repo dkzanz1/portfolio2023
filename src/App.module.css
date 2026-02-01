@@ -1,73 +1,59 @@
 .container {
-   /* Flexbox is used for vertical stacking */
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  /* this ensures the content is centered and contained */
-  width: 90%; 
-  max-width: 1400px; 
+  width: 100%; 
+  max-width: 100%; 
   margin: 0 auto; 
-  padding: 2rem 0; /* Add vertical padding so components aren't touching page edges */
+  padding: 2rem 0;
 }
-  /* Visually hidden class for h1 for accessibility purpose only */
-  .visuallyHidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
-/* Add styles for the dark mode toggle button */
+
 .darkModeToggle {
-    position: fixed; /* Positions the button relative to the viewport */
-    top: 20px; /* Positions it 20px from the top */
-    right: 20px; /* Positions it 20px from the right */
-    z-index: 1000; /* Ensures the button is on top of other content */
-     background-color: var(--background-color);/*global colors */
-    color: var(--text-color);
-    border: 1px solid var(--primary-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Optional: Add hover styles for better user experience */
-.darkModeToggle:hover {
-  filter: brightness(1.2);
-}
-
-/*===== Styles for tablets===== ipad mini width*/
+/* Tablet settings restored */
 @media (min-width: 768px) {
   .container {
     padding: 20px;
-    }
-
+  }
 }
 
-/*===== Styles for laptops=====*/
+/* Laptop settings restored */
 @media (min-width: 922px) {
-    .container {
-    justify-content: center;
-     /* Ensures no unwanted width constraints are carried over from base styles */
-    max-width: 1400px; /* Allow wide display */
+  .container {
+    max-width: 1400px;
     margin: 0 auto;
-    }
-  
+  }
 }
+
+/* Large screen settings restored with corrected syntax */
 @media (min-width: 1024px) {
   .container {
-    /* 1. Sets a readable max-width for content (e.g., 1200px is common) */
-    max-width: 2500px;
-    
-    /* 2. Centers the content in the middle of the large screen */
-    margin: 100 auto; 
-    
-    /* 3. Adjusts padding for desktop space */
+    max-width: 1400px; /* Restored to your preferred limit */
+    margin: 0 auto; 
     padding: 0 3rem; 
   }
 }

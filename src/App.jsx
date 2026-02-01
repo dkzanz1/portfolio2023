@@ -34,9 +34,8 @@ function App() {
         <Burger />
         {/* ADD THE BUTTON BACK HERE */}
         <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
-
+        <HeroCard />
         <div id="page-wrap" className={styles.container}>
-          <HeroCard />
           <About />
           <Sectionpart />
           <ProjectCardList />
