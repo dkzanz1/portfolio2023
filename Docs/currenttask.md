@@ -95,3 +95,19 @@ Session ID: portfolio2023-main
 Outcome: Protocol updated; CSS changes reverted to maintain a clean state.
 
 The "One Thing" for Next Time: The video is likely being constrained by a Parent Container (the Hero section) that needs its width and height set to 100% before the video can fill the screen.
+"Current State: Architecture refactored. HeroCard is now outside the container in App.jsx. Git status is clean on branch feature/session-1-updates.
+
+The Problem: The Hero is "blown out." Global width changes fixed the 27-inch screen but ruined the mobile "card" look and vertical scaling.
+
+The Goal: I need the Surgical CSS fix for HeroCard.module.css.
+
+Requirement: > 1. Mobile: Restore the 90% width "Card" aesthetic with rounded corners. 2. 27-inch Screen: Force a 100vw "Full-Bleed" cinematic look. 3. The Boat: Ensure the absolute positioning of the boat animation still works in the expanded container.
+
+Please provide the final CSS block for HeroCard.module.css now.
+
+Final Checklist Before Closing
+Git Status: Your working tree is Clean. You successfully committed your architectural changes.
+
+App.jsx: Is saved with the <HeroCard /> as a sibling to the .container.
+
+Session Status: Session 3 complete. Session 4 (Final) is ready to begin."
