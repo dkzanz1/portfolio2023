@@ -111,3 +111,14 @@ Git Status: Your working tree is Clean. You successfully committed your architec
 App.jsx: Is saved with the <HeroCard /> as a sibling to the .container.
 
 Session Status: Session 3 complete. Session 4 (Final) is ready to begin."
+📉 The Problem
+CSS: HeroCard lost its container constraints. It lacks the 90% "Card" look on mobile and fails the 100vw "Full-Bleed" on 27-inch screens.
+
+Logic: dampeningFactor (0.7) is too high, causing the boat to fly off-screen.
+
+🎯 Next Session Startup Plan
+JSX Fix: Revert dampeningFactor to 0.03.
+
+CSS Fix: Apply Mobile-First constraints to .heroSection (90% width base).
+
+Expansion: Add min-width: 1920px for the cinematic 100vw look.
