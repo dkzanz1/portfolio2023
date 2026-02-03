@@ -30,11 +30,12 @@ function App() {
       <h1 className={styles.visuallyHidden}>
         Paul Zolik Aspiring Software Engineer Portfolio
       </h1>
+      <HeroCard />
       <div id="outer-container" className={styles.outerContainer}>
         <Burger />
         {/* ADD THE BUTTON BACK HERE */}
         <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
-        <HeroCard />
+
         <div id="page-wrap" className={styles.container}>
           <About />
           <Sectionpart />

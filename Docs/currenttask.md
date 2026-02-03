@@ -122,3 +122,153 @@ JSX Fix: Revert dampeningFactor to 0.03.
 CSS Fix: Apply Mobile-First constraints to .heroSection (90% width base).
 
 Expansion: Add min-width: 1920px for the cinematic 100vw look.
+## [2026-02-03] Session 4: Layout Architecture & Finalization
+**Status:** In-Progress 🟢
+
+### Objectives:
+- [ ] Refactor Hero/About container constraints for fluid responsiveness.
+- [ ] Audit CSS modules for naming consistency (BEM or CamelCase).
+- [ ] Sync technical protocol with Git resolution lessons learned.
+- [ ] Perform cross-browser UI audit (Chrome/Firefox).
+
+### Professional Notes:
+- Session 3 closed with clean git history.
+- Resolved Husky/Commitlint gatekeeping by adopting Conventional Commits.
+feb 3rd Session 5 Start-up: HeroCard Full-Bleed Refactor
+Goal: Transition HeroCard from "Constrained Box" to "Full-Viewport" architecture while maintaining Mobile-First integrity.
+
+Git Check: Verify feature/session-1-updates is clean.
+
+Architecture Shift: * Move HeroCard outside the outerContainer in App.jsx to break the 1200px width limit.
+
+Wrap About through Footer in a new div with max-width: var(--screen-lg) to keep content centered.
+
+CSS Implementation:
+
+Apply object-fit: cover and z-index: 0 to WaterVideo.
+
+Set heroSection to width: 100vw and height: 100vh.
+
+Implement clamp() for fluid typography across all breakpoints.
+
+Mobile-First Optimization: * Add a static poster image to WaterVideo for slow connections.
+
+Use @media query to disable mousemove parallax on touch devices.
+
+Professional Note Entry (Session Close)
+Log: Session 4 ended with a successful Git resolution and layout audit.
+
+Discovery: Identified that the current outerContainer prevents the intended "Full-Bleed" video background on high-res displays.
+
+Action: Proceeding to architectural decoupling in Session 5.
+Project: portfolio2023-main | Session 5 Startup
+Status: Architecture Refactored | Branch: feature/session-1-updates (Clean)
+
+🎯 Primary Objective: Full-Bleed Hero Implementation
+Transition HeroCard from a "Constrained Box" to a "Full-Viewport" cinematic layout without breaking Mobile-First integrity.
+
+🛠 Technical Action Plan
+Architecture (App.jsx):
+
+Ensure <HeroCard /> is a direct sibling to #outer-container (outside the 1200px constraint).
+
+Wrap remaining components (About to Footer) in a .contentWrapper to maintain standard centering.
+
+CSS Refactor (HeroCard.module.css):
+
+Full-Bleed: Set .heroSection to 100vw / 100vh.
+
+The Layering: Use position: absolute + object-fit: cover on WaterVideo (z-index: 0).
+
+The Content: Use position: relative (z-index: 1) to float text and the boat on top of the water.
+
+Responsive Logic: Use clamp() for fluid font sizing and @media queries to restore the "90% Card" look for mobile viewports only.
+
+Parallax Calibration:
+
+Revert dampeningFactor to 0.03 (currently too high at 0.7).
+
+Disable mousemove listeners for touch devices via media query.
+
+📝 Professional Protocol Notes
+P3 Compliance: Ensure aria-hidden is on decorative boat assets.
+
+Accessibility: Verify srOnly H1 exists for SEO/WCAG.
+
+Performance: Add a static poster image to WaterVideo fallback.
+
+🛑 Session Stop Summary
+Last Move: Identified that outerContainer was "choking" the high-res display.
+
+Current State: Git tree is clean. Ready for "Surgical CSS" injection.
+/* 1. The Main Container - Mobile First (The 90% Card Look) */
+.heroSection {
+  position: relative;
+  width: 90%;
+  height: 80vh; /* Shorter card look for mobile */
+  margin: 2rem auto;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+
+/* 2. The Full-Bleed Trigger - Large Screens (27-inch / 1920px+) */
+@media (min-width: 1200px) {
+  .heroSection {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+  }
+}
+
+/* 3. The Video Layer - The "Full Coverage" Magic */
+.watervideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* 4. The Content Layer - Floating on top of the water */
+.overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  width: 100%;
+}
+
+/* 5. Typography - Fluid scaling using clamp */
+.name {
+  font-size: clamp(1.8rem, 8vw, 4rem);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* 6. The Boat Container - Absolute within the Hero */
+.boat-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Allows clicks to pass through to content */
+  z-index: 2;
+}
+
+.boat {
+  position: absolute;
+  top: 70%; /* Position the boat on the "water line" */
+  left: 50%;
+  width: 80px;
+  transition: transform 0.1s ease-out; /* Smooths out the parallax move */
+}
