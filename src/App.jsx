@@ -30,13 +30,14 @@ function App() {
       <h1 className={styles.visuallyHidden}>
         Paul Zolik Aspiring Software Engineer Portfolio
       </h1>
+      {/* PHASE 1: FULL-BLEED (Cinematic) */}
       <HeroCard />
       <div id="outer-container" className={styles.outerContainer}>
         <Burger />
-        {/* ADD THE BUTTON BACK HERE */}
-        <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
-
+        {/* PHASE 2: CONSTRAINED CONTENT */}
         <div id="page-wrap" className={styles.container}>
+          {/* Keep the Toggle aligned with the content container */}
+          <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
           <About />
           <Sectionpart />
           <ProjectCardList />
