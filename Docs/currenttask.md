@@ -288,3 +288,12 @@ HeroCard: Architecture decoupled. 100vw ready. Dampening locked at 0.7.
 App.jsx: Refactored. HeroCard is a direct child of Fragment. All other content is safely inside .container.
 
 A11y: Visually hidden H1 verified as the first element. Next Session Start: Apply the specific CSS media query to HeroCard.module.css to trigger 100vw on desktop.
+Next Session Startup: portfolio2023-main
+
+Last State: App.jsx is refactored. HeroCard is outside the container.
+
+Immediate Task: Apply the @media (min-width: 1200px) block to HeroCard.module.css to force the 100vw cinematic look while keeping the 90% card look for mobile.
+
+Goal: Finalize the "Surgical CSS" to fix the 27-inch monitor blowout.
+
+Session Closed. See you in the next 15-minute or 30-minute sprint, Paul! Just say "Startup portfolio2023-main" when you're back.

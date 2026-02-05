@@ -160,4 +160,28 @@ Action: I will prioritize relevant saved information and logic for that specific
 Trigger: Use "Close session: [Topic]" to clear that context.
 
 Benefit: Prevents "State Pollution" and ensures high-accuracy responses.
-Use this as part of my state prevention protocol 
+Use this as part of my state prevention protocol
+
+6. (Feature Branching Protocol): Once a stable baseline 
+is pushed to the remote repository (origin/main), 
+all subsequent development must occur on 
+a dedicated feature branch.
+ This ensures the main branch remains 
+ deployable and provides a clean point for 
+ rollbacks or branch deletion 
+ if the experimental logic fails. 
+ Branch Creation: Use git checkout -b <type>/<description> (e.g., feat/contact-form).
+.' This terminology aligns with standard CI/CD (Continuous Integration/Continuous Deployment) workflows used in professional dev shops."
+
+Protocol Evaluation & Logic Order
+The order is logical, but for a "Startup Routine," we should ensure the Feature Branching happens before you start coding. Here is the suggested professional flow for your daily work:
+
+Sync & Maintenance: (Pull, Install, Clean tree check).
+
+State Protection: (Feature Branching Protocol — Create your branch before opening the IDE).
+
+Execution: (npm run dev).
+
+Iteration: (ACE Protocol, Mobile-First, Conventional Commits).
+
+Cleanup/Resolution: (Conflict Action Plan if needed).
