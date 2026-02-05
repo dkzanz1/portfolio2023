@@ -174,7 +174,7 @@
   Medium screens (tablets, 768px and up) 
   *****************************************/
 
-@media (min-width: var(--breakpoint-md)) {
+@media (min-width:992px) {
     .name {
         font-size: 4em;
     }
@@ -188,14 +188,17 @@
  Large screens (desktops, 992px and up) 
  *****************************************/
 
-@media (min-width: var(--breakpoint-lg)) {
+@media (min-width: 1200px) { 
     .name {
         font-size: 4em;
+        
     }
+}
     /* 2. Add this to the very bottom of HeroCard.module.css */
 @media (min-width: 1400px) {
     .heroSection {
-        width: 100vw;      /* Force to Viewport Width */
+        width: 100vw; 
+        max-width: 100vw;
         margin: 0;         /* Remove margins */
         border-radius: 0;  /* Optional: Remove rounded corners for a "full-bleed" look */
         left: 50%;
@@ -204,8 +207,8 @@
     }
     
     .heroContent {
-        min-height: 70vh;  /* Makes the hero taller and more dramatic on large screens */
+        min-height: 75h;  /* Makes the hero taller and more dramatic on large screens */
     }
 }
-}
+
   

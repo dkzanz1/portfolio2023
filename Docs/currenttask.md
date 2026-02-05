@@ -296,4 +296,4 @@ Immediate Task: Apply the @media (min-width: 1200px) block to HeroCard.module.cs
 
 Goal: Finalize the "Surgical CSS" to fix the 27-inch monitor blowout.
 
-Session Closed. See you in the next 15-minute or 30-minute sprint, Paul! Just say "Startup portfolio2023-main" when you're back.
+"Startup portfolio2023-main" 

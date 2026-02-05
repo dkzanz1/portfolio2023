@@ -14,7 +14,9 @@
   --screen-xl: 1536px; /* Professional standard for large screens */
   --screen-xxl: 2560px; /* For the ultra-wide crowd */
 }
-
+*, *::before, *::after {
+  box-sizing: inherit;
+}
 /* Override variables for the DARK theme on the body selector */
 body[data-theme='dark'] {
   --background-color: #1a202c;
@@ -24,6 +26,7 @@ body[data-theme='dark'] {
 }
 
 html, body, #root {
+  box-sizing: border-box; /* 1. Define it at the very top */
   margin: 0;
   padding: 0;
   width: 100vw;
