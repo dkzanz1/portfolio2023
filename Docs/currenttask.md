@@ -298,3 +298,4 @@ Goal: Finalize the "Surgical CSS" to fix the 27-inch monitor blowout.
 
 "Startup portfolio2023-main" 
 Entry: "Session finalized. HeroCard 'Blowout' issue resolved via 100vw transform breakout. Global styles consolidated with standard inheritance-based box-sizing. Repository state is clean and ready for the next feature implementation."
+Next Session Startup: portfolio2023-main Immediate Task: Apply the @media (min-width: 1200px) breakout and margin: -50vw logic to HeroCard.module.css. Goal: Verify "Full-Bleed" cinematic look on the 27-inch monitor."Startup portfolio2023-main"

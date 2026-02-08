@@ -34,7 +34,7 @@ function HeroCard() {
       const dy = e.clientY - rect.top - centerY;
       // 3.Adjust sensitivity factor for smoother movement//
       // 4.Dampening factor mean the boat moves 3% of the distance the mouse moves//
-      const dampeningFactor = 0.3;
+      const dampeningFactor = 0.9; // Adjust this value to make the boat more or less responsive
       // 3. Calculate the new parallax position (offset from center)
       // We are *offsetting* the boat relative to its center position// The boat-animation-wrapper should be used to position the boat,
       // but for simplicity, let's target the boat directly using 'transform'.
@@ -86,11 +86,11 @@ function HeroCard() {
                 using<strong> full stack development</strong>
               </p>
             </article>
-            <div className={styles["boat-container"]}>
+            <div className={styles["boat-container"]} aria-hidden="true">
               <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
                 <img
                   src={boatImage}
-                  alt="Cartoon Boat"
+                  alt="A small boat icon that follows the mouse movement for a parallax effect"
                   className={styles.boat}
                 />
               </div>
