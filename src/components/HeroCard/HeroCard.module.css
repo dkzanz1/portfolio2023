@@ -13,16 +13,18 @@
 /* This is the outer div */
 .heroSection {
     position: relative;
-    height: 80vh;
-    margin: 2rem auto;
     width: 90%;
+    height: 85vh;
+    margin: 2rem auto;
+   /* Keep this so it doesn't get too small on tiny phones */
+   min-height: 550px;
     border-radius: 20px;
     box-shadow: 0 10px 30px #0ee1ac;
     overflow:hidden;
-    display:flex;
+    /* display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     transition: all 0.5s ease-in-out;
     background: #000; /* Fallback for video */
 }
@@ -43,7 +45,7 @@
     display: block; /* FIX: Guarantees it behaves as a stable block element. */
     width: 100%;
     /* Occupy full width on mobile content needs to be 100% to fill screen */
-   min-height: 60vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
+   min-height: 100vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
     /* Adjust as needed */
     overflow: hidden;
     /* Ensure video stays within container */
@@ -76,7 +78,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
     /* Adjust opacity as needed */
-    z-index: 12;
+    z-index: 1;
     /* Overlay on top of the video */
     /* NEW CRITICAL ADDITION */
     pointer-events: auto; /* WHY: Ensures the overlay layer actively captures mouse events (mousemove, click, etc.) and does not pass them through. This is necessary for the event listener to function. */
@@ -87,7 +89,7 @@
     /* Center horizontally */
     justify-content: center;
     /* Center vertically */
-    padding: 20px;
+    /* padding: 20px; */
     /* Add some padding */
     border-radius: 25px;
     box-sizing: border-box;
