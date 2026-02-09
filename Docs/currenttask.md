@@ -324,3 +324,29 @@ Units: Use dvh for mobile height; object-fit: cover for video.
 
 Professional Note: Git State
 Clean branch: feature/session-1-updates. Last fix: Resolved ultra-wide video gaps.
+🏁 Session Stop Summary: portfolio2023-main
+Date: 2026-02-09 | Status: Layout Refactored (Pending Visual Review)
+
+Accomplishments:
+
+Breakout Implementation: Applied the 100vw negative margin logic to HeroCard.module.css.
+
+Cinematic Shift: Transitioned the HeroCard from a center-aligned card to a Rule of Thirds left-aligned layout for ultra-wide displays.
+
+Fluid Typography: Integrated clamp() for the .name heading.
+
+Git State: Pushed feat(herocard) to feature/session-1-updates. Working tree currently has unstaged changes in HeroCard.jsx and currenttask.md.
+
+The "One Thing" for Next Time:
+
+The user noted the layout is still "wrong" in specific ways.
+
+Immediate Goal: Diagnose why the cinematic layout isn't hitting the mark (potential issues: text scaling, boat overlap, or white-space balance).
+
+Next Steps:
+
+Stage and commit the remaining HeroCard.jsx changes.
+
+Review the "wrong" layout aspects with Gemini.
+
+Execute the final "Surgical CSS" polish.

@@ -96,7 +96,7 @@
 }
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: 2em;
+    font-size: clamp(2.5rem, 10vw, 8rem);
     color: white;
     /* Ensure text is visible */
     margin-bottom: 20px;
@@ -196,20 +196,51 @@
  Large screens (desktops, 992px and up) 
  *****************************************/
 /* Desktop: 27-inch "Full-Bleed" Breakout */
-@media (min-width: 1200px) { 
-    .name {
-        font-size: 4em;
-    }
+  @media (min-width: 1200px) { 
+    .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Move text to the left */
+    padding-left: 12vw;
+    text-align: left;
+  }
+
+  .name {
+   /* Fluid scaling: starts at 5rem, grows with screen, caps at 15rem */
+    font-size: clamp(5rem, 15vw, 15rem); 
+    font-weight: 900;
+    line-height: 0.85;
+    text-transform: uppercase;
+    color: white;
+    /* Cinematic depth: subtle shadow + slight letter spacing */
+    letter-spacing: -0.04em;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+    
+    /* Optional: Professional "Hollow" effect for sub-headers or secondary text */
+    /* -webkit-text-stroke: 1px rgba(255,255,255,0.5); */
+    /* Optional: Add a subtle vignette to make the white text pop against light water */
+  }    
+    .heroSection::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 50%);
+    pointer-events: none;
+  }
     .heroSection {
     width: 100vw;
     height: 100vh;
     margin: 0;
     border-radius: 0;
     /* This breaks out of the Fragment's implied flow */
-    /* left: 50%;
+    left: 50%;
     right: 50%;
     margin-left: -50vw;
-    margin-right: -50vw; */
+    margin-right: -50vw;
+    display:flex;
+    align-items: center; /* Vertical center */
+    justify-content: flex-start; /* Horizontal start (Rule of Thirds) */
 }
 /* Decorative Boat - A11y: Controlled via JS and aria-hidden */
 .boatContainer {
@@ -222,6 +253,7 @@
   z-index: 2;
 }
 }
+
 @media (min-width: 1400px) {
     .heroSection {
         width: 100vw; 
