@@ -28,13 +28,13 @@ function HeroCard() {
       const rect = videoContainer.getBoundingClientRect();
       // 1.Calculates mouse position relative to the container's center//
       const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+      const centerY = rect.height / 1;
       // 2.Sets boat position to follow mouse, clamped within container bounds//
       const dx = e.clientX - rect.left - centerX;
       const dy = e.clientY - rect.top - centerY;
       // 3.Adjust sensitivity factor for smoother movement//
       // 4.Dampening factor mean the boat moves 3% of the distance the mouse moves//
-      const dampeningFactor = 0.9; // Adjust this value to make the boat more or less responsive
+      const dampeningFactor = 0.7; // Adjust this value to make the boat more or less responsive
       // 3. Calculate the new parallax position (offset from center)
       // We are *offsetting* the boat relative to its center position// The boat-animation-wrapper should be used to position the boat,
       // but for simplicity, let's target the boat directly using 'transform'.
