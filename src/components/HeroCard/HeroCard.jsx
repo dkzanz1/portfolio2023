@@ -70,7 +70,7 @@ function HeroCard() {
             />
             <h2 className={styles.name}>
               <span>Hi, </span>
-              <span>I am Paul</span>
+              <span>Im Paul</span>
             </h2>
             <article className={styles.HeroBlurb}>
               <h3>
