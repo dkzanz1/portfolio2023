@@ -14,19 +14,13 @@
 .heroSection {
     position: relative;
     width: 100%;
-    height: 100dvh;/* Dynamic viewport height for mobile browser bars */
-    /* margin: 2rem auto; */
+    height: 80dvh;/* Dynamic viewport height for mobile browser bars */
    /* Keep this so it doesn't get too small on tiny phones */
-   min-height: 550px;
+    min-height: 550px;
     border-radius: 20px;
     box-shadow: 0 10px 30px #0ee1ac;
     overflow:hidden;
-    display:flex;
-    /*flex-direction: column;
-    justify-content: center;*/
-    align-items: flex-start; /* Aligns content to the left */
-    transition: all 0.5s ease-in-out;
-    background: #000; /* Fallback for video */
+    background: #000;
 }
 .Herocard {
     /* No display: flex or flex-direction needed here (removed in Task A) */
@@ -42,9 +36,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    /* display: block; */
     object-fit: cover;
-    z-index: 0;
+    z-index: 1;
     /* Place video behind other content */
     border-radius: 25px;
 }
@@ -67,30 +60,30 @@
 }
 .overlay {
     /* An overlay creates  semi transparent layer for better text readability */
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
+    height: 100%;
     /* Safe-Zone: Ensures text never touches the screen edge */
-  padding: clamp(2rem, 10vh, 10rem) clamp(1.5rem, 8vw, 8rem);
+    padding: clamp(2rem, 10vh, 10rem); 
     /* height: 100%; */
     background-color: rgba(0, 0, 0, 0.85);
     /* Adjust opacity as needed */
-    z-index: 2;
+    z-index: 2;/*now middle layer*/
     /* Overlay on top of the video */
     /* NEW CRITICAL ADDITION */
-    pointer-events: auto; /* WHY: Ensures the overlay layer actively captures mouse events (mousemove, click, etc.) and does not pass them through. This is necessary for the event listener to function. */
+    pointer-events: none; /* WHY: Ensures the overlay layer actively captures mouse events (mousemove, click, etc.) and does not pass them through. This is necessary for the event listener to function. */
     display: flex;
-    flex-direction: column;
-    /* Stack elements vertically */
+    flex-direction: column;/* Stack elements vertically */
     align-items: center;
     /* Center horizontally */
-    justify-content: center;
-    /* Center vertically */
-    /* padding: 20px; */
+    justify-content: center;/* Center horizontally on mobile */
+    text-align: center;
     /* Add some padding */
+    padding : 2rem;
     border-radius: 25px;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
 }
 /* Mobile-first styles (no media query) */
 .name {
@@ -144,17 +137,17 @@
     left: 0;
     width: 100%; /* Spans the entire interactive area */
     height: 100%; /* Spans the entire interactive area */
-    
+    z-index: 3; /* Ensure it sits above the video and overlay but below the text */
     /* CRITICAL FIX 2: Ensure it doesn't block the mouse event from reaching the videoContainer/overlay */
     /* This might need testing based on where the listener is, but let's try 'pointer-events: none;' on the boat container */
     /* For now, let's omit 'pointer-events' to keep it simple, but remember this if the boat blocks clicks. */
+    pointer-events: none;
 }
 .boat {
     width: 50px; /* Adjust size as needed */
     height: auto;
     position :absolute;
     animation: bob 4s infinite ease-in-out; /* Adjust timing */
-   
     top: 50%; /* WHY: Centers the boat vertically */
     left: 50%; /* WHY: Centers the boat horizontally */
 /* CRITICAL FIX 3: Add a smooth transition for visual effect (0.05s is very smooth) */
@@ -203,24 +196,17 @@
 /* Desktop: 27-inch "Full-Bleed" Breakout */
   @media (min-width: 1200px) { 
     .overlay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: flex-start; /* Move text to the left */
-    padding-left: 12vw;
+    padding-left: 10vw;
     text-align: left;
+    justify-content: center;
   }
 
   .name {
-   /* Fluid scaling: starts at 5rem, grows with screen, caps at 15rem */
-    font-size: clamp(5rem, 15vw, 15rem); 
-    font-weight: 900;
-    line-height: 0.85;
-    text-transform: uppercase;
-    color: white;
-    /* Cinematic depth: subtle shadow + slight letter spacing */
-    letter-spacing: -0.04em;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+    font-size: clamp(5rem, 12vw, 12rem); 
+    line-height: 0.9;
+    text-align: left;
+    max-width: 10ch; /* Keeps name punchy and tall */
     
     /* Optional: Professional "Hollow" effect for sub-headers or secondary text */
     /* -webkit-text-stroke: 1px rgba(255,255,255,0.5); */
@@ -247,6 +233,12 @@
     align-items: center; /* Vertical center */
     justify-content: flex-start; /* Horizontal start (Rule of Thirds) */
 }
+.HeroBlurb {
+    font-size: 1.5rem; /* Make the description readable on big screens */
+    margin: 1rem 0; /* Align with the name */
+    text-align: left;
+   max-width: 500px;
+  }
 /* Decorative Boat - A11y: Controlled via JS and aria-hidden */
 .boatContainer {
   position: absolute;

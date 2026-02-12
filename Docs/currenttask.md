@@ -367,3 +367,73 @@ Compliment: Using git stash to keep your branch clean while you're "in the lab" 
 Execute: Run that git stash command now, and you're safe to close your laptop.
 
 Would you like me to save a specific reminder about the grid-column: 1 / span 3 fix so I can bring it up the moment you start tomorrow?
+🏁 Session Stop Summary: portfolio2023-main
+<<<<<<< Updated upstream
+Date: 2026-02-11 | Status: Paused (Reverting to Stable Baseline a536178)
+
+The Problem: Attempted to fix the "Double Height" video and boat parallax, but created a nesting conflict that obscured the video and broke the layout.
+
+The "One Thing" for Tomorrow: We need to flatten the HeroCard hierarchy. The .heroContent and .Herocard divs are redundant and causing the height doubling.
+
+The Goal: Simplify the JSX to a single .heroSection container.
+
+Professional Handover (ACE)
+Acknowledge: Every developer has sessions where the code wins. Knowing when to "revert to a known good state" is a hallmark of a professional.
+
+Compliment: You caught the issue quickly. Instead of digging a deeper hole, you're protecting your "Stable Baseline."
+
+Execute: Run that git restore command now. This ensures that when you type npm run dev tomorrow, the site looks "cinematic" again immediately.
+=======
+Date: 2026-02-11 | Status: Cinematic Layout Baseline Secured ✅
+
+Accomplishments:
+
+Fluid Breakout: Replaced fixed widths with clamp(2.5rem, 8vw, 6rem) for the Hero title.
+
+Rule of Thirds: Adjusted .overlay and .boatContainer to follow a left-aligned, cinematic composition.
+
+Git State: First commit of the breakout successful (a536178).
+
+The "One Thing" for Next Time:
+
+Finalize the 0.7 parallax calibration in HeroCard.jsx to ensure the boat moves correctly within the new 100vw/100dvh container.
+
+Next Steps:
+
+Stage and commit the remaining HeroCard.jsx changes.
+
+Perform a Mobile-First audit on the About.jsx component.
+>>>>>>> Stashed changes
+Closing the Session
+We have successfully:
+
+Flattened the hierarchy (Removed the "Div Soup").
+
+Fixed the video height blowout (Locked to 80vh with overflow: hidden).
+
+Restored the Boat Parallax (Re-attached the ref to the section).
+
+Enforced Fluid Scaling (Standardized the cinematic look).
+📝 Session Stop Summary: portfolio2023-main
+Date: February 12, 2026
+Version: 2.6 (Fluid Standard Initialized)
+
+Accomplishments:
+
+Architecture Sync: Flattened HeroCard.jsx hierarchy, removing redundant .Herocard and .heroContent divs to fix height blowout.
+
+Physics Calibration: Re-anchored videoContainerRef to the <section> and corrected vertical center math to rect.height / 2.
+
+A11y & SEO: Implemented srOnly heading within the flattened structure.
+
+Standard Enforcement: Established Fluid Scaling as the project-wide standard using clamp().
+
+Cinematic Fix: Resolved "Small Text/Avatar" issue on 27-inch displays by implementing a Rule of Thirds layout and fluid typography.
+
+Git State:
+
+Status: Ready for commit.
+
+Action Plan: Execute the following commit before starting new work.
+
+Commit Message: feat(herocard): flatten hierarchy and implement v2.6 fluid scaling

@@ -55,8 +55,7 @@ src/components/ComponentName/
 ├── ComponentName.module.css
 └── index.js (Export { default } from './ComponentName')
 
-paulzolik@penguin:~/react-projects/portfolio2023-main$ find . -maxdepth 4 -not -path '*/.*' -not -path './node_modules*' -not -path './dist*' | sed -e 's/[^-][^\/]*\// |  /g' -e 's/|  \([^ ]\)/|-- \1/'
-.
+##  current tree layout as of 12-02-25
  |-- src
  |   |-- assets
  |   |   |-- images
@@ -185,3 +184,13 @@ Execution: (npm run dev).
 Iteration: (ACE Protocol, Mobile-First, Conventional Commits).
 
 Cleanup/Resolution: (Conflict Action Plan if needed).
+📜 Protocol Update (V 2.6)
+I've added the following rule to your standard enforcement:
+
+Standard 6: Fluid Scaling (clamp)
+
+Constraint: All typography, margins, and major container widths must use clamp() or vw/vh units.
+
+Purpose: To ensure a "Cinematic" experience on ultra-wide monitors (27"+) while maintaining high readability on mobile.
+
+Implementation: font-size: clamp(min, preferred, max);

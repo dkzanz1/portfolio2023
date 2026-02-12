@@ -28,7 +28,7 @@ function HeroCard() {
       const rect = videoContainer.getBoundingClientRect();
       // 1.Calculates mouse position relative to the container's center//
       const centerX = rect.width / 2;
-      const centerY = rect.height / 1;
+      const centerY = rect.height / 2;
       // 2.Sets boat position to follow mouse, clamped within container bounds//
       const dx = e.clientX - rect.left - centerX;
       const dy = e.clientY - rect.top - centerY;
@@ -54,47 +54,44 @@ function HeroCard() {
   }, []);
 
   return (
-    <section className={styles.heroSection} aria-labelledby="hero-heading">
+    <section
+      className={styles.heroSection}
+      aria-labelledby="hero-heading"
+      ref={videoContainerRef}
+      /* <--- THIS above RE-ACTIVATES THE BOAT */
+    >
       {/* 2. Visually Hidden H1 for SEO/A11y Compliance */}
       <h1 id="hero-heading" className={styles.srOnly}>
         Paul - Full Stack Web Developer Portfolio
       </h1>
-      <div className={styles.Herocard}>
-        <div className={styles.heroContent} ref={videoContainerRef}>
-          <WaterVideo className={styles.watervideo} />
-          <div className={styles.overlay}>
+      <WaterVideo className={styles.watervideo} />
+      <div className={styles.overlay}>
+        <img src={img} alt="Paul's Avatar" className={styles["circle-img"]} />
+        <h2 className={styles.name}>
+          <span>Hi, </span>
+          <span>Im Paul</span>
+        </h2>
+        <article className={styles.HeroBlurb}>
+          <h3>
+            Web Developer
+            <br /> who lives by the Sea, <br />I build websites that are as
+            <br /> refreshing as the sea breeze
+            <br />
+            Dorset
+          </h3>
+          <p className={styles.HeroInfo}>
+            I build Crafted Bespoke Webpages
+            <br />
+            using<strong> full stack development</strong>
+          </p>
+        </article>
+        <div className={styles["boat-container"]} aria-hidden="true">
+          <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
             <img
-              src={img}
-              alt="Paul's Avatar"
-              className={styles["circle-img"]}
+              src={boatImage}
+              alt="A small boat icon that follows the mouse movement for a parallax effect"
+              className={styles.boat}
             />
-            <h2 className={styles.name}>
-              <span>Hi, </span>
-              <span>Im Paul</span>
-            </h2>
-            <article className={styles.HeroBlurb}>
-              <h3>
-                Web Developer
-                <br /> who lives by the Sea, <br />I build websites that are as
-                <br /> refreshing as the sea breeze
-                <br />
-                Dorset
-              </h3>
-              <p className={styles.HeroInfo}>
-                I build Crafted Bespoke Webpages
-                <br />
-                using<strong> full stack development</strong>
-              </p>
-            </article>
-            <div className={styles["boat-container"]} aria-hidden="true">
-              <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
-                <img
-                  src={boatImage}
-                  alt="A small boat icon that follows the mouse movement for a parallax effect"
-                  className={styles.boat}
-                />
-              </div>
-            </div>
           </div>
         </div>
       </div>
