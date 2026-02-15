@@ -87,7 +87,7 @@
 }
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-size: clamp(2rem, 8vw, 4.5rem);
     font-weight: 800;
     line-height: 1.1;
     /* color: white; */
@@ -106,12 +106,12 @@
 }
 
 .HeroBlurb {
-    font-size: 1em;
+    width: clamp(280px, 80%, 600px); 
+    margin: 1.5rem auto;
     color: white;
     text-align: center;
-    margin: 0 auto;
-    /* Center the blurb */
-    max-width: 80%;
+  
+    
     /* Limit blurb width */
     z-index: 2;
 }
@@ -235,9 +235,14 @@
 }
 .HeroBlurb {
     font-size: 1.5rem; /* Make the description readable on big screens */
-    margin: 1rem 0; /* Align with the name */
+    margin: 1.5rem 0; /* Align with the name */
     text-align: left;
    max-width: 500px;
+  }
+  .overlay {
+    /* Rule of Thirds: Align content to the left for cinematic feel */
+    text-align: left;
+    padding-left: 10%;
   }
 /* Decorative Boat - A11y: Controlled via JS and aria-hidden */
 .boatContainer {

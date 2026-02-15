@@ -72,12 +72,10 @@ function HeroCard() {
           <span>Im Paul</span>
         </h2>
         <article className={styles.HeroBlurb}>
+          {/*removed all br for better flow*/}
           <h3>
-            Web Developer
-            <br /> who lives by the Sea, <br />I build websites that are as
-            <br /> refreshing as the sea breeze
-            <br />
-            Dorset
+            Web Developer who lives by the Sea, I build websites that are as
+            refreshing as the sea breeze Dorset
           </h3>
           <p className={styles.HeroInfo}>
             I build Crafted Bespoke Webpages
@@ -87,11 +85,7 @@ function HeroCard() {
         </article>
         <div className={styles["boat-container"]} aria-hidden="true">
           <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
-            <img
-              src={boatImage}
-              alt="A small boat icon that follows the mouse movement for a parallax effect"
-              className={styles.boat}
-            />
+            <img src={boatImage} alt="" className={styles.boat} />
           </div>
         </div>
       </div>

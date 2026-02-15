@@ -1,4 +1,4 @@
-eactCraft Project Protocol (V 2.5)
+ReactCraft Project Protocol (V 2.5)
 # Last Updated: January 2026
 
 ## 1. 🛑 Standard Enforcement (The ACE Protocol)
