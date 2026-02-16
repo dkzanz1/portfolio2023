@@ -437,3 +437,32 @@ Status: Ready for commit.
 Action Plan: Execute the following commit before starting new work.
 
 Commit Message: feat(herocard): flatten hierarchy and implement v2.6 fluid scaling
+Current State: Reverting to stable baseline (pre-breakout experiments).
+
+1. Visual Goals (The "Cartoon" Upgrade)
+Objective: Transform the current mephoto.jpg from a standard photo into a "cartoon/sticker" illustration.
+
+Proposed Style: * Add a 8px solid white border and a deep shadow to the .circle-img.
+
+Use a specific CSS filter stack: brightness(1.1) contrast(1.2) saturate(1.4).
+
+Cinematic View: Increase the scale of the avatar using clamp() but keep it vertically centered for now to avoid layout shifts.
+
+2. Physics & Logic Fixes
+Dampening Factor: Strictly .07 (Restore from the accidental 0.7).
+
+Boat Glitch: The "snapping" is caused by a transition lag. Next session, we will update the .boat-animation-wrapper transition to 0.1s or 0.2s for a snappy, responsive follow.
+
+Math Fix: Implement rect.height / 2 in the boat's Y-axis calculation to ensure the "bob" happens from the true center.
+
+3. Layout & iPad Optimization
+The Breakout: Keep the clamp(280px, 90%, 1400px) width as the standard. Do not attempt 100vw breakouts until the internal centering is fully stable.
+
+iPad Mini/Pro: The next task is to refine the Quick Navigation button sizes using fluid scaling without pushing the hero content off-center.
+
+🛠 Git Protocol for Next Start
+Command: git status (Confirming we are on a clean branch).
+
+Commit Scope: Use lowercase only (e.g., feat(hero): ... or style(avatar): ...).
+
+Files to provide: protocol and currenttask.sh
