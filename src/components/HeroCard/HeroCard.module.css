@@ -202,21 +202,25 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
 /* Desktop: 27-inch "Full-Bleed" Breakout */
   @media (min-width: 1200px) { 
     .overlay {
-    align-items: flex-start; /* Move text to the left */
-    padding-left: 10vw;
+    display: grid;
+    /* Two-column layout: Text on left (1.5 parts), Image on right (1 part) */
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-areas: 
+      "title image"
+      "blurb image";
+    align-items: center;
+    padding: 0 10vw;
     text-align: left;
-    justify-content: center;
+    background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%);
   }
 
   .name {
-    font-size: clamp(5rem, 12vw, 12rem); 
-    line-height: 0.9;
+ grid-area: title;
     text-align: left;
-    max-width: 10ch; /* Keeps name punchy and tall */
-    
-    /* Optional: Professional "Hollow" effect for sub-headers or secondary text */
-    /* -webkit-text-stroke: 1px rgba(255,255,255,0.5); */
-    /* Optional: Add a subtle vignette to make the white text pop against light water */
+    font-size: clamp(5rem, 10vw, 10rem);
+    align-self: end; /* Ties title to the blurb below it */
+    margin: 0;
+
   }    
     .heroSection::after {
     content: '';
@@ -237,13 +241,22 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
     margin-right: -50vw;
     display:flex;
     align-items: center; /* Vertical center */
-    justify-content: flex-start; /* Horizontal start (Rule of Thirds) */
+    
 }
 .HeroBlurb {
-    font-size: 1.5rem; /* Make the description readable on big screens */
-    margin: 1.5rem 0; /* Align with the name */
+   grid-area: blurb;
     text-align: left;
-    max-width: 500px;
+    align-self: start; /* Keeps blurb tight under the name */
+    margin-top: 1.5rem;
+    max-width: 550px;
+  }
+  .circle-img {
+    grid-area: image;
+    justify-self: center; /* Centers sticker in its right-hand column */
+    width: clamp(14em, 25vw, 22em); /* Scales up for the big screen */
+    height: clamp(14em, 25vw, 22em);
+    border-width: 12px; /* Thicker "sticker" border for larger size */
+    margin: 0;
   }
   .overlay {
     /* Rule of Thirds: Align content to the left for cinematic feel */
