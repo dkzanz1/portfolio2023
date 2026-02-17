@@ -13,14 +13,18 @@
 /* This is the outer div */
 .heroSection {
     position: relative;
-    width: 100%;
-    height: 80dvh;/* Dynamic viewport height for mobile browser bars */
+    width: 90%;
+    margin: 2rem auto;
+    height: 80vh;/* Dynamic viewport height for mobile browser bars */
    /* Keep this so it doesn't get too small on tiny phones */
-    min-height: 550px;
     border-radius: 20px;
     box-shadow: 0 10px 30px #0ee1ac;
     overflow:hidden;
     background: #000;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease-in-out;
 }
 .Herocard {
     /* No display: flex or flex-direction needed here (removed in Task A) */
@@ -29,6 +33,7 @@
     overflow: hidden; /* Hide any overflowing content */
     position: relative; /* For positioning the overlay */
     isolation: isolate; /* NEW FIX: WHY: Creates a new stacking context, often resolving mysterious positioning and z-index issues for absolute children. */
+    border-radius: 20px;
   }
   .watervideo {
     position: absolute;
@@ -39,7 +44,7 @@
     object-fit: cover;
     z-index: 1;
     /* Place video behind other content */
-    border-radius: 25px;
+    border-radius: 20px;
 }
 
 .heroContent {
@@ -110,8 +115,10 @@
     margin: 1.5rem auto;
     color: white;
     text-align: center;
-  
-    
+     font-size: clamp(1rem, 4vw, 1.5rem);
+     line-height: 1.5;
+     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+     /* Ensure blurb is visible */
     /* Limit blurb width */
     z-index: 2;
 }
@@ -119,11 +126,12 @@
 .circle-img {
     border-radius: 50%;
     border: 8px solid #fff;
-    width: clamp(6em, 15vw, 10em);
-    height : clamp(6em, 15vw, 10em);
+    width: clamp(180px, 25vw, 350px);
+    height : auto;
 filter: brightness(1.1) contrast(1.2) saturate(1.4); 
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
-    z-index: 5;
+    z-index: 3;
+    transition: transform 0.3s ease;
 }
 /* Hover effect to make the 'sticker' feel interactive */
 .circle-img:hover {
@@ -140,7 +148,7 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
     left: 0;
     width: 100%; /* Spans the entire interactive area */
     height: 100%; /* Spans the entire interactive area */
-    z-index: 3; /* Ensure it sits above the video and overlay but below the text */
+    z-index: 5; /* Ensure it sits above the video and overlay but below the text */
     /* CRITICAL FIX 2: Ensure it doesn't block the mouse event from reaching the videoContainer/overlay */
     /* This might need testing based on where the listener is, but let's try 'pointer-events: none;' on the boat container */
     /* For now, let's omit 'pointer-events' to keep it simple, but remember this if the boat blocks clicks. */
@@ -215,11 +223,10 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
   }
 
   .name {
- grid-area: title;
-    text-align: left;
-    font-size: clamp(5rem, 10vw, 10rem);
-    align-self: end; /* Ties title to the blurb below it */
-    margin: 0;
+ font-size: clamp(2.5rem, 8vw, 6rem);
+  color: white;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 
   }    
     .heroSection::after {
@@ -239,9 +246,6 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    display:flex;
-    align-items: center; /* Vertical center */
-    
 }
 .HeroBlurb {
    grid-area: blurb;

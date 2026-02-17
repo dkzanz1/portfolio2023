@@ -476,3 +476,19 @@ Full-Bleed Breakout functional.
 Cinematic Balance implemented via Grid.
 
 Would you like me to generate the final commit message for this "Cinematic Balance" update so you can wrap up this session?
+#Session Save Point: portfolio2023-main
+Architecture: HeroCard.jsx is successfully flattened. The <section> now acts as the primary videoContainerRef, fixing the boat's tracking area.
+
+Physics: Locked at 0.7 dampening. The rect.height / 2 math is integrated for vertical centering.
+
+Styling: Fluid scaling is active via clamp(). The "Sticker" aesthetic (white border/filters) is ready for final CSS polish.
+
+Git State: Local changes are ready to be staged.
+
+📝 Professional Note (Session Mid-Point)
+Log: Refactored HeroCard to a semantic <section> wrapper. Resolved coordinate tracking by anchoring getBoundingClientRect to the full-bleed container.
+Discovery: 0.7 dampening provides the desired "high-energy" parallax for the boat on larger displays.
+
+🏁 Final Summary for your Records
+Current State: HeroCard is semantically compliant and structurally decoupled. The "Breakout" CSS is handling the 27-inch monitor transition without blowing out the mobile card view.
+Pending: Fine-tuning the "Sticker" CSS filter stack and verifying the "Rule of Thirds" alignment for the avatar.
