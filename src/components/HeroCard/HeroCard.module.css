@@ -22,9 +22,9 @@
     overflow:hidden;
     background: #000;
     display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.5s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
 }
 .Herocard {
     /* No display: flex or flex-direction needed here (removed in Task A) */
@@ -45,23 +45,6 @@
     z-index: 1;
     /* Place video behind other content */
     border-radius: 20px;
-}
-
-.heroContent {
-    position: relative;
-    /* Make this relative for absolute positioning of children */
-    display: block; /* FIX: Guarantees it behaves as a stable block element. */
-    width: 100%;
-    /* Occupy full width on mobile content needs to be 100% to fill screen */
-   min-height: 100vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
-    /* Adjust as needed */
-    overflow: hidden;
-    /* Ensure video stays within container */
-    border-radius: 25px;
-    /* Keep the rounded corners */
-    margin:0;
-    box-sizing: border-box;
-    /* border: rgb(185, 15, 237) 1px solid; */
 }
 .overlay {
     /* An overlay creates  semi transparent layer for better text readability */
@@ -95,7 +78,6 @@
     font-size: clamp(2rem, 8vw, 4.5rem);
     font-weight: 800;
     line-height: 1.1;
-    /* color: white; */
     color: var(--text-primary, #ffffff);
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -105,22 +87,37 @@
     /* Add spacing below name */
     text-align: center;
     max-width: 12ch; /* Limits width so title doesn't span the whole 27" screen */
-    /* Center the name */
-    /* z-index: 1; */
-    /* Ensure text is on top */
+    pointer-events: auto;
 }
+
+.heroContent {
+    position: relative;
+    /* Make this relative for absolute positioning of children */
+    display: block; /* FIX: Guarantees it behaves as a stable block element. */
+    width: 100%;
+    /* Occupy full width on mobile content needs to be 100% to fill screen */
+   min-height: 100vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
+    /* Adjust as needed */
+    overflow: hidden;
+    /* Ensure video stays within container */
+    border-radius: 25px;
+    /* Keep the rounded corners */
+    margin:0;
+    box-sizing: border-box;
+    /* border: rgb(185, 15, 237) 1px solid; */
+}
+
+
 
 .HeroBlurb {
     width: clamp(280px, 80%, 600px); 
     margin: 1.5rem auto;
     color: white;
-    text-align: center;
+    
      font-size: clamp(1rem, 4vw, 1.5rem);
      line-height: 1.5;
      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-     /* Ensure blurb is visible */
-    /* Limit blurb width */
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 .circle-img {
@@ -132,6 +129,7 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
     z-index: 3;
     transition: transform 0.3s ease;
+    pointer-events: auto;
 }
 /* Hover effect to make the 'sticker' feel interactive */
 .circle-img:hover {
@@ -149,47 +147,29 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
     width: 100%; /* Spans the entire interactive area */
     height: 100%; /* Spans the entire interactive area */
     z-index: 5; /* Ensure it sits above the video and overlay but below the text */
-    /* CRITICAL FIX 2: Ensure it doesn't block the mouse event from reaching the videoContainer/overlay */
-    /* This might need testing based on where the listener is, but let's try 'pointer-events: none;' on the boat container */
-    /* For now, let's omit 'pointer-events' to keep it simple, but remember this if the boat blocks clicks. */
     pointer-events: none;
 }
-.boat {
-    width: 50px; /* Adjust size as needed */
-    height: auto;
-    position :absolute;
-    animation: bob 4s infinite ease-in-out; /* Adjust timing */
-    top: 50%; /* WHY: Centers the boat vertically */
-    left: 50%; /* WHY: Centers the boat horizontally */
-/* CRITICAL FIX 3: Add a smooth transition for visual effect (0.05s is very smooth) */
-  transform: translate(-50%, -50%); 
-    /* 0.2s prevents the boat from 'snapping' too harshly with high dampening */
-    transition: transform 0.2s ease-out;
-    z-index: 10;
-    transform-origin: bottom center;
-    pointer-events: none; /* Ensure the boat doesn't block mouse events */
-}
-    @keyframes bob {
-    0% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(7px) rotate(5deg); }  
-    100% { transform: translateY(0px) rotate(-3deg); }  
-} 
-
 .boat-animation-wrapper {
     /* WHY: This element is positioned absolutely and receives the JS parallax transform. */
     position: absolute; 
     top: 50%; 
     left: 50%;
     transform: translate(-50%, -50%); 
-    transition: transform 5.0s ease-out;
+   
     z-index: 1;
     pointer-events: none;/* Ensure it doesn't block mouse events */
 }
-    /* @keyframes bob {
-        0% { transform: translateY(0) rotate(0deg); }
-        50% { transform: translateY(7px) rotate(5deg); } /* Adjust height */
-        /* 100% { transform: translateY(0px) rotate(-3deg); } */
-    /* } */ 
+.boat {
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    animation: bob 4s infinite ease-in-out; /* Adjust timing */
+}
+    @keyframes bob {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(10px) rotate(5deg); }  
+    100% { transform: translateY(0px) rotate(0deg); }  
+} 
+
  /*****************************************
   Medium screens (tablets, 768px and up) 
   *****************************************/
@@ -208,7 +188,18 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
  Large screens (desktops, 992px and up) 
  *****************************************/
 /* Desktop: 27-inch "Full-Bleed" Breakout */
-  @media (min-width: 1200px) { 
+@media (min-width: 1200px) {
+.heroSection {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    border-radius: 0;
+    /* This breaks out of the Fragment's implied flow */
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+} 
     .overlay {
     display: grid;
     /* Two-column layout: Text on left (1.5 parts), Image on right (1 part) */
@@ -223,44 +214,32 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
   }
 
   .name {
- font-size: clamp(2.5rem, 8vw, 6rem);
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-  z-index: 1;
-
+    grid-area: title;
+    text-align: left;
+    font-size: clamp(2.5rem, 8vw, 6rem);
   }    
-    .heroSection::after {
+    /* .heroSection::after {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, rgba(0,0,0,0.4) 0%, transparent 50%);
     pointer-events: none;
-  }
-    .heroSection {
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    border-radius: 0;
-    /* This breaks out of the Fragment's implied flow */
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-}
+  } */
+ 
 .HeroBlurb {
    grid-area: blurb;
     text-align: left;
-    align-self: start; /* Keeps blurb tight under the name */
-    margin-top: 1.5rem;
-    max-width: 550px;
+    
+    margin: 1.5rem 0 0 0; /* Remove horizontal auto margin for left alignment */
+   
   }
   .circle-img {
     grid-area: image;
     justify-self: center; /* Centers sticker in its right-hand column */
     width: clamp(14em, 25vw, 22em); /* Scales up for the big screen */
-    height: clamp(14em, 25vw, 22em);
+   
     border-width: 12px; /* Thicker "sticker" border for larger size */
-    margin: 0;
+    
   }
   .overlay {
     /* Rule of Thirds: Align content to the left for cinematic feel */
