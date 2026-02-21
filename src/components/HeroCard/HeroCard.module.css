@@ -27,6 +27,7 @@
     transition: all 0.5s ease-in-out;
 }
 .Herocard {
+    outline: 20px solid lime;
     /* No display: flex or flex-direction needed here (removed in Task A) */
     width: 100%; /* Ensures the card takes full width of its parent */
     background-color: #2e4325; /* Example background color */
@@ -75,9 +76,9 @@
 }
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: clamp(2rem, 8vw, 4.5rem);
+    font-size: clamp(2.2rem, 8vw, + 1rem, 8.5rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.0;
     color: var(--text-primary, #ffffff);
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -86,7 +87,7 @@
     margin: 0;
     /* Add spacing below name */
     text-align: center;
-    max-width: 12ch; /* Limits width so title doesn't span the whole 27" screen */
+    max-width: 15ch; /* Limits width so title doesn't span the whole 27" screen */
     pointer-events: auto;
 }
 
@@ -110,13 +111,12 @@
 
 
 .HeroBlurb {
-    width: clamp(280px, 80%, 600px); 
+    width: clamp(280px, 80%, 800px); 
     margin: 1.5rem auto;
     color: white;
-    
-     font-size: clamp(1rem, 4vw, 1.5rem);
-     line-height: 1.5;
-     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    line-height: 1.4;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     /* z-index: 2; */
 }
 
@@ -174,15 +174,7 @@ filter: brightness(1.1) contrast(1.2) saturate(1.4);
   Medium screens (tablets, 768px and up) 
   *****************************************/
 
-@media (min-width:992px) {
-    .name {
-        font-size: 4em;
-    }
-
-.HeroBlurb {
-    font-size: 2.5em;
-}
-}
+/* not currently required */
 
 /*****************************************
  Large screens (desktops, 992px and up) 

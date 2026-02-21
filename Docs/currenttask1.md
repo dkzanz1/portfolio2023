@@ -1,15 +1,50 @@
 # 🎯 Session 6: Fluid Parity & UI Recovery
 
 ## 🚀 Immediate Focus
-- [ ] **Find the Down Arrow:** Fix the Z-index/Viewport clipping in `HeroCard.module.css`.
+check that all levels of screen have a good balance and visual appeal only then we can move onto about too set the same standard,
+Q/ask ai should we apply the rule of third to all sizes and if so why?
+ `HeroCard.module.css`.
 - [ ] **About.jsx P3 Audit:** Verify semantic HTML tags for accessibility.
 - [ ] **Rule of Thirds:** Set up the Grid layout for the About section content.
 
 ## 🛠 Active Logic Constants
-- **Dampening:** `.07` (Locked)
-- **Vertical Math:** `rect.height / 2`
+- **Dampening:** `0.7` (Locked)and now completed
+- **Vertical Math:** `rect.height / 2`completed
 - **Breakout Pattern:** `margin-left: -50vw; left: 50%; width: 100vw;`
 
 ## 📂 Git Pulse
 - **Branch:** `feature/session-1-updates`
 - **Last Stable:** `a536178`
+New AI standard session summary:-
+Use formatable way to creat summary with a tick box when completed, ideally saying done with maybe date
+
+Updated Session Checklist
+[ ] Fluid Parity Check: Verify clamp() values across mobile/desktop.
+
+[ ] About.jsx P3 Audit: Check for <section>, <article>, and aria-labels.
+
+[ ] Grid Setup: Apply Rule of Thirds to the About section layout.
+
+[ ] HeroCard Breakout: Apply the 50vw breakout logic
+📍 Session 6 Journey: UI Recovery & Expansion
+[x] Task 6.1: Set Fluid Scaling standard (Done: 2026-02-18)
+
+[x] Task 6.2: Define New Summary Protocol (Done: 2026-02-21)
+
+[ ] Task 6.3: HeroCard Breakout Implementation & Visual Audit
+
+[ ] Task 6.4: About section Semantic P3 Audit
+
+[ ] Task 6.5: About section "Rule of Thirds" Grid Layout
+
+[ ] Task 6.6: Final Parity Sync (Mobile vs Desktop Balance)
+The Session Journey (currenttask.md)
+Update your currenttask.md with these next steps to keep the momentum:
+
+Task 6.3: Complete HeroCard Visual Audit (Check for overflow-x).
+
+Task 6.4: Semantic refactor of About.jsx (Switching div to section/article).
+
+Task 6.5: Apply grid-template-columns: repeat(3, 1fr) to About.module.css.
+
+How is the HeroCard looking in the browser? If the breakout is causing a horizontal scrollbar, would you like the CSS fix for the body overflow now?

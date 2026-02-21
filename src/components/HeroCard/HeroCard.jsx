@@ -34,13 +34,14 @@ function HeroCard() {
       const dy = e.clientY - rect.top - centerY;
       // 3.Adjust sensitivity factor for smoother movement//
       // 4.Dampening factor mean the boat moves 3% of the distance the mouse moves//
-      const dampeningFactor = 0.7; // Adjust this value to make the boat more or less responsive
+      const dampeningFactor = 0.15; // Adjust this value to make the boat more or less responsive
 
       const offsetX = dx * dampeningFactor;
       const offsetY = dy * dampeningFactor;
       // 4. Apply the position using CSS transform for better performance (GPU acceleration)
       // This centers the boat (translateX/Y(-50%)) and then applies the parallax offset.
-      boat.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px)`;
+      //   boat.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px)`;
+      boat.style.transform = `translate3d(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px), 0)`;
     };
 
     videoContainer.addEventListener("mousemove", handleMouseMove);
