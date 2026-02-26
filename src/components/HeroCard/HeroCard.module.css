@@ -10,6 +10,9 @@
   white-space: nowrap;
   border: 0;
 }
+/* ============================================================
+   1. CORE CONTAINER (Mobile-First)
+   ============================================================ */
 /* This is the outer div */
 .heroSection {
     position: relative;
@@ -19,23 +22,18 @@
    /* Keep this so it doesn't get too small on tiny phones */
     border-radius: 20px;
     box-shadow: 0 10px 30px #0ee1ac;
-    overflow:hidden;
     background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: all 0.5s ease-in-out;
+/* CRITICAL: Keeps boat/video clipped and fixes z-index layering */
+    overflow:hidden;
+    isolation: isolate;
+    pointer-events: auto; /* Ensure the container is interactive */
+    cursor: default;
 }
-.Herocard {
-    outline: 20px solid lime;
-    /* No display: flex or flex-direction needed here (removed in Task A) */
-    width: 100%; /* Ensures the card takes full width of its parent */
-    background-color: #2e4325; /* Example background color */
-    overflow: hidden; /* Hide any overflowing content */
-    position: relative; /* For positioning the overlay */
-    isolation: isolate; /* NEW FIX: WHY: Creates a new stacking context, often resolving mysterious positioning and z-index issues for absolute children. */
-    border-radius: 20px;
-  }
+
   .watervideo {
     position: absolute;
     top:0;
@@ -45,28 +43,30 @@
     object-fit: cover;
     z-index: 1;
     /* Place video behind other content */
-    border-radius: 20px;
+    
 }
 .overlay {
     position: absolute;
     inset: 0; /* Shorthand for top/left/right/bottom: 0 */
     padding: 1.5rem; /* Reduced from 2rem to prevent Nest Hub overflow */
     background-color: rgba(0, 0, 0, 0.85);
-    z-index: 2;
-    pointer-events: none;
+    z-index: 3;
+    pointer-events: none;/*address at point 2*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
+/* ============================================================
+   2. CONTENT ELEMENTS
+   ============================================================ */
 /* Mobile-first styles (no media query) */
 .name {
     font-size: clamp(2.5rem, 12vw,8.5rem); 
     font-weight: 800;
     line-height: 1.0;
     color: var(--text-primary, #ffffff);
-  
     text-transform: uppercase;
     letter-spacing: -0.02em;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -78,25 +78,6 @@
     pointer-events: auto;
 }
 
-.heroContent {
-    position: relative;
-    /* Make this relative for absolute positioning of children */
-    display: block; /* FIX: Guarantees it behaves as a stable block element. */
-    width: 100%;
-    /* Occupy full width on mobile content needs to be 100% to fill screen */
-   min-height: 100vh; /* <--- ADD A BASE HEIGHT (Adjust as needed for mobile-first) */
-    /* Adjust as needed */
-    overflow: hidden;
-    /* Ensure video stays within container */
-    border-radius: 25px;
-    /* Keep the rounded corners */
-    margin:0;
-    box-sizing: border-box;
-    /* border: rgb(185, 15, 237) 1px solid; */
-}
-
-
-
 .HeroBlurb {
     width: clamp(280px, 80%, 800px); 
     margin: 1.5rem auto;
@@ -104,7 +85,6 @@
     font-size: clamp(1rem, 2.5vw, 2.5rem);
     line-height: 1.4;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    /* z-index: 2; */
 }
 
 .circle-img {
@@ -116,7 +96,7 @@
     height : auto; */
     filter: brightness(1.1) contrast(1.2) saturate(1.4); 
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
-    z-index: 3;
+    z-index: 4; /* Above overlay and video */
     transition: transform 0.3s ease;
     pointer-events: auto;
 }
@@ -128,6 +108,9 @@
     text-align: center;
     
   }
+  /* ============================================================
+   3. INTERACTIVE BOAT (Parallax)
+   ============================================================ */
 .boat-container {
     /* CRITICAL FIX 1: Set positioning context */
     position: absolute; /* Place it over the video/overlay */
@@ -135,7 +118,7 @@
     left: 0;
     width: 100%; /* Spans the entire interactive area */
     height: 100%; /* Spans the entire interactive area */
-    z-index: 5; /* Ensure it sits above the video and overlay but below the text */
+    z-index: 2; /* Ensure it sits above the video and overlay but below the text */
     pointer-events: none;
 }
 .boat-animation-wrapper {
@@ -143,10 +126,11 @@
     position: absolute; 
     top: 50%; 
     left: 50%;
-    transform: translate(-50%, -50%); 
-   
-    z-index: 1;
+    transform: translate3d(-50%, -50%); 
+    z-index: 5;
     pointer-events: none;/* Ensure it doesn't block mouse events */
+    transition: transform 20.5s ease-out !important;
+    will-change: transform;
 }
 .boat {
     width: 80px; /* Adjust size as needed */
@@ -232,7 +216,6 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 2;
 }
 }
 
@@ -248,17 +231,16 @@
         overflow:hidden;/* Ensures video and boat remain clipped to the section */
     }
     
-    .heroContent {
-        min-height: 85vh;  /* Makes the hero taller and more dramatic on large screens */
+  .heroContent {
+      min-height: 85vh;  /* Makes the hero taller and more dramatic on large screens */
     }
     /* 2. Layering Check: Ensure boat stays above overlay fog but below content if needed */
-.boat-animation-wrapper {
+  .boat-animation-wrapper {
     position: absolute; 
     top: 50%; 
     left: 50%;
     /* Keep transition low for the 0.7 dampening responsiveness */
     transition: transform 0.1s ease-out; 
-    z-index: 15; /* Higher than .overlay (12) to make it sit 'on top' of the tint */
     pointer-events: none;
 }
 }

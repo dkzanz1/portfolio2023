@@ -23,31 +23,35 @@ function HeroCard() {
     const videoContainer = videoContainerRef.current;
 
     if (!boat || !videoContainer) return;
-
-    const handleMouseMove = (e) => {
+    // LINE A: Get the container's size and position on the screen.
+    const handlePassiveMove = (e) => {
       const rect = videoContainer.getBoundingClientRect();
-      // 1.Calculates mouse position relative to the container's center//
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
+      // LINE A: Get the container's size and position on the screen.
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+      // LINE C: Calculate mouse position relative to the container.
+      // e.clientX is where the mouse is on the WHOLE screen.
+      // rect.left is where the container starts.
+      // We subtract the center to make "0" the middle of the box.
       // 2.Sets boat position to follow mouse, clamped within container bounds//
       const dx = e.clientX - rect.left - centerX;
       const dy = e.clientY - rect.top - centerY;
       // 3.Adjust sensitivity factor for smoother movement//
-      // 4.Dampening factor mean the boat moves 3% of the distance the mouse moves//
-      const dampeningFactor = 0.15; // Adjust this value to make the boat more or less responsive
-
+      // 4.Dampening factor mean the boat moves 95% of the distance the mouse moves until it slowly catches up//
+      const dampeningFactor = 0.95; // Adjust this value to make the boat more or less responsive
+      // LINE E: Final offset distance.
       const offsetX = dx * dampeningFactor;
       const offsetY = dy * dampeningFactor;
       // 4. Apply the position using CSS transform for better performance (GPU acceleration)
       // This centers the boat (translateX/Y(-50%)) and then applies the parallax offset.
       //   boat.style.transform = `translate(-50%, -50%) translate(${offsetX}px, ${offsetY}px)`;
-      boat.style.transform = `translate3d(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px), 0)`;
+      boatRef.current.style.transform = `translate3d(calc(-50% + ${offsetX}px), calc(-50% + ${offsetY}px), 0)`;
     };
 
-    videoContainer.addEventListener("mousemove", handleMouseMove);
+    videoContainer.addEventListener("mousemove", handlePassiveMove);
 
     return () => {
-      videoContainer.removeEventListener("mousemove", handleMouseMove);
+      videoContainer.removeEventListener("mousemove", handlePassiveMove);
     };
   }, []);
 
