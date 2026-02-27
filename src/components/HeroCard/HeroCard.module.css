@@ -15,7 +15,7 @@
    ============================================================ */
 /* This is the outer div */
 .heroSection {
-    position: relative;
+    position: relative;/* DEFINED ONCE HERE - Inherited by all screen sizes */
     width: 90%;
     margin: 2rem auto;
     height: 80vh;/* Dynamic viewport height for mobile browser bars */
@@ -51,7 +51,7 @@
     padding: 1.5rem; /* Reduced from 2rem to prevent Nest Hub overflow */
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 3;
-    pointer-events: none;/*address at point 2*/
+    pointer-events: none;/*set the standard at mobile level*/
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -75,7 +75,7 @@
     /* Add spacing below name */
     text-align: center;
     max-width: 15ch; /* Limits width so title doesn't span the whole 27" screen */
-    pointer-events: auto;
+    pointer-events: none;
 }
 
 .HeroBlurb {
@@ -90,15 +90,13 @@
 .circle-img {
     border-radius: 50%;
     border: 8px solid #fff;
-    width: clamp(200px, 25vw, 350px);
+    width: clamp(200px, 25vw, 450px);
     height: clamp(200px, 25vw, 350px);
-    /* width: auto;
-    height : auto; */
     filter: brightness(1.1) contrast(1.2) saturate(1.4); 
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
     z-index: 4; /* Above overlay and video */
     transition: transform 0.3s ease;
-    pointer-events: auto;
+    pointer-events: none;
 }
 /* Hover effect to make the 'sticker' feel interactive */
 .circle-img:hover {
@@ -133,7 +131,7 @@
     will-change: transform;
 }
 .boat {
-    width: 80px; /* Adjust size as needed */
+    width: clamp(30px, 8vw, 80px);
     height: auto;
     animation: bob 4s infinite ease-in-out; /* Adjust timing */
 }
@@ -157,9 +155,10 @@
 .heroSection {
         width: 100vw;
         left: 50%;
-        margin-left: -50vw;
+        margin-left: -50vw;/* This is our standard breakout */
         border-radius: 0;
         height: 100vh; /* Full height for cinematic feel */
+        
 } 
     .overlay {
     display: grid;
@@ -172,7 +171,7 @@
     padding: 0 10vw;
     text-align: left;
     background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%);
-    pointer-events: none;
+    
   }
     .overlay {
     /* Rule of Thirds: Align content to the left for cinematic feel */
@@ -215,25 +214,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
 }
 }
 
 @media (min-width: 1400px) {
     .heroSection {
-        width: 100vw; 
         max-width: 100%;
-        margin: 0;         /* Remove margins */
-        border-radius: 0;  /* Optional: Remove rounded corners for a "full-bleed" look */
-        left: 50%;
-        position: relative;
-        transform: translateX(-50%); /* Centers the breakout */
-        overflow:hidden;/* Ensures video and boat remain clipped to the section */
     }
     
   .heroContent {
       min-height: 85vh;  /* Makes the hero taller and more dramatic on large screens */
     }
+
     /* 2. Layering Check: Ensure boat stays above overlay fog but below content if needed */
   .boat-animation-wrapper {
     position: absolute; 
@@ -241,7 +233,6 @@
     left: 50%;
     /* Keep transition low for the 0.7 dampening responsiveness */
     transition: transform 0.1s ease-out; 
-    pointer-events: none;
 }
 }
 
