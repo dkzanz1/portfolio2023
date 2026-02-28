@@ -31,11 +31,12 @@ function App() {
         Paul Zolik Aspiring Software Engineer Portfolio
       </h1>
       {/* PHASE 1: FULL-BLEED (Cinematic) */}
-      <HeroCard />
+
       <div id="outer-container" className={styles.outerContainer}>
         <Burger />
         {/* PHASE 2: CONSTRAINED CONTENT */}
         <div id="page-wrap" className={styles.container}>
+          <HeroCard />
           {/* Keep the Toggle aligned with the content container */}
           <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
           <About />

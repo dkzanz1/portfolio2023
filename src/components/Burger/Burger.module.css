@@ -2,20 +2,21 @@
 
 .bm-burger-button {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: clamp(32px, 5vw, 50px); /* Fluid width between 32px and 50px */
+  height: clamp(28px, 4.5vw, 45px); /* Fluid height between 24px and 40px */
   left: 1.25rem;
   top: 1.25rem;
   background: rgba(14, 14, 14, 0.0);
-  display: flex; /* Use flexbox to center bars */
-  flex-direction: column; /* Stack bars vertically */
-  justify-content: space-around; /* Distribute space evenly between bars */
   padding: 6px; /* Add some padding around the bars */
   box-sizing: border-box; /* Include padding in width/height */
 }
 
 /*burger button and bar held in global index.css*/
-
+.bm-burger-bars {
+  background: #373a47; /* Fallback color */
+  height: 20%; /* Relative to the fluid height of the button */
+  border-radius: 2px;
+}
 
 
 
@@ -31,8 +32,9 @@
   
 .bm-menu-wrap {
     position: fixed;
-    width: 40%;
-    height: 40%;
+    width: clamp(280px, 40%, 450px) !important; /* Fluid width between 280px and 400px */
+    height: 100% !important;
+    top : 0;
   }
   
 .bm-menu {
@@ -52,12 +54,46 @@
   
 .bm-item {
     display: block;
-    padding: 20px 0;
-    font-size: 1.15em;
+    padding: clamp(1rem, 3vw, 2rem) 0; /* Fluid vertical padding */
+    font-size: clamp(1.2rem, 2.15vw, 2.15rem);
     text-decoration: none;
     color: white;
+    /* Adds a slight transition for hover states */
+    transition: color 0.5s ease, padding-left 0.3s ease;
   }
-  
+  .bm-item:hover {
+  color: var(--secondary-color, #bdc3c7);
+  padding-left: 10px; /* Subtle "push" effect on hover */
+}
 .bm-overlay {
     background: rgba(126, 135, 124, 0.3);
+
   }
+  /* --- Desktop Nav Logic --- */
+.desktopNav {
+  display: none; /* Hidden by default (Mobile First) */
+}
+
+@media (min-width: 1024px) {
+  .desktopNav {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    gap: 3rem;
+    z-index: 1000;
+  }
+  
+  .desktopNav a {
+    text-decoration: none;
+    color: white; /* Or your variable */
+    font-weight: 500;
+    font-size: clamp(1rem, 1.2vw, 1.5rem); /* Fluid Scaling Standard */
+  }
+
+  /* Hide the Burger completely on Desktop */
+  .mobileWrapper {
+    display: none;
+  }
+}
+

@@ -79,12 +79,16 @@
 }
 
 .HeroBlurb {
-    width: clamp(280px, 80%, 800px); 
-    margin: 1.5rem auto;
+    width: clamp(90%, 800px); 
+    margin: 1.2rem auto;
     color: white;
-    font-size: clamp(1rem, 2.5vw, 2.5rem);
+    font-size: clamp(.7rem, 2.5vw, 1.6rem);
     line-height: 1.4;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    /* Force centering to override any inherited layout shifts */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .circle-img {
@@ -150,6 +154,26 @@
 /*****************************************
  Large screens (desktops, 992px and up) 
  *****************************************/
+ /*
+3. NEST HUB / SHORT SCREEN FIX (The "Crossover" Fix)
+   ============================================================ */
+@media (max-height: 700px) {
+  .overlay { gap: 0.1rem; } /* Tighten spacing */
+  
+  .name { font-size: clamp(1.4rem, 8vh, 3rem); }
+  
+  .HeroBlurb { font-size: 0.7rem; margin: 0.1rem; }
+
+  .circle-img {
+    width: clamp(60px, 35vh, 150px);
+    height: clamp(60px, 35vh, 150px);
+  }
+
+  .boat {
+    width: clamp(10px, 15vh, 30px); /* Keeps boat from eating the text */
+  }
+}
+
 /* Desktop: 27-inch "Full-Bleed" Breakout */
 @media (min-width: 1200px) {
 .heroSection {
