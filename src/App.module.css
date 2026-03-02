@@ -23,8 +23,8 @@
 
 .darkModeToggle {
   position: fixed;
-  top: 20px;
-  right: 20px;
+  top: 3rem;
+  right: 6rem;
   z-index: 1000;
   background-color: var(--background-color);
   color: var(--text-color);

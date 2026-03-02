@@ -48,7 +48,7 @@
 .overlay {
     position: absolute;
     inset: 0; /* Shorthand for top/left/right/bottom: 0 */
-    padding: 1.5rem; /* Reduced from 2rem to prevent Nest Hub overflow */
+    padding: 6rem 1.5rem 1.5rem; /* Reduced from 2rem to prevent Nest Hub overflow */
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 3;
     pointer-events: none;/*set the standard at mobile level*/
@@ -63,7 +63,7 @@
    ============================================================ */
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: clamp(2.5rem, 12vw,8.5rem); 
+    font-size: clamp(2.5rem, 10vw, 8.5rem); 
     font-weight: 800;
     line-height: 1.0;
     color: var(--text-primary, #ffffff);
@@ -95,7 +95,7 @@
     border-radius: 50%;
     border: 8px solid #fff;
     width: clamp(200px, 25vw, 450px);
-    height: clamp(200px, 25vw, 350px);
+    height: clamp(200px, 25vw, 550px);
     filter: brightness(1.1) contrast(1.2) saturate(1.4); 
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
     z-index: 4; /* Above overlay and video */
@@ -177,17 +177,25 @@
 /* Desktop: 27-inch "Full-Bleed" Breakout */
 @media (min-width: 1200px) {
 .heroSection {
-        width: 100vw;
-        left: 50%;
-        margin-left: -50vw;/* This is our standard breakout */
-        border-radius: 0;
-        height: 100vh; /* Full height for cinematic feel */
-        
+    position: relative;
+       /* 1. Reset Mobile Width */
+    width: 100vw;
+    max-width: 100vw; 
+    min-width: 100vw;/* Ensure no cap from parent */
+        /* 2. THE BREAKOUT LOGIC: Anchor to center, then pull back half the viewport */
+    left: 50%;
+    margin-left: -50vw;
+  
+    /* 3. Aesthetics */
+    border-radius: 0;
+    height: 100vh; 
+    margin-top: 0;
+    margin-bottom: 0
 } 
     .overlay {
     display: grid;
     /* Two-column layout: Text on left (1.5 parts), Image on right (1 part) */
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr .5fr;
     grid-template-areas: 
       "title image"
       "blurb image";
@@ -206,7 +214,8 @@
   .name {
     grid-area: title;
     text-align: left;
-    /* font-size: clamp(2.5rem, 8vw, 6rem); remove if works bettter*/
+    font-size: clamp(2.5rem, 10vw, 12rem); /*remove if works better*/
+    line-height: 0.9; /* Bring letters closer vertically */
   }    
     .heroSection::after {
     content: '';
@@ -217,10 +226,11 @@
   }
  
 .HeroBlurb {
-   grid-area: blurb;
-    text-align: left;
-    margin: 1rem 0; /* Remove horizontal auto margin for left alignment */
-   
+  grid-area: blurb;
+  text-align: left;
+  margin: 1rem 0; /* Remove horizontal auto margin for left alignment */
+   /* Increase the ceiling for the sub-headline */
+  font-size: clamp(1.2rem, 3vw, 2.5rem);
   }
   .circle-img {
     grid-area: image;
