@@ -5,7 +5,7 @@ function About() {
   return (
     <>
       <section className={styles.aboutContainer}>
-        <div className={styles.Aboutblurb}>
+        <article className={styles.Aboutblurb}>
           <h2>About:-</h2>
           <p className={styles.blurb}>
             &quot;Im a dedicated self-taught web developer with a passion for
@@ -16,7 +16,7 @@ function About() {
             I strive to deliver high-quality results that exceed client
             expectations.&quot;
           </p>
-        </div>
+        </article>
       </section>
     </>
   );
