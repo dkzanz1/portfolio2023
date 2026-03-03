@@ -1,7 +1,7 @@
 /* Burger.module.css */
 
 .bm-burger-button {
-  position: absolute;
+  position : fixed;
   width: clamp(32px, 5vw, 50px); /* Fluid width between 32px and 50px */
   height: clamp(28px, 4.5vw, 45px); /* Fluid height between 24px and 40px */
   left: 1.25rem;

@@ -62,6 +62,16 @@ function HeroCard() {
       ref={videoContainerRef}
       /* <--- THIS above RE-ACTIVATES THE BOAT */
     >
+      {/* Standard 8: aria-hidden because it's purely decorative */}
+      <div className={styles.scrollIndicator} aria-hidden="true">
+        <div className={styles.mouse}>
+          <div className={styles.wheel}></div>
+        </div>
+        <div className={styles.arrow}>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
       {/* 2. Visually Hidden H1 for SEO/A11y Compliance */}
       <h1 id="hero-heading" className={styles.srOnly}>
         Paul - Full Stack Web Developer Portfolio

@@ -144,6 +144,65 @@
     50% { transform: translateY(10px) rotate(5deg); }  
     100% { transform: translateY(0px) rotate(0deg); }  
 } 
+/* ADD THIS TO THE END OF HeroCard.module.css */
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 5vh; /* Adjusted for Standard 6 spacing */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  z-index: 10;
+  pointer-events: none; /* Standard 8: No interaction hijacking */
+  opacity: 0.8; /* Subtle look */
+}
+
+.mouse {
+  width: 35px;
+  height: 60px;
+  border: 3px solid #ffffff;
+  border-radius: 25px;
+  position: relative;
+}
+
+.wheel {
+  width: 8px;
+  height: 12px;
+  background: #0ee1ac; /* Using your signature green */
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollWheel 2.5 infinite ease-in-out;
+}
+
+.arrow span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-bottom: 4px solid #ffffff;
+  border-right: 4px solid #ffffff;
+  transform: rotate(45deg);
+  margin: -6px;
+  animation: arrowBounce 2s infinite;
+}
+
+@keyframes scrollWheel {
+  0% { opacity: 0; top: 10px; }
+  30% { opacity: 1; }
+  100% { opacity: 0; top: 35px; }
+}
+
+@keyframes arrowBounce {
+  0% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
+}
+
 
  /*****************************************
   Medium screens (tablets, 768px and up) 
@@ -171,6 +230,9 @@
 
   .boat {
     width: clamp(10px, 15vh, 30px); /* Keeps boat from eating the text */
+  }
+  .scrollIndicator {
+    display: none; /* Hide on Nest Hub/Short screens to save space */
   }
 }
 
@@ -216,6 +278,7 @@
     text-align: left;
     font-size: clamp(2.5rem, 10vw, 12rem); /*remove if works better*/
     line-height: 0.9; /* Bring letters closer vertically */
+    margin-top: 30px;
   }    
     .heroSection::after {
     content: '';
@@ -265,8 +328,7 @@
     position: absolute; 
     top: 50%; 
     left: 50%;
-    /* Keep transition low for the 0.7 dampening responsiveness */
-    transition: transform 0.1s ease-out; 
+    
 }
 }
 

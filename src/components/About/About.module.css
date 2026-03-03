@@ -1,4 +1,7 @@
 /* About.module.css */
+:root {
+  --section-gap: clamp(4rem, 10vh, 8rem);
+}
 .aboutContainer {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -8,16 +11,18 @@
   padding: 1.5rem;
   width: 92%;
   border-radius: 25px;
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
   /* Use the CSS variable for box-shadow */
   box-shadow: 10px 10px 10px 10px var(--box-shadow-color);
-  /* margin-top: 30px; */
+ 
 }
 
 /* Explicitly style the text colors */
 .Aboutblurb {
   color: var(--text-color); 
-  padding-left: 15px;
-  padding-top: 10px;
+  padding-left: 5px;
+  padding-top: 5px;
   
   position: relative;
   top: 0px;
@@ -26,7 +31,7 @@
 
 .Aboutblurb h2 {
   font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
   color: var(--text-color); /* Explicitly target the h1 tag */
 }
 
@@ -37,7 +42,40 @@
   font-size: clamp(1.1rem, 2.5vw, 1.6rem);
   line-height: 1.6; /* Increased for better readability on small screens */
   margin: 1rem auto;
-  padding-bottom: 20px;
+  padding-bottom: clamp(1rem, 3vh, 2rem);
+}
+/* 1. THE STICKER CONTAINER */
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* 2. THE STICKER ITSELF (Standardized Aesthetic) */
+.stickerImg {
+  width: clamp(150px, 20vw, 300px);
+  height: 12rem;
+  border-radius: 50%; /* Keeps the "Sticker" circular */
+  border: 8px solid #ffffff; /* The signature white sticker border */
+  
+  /* Standard 6: Physics-based shadow for "lifted" feel */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  
+  /* Your specific filter stack for the "Cartoon" look */
+  filter: brightness(1.1) contrast(1.2) saturate(1.4);
+  
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 3. INTERACTION (Standard 8) */
+.stickerImg:hover {
+  transform: scale(1.05) rotate(-3deg); /* "Peeling" sticker effect */
+}
+@media (min-width: 1200px) {
+  .imageWrapper {
+    grid-column: 1; /* Places it in the left "Third" of the grid */
+  }
 }
 /* ============================================================
    DESKTOP GRID (Rule of Thirds)
