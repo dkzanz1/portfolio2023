@@ -92,15 +92,22 @@
 }
 
 .circle-img {
-    border-radius: 50%;
-    border: 8px solid #fff;
+  /* Standard 6: Dynamic width + Brand Aspect Ratio */
     width: clamp(200px, 25vw, 450px);
-    height: clamp(200px, 25vw, 550px);
+    aspect-ratio: 4 / 5; /* THE OVAL STANDARD */
+    height: auto; 
+    border-radius: 50%;
+    object-fit: cover; /* Keeps your image from stretching */
+
+  /* Branding */
+    border: 8px solid #fff;
     filter: brightness(1.1) contrast(1.2) saturate(1.4); 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
+    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
+
     z-index: 4; /* Above overlay and video */
-    transition: transform 0.3s ease;
-    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: auto;
+     
 }
 /* Hover effect to make the 'sticker' feel interactive */
 .circle-img:hover {
@@ -298,10 +305,10 @@
   .circle-img {
     grid-area: image;
     justify-self: center; /* Centers sticker in its right-hand column */
-    width: 22em; /* Larger size for desktop */
-    height: 22em;
+    width: 28rem; /* Larger size for desktop */
+    height: auto;
     border-width: 12px; /* Thicker "sticker" border for larger size */
-    
+    pointer-events: auto;
   }
 
 /* Decorative Boat - A11y: Controlled via JS and aria-hidden */

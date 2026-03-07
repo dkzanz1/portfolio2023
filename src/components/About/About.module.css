@@ -28,20 +28,27 @@
   align-items: center;
   padding: 2rem;
 }
+/* 1. THE STICKER FRAME (Shared Logic) */
+.stickerFrame {
+  position: relative;
+  /* STANDARD 6: Fluid sizing for the whole circle */
+  width: clamp(180px, 30vw, 340px); 
+  aspect-ratio: 4 / 5; /* Forces the circle shape regardless of viewport */
+  margin: 0 auto;
+
+}
 /* 2. THE STICKER ITSELF (Standardized Aesthetic) */
 .stickerImg {
-  width: clamp(150px, 20vw, 300px);
-  height: 12rem;
-  border-radius: 50%; /* Keeps the "Sticker" circular */
-  border: 8px solid #ffffff; /* The signature white sticker border */
-  
-  /* Standard 6: Physics-based shadow for "lifted" feel */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-  
-  /* Your specific filter stack for the "Cartoon" look */
-  filter: brightness(1.1) contrast(1.2) saturate(1.4);
-  
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  /* BRAND CONSTANTS */
+  border: 8px solid var(--primary-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1) contrast(1.1) saturate(1.2);
+  /* STANDARD 8: Cohesive Physics Hover */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* 3. INTERACTION (Standard 8) */
