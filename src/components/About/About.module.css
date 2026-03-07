@@ -7,42 +7,19 @@
   color: var(--text-color);
   border: 1px solid var(--primary-color);
   box-sizing: border-box; /* stops padding doesn't break the width */
-  margin: 15% auto;
-  padding: 1.5rem;
-  width: 92%;
   border-radius: 25px;
-  margin-top: var(--section-gap);
-  margin-bottom: var(--section-gap);
-  /* Use the CSS variable for box-shadow */
   box-shadow: 10px 10px 10px 10px var(--box-shadow-color);
- 
-}
-
-/* Explicitly style the text colors */
-.Aboutblurb {
-  color: var(--text-color); 
-  padding-left: 5px;
-  padding-top: 5px;
   
-  position: relative;
-  top: 0px;
+    /* STANDARD 6: Fluid Spacing & Width */
+  width: clamp(92%, 90vw, 1400px);
+  margin: var(--section-gap)auto;
+  padding: clamp(1.5rem, 5vw, 4rem);
+  
   text-align: center;
-}
 
-.Aboutblurb h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
-  color: var(--text-color); /* Explicitly target the h1 tag */
-}
-
-.blurb {
-  color: var(--text-color);
-  padding: 10px;
-  /* Fluid Scaling: Min 1.1rem, Scales with viewport, Max 1.6rem */
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  line-height: 1.6; /* Increased for better readability on small screens */
-  margin: 1rem auto;
-  padding-bottom: clamp(1rem, 3vh, 2rem);
+  /* STANDARD 7: Define Layout at Mobile level */
+  display: grid;
+  grid-template-columns: 1fr; /* Single column for mobile */
 }
 /* 1. THE STICKER CONTAINER */
 .imageWrapper {
@@ -51,7 +28,6 @@
   align-items: center;
   padding: 2rem;
 }
-
 /* 2. THE STICKER ITSELF (Standardized Aesthetic) */
 .stickerImg {
   width: clamp(150px, 20vw, 300px);
@@ -72,41 +48,34 @@
 .stickerImg:hover {
   transform: scale(1.05) rotate(-3deg); /* "Peeling" sticker effect */
 }
-@media (min-width: 1200px) {
-  .imageWrapper {
-    grid-column: 1; /* Places it in the left "Third" of the grid */
-  }
+
+/* Explicitly styled the text colors */
+.Aboutblurb {
+  color: var(--text-color); 
 }
+
+.Aboutblurb h2 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+.blurb {
+  /* Fluid Scaling: Min 1.1rem, Scales with viewport, Max 1.6rem */
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  line-height: 1.6; /* Increased for better readability on small screens */
+  max-width: 65ch; /* Standard 6: Readability cap */
+  margin: 0 auto;
+}
+
 /* ============================================================
    DESKTOP GRID (Rule of Thirds)
    ============================================================ */
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .aboutContainer {
-    display: grid;
-    /* Creating 3 columns: 1 for whitespace/image, 2 for the bio */
-    grid-template-columns: 1fr 2fr; 
+   grid-template-columns: 1fr 2fr; /* Implementation of Rule of Thirds */
+    text-align: left;
     gap: 4rem;
-    padding: 4rem;
-    width: 90vw; /* Matches the breakout feel */
-    max-width: 1400px;
-    margin: 4rem auto;
-    text-align: left;
   }
-
-  .Aboutblurb {
-    grid-column: 2; /* Pushes the text to the right 2/3 of the container */
-    text-align: left;
-    padding: 0;
-  }
-  .Aboutblurb h2 {
-    
-    margin-bottom: 1rem;
-}
 
   .blurb {
-    margin: 1rem 0;
-    font-size: 1.5rem; /* Larger for cinema screens */
-    line-height: 1.6;
-    max-width: 65ch; /* Optimal reading length */
-  }
-}
+    margin: 0;
+}}

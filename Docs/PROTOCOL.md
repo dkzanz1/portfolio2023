@@ -154,3 +154,5 @@ Duplicates: The "[2026-02-27] Standard 7 & 8 Addition" block at the very end was
 Redundancy: Removed the repeated "Mobile-First" descriptions by consolidating them into the core ACE rules.
 
 Clarity: Reorganized the "Startup Routine" into a numbered list that includes the Feature Branching Protocol, so you don't forget to branch out before you code.
+Constraint Rule: Prohibit max-width media queries to prevent "Breakpoint Snapping" and logic conflicts. Use min-width for layout escalations and clamp() for internal element fluidity.
+(Note: max-width on an element is okay/reasonably good; but max-width in a @media query is the problem!)
