@@ -131,7 +131,7 @@
     transform: translate3d(-50%, -50%); 
     z-index: 5;
     pointer-events: none;/* Ensure it doesn't block mouse events */
-    transition: transform 20.5s ease-out !important;
+    transition: transform 10.5s ease-out !important;
     will-change: transform;
 }
 .boat {
