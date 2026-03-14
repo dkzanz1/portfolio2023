@@ -232,7 +232,8 @@
 
   .circle-img {
     width: clamp(60px, 35vh, 150px);
-    height: clamp(60px, 35vh, 150px);
+    height: auto;
+    aspect-ratio: 4 / 5; /* Forces the Oval on short screens */
   }
 
   .boat {
@@ -252,8 +253,9 @@
     max-width: 100vw; 
     min-width: 100vw;/* Ensure no cap from parent */
         /* 2. THE BREAKOUT LOGIC: Anchor to center, then pull back half the viewport */
-    left: 50%;
-    margin-left: -50vw;
+    /* left: 50%; */
+    left: calc(-50vw + 50%);
+    /* margin-left: -50vw; */
   
     /* 3. Aesthetics */
     border-radius: 0;

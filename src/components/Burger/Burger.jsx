@@ -34,7 +34,7 @@ function Burger() {
         <div
           className={`${styles.topDownMenu} ${isOpen ? styles.menuVisible : ""}`}
           /* Standard 8: Prevents the hidden curtain from blocking clicks to the boat/parallax */
-          style={{ pointerEvents: isOpen ? "auto" : "none" }}
+          // Note: This is a safety measure to ensure that when the menu is closed, it does not interfere with interactions on the boat/parallax elements below it. By setting pointer-events to none when the menu is hidden, we allow clicks to pass through the hidden menu to the elements underneath. When the menu is visible, we set pointer-events back to auto to allow interaction with the menu links.
         >
           <nav className={styles.curtainLinks}>
             <a href="/contact" onClick={toggleMenu}>

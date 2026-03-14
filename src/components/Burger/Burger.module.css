@@ -82,6 +82,8 @@
   transform: translateY(-100%);
   z-index: 999;
 
+  /* Standard 8: Force transparency when closed to protect Boat/Parallax */
+  pointer-events: none;
   /* Protocol Figure: .95 Dampening */
   /* We use cubic-bezier to simulate that heavy dampening/physics feel */
   transition: transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
@@ -90,6 +92,8 @@
 /* 4. Active State (Task 8.3) */
 .menuVisible {
   transform: translateY(0);
+  /* Standard 8: Enable interactions when visible */
+  pointer-events: auto;
 }
 
 /* 5. Fluid Scaling Links (Task 8.4) */
