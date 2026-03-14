@@ -1,126 +1,44 @@
-📂 NEW Session History: portfolio2023-main
-Project Standard: V 2.7 (Fluid Parity & ACE Compliance)
+📜 Master Project History: portfolio2023-main
+Latest Standard: V 2.8 (Liquid Physics & ACE Compliance)
 
-✅ Completed Milestones (Archive)
+✅ Completed Milestones (Phase 1 & 2 Locked)
+Architecture: Component-Centric Barrel Pattern (index.js exports) with App-level Navigation.
 
-Architecture: Moved Navigation to App.jsx to resolve stacking context/clipping issues.
+Semantics: Full conversion to <main>, <section>, and <article> for A11y/SEO compliance.
 
-Hero Section: Implemented 100vw "Full-Bleed" breakout via left: 50% / margin-left: -50vw.
+Fluidity: Global clamp() scaling and --section-gap variable established.
 
-Navigation: Deleted react-burger-menu; implemented custom "Curtain" drop-down with translateY.
+Hero Breakout: 100vw "Full-Bleed" logic via calc(-50vw + 50%).
 
-Semantics: Swapped div for <section> and <article> in About.jsx (WCAG compliant).
+🛠️ Phase 3 Refinements (The "Glass & Physics" Sprint)
+Liquid Glass Navigation: * Implemented 40% transparency + 15px backdrop-blur for premium depth.
 
-Typography: Established clamp() as the mandatory fluid scaling standard.
+Resolved GPU stuttering using will-change: transform.
 
-Physics: Applied pointer-events: none to all decorative overlays to prevent interaction hijacking.
+Applied Standard 8 (pointer-events: none) to prevent interaction hijacking when closed.
+
+Physics Protocol: * Applied a "Back Ease Out" bounce to the curtain menu: cubic-bezier(0.175, 0.885, 0.32, 1.275).
+
+Calibrated boat inertia: 10.5s transition with .95 dampening.
+
+Branding Sync: * Unified the "Sticker" visual language across Hero and About sections.
+
+Locked the 4:5 Oval standard via aspect-ratio and border-radius: 50%.
+
+About Section Audit: * Eliminated all hard-coded pixel widths/margins.
+
+Refactored grid to Rule of Thirds (1fr 2fr) on desktop via Standard 7.
 
 ⚙️ Active Project Constants
-
-Dampening (Precision): 0.95 (UI tracking).
-
-Dampening (Lag): .07 (Organic boat movement).
+Dampening: 0.95 (UI Tracking) / 0.07 (Boat Inertia).
 
 Vertical Math: rect.height / 2 (Centering logic).
 
-Scaling Standard: Fluid clamp() (No static px or rem for layout).
+Scaling: Fluid clamp() mandatory for all layout/typography.
 
-⚠️ Technical Debt (Revisit List)
+🎯 Current Task Queue
+ProjectCard Audit: Hunt for max-width media queries and convert to fluid gaps.
 
-Nest Hub Audit: Implement @media (max-height: 700px) for smart display overflow.
+Mobile Scaling Audit: Physical device verification of z-index and menu links.
 
-Global Overrides: Audit index.css for h2 styles clashing with module clamp().
-
-Interaction Wake-up: Test mousemove listeners for "click-to-start" on mobile Safari.
-📋 Recommended Update for currenttask
-:
-
-ðŸ›  Consolidated Session State: portfolio2023-main
-
-Dampening: 0.95 (Locked) chosen because feels right on screen
-
-Scaling: Fluid clamp() mandatory.
-
-Breakout: margin-left: -50vw; left: 50%; width: 100vw;.
-
-ðŸ“‹ Active Checklist
-
-[X] Task 1: Vertical Rhythm Audit. Fine-tune margin-top between Hero and About container.
-✅ Task Status Update
-[x] Task 8.6: Vertical Rhythm. (Validated via --section-gap).
-
-[x] Task 8.1: Image Integration. (Avatar placed with "Sticker" border).
-
-[~] Task 8.7: Rule of Thirds. (Logic structure established in About.module.css).
-
-Next Step: Task 8.4 — Mobile Fluid Scaling Audit (Burger Menu).
-
-[ ] Task 2: Image Integration. Add "Sticker" avatar to first column of About grid.
-
-[ ] Task 3: Mobile Fluid Scaling. Verify Curtain menu links on physical device breakpoints.
-📝 Session Summary: portfolio2023-main
-Goal: Vertical Rhythm & Component Refinement.
-
-Vertical Rhythm (Task 8.6): Successfully refactored App.module.css. We replaced static media query jumps with a fluid gap: clamp(3rem, 10vh, 8rem) and established the --section-gap variable. The transition from Hero to About is now automated and smooth.
-
-Image Integration (Task 8.1): Integrated the "Sticker" avatar into About.jsx. Applied a circular white-border aesthetic with a "peeling" hover effect.
-
-Rule of Thirds (Task 8.7): Refactored the About section grid. It now correctly uses a 1fr 2fr split on desktop while maintaining a centered mobile-first stack, all while adhering to the Standard 7 (DRY Inheritance) rule.
-
-Protocol Alignment: Cleaned out prohibited max-width media queries from App.module.css and About.module.css, replacing them with fluid width and clamp() logic.
-[ ] Task 4: Physics Polish. Audit boat lag with .07 dampening post-transition removal.
-Status: Ready for Mobile Nav Audit.
-
-[x] Task 8.1: Image Integration (Sticker avatar implemented).
-
-[x] Task 8.6: Vertical Rhythm Audit (Fluid gaps verified).
-
-[x] Task 8.7: Rule of Thirds (Desktop grid logic established).
-
-[ ] Task 8.4: Mobile Fluid Scaling Audit (NEXT UP)
-
-Action: Audit Burger.jsx and Burger.module.css.
-
-Goal: Ensure the "Curtain" menu links scale correctly and don't hijack interactions (Standard 8).
-
-[ ] Task 8.5: Physics Polish
-
-Action: Verify the .95 boat dampening in the final environment.
-📋 Session Summary: portfolio2023-main
-Goal: Vertical Rhythm, Component Refinement, and Physics Calibration.
-
-Fluid Architecture (Standard 6): Refactored App.module.css to remove "breakpoint snapping." We replaced rigid media queries with clamp(.5rem, 10vh, 8rem) for gaps and clamp(1.5rem, 5vw, 4rem) for padding. The layout now breathes fluidly from mobile to 4K.
-
-Nav "Curtain" Audit (Task 8.4): Verified the Burger menu. It now uses a 0.95s physics-based transition and correctly implements pointer-events: none to prevent the hidden menu from "hijacking" the boat interaction.
-
-Cinematic Breakout: Applied surgical CSS to HeroCard.module.css (100vw with negative margins). This allows the Hero section to ignore the container's constraints on desktop for a professional, full-bleed look.
-
-Physics Tuning (Task 8.5): Calibrated the boat's "inertia." We settled on a 10.5s CSS transition combined with a .95 JS dampening factor. This perfectly simulates the weight of a sailboat rather than a speedboat.
-
-A11y & SEO: Verified srOnly and visuallyHidden patterns in App.jsx and HeroCard.jsx to ensure the site is professional and crawlable.
-✅ Updated Checklist (Current State)
-[X] Task 8.1: Image Integration (Avatar placed with "Sticker" border).
-
-[X] Task 8.2 & 8.3: Burger Toggle & "Curtain" drop-down logic.
-
-[X] Task 8.4: Mobile Fluid Scaling Audit (Burger links & Nav).
-
-[X] Task 8.5: Physics Polish (The 10.5s / .95 sailboat "inertia" fix).
-
-[X] Task 8.6: Vertical Rhythm Audit (--section-gap via clamp).
-
-[X] Task 8.7: Rule of Thirds (Desktop grid logic for About section).
-🚀 Next Steps (Future Session)
-This has been done ?so ask ai why its coming up again what have i missed??
-Task 2: Image Integration — Add the "Sticker" avatar to the first column of the About grid.
-
-Task 3: Mobile Scaling — Verify the "Curtain" menu on a physical device to ensure no interaction overlap with the "About" section.
-
-Task 8.4 (Refined): Final audit of the HeroCard breakout on ultrawide viewports.
-[X] Task 8.4: Mobile Fluid Scaling Audit (Burger Menu).
-
-[X] Task 8.5: Physics Polish (The 10.5s / .95 boat fix).
-
-[X] Task 8.6: Vertical Rhythm Audit.
-
-[X] Task 8.7: Rule of Thirds (Desktop grid logic).
+Stress Test: Verify boat physics smoothness on mobile Safari.
