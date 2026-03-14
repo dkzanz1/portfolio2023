@@ -2,25 +2,30 @@
 :root {
   --section-gap: clamp(4rem, 10vh, 8rem);
 }
+/* 2. REFINING THE CONTAINER (Fluidizing the "Hard" pixels) */
 .aboutContainer {
   background-color: var(--background-color);
   color: var(--text-color);
   border: 1px solid var(--primary-color);
   box-sizing: border-box; /* stops padding doesn't break the width */
-  border-radius: 25px;
-  box-shadow: 10px 10px 10px 10px var(--box-shadow-color);
+  /* Conversion: Make the radius and shadow fluid with clamp */
+  border-radius: clamp(15px, 3vw, 30px);
+  box-shadow: clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) 20px var(--box-shadow-color);
+  
   
     /* STANDARD 6: Fluid Spacing & Width */
   width: clamp(92%, 90vw, 1400px);
   margin: var(--section-gap)auto;
   padding: clamp(1.5rem, 5vw, 4rem);
-  
-  text-align: center;
+
 
   /* STANDARD 7: Define Layout at Mobile level */
+  text-align: center;
   display: grid;
   grid-template-columns: 1fr; /* Single column for mobile */
+  align-items: center; /* Ensures vertical alignment in the grid */
 }
+
 /* 1. THE STICKER CONTAINER */
 .imageWrapper {
   display: flex;
@@ -39,16 +44,19 @@
 }
 /* 2. THE STICKER ITSELF (Standardized Aesthetic) */
 .stickerImg {
-  width: 100%;
-  height: 100%;
+  /* Standard 6: Fluid sizing moved directly to the image */
+  width: clamp(200px, 35vw, 380px); 
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+/* border-radius: 50% on a 4:5 ratio creates the perfect Oval sticker */
   border-radius: 50%;
   /* BRAND CONSTANTS */
   border: 8px solid var(--primary-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
+
   /* STANDARD 8: Cohesive Physics Hover */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 /* 3. INTERACTION (Standard 8) */
