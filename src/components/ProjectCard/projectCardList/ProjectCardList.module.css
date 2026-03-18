@@ -3,16 +3,68 @@
 .projectsGrid {
     /* Set up the parent container as a grid */
     display: grid;
-    
-    /* Mobile-First: By default, stack all cards in a single column. 
-       The 1fr ensures the cards take up the full available width. */
-    grid-template-columns: 1fr;
-    
-    /* Consistent spacing between all items (rows and columns) */
-    gap: 40px; 
-    
-    /* Optional: Add some padding if needed, though this is often handled by the main .container */
-    /* padding: 10px; */
+    /* STANDARD 6: Fluid Grid logic */
+  /* This creates 1 column by default, but automatically switches to 2 
+     when there is enough space for each card to be at least 320px. 
+     No media query required for the basic shift. */
+  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 600px), 1fr));
+
+  /* STANDARD 6: Fluid Gaps */
+  /* Scales the space between cards from 1.5rem (mobile) to 3rem (desktop) */
+  gap: clamp(1.5rem, 4vw, 3rem);
+
+  /* STANDARD 7: Mobile-First Padding */
+  padding: clamp(1rem, 3vw, 2rem);
+  
+  /* Ensure the grid centers itself if cards don't fill the row */
+  justify-content: center;
+  
+  /* PERFORMANCE: Prepare for scrolling/parallax if needed */
+  will-change: transform;
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--primary-color);
+  border-radius: clamp(10px, 2vw, 20px); /* Fluid rounding */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  
+  /* STANDARD 8: Cohesive Physics (Matches your .95 bounce) */
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.cardImage {
+  width: 100%;
+  /* Use aspect-ratio instead of fixed height: 200px */
+  aspect-ratio: 16 / 9; 
+  object-fit: cover;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.cardBody {
+  padding: clamp(1rem, 3vw, 2rem); /* Fluid breathing room */
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cardTitle {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Standard 6 Typography */
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.cardDescription {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.9;
+}
 }
 
 
@@ -25,7 +77,5 @@
         /* Large Screen Requirement: Switch to two equal-width columns at mini ipad level. */
         grid-template-columns: 1fr 1fr;
         
-        /* You can adjust the gap here if you want different spacing for large screens */
-        gap: 40px; 
     }
 }
