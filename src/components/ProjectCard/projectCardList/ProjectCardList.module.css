@@ -7,20 +7,18 @@
   /* This creates 1 column by default, but automatically switches to 2 
      when there is enough space for each card to be at least 320px. 
      No media query required for the basic shift. */
-  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 600px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 500px), 1fr));
 
   /* STANDARD 6: Fluid Gaps */
   /* Scales the space between cards from 1.5rem (mobile) to 3rem (desktop) */
-  gap: clamp(1.5rem, 4vw, 3rem);
-
+  gap: clamp(1.5rem, 5vw, 3rem);
   /* STANDARD 7: Mobile-First Padding */
-  padding: clamp(1rem, 3vw, 2rem);
-  
+  padding: clamp(1rem, 5vw, 4rem);
   /* Ensure the grid centers itself if cards don't fill the row */
   justify-content: center;
-  
   /* PERFORMANCE: Prepare for scrolling/parallax if needed */
   will-change: transform;
+  align-items: start;
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
@@ -35,7 +33,7 @@
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: translateY(-5px) scale(1.01);
 }
 
 .cardImage {

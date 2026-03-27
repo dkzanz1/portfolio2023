@@ -29,3 +29,11 @@ I've moved the Audit to "Completed" and left the final "Mobile Safari" stress te
 [ ] Task 2: Mobile Scaling Audit — Physical device check for "Curtain" z-index.
 
 [ ] Task 3: Physics Stress Test — Safari/Chrome .95 dampening verification.
+📋 Startup Memo for Tomorrow
+When you open portfolio2023-main tomorrow, your environment is perfectly staged:
+
+Protocol: Locked and Loaded (Standards 1-9).
+
+Task: The Physics "Float" is the first item on the menu.
+
+State: Run git stash pop to bring back today's experimental tweaks.

@@ -10,7 +10,7 @@
     width: 100%;
     /* Standard 6: Modern Aspect Ratio */
     aspect-ratio: 16 / 9;
-    border-radius: 25px; /* Match the card's border radius */   
+    border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
 }
