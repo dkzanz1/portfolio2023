@@ -1,9 +1,14 @@
-🎯 Active Tasks
-[ ] Task 3: Mobile Scaling Audit - Verify "Curtain" menu links and Z-index on physical device.
+# 🎯 Current Task: Physics "Float" & Final Validation
+**Status:** 🟡 In Progress  
+**Branch:** feat/nav-glass-refinement
 
-[ ] Task 9.1: Physics Stress Test - Ensure boat .95 dampening is smooth on mobile.
+## 1. Task Objective
+Fine-tune the HeroCard "drift" to achieve the "Float" goal. Perform final z-index and cross-browser validation.
 
-[ ] Phase 3 Audit: ProjectCard Section - Hunt for max-width media queries and convert to clamp() / Standard 6.
+## 2. Sub-Tasks (Execution)
+- [ ] **Step 1:** Adjust JS weight/mass variables to increase the "drift" duration of the HeroCard.
+- [ ] **Step 2:** Physical Device Check: Open the site on mobile to verify "Curtain" menu z-index.
+- [ ] **Step 3:** Cross-Browser Check: Verify .95 dampening isn't "stuttering" in Safari.
 
 🛠️ Next Session Startup (Lead Dev Protocol)
 Status Check: Confirm branch is feat/nav-glass-refinement.
@@ -37,3 +42,13 @@ Protocol: Locked and Loaded (Standards 1-9).
 Task: The Physics "Float" is the first item on the menu.
 
 State: Run git stash pop to bring back today's experimental tweaks.
+## 3. Definition of Done (DoD)
+- [ ] The HeroCard feels "weightless" but controlled.
+- [ ] Navigation menu clears all background elements on mobile.
+- [ ] git push --force-with-lease.
+[ ] Ultra-Wide Balance Audit: Implement "Alternating Breakouts" or "Bento Grid" logic for ProjectCardList on screens > 1800px to prevent the "centered strip" look and utilize horizontal real estate.
+Two Ways We Can Fix This (For the next session)
+The "Bento" Shift (Standard 6): Instead of one card per row (centralized), we shift to a 3-column or 4-column grid on Ultra-Wide. This fills the horizontal space and makes the portfolio feel like a high-end dashboard.
+
+The "Alternating Full-Bleed": We apply the same "Breakout" logic we used for the Hero to certain sections of the ProjectCardList, allowing the images to touch the edges of the screen while the text stays aligned to the inner grid.
+Q/WHAT TO DO ????

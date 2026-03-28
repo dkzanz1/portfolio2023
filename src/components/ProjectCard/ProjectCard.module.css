@@ -2,7 +2,7 @@
 .projectCardContainer {
     max-height: none; /*content ditated the height*/
     padding: 0;
-    overflow:visable;
+    overflow:visible;
 }
 
 .projectCardContentWrapper {

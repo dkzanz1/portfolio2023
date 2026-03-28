@@ -96,7 +96,7 @@
     width: clamp(200px, 25vw, 450px);
     aspect-ratio: 4 / 5; /* THE OVAL STANDARD */
     height: auto; 
-    border-radius: 50%;
+    border-radius: 100%;
     object-fit: cover; /* Keeps your image from stretching */
 
   /* Branding */
@@ -138,7 +138,7 @@
     transform: translate3d(-50%, -50%); 
     z-index: 5;
     pointer-events: none;/* Ensure it doesn't block mouse events */
-    transition: transform 10.5s ease-out !important;
+    /* transition: transform 5.1s ease-out !important; */
     will-change: transform;
 }
 .boat {
