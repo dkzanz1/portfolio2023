@@ -1,54 +1,47 @@
-# 🎯 Current Task: Physics "Float" & Final Validation
-**Status:** 🟡 In Progress  
-**Branch:** feat/nav-glass-refinement
+🎯 Current Task: Ultra-Wide Balance & Hover Interactions
+Status: 🟡 In Progress
 
-## 1. Task Objective
-Fine-tune the HeroCard "drift" to achieve the "Float" goal. Perform final z-index and cross-browser validation.
+Branch: feat/nav-glass-refinement
 
-## 2. Sub-Tasks (Execution)
-- [ ] **Step 1:** Adjust JS weight/mass variables to increase the "drift" duration of the HeroCard.
-- [ ] **Step 2:** Physical Device Check: Open the site on mobile to verify "Curtain" menu z-index.
-- [ ] **Step 3:** Cross-Browser Check: Verify .95 dampening isn't "stuttering" in Safari.
+1. Task Objective
+Resolve the "Centered Strip" issue on 27"+ monitors by implementing an Ultra-Wide Grid Audit and applying interactive "Hover Zoom" physics to ProjectCards.
 
-🛠️ Next Session Startup (Lead Dev Protocol)
-Status Check: Confirm branch is feat/nav-glass-refinement.
+2. Sub-Tasks (Execution)
+[ ] Step 1: Ultra-Wide Gutter Audit
 
-Visual Audit: npm run dev — Verify the "Liquid Glass" bounce hasn't regressed.
+Target: ProjectCardList.module.css
 
-The Target: Audit ProjectCard.module.css for "Fluidity Debt."
-Also for double chjecking wwe are on the same page 
-🛑 Session Stop Summary
-Current Branch: feat/nav-glass-refinement
+Action: Implement Bento Grid logic (3-4 columns) or Alternating Full-Bleed breakouts for screens > 1800px to utilize horizontal real estate.
 
-Project State: Liquid Glass Menu and About Section Fluidity are Locked.
+[ ] Step 2: Hover Zoom Physics
 
-Next Action: Open ProjectCard.module.css to begin the Phase 3 Audit.
+Target: ProjectCard.module.css
 
-I have saved this final state. When you're ready to start the next session, just say "Start ProjectCard Audit" and I’ll be ready with the Standard 6 requirements.
-3. Final Alignment SummaryComponentStatusStandard AppliedNavigationLOCKEDLiquid Glass + .95 Physics BounceAbout ImageLOCKED4:5 Oval "Sticker" BrandingAbout CSSLOCKEDStandard 6 (Zero Fluidity Debt)PerformanceLOCKEDGPU Acceleration (will-change)
-📝 Updated currenttask1.md (Active Status)
-I've moved the Audit to "Completed" and left the final "Mobile Safari" stress tests for your next open window.
+Logic: Apply .95 dampening transition to .projectCardImg.
 
-[X] Task 1: ProjectCard Audit (Standard 6) — GRID LOCKED. clamp() and aspect-ratio implemented.
+Math: transform: scale(1.08) on hover with a 600ms cubic-bezier ease.
 
-[ ] Task 2: Mobile Scaling Audit — Physical device check for "Curtain" z-index.
+[ ] Step 3: Mobile Safari Stress Test
 
-[ ] Task 3: Physics Stress Test — Safari/Chrome .95 dampening verification.
-📋 Startup Memo for Tomorrow
-When you open portfolio2023-main tomorrow, your environment is perfectly staged:
+Action: Verify "Curtain" menu z-index and .95 dampening smoothness on physical iOS device.
 
-Protocol: Locked and Loaded (Standards 1-9).
+3. 🛠️ Startup Protocol (Next Session)
+Environment: npm run dev
 
-Task: The Physics "Float" is the first item on the menu.
+Git Check: Confirm branch feat/nav-glass-refinement is clean.
 
-State: Run git stash pop to bring back today's experimental tweaks.
-## 3. Definition of Done (DoD)
-- [ ] The HeroCard feels "weightless" but controlled.
-- [ ] Navigation menu clears all background elements on mobile.
-- [ ] git push --force-with-lease.
-[ ] Ultra-Wide Balance Audit: Implement "Alternating Breakouts" or "Bento Grid" logic for ProjectCardList on screens > 1800px to prevent the "centered strip" look and utilize horizontal real estate.
-Two Ways We Can Fix This (For the next session)
-The "Bento" Shift (Standard 6): Instead of one card per row (centralized), we shift to a 3-column or 4-column grid on Ultra-Wide. This fills the horizontal space and makes the portfolio feel like a high-end dashboard.
+Visual Audit: Verify the "Seamless Sea" Navbar alignment (10% left-grid) is holding.
 
-The "Alternating Full-Bleed": We apply the same "Breakout" logic we used for the Hero to certain sections of the ProjectCardList, allowing the images to touch the edges of the screen while the text stays aligned to the inner grid.
-Q/WHAT TO DO ????
+4. 📐 Hover Zoom "Golden Ratio" Reminder
+Scale Factor: 1.08 (Subtle "Swell" effect).
+
+Transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1).
+
+Standard 8: Ensure overflow: hidden is on the parent container to clip the zoom.
+
+5. Definition of Done (DoD)
+[ ] ProjectCardList fills ~90% of the viewport width on 27" monitors.
+
+[ ] Hovering over a project card triggers a smooth, non-stuttering zoom.
+
+[ ] All Docs/ (PROTOCOL.md, session_history.md) are synced with the "Overlay" architecture.
