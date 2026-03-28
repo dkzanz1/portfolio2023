@@ -120,3 +120,23 @@ Fix: [e.g., Removed and replaced with width: 100%.]
 [ ] npm run build passes with zero errors.
 
 [ ] Pushed to GitHub with git push --force-with-lease (if rebased).
+Session Stop: 2026-03-28 (Portfolio-Main)
+
+Accomplished: Passed Mobile Scaling Audit for HeroCard.
+
+Decision: Reverted circle-img to border-radius: 100% to solve the "Tombstone" rendering issue on mobile Safari/Chrome.
+
+Standard Applied: Standard 8 (Interaction Transparency) — added pointer-events: none to text overlays to ensure smooth mobile scrolling.
+
+Git State: Pushed to feat/nav-glass-refinement.
+Session Stop: 2026-03-28 (Portfolio-Main)
+
+Status: HeroCard Physics & Mobile Scaling LOCKED.
+
+Decision: Confirmed border-radius: 100% for the "Oval Standard" on the 4:5 sticker to ensure cross-browser stability.
+
+Physics: Verified "True Drift" logic in HeroCard.jsx. Implementation uses requestAnimationFrame with a Lerp speed of 0.005 for a heavy, nautical feel.
+
+Standard Applied: Standard 8 (Interaction Transparency) — pointer-events: none verified on all text overlays to prevent mobile scroll-stutter.
+
+Git State: Changes staged and pushed to feat/nav-glass-refinement.

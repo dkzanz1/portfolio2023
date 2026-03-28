@@ -8,11 +8,17 @@
 .projectCardContentWrapper {
     position: relative;
     width: 100%;
-    /* Standard 6: Modern Aspect Ratio */
-    aspect-ratio: 16 / 9;
+    /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
+    aspect-ratio: 5/4;
     border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
+    /* Add a subtle glass border to match the Nav-Glass theme */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Subtle interaction when the user's eye (or mouse) hits the card */
+.projectCardContentWrapper:hover .projectCardImg {
+    transform: scale(1.08);
 }
 .projectCardTitle {
     position:absolute;
@@ -39,7 +45,7 @@
     width:100%;
     height:100%;
     object-fit:cover; /* Ensure the image covers the area without distortion */
-    border-radius: 25px; /* Match the card's border radius */
+    
     z-index: 1; /* Ensure the image is behind the text */
     transition: transform 0.3s ease; /* Smooth zoom effect */
 }
@@ -66,4 +72,10 @@
 /* However, the clamp function handles scaling for different screen sizes */
 
 /*===== Styles for laptops=====*/
-
+/* 2. Desktop Escalation (Standard 2) */
+@media (min-width: 1024px) {
+    .projectCardContentWrapper {
+        /* Switch to Cinematic Wide for larger screens */
+        aspect-ratio: 16 / 9;
+    }
+}
