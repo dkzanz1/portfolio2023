@@ -16,11 +16,12 @@
 /* This is the outer div */
 .heroSection {
     position: relative;/* DEFINED ONCE HERE - Inherited by all screen sizes */
-    width: 90%;
-    margin: 2rem auto;
-    height: 80vh;/* Dynamic viewport height for mobile browser bars */
+    width: 100%;
+    margin: 0;
+    min-height: 100vh;/* Dynamic viewport height for mobile browser bars */
+    overflow:hidden;
    /* Keep this so it doesn't get too small on tiny phones */
-    border-radius: 20px;
+    /* border-radius: 20px; */
     box-shadow: 0 10px 30px #0ee1ac;
     background: #000;
     display: flex;
@@ -48,8 +49,12 @@
 .overlay {
     position: absolute;
     inset: 0; /* Shorthand for top/left/right/bottom: 0 */
-    padding: 6rem 1.5rem 1.5rem; /* Reduced from 2rem to prevent Nest Hub overflow */
-    background-color: rgba(0, 0, 0, 0.85);
+    /* CHANGE: Move from 0.85 opacity to a gradient that clears up at the top */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0.3) 0%, 
+        rgba(0, 0, 0, 0.7) 100%
+    );
     z-index: 3;
     pointer-events: none;/*set the standard at mobile level*/
     display: flex;
@@ -270,8 +275,8 @@
     grid-template-areas: 
       "title image"
       "blurb image";
-    align-items: center;
-    padding: 0 10vw;
+    align-items: left;
+    padding-left: 0 10vw;
     text-align: left;
     background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%);
     

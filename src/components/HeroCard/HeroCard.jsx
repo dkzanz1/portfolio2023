@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import Burger from "../../components/Burger";
 import img from "../../assets/images/mephoto.jpg";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
@@ -63,6 +64,7 @@ function HeroCard() {
       aria-labelledby="hero-heading"
       ref={videoContainerRef}
     >
+      <Burger />
       <div className={styles.scrollIndicator} aria-hidden="true">
         <div className={styles.mouse}>
           <div className={styles.wheel}></div>

@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import styles from "./App.module.css";
 import About from "./components/About";
 import HeroCard from "./components/HeroCard";
-import Burger from "./components/Burger";
+
 import Sectionpart from "./components/Section";
 import ProjectCardList from "./components/ProjectCard/projectCardList";
 import SocialFollow from "./components/SocialFollow";
@@ -33,7 +33,6 @@ function App() {
       {/* PHASE 1: FULL-BLEED (Cinematic) */}
 
       <div id="outer-container" className={styles.outerContainer}>
-        <Burger />
         {/* PHASE 2: CONSTRAINED CONTENT */}
         <div id="page-wrap" className={styles.container}>
           <HeroCard />

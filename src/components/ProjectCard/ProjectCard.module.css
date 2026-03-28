@@ -18,7 +18,7 @@
 }
 /* Subtle interaction when the user's eye (or mouse) hits the card */
 .projectCardContentWrapper:hover .projectCardImg {
-    transform: scale(1.08);
+    transform: scale(1.08);/* A subtle 8% lift */
 }
 .projectCardTitle {
     position:absolute;
@@ -47,7 +47,7 @@
     object-fit:cover; /* Ensure the image covers the area without distortion */
     
     z-index: 1; /* Ensure the image is behind the text */
-    transition: transform 0.3s ease; /* Smooth zoom effect */
+    transition: transform 0.6s  cubic-bezier(0.33, 1, 0.68, 1); /* Smooth zoom effect */
 }
 
 .projectCardInfo {

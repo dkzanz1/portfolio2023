@@ -5,20 +5,45 @@
 
 @media (min-width: 1024px) {
   .desktopNav {
+    position: absolute; 
+    top: 2.5rem;
+    left: 10%; 
     display: flex;
-    gap: 2rem;
-    padding: 1rem;
-    /* Insert your desktop styling here */
+    gap: 3rem;
+    z-index: 1000;
+  
+  }
+    .desktopNav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    /* Standard 8: Contrast boost */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: color 0.3s ease;
+  }
+
+  .desktopNav a:hover {
+    color: #0ee1ac; /* Your signature green from the scroll wheel */
   }
   .mobileWrapper {
-    display: none; /* Hide burger on desktop */
+    display: none; /* Standard 2: Hide mobile elements on desktop */
   }
+  /* 2. Mobile Container Fix */
+.mobileWrapper {
+  /* CHANGE: Using absolute so it respects the HeroCard's border-radius */
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 1001;
 }
+  }
+
 
 /* 2. The Burger Trigger (The Button) */
 
 .burgerTrigger {
-  position: fixed;
+  position: absolute;
   width: clamp(32px, 5vw, 50px); 
   height: clamp(32px, 5vw, 50px); /* Make it a square for perfect rotation */
   left: 1.25rem;
@@ -70,16 +95,15 @@
 
 /* 3. The "Curtain" Menu (Task 8.3) */
 .topDownMenu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  /* CHANGE 1:I Increased transparency (0.9 -> 0.4) to see the boat/background */
-  background-color: rgba(255, 255, 255, 0.4);
-  /* Adds blur for that premium "Glass" feel */
-  backdrop-filter: blur(15px); /* Matches your Glassmorphism goal */
-  -webkit-backdrop-filter: blur(15px); /* Safari Support */
+/* Lead Dev Fix: Darker tint for better contrast with white links */
+  background-color: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(15px) saturate(160%);
+  -webkit-backdrop-filter: blur(15px);
 
   /* Initial State: Pulled up out of view */
   transform: translateY(-100%);
@@ -128,5 +152,6 @@
 
 .curtainLinks a:hover {
   color: #ffd700; /* "Precious Metal" Gold accent */
+  text-shadow: 0 0 15px rgba(14, 225, 172, 0.6);
 }
 
