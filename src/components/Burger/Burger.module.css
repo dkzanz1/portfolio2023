@@ -41,7 +41,6 @@
 
 
 /* 2. The Burger Trigger (The Button) */
-
 .burgerTrigger {
   position: absolute;
   width: clamp(32px, 5vw, 50px); 
