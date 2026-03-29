@@ -157,3 +157,13 @@ Anti-Stretch Logic: Applied auto-fill with a 550px cap to prevent cards from bec
 Physics Integration: Confirmed the 0.95 dampening feel using the 0.33, 1, 0.68, 1 cubic-bezier and a 1.08 scale swell.
 
 Git Recovery: Resolved the stash@{0} conflicts and merged the V 2.8 Master History.
+📝 Session Stop Summary: portfolio2023-main
+Status: PAUSED (Stable) Last Known Good Config: ProjectCard.module.css (Proportion Flip applied).
+
+Key Takeaways for Next Startup:
+
+The "Ruler" Issue: Avoid forcing side-by-side (1fr 2fr) too early (at 1024px). Keep it stacked until 1400px to give the text "Air."
+
+The Container Fix: Replace width: 92% with width: auto + margin: 1rem to stop the 360px border collisions.
+
+Syntax Hunt: Check ProjectCard.module.css for a missing } to clear the Vite error.

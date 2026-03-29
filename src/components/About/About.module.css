@@ -14,16 +14,15 @@
   
   
     /* STANDARD 6: Fluid Spacing & Width */
-  width: clamp(92%, 90vw, 1400px);
-  margin: var(--section-gap)auto;
-  padding: clamp(1.5rem, 5vw, 4rem);
+  width: 92%; /* Full width on mobile */
+  margin: var(--section-gap)auto;/* Centered on mobile only */
+  padding: 1.5rem;/* Tight mobile padding */
 
-
-  /* STANDARD 7: Define Layout at Mobile level */
-  text-align: center;
   display: grid;
   grid-template-columns: 1fr; /* Single column for mobile */
   align-items: center; /* Ensures vertical alignment in the grid */
+  text-align: center; /* Center text for mobile */
+  gap: 2rem; /* Space between image and text on mobile */
 }
 
 /* 1. THE STICKER CONTAINER */
@@ -86,12 +85,27 @@
    ============================================================ */
 @media (min-width: 1024px) {
   .aboutContainer {
-   grid-template-columns: 1fr 2fr; /* Implementation of Rule of Thirds */
+    /* ARCHITECTURAL ALIGNMENT: Lock to the 10vw Hero Line */
+    margin-left: 10vw; 
+    margin-right: 5vw;
+    width: auto; /* Let the margins define the width */
+    /* Rule of thirds applied */
+   grid-template-columns: 1fr; /* Implementation of Rule of Thirds */
     text-align: left;
-    gap: 4rem;
+    gap: 6vw; /* Increased gap for larger screens */
+    padding: 4rem;
   }
-
+.imageWrapper {
+    justify-content: flex-start; /* Align sticker to the Spine */
+      padding: 0 0 2rem 0;
+    }
+  .stickerImg {
+    /* Scale down the image so it's not "massive" on small laptops */
+    width: clamp(150px, 20vw, 250px); 
+  }
   .blurb {
     margin: 0;
+    /* Standard 6: Ensure the text doesn't stretch too wide for the eye */
+    max-width: 70ch;
 }
 }
