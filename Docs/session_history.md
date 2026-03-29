@@ -130,4 +130,4 @@ Fix: [e.g., Removed and replaced with width: 100%.]
 1. Definition of Done (DoD)
 [ ] Browser resize test (No layout snapping).
 [ ] npm run build passes with zero errors.
-[ ] Pushed to GitHub with git push --force-with-lease (if rebased)
+[ ] Pushed to GitHub with git push
