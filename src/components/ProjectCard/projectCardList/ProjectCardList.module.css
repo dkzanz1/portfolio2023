@@ -3,22 +3,24 @@
 .projectsGrid {
     /* Set up the parent container as a grid */
     display: grid;
-    /* STANDARD 6: Fluid Grid logic */
-  /* This creates 1 column by default, but automatically switches to 2 
+    /* STANDARD 6: Fluid scaling without snapping*/
+  /* This creates 1 column by default, but automatically switches to 4 
      when there is enough space for each card to be at least 320px. 
      No media query required for the basic shift. */
-  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 45vw, 500px), 1fr));
+  grid-template-columns: repeat(auto-fill, (320px, 1fr));
 
-  /* STANDARD 6: Fluid Gaps */
-  /* Scales the space between cards from 1.5rem (mobile) to 3rem (desktop) */
-  gap: clamp(1.5rem, 5vw, 3rem);
-  /* STANDARD 7: Mobile-First Padding */
-  padding: clamp(1rem, 5vw, 4rem);
-  /* Ensure the grid centers itself if cards don't fill the row */
-  justify-content: center;
+/* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem;
+
+/* Ensure it doesn't get ridiculously wide on 49" monitors */
+  max-width: 2500px;
+  padding-left: 2vw;
   /* PERFORMANCE: Prepare for scrolling/parallax if needed */
   will-change: transform;
-  align-items: start;
+      align-items: start;
+    }
 .card {
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
@@ -63,7 +65,6 @@
   color: var(--text-color);
   opacity: 0.9;
 }
-}
 
 
 /* 2. Large Screen Exception: Two-by-Two Stacking */
@@ -76,4 +77,13 @@
         grid-template-columns: 1fr 1fr;
         
     }
+   /* ULTRA-WIDE: Utilizing the 27" Real Estate */
+@media (min-width: 1800px) {
+  .projectsGrid {
+    /* Switch to 4 columns to break the "Centered Strip" */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
+    max-width: 2500px;
+  }
+} 
 }

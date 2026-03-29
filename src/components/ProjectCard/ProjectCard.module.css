@@ -9,7 +9,7 @@
     position: relative;
     width: 100%;
     /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
-    aspect-ratio: 5/4;
+    aspect-ratio: 16/9;
     border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
@@ -76,6 +76,8 @@
 @media (min-width: 1024px) {
     .projectCardContentWrapper {
         /* Switch to Cinematic Wide for larger screens */
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 4 / 5;
+        /* Capping the height ensures the card doesn't become an infinite tower */
+        max-height: 700px;
     }
 }
