@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 🎯 Current Task: Ultra-Wide Balance & Hover Interactions
 Status: 🟡 In Progress
 
@@ -45,3 +46,21 @@ Standard 8: Ensure overflow: hidden is on the parent container to clip the zoom.
 [ ] Hovering over a project card triggers a smooth, non-stuttering zoom.
 
 [ ] All Docs/ (PROTOCOL.md, session_history.md) are synced with the "Overlay" architecture.
+=======
+# 🎯 Current Task: Physics "Float" & Final Validation
+**Status:** 🟡 In Progress  
+**Branch:** feat/nav-glass-refinement
+
+## 1. Task Objective
+Fine-tune the HeroCard "drift" to achieve the "Float" goal. Perform final z-index and cross-browser validation.
+
+## 2. Sub-Tasks (Execution)
+- [ ] **Step 1:** Adjust JS weight/mass variables to increase the "drift" duration of the HeroCard.
+- [ ] **Step 2:** Physical Device Check: Open the site on mobile to verify "Curtain" menu z-index.
+- [ ] **Step 3:** Cross-Browser Check: Verify .95 dampening isn't "stuttering" in Safari.
+
+## 3. Definition of Done (DoD)
+- [ ] The HeroCard feels "weightless" but controlled.
+- [ ] Navigation menu clears all background elements on mobile.
+- [ ] git push --force-with-lease.
+>>>>>>> Stashed changes

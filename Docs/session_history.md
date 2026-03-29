@@ -32,9 +32,105 @@ Branding: Verified 4:5 "Oval Standard" for stickers using aspect-ratio and borde
 3. Standards Applied
 Standard 6 (Fluidity): Replaced all max-width media queries with clamp() and aspect-ratio: 16/9.
 
+<<<<<<< Updated upstream
 Standard 8 (Transparency): pointer-events: none verified on all text overlays to prevent mobile scroll-stutter.
 Constant,Value,Context
 Dampening,0.95,UI Tracking & Boat Inertia
 Physics Speed,0.005,"Lerp ""True Drift"" weight"
 Vertical Math,rect.height / 2,Centering logic
 Aspect Ratio,4:5 (Mobile) / 16:9 (Desktop),Project Card Standards
+=======
+Refactored grid to Rule of Thirds (1fr 2fr) on desktop via Standard 7.
+
+⚙️ Active Project Constants
+Dampening: 0.95 (UI Tracking) / 0.95 (Boat Inertia).
+
+Vertical Math: rect.height / 2 (Centering logic).
+
+Scaling: Fluid clamp() mandatory for all layout/typography.
+
+🎯 Current Task Queue
+ProjectCard Audit: Hunt for max-width media queries and convert to fluid gaps.
+
+Mobile Scaling Audit: Physical device verification of z-index and menu links.
+
+Stress Test: Verify boat physics smoothness on mobile Safari.
+🎯 Active Tasks
+[X] Task 1: ProjectCard Audit (Standard 6) — GRID LOCKED. clamp(), aspect-ratio, and width: 100% implemented.
+
+[ ] Task 2: Mobile Scaling Audit — Physical device check for "Curtain" menu z-index.
+
+[ ] Task 3: Physics Stress Test — Safari/Chrome .95 dampening verification for "Liquid Glass" bounce.
+
+🛑 Session Stop Summary (2026-03-22)
+Current Branch: feat/nav-glass-refinement
+
+Status: CLEAN (GitHub synced)
+
+Accomplishments:
+System Recovery: Fixed Linux container boot hang via Crosh/Settings initialization.
+
+Surgical CSS Breakout: Refactored ProjectCard.module.css.
+
+Standard 6 Enforcement: Deleted all max-width media queries; replaced with clamp() and aspect-ratio: 16/9.
+
+Bug Squashing: Fixed the 100px width constraint and syntax errors in the overlay positioning.
+Component,Status,Standard Applied
+Navigation,LOCKED,Liquid Glass + .95 Physics Bounce
+About Section,LOCKED,Standard 6 (Zero Fluidity Debt)
+ProjectCards,LOCKED,Fluid Grid + aspect-ratio + clamp()
+Performance,LOCKED,GPU Acceleration (will-change)
+Session Stop Summary: portfolio2023-main
+Current Branch: feat/nav-glass-refinement
+
+Status: Clean (CSS Transition Conflict Resolved).
+
+Accomplishments:
+
+Burger Menu: Full Standard 6 (clamp) and Standard 8 (pointer-events) integration.
+
+ProjectCard: Aspect-ratio and fluid typography locked in.
+
+HeroCard: Removed CSS transition to allow for clean JS physics.
+
+The "Float" Goal: We established that the current weight isn't right yet. We need to find the sweet spot between "snappy" and "drifting" without losing the "float."
+🎯 Current Task: [Task Name]
+Status: 🟡 In Progress / 🔴 Blocked / 🟢 Completed
+
+Branch: feat/[scope]-[description]
+
+1. Task Objective
+Brief description of the goal (e.g., "Refine Burger Menu Dimensions for fluid scaling").
+
+2. ACE Protocol Checklist
+Before marking a task as complete, verify against the standards:
+
+[ ] Standard 2 (Mobile-First): Are all layout changes using min-width only?
+
+[ ] Standard 6 (Fluid): Are clamp() or vw/vh used for new dimensions?
+
+[ ] Standard 7 (Inheritance): Are properties inherited from mobile without redundancy?
+
+[ ] Standard 8 (Transparency): Do new overlays have pointer-events: none?
+
+[ ] Standard 9 (Linting): Does the commit message use lowercase scopes?
+
+3. Sub-Tasks (Execution)
+[ ] Step 1: [e.g., Identify current hard-coded widths in Burger.module.css]
+
+[ ] Step 2: [e.g., Replace pixels with clamp() values]
+
+[ ] Step 3: [e.g., Physics stress test for .95 dampening]
+
+4. Technical Notes / Blockers
+Note: [e.g., Found a 100px width constraint in the parent container.]
+
+Fix: [e.g., Removed and replaced with width: 100%.]
+
+5. Definition of Done (DoD)
+[ ] Browser resize test (No layout snapping).
+
+[ ] npm run build passes with zero errors.
+
+[ ] Pushed to GitHub with git push --force-with-lease (if rebased).
+>>>>>>> Stashed changes
