@@ -36,7 +36,6 @@
     color: var(--text-color-light, white); /* Used protocol variables */
     border-radius: 8px;
     width: 85%; /* Ensure it doesn't spill over card edges */
-   
 }
 
 .projectCardImg {

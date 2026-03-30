@@ -115,18 +115,27 @@ Before marking a task as complete, verify against the standards:
 
 [ ] Standard 9 (Linting): Does the commit message use lowercase scopes?
 
+<<<<<<< Updated upstream
 1. Sub-Tasks (Execution)
+=======
+3. Sub-Tasks (Execution)
+>>>>>>> Stashed changes
 [ ] Step 1: [e.g., Identify current hard-coded widths in Burger.module.css]
 
 [ ] Step 2: [e.g., Replace pixels with clamp() values]
 
 [ ] Step 3: [e.g., Physics stress test for .95 dampening]
 
+<<<<<<< Updated upstream
 1. Technical Notes / Blockers
+=======
+4. Technical Notes / Blockers
+>>>>>>> Stashed changes
 Note: [e.g., Found a 100px width constraint in the parent container.]
 
 Fix: [e.g., Removed and replaced with width: 100%.]
 
+<<<<<<< Updated upstream
 1. Definition of Done (DoD)
 [ ] Browser resize test (No layout snapping).
 [ ] npm run build passes with zero errors.
@@ -167,3 +176,11 @@ The "Ruler" Issue: Avoid forcing side-by-side (1fr 2fr) too early (at 1024px). K
 The Container Fix: Replace width: 92% with width: auto + margin: 1rem to stop the 360px border collisions.
 
 Syntax Hunt: Check ProjectCard.module.css for a missing } to clear the Vite error.
+=======
+5. Definition of Done (DoD)
+[ ] Browser resize test (No layout snapping).
+
+[ ] npm run build passes with zero errors.
+
+[ ] Pushed to GitHub with git push --force-with-lease (if rebased).
+>>>>>>> Stashed changes

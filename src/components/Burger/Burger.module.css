@@ -39,7 +39,6 @@
 }
   }
 
-
 /* 2. The Burger Trigger (The Button) */
 .burgerTrigger {
   position: absolute;
@@ -97,7 +96,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  /* width: 100vw; *//*remove to test clamp width*/
+  width: clamp(300px, 100vw, 100%); /* Standard
   height: 100vh;
 /* Lead Dev Fix: Darker tint for better contrast with white links */
   background-color: rgba(10, 20, 30, 0.6);

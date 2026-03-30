@@ -78,7 +78,6 @@ function HeroCard() {
       <h1 id="hero-heading" className={styles.srOnly}>
         Paul - Full Stack Web Developer Portfolio
       </h1>
-
       <WaterVideo className={styles.watervideo} />
 
       <div className={styles.overlay}>
@@ -98,6 +97,7 @@ function HeroCard() {
             using <strong>full stack development</strong>
           </p>
         </article>
+
         <div className={styles["boat-container"]} aria-hidden="true">
           <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
             <img src={boatImage} alt="" className={styles.boat} />
