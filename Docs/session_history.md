@@ -115,72 +115,29 @@ Before marking a task as complete, verify against the standards:
 
 [ ] Standard 9 (Linting): Does the commit message use lowercase scopes?
 
-<<<<<<< Updated upstream
-1. Sub-Tasks (Execution)
-=======
 3. Sub-Tasks (Execution)
->>>>>>> Stashed changes
 [ ] Step 1: [e.g., Identify current hard-coded widths in Burger.module.css]
 
 [ ] Step 2: [e.g., Replace pixels with clamp() values]
 
 [ ] Step 3: [e.g., Physics stress test for .95 dampening]
 
-<<<<<<< Updated upstream
-1. Technical Notes / Blockers
-=======
 4. Technical Notes / Blockers
->>>>>>> Stashed changes
 Note: [e.g., Found a 100px width constraint in the parent container.]
 
 Fix: [e.g., Removed and replaced with width: 100%.]
 
-<<<<<<< Updated upstream
-1. Definition of Done (DoD)
-[ ] Browser resize test (No layout snapping).
-[ ] npm run build passes with zero errors.
-[ ] Pushed to GitHub with git push
-📝 Session Stop Summary: portfolio2023-main
-Status: LOCKED (Ultra-Wide Proportions Resolved)
-
-Accomplishments:
-
-Ratio Flip: Corrected the mobile/desktop aspect ratios to favor vertical space on large screens.
-
-Text Clearance: Resolved the "Stretched Strip" issue by capping card width and increasing height.
-
-ACE Protocol: Verified Standard 2 (Mobile-First) and Standard 6 (Fluidity) are in sync.
-ession Stop Summary: portfolio2023-main
-Branch: feat/nav-glass-refinement
-
-Status: CLEAN & SYNCED (Ultra-Wide Balance Locked)
-
-Accomplishments:
-
-Proportion Flip: Successfully implemented 16:9 (Mobile) and 4:5 (Desktop) aspect ratios to resolve text overlap.
-
-The 10% Spine: Locked the projectsGrid to the 10vw Hero Line, ensuring a unified vertical line of sight across the entire site.
-
-Anti-Stretch Logic: Applied auto-fill with a 550px cap to prevent cards from becoming massive horizontal banners on 27" monitors.
-
-Physics Integration: Confirmed the 0.95 dampening feel using the 0.33, 1, 0.68, 1 cubic-bezier and a 1.08 scale swell.
-
-Git Recovery: Resolved the stash@{0} conflicts and merged the V 2.8 Master History.
-📝 Session Stop Summary: portfolio2023-main
-Status: PAUSED (Stable) Last Known Good Config: ProjectCard.module.css (Proportion Flip applied).
-
-Key Takeaways for Next Startup:
-
-The "Ruler" Issue: Avoid forcing side-by-side (1fr 2fr) too early (at 1024px). Keep it stacked until 1400px to give the text "Air."
-
-The Container Fix: Replace width: 92% with width: auto + margin: 1rem to stop the 360px border collisions.
-
-Syntax Hunt: Check ProjectCard.module.css for a missing } to clear the Vite error.
-=======
 5. Definition of Done (DoD)
 [ ] Browser resize test (No layout snapping).
 
 [ ] npm run build passes with zero errors.
 
 [ ] Pushed to GitHub with git push --force-with-lease (if rebased).
->>>>>>> Stashed changes
+📝 Session Summary: portfolio2023-main
+Status: CLEAN & SYNCED
+
+ProjectCard: Successfully hunted the missing bracket and removed the "copy-paste" glitch in .projectCardTitle.
+
+Burger Menu: Implemented clamp() for the trigger and links. Verified Standard 8 pointer-events to protect the WaterVideo background interaction.
+
+Physics: Confirmed the .95 dampening feel remains active via the cubic-bezier transition.
