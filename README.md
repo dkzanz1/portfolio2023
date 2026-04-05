@@ -72,3 +72,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 #### Developer notes
 
 link to Aldgate project,Vite project(ANZ),E-commerce,dbank
+🛠️ Development Standards
+This project strictly adheres to the ACE Protocol (Architectural Control & Enforcement). All contributors must follow the established standards for Mobile-First escalation, Fluid Scaling, and Component-Centric architecture.
+
+Core Guidelines: Detailed architectural rules, naming conventions, and CSS standards can be found in Docs/PROTOCOL.md.
+
+Workflow: Please review the Sequential Daily Routine before opening a Pull Request.
+
+Commits: This repository uses commitlint. Ensure all commit scopes are lowercase as per Standard 9.

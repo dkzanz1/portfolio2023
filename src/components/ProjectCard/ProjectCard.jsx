@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "./ProjectCard.module.css";
-import PropTypes from "prop-types"; // Import PropTypes
-
-const ProjectCard = ({ id, title, img, url, description }) => {
-  console.log("ProjectCard props:", { id, title, img, url, description });
-
+import PropTypes from "prop-types"; // Import PropType
+/* NOTE: 'id' is intentionally excluded from props here to satisfy ESLint. 
+  It is still used as a 'key' in the parent (ProjectCardList) for React's 
+  reconciliation process, but since we aren't rendering the ID 
+  visually, passing it here as a prop creates an 'unused variable' error.
+*/
+const ProjectCard = ({ title, img, url, description }) => {
   return (
     <div className={styles.projectCardContainer}>
       <div className={styles.projectCardContentWrapper}>
@@ -19,7 +21,7 @@ const ProjectCard = ({ id, title, img, url, description }) => {
         >
           Visit Project
         </a>
-        <p className={styles.projectCardId}>{id}</p>
+        {/* <p className={styles.projectCardId}>{id}</p> */}
       </div>
     </div>
   );

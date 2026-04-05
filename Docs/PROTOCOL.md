@@ -1,158 +1,78 @@
-1. 🛡️ Standard Enforcement (The ACE Protocol)
-Single Source of Truth: This document governs all architectural decisions.
+# 🛡️ The ACE Protocol: portfolio2023-main
 
-Mobile-First: Target mobile viewports first. Use min-width queries ONLY. max-width is prohibited for layout.
+## 1. Standard Enforcement (Architectural Control)
 
-Semantic HTML: Mandatory use of <main>, <section>, <article>, and <nav> for A11y/SEO.
+Standard 1: Single Source of Truth – This document governs all architectural and logical decisions.
 
-Standard 6 (Fluid Scaling): Use clamp() or vw/vh for typography and major margins.
+Standard 2: Mobile-First Escalation – Target mobile viewports first. Use min-width queries ONLY. max-width media queries are strictly prohibited for layout to prevent "breakpoint snapping."
 
-Standard 7 (DRY Inheritance): Define layout properties (position, display, pointer-events) at the Mobile level. Do not repeat in @media unless the value changes.
+Standard 3: Semantic HTML – Mandatory use of `<main>`, `<section>`, `<article>`, and `<nav>` for A11y and SEO.
 
-Standard 8 (Interactive Transparency): Overlays must use pointer-events: none to prevent interaction hijacking on parallax/background logic. Use clamp() for all standalone decorative assets (SVGs/Icons).
+Standard 4: DRY Global Values – Use CSS Variables (--var) for all repeating values (colors, timing, easing). Define in :root. Never hard-code hex codes or speeds twice.
 
-2. 🛠️ Technology Stack & Environment
+Standard 5: Component-Centricity – Mandatory use of Barrel Files (index.js) inside every component folder to ensure internal logic is isolated.
+
+Standard 6: Fluid Scaling – Use clamp(), vw, or vh for typography and major layout margins to ensure seamless scaling.
+
+Standard 7: Property Lean Inheritance – Define layout (position, display, pointer-events) at the Mobile level. Do not redeclare in @media unless the value changes.
+
+Standard 8: Interactive Transparency – Overlays must use pointer-events: none to prevent interaction hijacking. Use clamp() for decorative assets (SVGs/Icons).
+
+Standard 9: Linting Enforcement – All commits must pass commitlint (lowercase scopes) and husky pre-commit hooks to ensure quality.
+
+1. Technology Stack & Environment
 Stack: React + Vite (Functional Components & Hooks).
 
 Styling: CSS Modules (.module.css) + Custom Properties (Variables).
 
-Architecture: Component-Centric with Barrel Exports (index.js).
+Architecture: Component-Centric with Barrel Exports.
 
 Commits: type(scope): description (Scopes MUST be lowercase).
 
-3. 📅 Sequential Daily Routine (Logic Order)
+1. Sequential Daily Routine (Logic Order)
 Sync: git pull origin main
 
 Maintenance: npm install (if needed) + Verify local tree against Project Map.
 
-State Protection: Create feature branch: git checkout -b <type>/<description>.
+State Protection: Create feature branch: git checkout -b `<type>`/`<description>`.
 
 Execution: npm run dev.
 
-Context Control: Use "Open session: [Topic]" to start and "Close session: [Topic]" to clear AI state.
+Context Control: Use "Open session: [Topic]" and "Close session: [Topic]" to manage AI state.
 
-4. ⚠️ Conflict Resolution (The "Git Protocol")
+1. Conflict Resolution (The Git Protocol)
 Save State: git stash push -m "CONFLICT_SAVE"
 
 Resolve: Manually fix markers (<<<<<<<, =======, >>>>>>>).
 
-Stage: git add <file-name>
+Validation Gate: Run npm run build or check the browser. Do not proceed if the app is crashed.
 
-Resume: git rebase --continue or git merge --continue.
+Stage: git add `<file-name>`
 
-Push: git push --force-with-lease (if rebasing).
+Resume: git rebase --continue (or merge --continue).
 
+Push: git push --force-with-lease (required for rebasing).
 📂 Project Structure Map (The Barrel Pattern)
-Plaintext
+Component Level
 src/components/ComponentName/
 ├── ComponentName.jsx
 ├── ComponentName.module.css
 └── index.js (Export { default } from './ComponentName')
-(Tree layout maintained in internal logs as of 12-02-25)
-ulzolik@penguin:~/react-projects/portfolio2023-main$ tree -I 'node_modules'
-.
+
+.Full Project Tree (Verified 2026-02-12)
 ├── commitlint.config.js
-├── Docs
+├── Docs/
 │   ├── currenttask1.md
 │   ├── MyJourney.md
 │   ├── PROTOCOL.md
-│   ├── session_history.md
-│   ├── svg1.html
-│   ├── svg2.html
-│   ├── svg3.html
-│   ├── svg4.html
-│   ├── svg5.html
-│   ├── svg6.html
-│   └── svgsnake.html
-├── index.html
-├── install.
-│   └── _
-│       ├── applypatch-msg
-│       ├── commit-msg
-│       ├── h
-│       ├── husky.sh
-│       ├── post-applypatch
-│       ├── post-checkout
-│       ├── post-commit
-│       ├── post-merge
-│       ├── post-rewrite
-│       ├── pre-applypatch
-│       ├── pre-auto-gc
-│       ├── pre-commit
-│       ├── pre-merge-commit
-│       ├── prepare-commit-msg
-│       ├── pre-push
-│       └── pre-rebase
-├── package.json
-├── package-lock.json
-├── public
-│   └── favicon.ico
-├── README.md
-├── src
+│   └── session_history.md
+├── src/
 │   ├── App.jsx
-│   ├── App.module.css
-│   ├── assets
-│   │   ├── images
-│   │   │   ├── boat.svg
-│   │   │   ├── face.jpg
-│   │   │   ├── image4.jpeg
-│   │   │   └── mephoto.jpg
-│   │   └── videos
-│   │       └── videobg.mp4
-│   ├── components
-│   │   ├── About
-│   │   │   ├── About.jsx
-│   │   │   ├── About.module.css
-│   │   │   └── index.js
-│   │   ├── Burger
-│   │   │   ├── Burger.jsx
-│   │   │   ├── Burger.module.css
-│   │   │   └── index.js
-│   │   ├── ContactForm
-│   │   │   ├── ContactForm.jsx
-│   │   │   ├── ContactForm.module.css
-│   │   │   └── index.js
-│   │   ├── Footer
-│   │   │   ├── Footer.jsx
-│   │   │   ├── Footer.module.css
-│   │   │   └── index.js
-│   │   ├── HeroCard
-│   │   │   ├── HeroCard.jsx
-│   │   │   ├── HeroCard.module.css
-│   │   │   └── index.js
-│   │   ├── ProjectCard
-│   │   │   ├── index.js
-│   │   │   ├── ProjectCard.jsx
-│   │   │   ├── projectCardList
-│   │   │   │   ├── index.js
-│   │   │   │   ├── ProjectCardList.jsx
-│   │   │   │   └── ProjectCardList.module.css
-│   │   │   ├── ProjectCard.module.css
-│   │   │   └── projectInfo.js
-│   │   ├── Section
-│   │   │   ├── index.js
-│   │   │   ├── Section.jsx
-│   │   │   └── Section.module.css
-│   │   ├── SocialFollow
-│   │   │   ├── index.js
-│   │   │   ├── SocialFollow.jsx
-│   │   │   └── SocialFollow.module.css
-│   │   └── WaterVideo
-│   │       ├── index.js
-│   │       ├── WaterVideo.jsx
-│   │       └── WaterVideo.module.css
-│   ├── hooks
-│   │   └── useTheme.js
-│   ├── index.css
-│   └── index.jsx
+│   ├── components/
+│   │   ├── About/
+│   │   ├── Burger/
+│   │   ├── HeroCard/
+│   │   └── ProjectCard/
+│   └── hooks/
 └── vite.config.js
-
-21 directories, 75 files
-What was removed/merged:
-Duplicates: The "[2026-02-27] Standard 7 & 8 Addition" block at the very end was merged into the main Standard Enforcement section.
-
-Redundancy: Removed the repeated "Mobile-First" descriptions by consolidating them into the core ACE rules.
-
-Clarity: Reorganized the "Startup Routine" into a numbered list that includes the Feature Branching Protocol, so you don't forget to branch out before you code.
-Constraint Rule: Prohibit max-width media queries to prevent "Breakpoint Snapping" and logic conflicts. Use min-width for layout escalations and clamp() for internal element fluidity.
-(Note: max-width on an element is okay/reasonably good; but max-width in a @media query is the problem!)
+ Dev Note: Prohibit max-width in media queries to ensure fluid escalation. max-width on specific elements for containment is permitted; however, layout logic must remain min-width driven.

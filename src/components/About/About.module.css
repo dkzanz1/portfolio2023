@@ -2,25 +2,35 @@
 :root {
   --section-gap: clamp(4rem, 10vh, 8rem);
 }
+/* 2. REFINING THE CONTAINER (Fluidizing the "Hard" pixels) */
 .aboutContainer {
   background-color: var(--background-color);
   color: var(--text-color);
   border: 1px solid var(--primary-color);
   box-sizing: border-box; /* stops padding doesn't break the width */
-  border-radius: 25px;
-  box-shadow: 10px 10px 10px 10px var(--box-shadow-color);
+  /* Conversion: Make the radius and shadow fluid with clamp */
+  border-radius: clamp(15px, 3vw, 30px);
+  box-shadow: clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) 20px var(--box-shadow-color);
+  
   
     /* STANDARD 6: Fluid Spacing & Width */
-  width: clamp(92%, 90vw, 1400px);
-  margin: var(--section-gap)auto;
-  padding: clamp(1.5rem, 5vw, 4rem);
-  
-  text-align: center;
+  width: 92%; /* Full width on mobile */
+  margin: var(--section-gap)auto;/* Centered on mobile only */
+  padding: 1.5rem;/* Tight mobile padding */
 
-  /* STANDARD 7: Define Layout at Mobile level */
   display: grid;
   grid-template-columns: 1fr; /* Single column for mobile */
+  align-items: center; /* Ensures vertical alignment in the grid */
+  text-align: center; /* Center text for mobile */
+  gap: 2rem; /* Space between image and text on mobile */
 }
+.aboutSection {
+  padding-left: 10vw; /* Standard 6: Fluid Scaling */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 5vw, 3rem); /* Fluid gap between elements */
+}
+
 /* 1. THE STICKER CONTAINER */
 .imageWrapper {
   display: flex;
@@ -35,25 +45,31 @@
   width: clamp(180px, 30vw, 340px); 
   aspect-ratio: 4 / 5; /* Forces the circle shape regardless of viewport */
   margin: 0 auto;
-
 }
 /* 2. THE STICKER ITSELF (Standardized Aesthetic) */
 .stickerImg {
-  width: 100%;
-  height: 100%;
+  /* Standard 6: Fluid sizing moved directly to the image */
+  width: clamp(200px, 35vw, 380px); 
+  aspect-ratio: 4 / 5;
   object-fit: cover;
+/* border-radius: 50% on a 4:5 ratio creates the perfect Oval sticker */
   border-radius: 50%;
   /* BRAND CONSTANTS */
   border: 8px solid var(--primary-color);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
+
   /* STANDARD 8: Cohesive Physics Hover */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: scale(1.1);
 }
 
 /* 3. INTERACTION (Standard 8) */
 .stickerImg:hover {
-  transform: scale(1.05) rotate(-3deg); /* "Peeling" sticker effect */
+  /* This creates a glowing 'ripple' effect around the sticker */
+  box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0.6), 
+              0 0 0 20px rgba(var(--primary-rgb), 0.1);
+  transform: translateY(-45px); /* Lifts up like it's floating */
 }
 
 /* Explicitly styled the text colors */
@@ -78,12 +94,28 @@
    ============================================================ */
 @media (min-width: 1024px) {
   .aboutContainer {
+    /* ARCHITECTURAL ALIGNMENT: Lock to the 10vw Hero Line */
+    margin-left: 10vw; 
+    margin-right: 5vw;
+    width: auto; /* Let the margins define the width */
+    /* Rule of thirds applied */
    grid-template-columns: 1fr 2fr; /* Implementation of Rule of Thirds */
     text-align: left;
-    gap: 4rem;
+    gap: 6vw; /* Increased gap for larger screens */
+    padding: 4rem;
+    display: grid; /* Added to ensure grid is active */
   }
-
+.imageWrapper {
+    justify-content: flex-start; /* Align sticker to the Spine */
+      padding: 0 0 2rem 0;
+    }
+  .stickerImg {
+    /* Scale down the image so it's not "massive" on small laptops */
+    width: clamp(150px, 20vw, 250px); 
+  }
   .blurb {
     margin: 0;
+    /* Standard 6: Ensure the text doesn't stretch too wide for the eye */
+    max-width: 70ch;
 }
 }
