@@ -24,6 +24,12 @@
   text-align: center; /* Center text for mobile */
   gap: 2rem; /* Space between image and text on mobile */
 }
+.aboutSection {
+  padding-left: 10vw; /* Standard 6: Fluid Scaling */
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 5vw, 3rem); /* Fluid gap between elements */
+}
 
 /* 1. THE STICKER CONTAINER */
 .imageWrapper {
@@ -39,7 +45,6 @@
   width: clamp(180px, 30vw, 340px); 
   aspect-ratio: 4 / 5; /* Forces the circle shape regardless of viewport */
   margin: 0 auto;
-
 }
 /* 2. THE STICKER ITSELF (Standardized Aesthetic) */
 .stickerImg {
@@ -90,10 +95,11 @@
     margin-right: 5vw;
     width: auto; /* Let the margins define the width */
     /* Rule of thirds applied */
-   grid-template-columns: 1fr; /* Implementation of Rule of Thirds */
+   grid-template-columns: 1fr 2fr; /* Implementation of Rule of Thirds */
     text-align: left;
     gap: 6vw; /* Increased gap for larger screens */
     padding: 4rem;
+    display: grid; /* Added to ensure grid is active */
   }
 .imageWrapper {
     justify-content: flex-start; /* Align sticker to the Spine */
