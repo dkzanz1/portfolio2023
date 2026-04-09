@@ -9,14 +9,17 @@ const ProjectCardRender = () => {
     // Apply the grid layout class here
     <section className={styles.projectsGrid}>
       {projectInfo.map((project) => (
-        <ProjectCard
-          key={project.id}
-          id={project.id}
-          title={project.title}
-          img={project.imgURL}
-          url={project.url}
-          description={project.description}
-        />
+        /* THE ANCHOR: This div allows the Mosaic Spans to work! */
+        <div key={project.id} className={styles.card}>
+          <ProjectCard
+            key={project.id}
+            id={project.id}
+            title={project.title}
+            img={project.imgURL}
+            url={project.url}
+            description={project.description}
+          />
+        </div>
       ))}
     </section>
   );

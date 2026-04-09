@@ -7,21 +7,19 @@
   /* This creates 1 column by default, but automatically switches to 4 
      when there is enough space for each card to be at least 320px. 
      No media query required for the basic shift. */
-  grid-template-columns: repeat(auto-fill, (320px, 1fr));
-
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 /* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
   gap: 1.5rem;
   width: 100%;
   padding: 1.5rem;
-
 /* Ensure it doesn't get ridiculously wide on 49" monitors */
   max-width: 2500px;
   padding-left: 2vw;
-  /* PERFORMANCE: Prepare for scrolling/parallax if needed */
-  will-change: transform;
-      align-items: start;
+  align-items: start;
     }
 .card {
+  height: 100%; /* Force the wrapper to match the grid row height */
+
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
   border-radius: clamp(10px, 2vw, 20px); /* Fluid rounding */
@@ -33,6 +31,12 @@
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   will-change: transform;
 }
+.card > * {
+  height: 100%; /* Force the ProjectCard component to match the wrapper */
+  flex: 1; /* This tells the ProjectCard component to grow to fill the .card wrapper */
+  display: flex;
+  flex-direction: column;
+}
 
 .card:hover {
   transform: translateY(-5px) scale(1.01);
@@ -40,10 +44,19 @@
 
 .cardImage {
   width: 100%;
+ flex: 1; /* Allow the image to grow and fill the available space */
   /* Use aspect-ratio instead of fixed height: 200px */
-  aspect-ratio: 16 / 9; 
+
+  min-height: 0; /* Prevents the image from pushing the card larger than the grid row */
   object-fit: cover;
   border-bottom: 1px solid var(--primary-color);
+}
+/* 4. The actual <img> tag */
+.cardImage img {
+  width: 100%;
+  height: 100%;       /* Match the parent container's new stretched height */
+  object-fit: cover;
+  display: block;
 }
 
 .cardBody {
@@ -75,15 +88,39 @@
     .projectsGrid {
         /* Large Screen Requirement: Switch to two equal-width columns at mini ipad level. */
         grid-template-columns: 1fr 1fr;
-        
     }
+    }
+@media (min-width: 1024px){
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(300px, auto); 
+    grid-auto-flow: dense; /* Fills gaps automatically */
+    padding-left: 10vw; /* STANDARD 6: Alignment with 'About' */
+    gap: 2.5rem;
+     }  
+     /* BENTO SPANS: Now that we have a wrapper <div> in the Render file, 
+     these child selectors will finally work! */
+     /* big square (top left Hero anchor ) */
+  .card:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2; /* Large 'Hero' Anchor */
+  }
+ 
+ .card:nth-child(2),.card:nth-child(3){
+    grid-column:span 1;
+    grid-row:span 1;
+  }
+  .card:nth-child(4){
+    grid-column:span 3;
+  }
+}
+    
    /* ULTRA-WIDE: Utilizing the 27" Real Estate */
 @media (min-width: 1800px) {
   .projectsGrid {
     /* Switch to 4 columns to break the "Centered Strip" */
-    grid-template-columns: repeat(4, 1fr);
+    min-width: 1200px;
     gap: 4rem;
-    max-width: 2500px;
+    grid-auto-rows: minmax(400px, auto);
   }
 } 
-}

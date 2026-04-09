@@ -26,3 +26,11 @@ Resolve the "Centered Strip" issue on 27"+ monitors and fix CSS syntax errors to
 - [ ] No build errors (Brackets closed).
 - [ ] Layout scales fluidly to 27" without looking like a "strip".
 - [ ] Hover zoom is smooth and non-stuttering.
+📝 Handover Notes (For Tomorrow)
+The Win: We successfully established the 3-column Desktop Grid and the 10vw Spine alignment.
+
+The "Not Right" Part: The internal `<ProjectCard/>` components likely aren't using height: 100% yet, leaving gaps in the "Hero" 2x2 box.
+
+The Technical Debt: We need to double-check the ProjectCard.module.css to ensure aspect-ratio: 16/9 is disabled on desktop so the cards can fill the Bento spans.
+
+Next Task: Internal Filling & Physics. We will force the images to fill the "Heavy" boxes and apply the .95 dampening zoom.

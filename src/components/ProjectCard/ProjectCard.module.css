@@ -73,10 +73,17 @@
 /*===== Styles for laptops=====*/
 /* 2. Desktop Escalation (Standard 2) */
 @media (min-width: 1024px) {
+    .projectCardContainer {
+        height: 100%; /* Shakes hands with the grid slot */
+        display: flex;
+    }
     .projectCardContentWrapper {
-        /* Switch to Cinematic Wide for larger screens */
-        aspect-ratio: 4 / 5;
-        /* Capping the height ensures the card doesn't become an infinite tower */
-        max-height: 700px;
+       /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
+        aspect-ratio: auto; 
+        height: 100%;
+        width: 100%;
+        flex: 1;
+        /* Increase max-height for ultra-wides or remove it */
+        max-height: none;
     }
 }
