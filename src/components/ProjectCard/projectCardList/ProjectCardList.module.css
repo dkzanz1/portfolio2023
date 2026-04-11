@@ -1,21 +1,21 @@
 /* 1. Mobile-First Default: Single Column Stacking */
 
 .projectsGrid {
-    /* Set up the parent container as a grid */
-    display: grid;
-    /* STANDARD 6: Fluid scaling without snapping*/
+  /* Set up the parent container as a grid */
+  display: grid;
+  /* STANDARD 6: Fluid scaling without snapping*/
   /* This creates 1 column by default, but automatically switches to 4 
      when there is enough space for each card to be at least 320px. 
      No media query required for the basic shift. */
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-/* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding:1.5rem;/* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
+  max-width: 2800px; /* Increased to allow more spread */
+  margin: 0 auto;
   width: 100%;
-  padding: 1.5rem;
-/* Ensure it doesn't get ridiculously wide on 49" monitors */
-  max-width: 2500px;
-  padding-left: 2vw;
-  align-items: start;
+  /* 2. THE SECRET SAUCE: 'dense' fills the gaps created by large cards */
+  grid-auto-flow: dense;
+
     }
 .card {
   height: 100%; /* Force the wrapper to match the grid row height */
@@ -26,10 +26,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  
   /* STANDARD 8: Cohesive Physics (Matches your .95 bounce) */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  will-change: transform;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .card > * {
   height: 100%; /* Force the ProjectCard component to match the wrapper */
@@ -39,44 +37,52 @@
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.01);
+  /* Subtle lift per Standard 8 */
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 .cardImage {
   width: 100%;
  flex: 1; /* Allow the image to grow and fill the available space */
   /* Use aspect-ratio instead of fixed height: 200px */
-
-  min-height: 0; /* Prevents the image from pushing the card larger than the grid row */
+  aspect-ratio: 4/3; 
   object-fit: cover;
   border-bottom: 1px solid var(--primary-color);
+/* Ensure the image inside also respects the physics */
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-/* 4. The actual <img> tag */
-.cardImage img {
-  width: 100%;
-  height: 100%;       /* Match the parent container's new stretched height */
-  object-fit: cover;
-  display: block;
+.card:hover .cardImage {
+  transform: scale(1.08); /* The .95 dampening zoom effect */
 }
-
+.card:hover {
+  transform: translateY(-8px) scale(1.01);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
 .cardBody {
-  padding: clamp(1rem, 3vw, 2rem); /* Fluid breathing room */
+  padding: clamp(2rem, 5vw, 4rem); /* Fluid breathing room */
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  /* To Ensure content pushes to the top */
+  height :100%;
+  justify-content: center;
 }
 
 .cardTitle {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Standard 6 Typography */
+  font-size: clamp(1.8rem, 3vw, 3rem); /* Standard 6 Typography */
   color: var(--primary-color);
+  line-height: 1.2;
   margin: 0;
 }
 
 .cardDescription {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  line-height: 1.5;
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  line-height: 1.8;
   color: var(--text-color);
   opacity: 0.9;
+  /* Standard 6: Prevent lines from getting too long within the card */
+  max-width: 45ch;
 }
 
 
@@ -85,42 +91,45 @@
 /* Use a Media Query to switch the layout ONLY when the screen is wide enough.
    We'll use 922px to match the breakpoint you mentioned earlier. */
 @media (min-width: 768px) {
-    .projectsGrid {
-        /* Large Screen Requirement: Switch to two equal-width columns at mini ipad level. */
-        grid-template-columns: 1fr 1fr;
-    }
-    }
-@media (min-width: 1024px){
+ .projectsGrid {
+    grid-template-columns: 1fr 1fr;
+    padding: 2rem 5vw;
+  }
+}   
+/* --- BENTO LOGIC: Feature scaling ---(Bento Entry & The 10vw Spine) */
+@media (min-width: 1024px) {
   .projectsGrid {
+/* 3 Columns creates the "Rule of Thirds" balance */
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(300px, auto); 
-    grid-auto-flow: dense; /* Fills gaps automatically */
-    padding-left: 10vw; /* STANDARD 6: Alignment with 'About' */
-    gap: 2.5rem;
-     }  
-     /* BENTO SPANS: Now that we have a wrapper <div> in the Render file, 
-     these child selectors will finally work! */
-     /* big square (top left Hero anchor ) */
+    /* We define a base row height so 'span 2' actually looks tall */
+    grid-auto-rows: minmax(400px, auto);
+    padding-left: 10vw; /* Standard 6: Spine Alignment */
+    padding-right: 5vw;
+    gap: 3rem;
+  }
+  
+
+  /* bento feature Make the first project stand out as a 'Hero' tile */
+
   .card:nth-child(1) {
     grid-column: span 2;
-    grid-row: span 2; /* Large 'Hero' Anchor */
+    grid-row: span 2; /* Balance the height against the first card */
   }
- 
- .card:nth-child(2),.card:nth-child(3){
-    grid-column:span 1;
-    grid-row:span 1;
+  .card:nth-child(3) {
+    grid-row: span 2; /* Tall box on the far right */
   }
-  .card:nth-child(4){
-    grid-column:span 3;
+  /* FOURTH CARD: Will automatically fill the gap under the 1st card 
+     thanks to grid-auto-flow: dense */
+  .card:nth-child(4) {
+    grid-column: span 2;
+    
   }
 }
-    
    /* ULTRA-WIDE: Utilizing the 27" Real Estate */
 @media (min-width: 1800px) {
   .projectsGrid {
-    /* Switch to 4 columns to break the "Centered Strip" */
-    min-width: 1200px;
-    gap: 4rem;
-    grid-auto-rows: minmax(400px, auto);
-  }
+
+    grid-auto-rows: minmax(400px, auto); /* Taller rows for bigger screens */
+    gap: 6rem;
+}
 } 
