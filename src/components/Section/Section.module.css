@@ -1,6 +1,39 @@
-.section {
-    height: 1000px;
-    width: 80%;
-    align-items: center;
-    /* border: yellow 10px solid; */
+.skillsSection {
+  padding: clamp(4rem, 10vh, 8rem) 10vw;
+  width: 100%;
+}
+
+/* Base style for mobile (Stacking) */
+.title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--primary-color);
+  margin-bottom: 3rem;
+  font-weight: 800;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Standard 6: Level 1 Split for Wide Screens */
+@media (min-width: 1024px) {
+  .skillsSection {
+    display: flex;
+    gap: 10vw; /* Keeps the gap proportional to the spine */
+    align-items: flex-start;
+  }
+
+  .title {
+    flex: 0 0 250px; /* Constant width for the title column */
+    position: sticky;
+    top: 5rem; /* Stays visible as you scroll icons */
+    margin-bottom: 0;
+  }
+
+  .grid {
+    flex: 1;
+  }
 }

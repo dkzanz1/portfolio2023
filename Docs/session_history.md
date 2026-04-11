@@ -272,3 +272,53 @@ Ultra-wide (27"+) uses a 3-column "Heavy" cinematic layout.
 Next Task: * Scroll-Sync Implementation: Replace the hover effect on the sticker image with a scroll-based parallax/sync.
 
 Audit the "Rule of Thirds" balance one last time on the live build.
+# 🎯Current Task: Ultra-Wide Balance & Hover Interactions
+
+**Status:** 🟡 In Progress
+**Branch:** feat/nav-glass-refinement
+
+## 1. Task Objective
+
+Resolve the "Centered Strip" issue on 27"+ monitors and fix CSS syntax errors to keep the build green.
+
+## 2.Sub-Tasks (Execution)
+
+- [X]**Step 1: Hunt the Bracket**(Immediate)
+  - Location: `src/components/ProjectCard/ProjectCard.module.css`
+  - Action: Find and close the unclosed bracket.
+- [X] **Step 2: The About Spine**
+  - Action: Mirror the 10vw padding-left on the "About" section for vertical alignment.
+- [X] **Step 3: Ultra-Wide Gutter Audit**
+  - Target: `ProjectCardList.module.css`
+  - Action: Implement Bento Grid logic (3-4 columns) for screens > 1800px.
+- [X] **Step 4: Hover Zoom Physics**
+  - Logic: Apply .95 dampening transition to `.projectCardImg`.
+  - Math: `transform: scale(1.08)` with a 600ms cubic-bezier.
+
+## 3. Definition of Done (DoD)
+
+- [X] Layout scales fluidly to 27" without looking like a "strip".
+- [X] Hover zoom is smooth and non-stuttering.
+Immediate Check: Verify the 10vw alignment on the About section and ensure the "Rule of Thirds" (1fr 2fr) looks balanced on your screen.
+
+The Next Feature: We will move straight into the Scroll-Sync Implementation to replace the hover effect on the sticker image.
+Technical Debt / Observations:
+
+Ultra-wide boxes are no longer "tiny," but the balance between image and text inside the cards may need a final visual pass once real content is added.
+
+The Standard 8 Physics: Transition curves are set to .33, 1, .68, 1 for that premium drift.
+
+[X]The Spine: Verified 10vw alignment on Desktop.
+
+[X]The Bento: Card 1 (2x2), Card 3 (Tall), Card 4 (Wide) logic is active on ipad pro sizes upwards to widescreen
+
+[X]The Height Handshake: Desktop cards fill their slots; Mobile cards are now fully visible (no more "thin slices").
+
+[X] Task: Bento Grid & Mobile Audit
+
+Goal: Verify Height Handshake and 10vw Spine alignment.
+
+Status: Completed. (Layout is fluid and gaps are resolved).
+Next Task: * Scroll-Sync Implementation: Replace the hover effect on the sticker image with a scroll-based parallax.
+🔍 Your Audit Checklist
+Since you've added it to the task, here is what you are specifically auditing right now to mark it as [X] Completed:

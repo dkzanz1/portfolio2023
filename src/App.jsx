@@ -3,8 +3,7 @@ import React, { Fragment } from "react";
 import styles from "./App.module.css";
 import About from "./components/About";
 import HeroCard from "./components/HeroCard";
-
-import Sectionpart from "./components/Section";
+import SkillsGrid from "./components/Section";
 import ProjectCardList from "./components/ProjectCard/projectCardList";
 import SocialFollow from "./components/SocialFollow";
 import Footer from "./components/Footer";
@@ -39,7 +38,7 @@ function App() {
           {/* Keep the Toggle aligned with the content container */}
           <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
           <About />
-          <Sectionpart />
+          <SkillsGrid />
           <ProjectCardList />
           <ContactForm />
           <SocialFollow />
