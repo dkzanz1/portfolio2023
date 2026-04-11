@@ -10,7 +10,7 @@
     height : 100%;
     width: 100%;
     /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
-    aspect-ratio: auto;
+    aspect-ratio: 4/5;
     border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
@@ -80,7 +80,7 @@
     }
     .projectCardContentWrapper {
        /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
-        aspect-ratio: auto; 
+        aspect-ratio: auto; /* This lets the Bento grid take over on desktop */
         height: 100%;
         width: 100%;
         flex: 1;

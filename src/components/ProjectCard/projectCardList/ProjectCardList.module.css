@@ -4,9 +4,7 @@
   /* Set up the parent container as a grid */
   display: grid;
   /* STANDARD 6: Fluid scaling without snapping*/
-  /* This creates 1 column by default, but automatically switches to 4 
-     when there is enough space for each card to be at least 320px. 
-     No media query required for the basic shift. */
+  
   grid-template-columns: 1fr;
   gap: 2rem;
   padding:1.5rem;/* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
@@ -18,8 +16,9 @@
 
     }
 .card {
-  height: 100%; /* Force the wrapper to match the grid row height */
-
+  height: auto; /* Force the wrapper to match the grid row height */
+/* Fix: Give it a baseline height for mobile */
+  min-height: 450px;
   background-color: var(--card-bg);
   border: 1px solid var(--primary-color);
   border-radius: clamp(10px, 2vw, 20px); /* Fluid rounding */
@@ -28,6 +27,7 @@
   flex-direction: column;
   /* STANDARD 8: Cohesive Physics (Matches your .95 bounce) */
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative; /* Anchor for the absolute children */
 }
 .card > * {
   height: 100%; /* Force the ProjectCard component to match the wrapper */
@@ -46,7 +46,7 @@
   width: 100%;
  flex: 1; /* Allow the image to grow and fill the available space */
   /* Use aspect-ratio instead of fixed height: 200px */
-  aspect-ratio: 4/3; 
+  aspect-ratio: 16/9; 
   object-fit: cover;
   border-bottom: 1px solid var(--primary-color);
 /* Ensure the image inside also respects the physics */
@@ -107,7 +107,10 @@
     padding-right: 5vw;
     gap: 3rem;
   }
-  
+  .card {
+    height: 100%; /* The Handshake only happens here */
+    min-height: 0;
+  }
 
   /* bento feature Make the first project stand out as a 'Hero' tile */
 
