@@ -11,3 +11,5 @@ Phase,Focus,Status
 
 4. Hardening,"Error Boundaries, Advanced A11y, Performance.",⏳ Pending
 5. Deployment,"CI/CD, SEO Meta, Live Testing.",⏳ Pending
+releasing my finished portfolio to the web
+chosing the next project to build to add to portfolio or more importantly to make money
