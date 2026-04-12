@@ -1,4 +1,5 @@
-Phase,Focus,Status
+# Phase,Focus,Status
+
 1. Structural Core,"Semantic HTML, Barrel Exports, Architecture.",✅ Complete
 2. Design System,"CSS Modules, Variables, Mobile-First.",✅ Complete
 3. Fluidity & Physics,"clamp(), Dampening (.95), Interaction Safety.",🟡 In Progress
@@ -9,7 +10,7 @@ Phase,Focus,Status
 
 [ ] Footer/Social: Standard 8 (Interactive Transparency) audit.
 
-4. Hardening,"Error Boundaries, Advanced A11y, Performance.",⏳ Pending
-5. Deployment,"CI/CD, SEO Meta, Live Testing.",⏳ Pending
+1. Hardening,"Error Boundaries, Advanced A11y, Performance.",⏳ Pending
+2. Deployment,"CI/CD, SEO Meta, Live Testing.",⏳ Pending
 releasing my finished portfolio to the web
 chosing the next project to build to add to portfolio or more importantly to make money
