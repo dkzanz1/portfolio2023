@@ -20,7 +20,11 @@ const SkillsGrid = () => {
       <h2 className={styles.title}>Professional Stack</h2>
       <div className={styles.grid}>
         {techStack.map((tech) => (
-          <div key={tech.id} className={styles.skillCard}>
+          <div
+            key={tech.id}
+            className={styles.skillCard}
+            style={{ "--hover-color": tech.color }} // Injecting the physics constant
+          >
             <div className={styles.iconWrapper}>{tech.icon}</div>
             <span className={styles.skillName}>{tech.name}</span>
           </div>
