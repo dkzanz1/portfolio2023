@@ -80,11 +80,20 @@
     }
     .projectCardContentWrapper {
        /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
-        aspect-ratio: auto; /* This lets the Bento grid take over on desktop */
+        aspect-ratio: 16/9; /* This lets the Bento grid take over on desktop */
         height: 100%;
         width: 100%;
         flex: 1;
         /* Increase max-height for ultra-wides or remove it */
         max-height: none;
     }
+    .projectCardTitle, .projectCardInfo {
+    /* Standard 8: Allow clicks to pass through to the wrapper if needed */
+    pointer-events: none; 
+    transition: transform 0.4s ease;
+}
+
+.projectCardContentWrapper:hover .projectCardTitle {
+    transform: translate(-50%, -60%); /* Subtle lift on hover */
+}
 }
