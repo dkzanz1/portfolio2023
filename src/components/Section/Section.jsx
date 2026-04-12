@@ -9,9 +9,8 @@ const SkillsGrid = () => {
     { id: 3, name: "Node.js", icon: <SI.SiNodedotjs />, color: "#339933" },
     { id: 4, name: "MongoDB", icon: <SI.SiMongodb />, color: "#47A248" },
     { id: 5, name: "HTML5", icon: <SI.SiHtml5 />, color: "#E34F26" },
-
     { id: 6, name: "Git", icon: <SI.SiGit />, color: "#F05032" },
-    { id: 7, name: "Tailwind", icon: <SI.SiTailwindcss />, color: "#06B6D4" },
+    { id: 7, name: "Docker", icon: <SI.SiDocker />, color: "#2496ED" },
     { id: 8, name: "Vite", icon: <SI.SiVite />, color: "#646CFF" },
   ];
 
