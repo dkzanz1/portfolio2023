@@ -1,24 +1,16 @@
+# Phase,Focus,Status
 
-# Milestone roadmap
-<!-- focus pointsa of development  -->
+1. Structural Core,"Semantic HTML, Barrel Exports, Architecture.",✅ Complete
+2. Design System,"CSS Modules, Variables, Mobile-First.",✅ Complete
+3. Fluidity & Physics,"clamp(), Dampening (.95), Interaction Safety.",🟡 In Progress
+🔍 Phase 3: "Fluidity Debt" Tracker
+[ ] About Section: Rule of Thirds grid scaling check.
 
-Phase,Focus,Status
+[ ] ProjectCardList: Mobile aspect-ratio stability audit.
 
-1. Structural Core,"Semantic HTML, React Architecture, Barrel Exports.",Complete
+[ ] Footer/Social: Standard 8 (Interactive Transparency) audit.
 
-2. Design System,"CSS Modules, Custom Properties, Mobile-First Layouts.",Complete
-
-3. Fluidity & Physics,"clamp() scaling, dampening logic, interaction safety.",Complete
-
-4. Hardening,"Error boundaries, advanced A11y, Performance optimization.",Pending
-
-5. Deployment,"CI/CD pipeline, SEO meta-tags, Live environment testing.",Pending
-
-🔍 Identifying the "Fluidity Debt"
-Based on the project map, I have the following sections remaining in Phase 3:
-
-About Section: Needs to be checked for the Rule of Thirds grid scaling.
-
-ProjectCardList: Needs to be checked for image aspect-ratio stability on mobile.
-
-Footer/SocialFollow: Needs to be checked for interactive transparency (Standard 8).
+1. Hardening,"Error Boundaries, Advanced A11y, Performance.",⏳ Pending
+2. Deployment,"CI/CD, SEO Meta, Live Testing.",⏳ Pending
+releasing my finished portfolio to the web
+chosing the next project to build to add to portfolio or more importantly to make money

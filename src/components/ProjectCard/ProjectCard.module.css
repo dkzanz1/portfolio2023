@@ -1,15 +1,16 @@
 /* PARENT CONTAINER */
 .projectCardContainer {
-    max-height: none; /*content ditated the height*/
+    height: 100%; /*content ditated the height*/
     padding: 0;
     overflow:visible;
 }
 
 .projectCardContentWrapper {
     position: relative;
+    height : 100%;
     width: 100%;
     /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
-    aspect-ratio: 16/9;
+    aspect-ratio: 4/5;
     border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
@@ -22,11 +23,11 @@
 }
 .projectCardTitle {
     position:absolute;
-    top: 25%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* Standard 6: Fluid Typography using(Min 1.25rem, scales with width, Max 2rem) */
-    font-size: clamp(1.25rem, 4vw, 2rem);
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: bold;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .7); /* Improved readability */  
@@ -35,7 +36,7 @@
     background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
     color: var(--text-color-light, white); /* Used protocol variables */
     border-radius: 8px;
-    width: 85%; /* Ensure it doesn't spill over card edges */
+    width: 70%; /* Ensure it doesn't spill over card edges */
 }
 
 .projectCardImg {
@@ -73,10 +74,26 @@
 /*===== Styles for laptops=====*/
 /* 2. Desktop Escalation (Standard 2) */
 @media (min-width: 1024px) {
-    .projectCardContentWrapper {
-        /* Switch to Cinematic Wide for larger screens */
-        aspect-ratio: 4 / 5;
-        /* Capping the height ensures the card doesn't become an infinite tower */
-        max-height: 700px;
+    .projectCardContainer {
+        height: 100%; /* Shakes hands with the grid slot */
+        display: flex;
     }
+    .projectCardContentWrapper {
+       /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
+        aspect-ratio: 16/9; /* This lets the Bento grid take over on desktop */
+        height: 100%;
+        width: 100%;
+        flex: 1;
+        /* Increase max-height for ultra-wides or remove it */
+        max-height: none;
+    }
+    .projectCardTitle, .projectCardInfo {
+    /* Standard 8: Allow clicks to pass through to the wrapper if needed */
+    pointer-events: none; 
+    transition: transform 0.4s ease;
+}
+
+.projectCardContentWrapper:hover .projectCardTitle {
+    transform: translate(-50%, -60%); /* Subtle lift on hover */
+}
 }

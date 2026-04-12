@@ -60,8 +60,8 @@
   filter: brightness(1.1) contrast(1.1) saturate(1.2);
 
   /* STANDARD 8: Cohesive Physics Hover */
-  transition: transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
-  transform: scale(1.1);
+  transition: transform 0.2s ease-out;
+  will-change: transform, box-shadow; /* Optimizes for hover performance */
 }
 
 /* 3. INTERACTION (Standard 8) */
@@ -69,7 +69,8 @@
   /* This creates a glowing 'ripple' effect around the sticker */
   box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0.6), 
               0 0 0 20px rgba(var(--primary-rgb), 0.1);
-  transform: translateY(-45px); /* Lifts up like it's floating */
+  transform: translateY(-45px);
+  /* Lifts up like it's floating */
 }
 
 /* Explicitly styled the text colors */
