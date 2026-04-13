@@ -4,9 +4,9 @@
 2. Design System,"CSS Modules, Variables, Mobile-First.",✅ Complete
 3. Fluidity & Physics,"clamp(), Dampening (.95), Interaction Safety.",🟡 In Progress
 🔍 Phase 3: "Fluidity Debt" Tracker
-[ ] About Section: Rule of Thirds grid scaling check.
+[X] About Section: Rule of Thirds grid scaling check.
 
-[ ] ProjectCardList: Mobile aspect-ratio stability audit.
+[X] ProjectCardList: Mobile aspect-ratio stability audit.
 
 [ ] Footer/Social: Standard 8 (Interactive Transparency) audit.
 

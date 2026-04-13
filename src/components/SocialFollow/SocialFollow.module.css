@@ -1,25 +1,34 @@
 .icon-container {
     display:flex;
-       flex-direction: row;
-        /* margin: 20px auto;
-        border: 2px solid blue;
-        width: 80%; */
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Keeps everything on the 10vw spine */
+    padding: clamp(2rem, 8vh, 4rem) 10vw; /* Syncs with 10vw Spine */
+    width: 100%;
+    /* Standard 8: Let clicks pass through to the background video */
+    pointer-events: none;
     }
 .social-container-title {
-        text-align: center;
-        padding: 1rem 1rem;
-        color: rgb(15, 192, 124);
-        bottom: 1rem;
+        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    color: var(--primary-color, rgb(254, 255, 254));
+    margin-right: clamp(1.5rem, 3vw, 3rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
     }
 .social-container-icon-link {
-        padding: 25px 5px;
-        transition: transform 250ms;
+       margin-right: 1.5rem; /* Spacing between the icons themselves */
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
     }
 
-    .social-container-icon-link:hover {
-        transform: translateY(-2px);
-        color: green;
-    }
+.social-container-icon-link:hover {
+    transform: translateY(-5px) scale(1.1);
+    color: var(--hover-color, #00f2ff); /* High-visibility nautical glow */
+}
+    
 
   
     

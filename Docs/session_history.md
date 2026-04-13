@@ -409,3 +409,5 @@ Environment: Build is green, HMR is stable, and the terminal is clear.
 [x] Phase 3: Fluidity Debt - Section.jsx (Complete: Fixed JSX typo & Brand-color physics)
 
 [X] ProjectCardList: Mobile aspect-ratio stability audit. (Standard 6)
+[2026-04-12] Completed ProjectCard Audit: Implemented fluid aspect-ratio (4/5 mobile to 16/9 desktop) and applied Standard 8 compliant pointer-events to ensure interactive transparency.
+[2026-04-12] Completed ProjectCard Audit: Implemented fluid aspect-ratio (4/5 mobile to 16/9 desktop) and applied Standard 8 compliant pointer-events to ensure interactive transparency.
