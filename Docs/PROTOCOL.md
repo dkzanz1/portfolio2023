@@ -80,3 +80,10 @@ Plaintext
 │   │   └── ProjectCard/
 │   └── hooks/
 └── vite.config.js
+
+Architectural Decision (2026-04-13):
+We are deprecating Hover-Zoom for ProjectCard stickers in favor of Scroll-Sync Parallax which work better one mobile.
+
+Rationale: To achieve the "Nautical Float" objective, visual movement must be tied to the user’s primary navigation (scrolling), not just pointer proximity. This ensures a consistent premium experience on both Desktop and Touch/Mobile Safari.
+
+Standard: Interaction must maintain the .95 Dampening constant to ensure the parallax feels "heavy" and fluid, not "jittery."
