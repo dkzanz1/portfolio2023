@@ -435,3 +435,11 @@ DoD Check: * [x] Skills Grid: Smooth on mobile.
 [x] Social Links: Standard 8 (pointer-events) applied.
 
 [x] History: Pushed to GitHub.
+Definition of Done (DoD) Check
+[x] Syntax: CSS comments are closed and PostCSS is happy.
+
+[x] Mobile: Form is centered at 92% width (No offset).
+
+[x] Desktop: Form mirrors the 10vw spine and expands to a 2-column grid.
+
+[x] Standard 8: Glassmorphism/blur is active on the background.

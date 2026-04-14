@@ -1,55 +1,50 @@
 /* ContactForm.module.css - Mobile-First Approach */
-/* only kebab style notation to be used
+/* /* only kebab style notation to be used */
 /* ---------------------------------------------------------------------- */
 /* BASE STYLES (Mobile) - Applied to all screen sizes initially */
 .contactForm {
-        margin: 20px; /* Smaller margins for mobile screens to maximize content area */
-        padding: 15px; /* Consistent padding inside the form */
-        border-radius: 25px;
-        box-shadow: 0 10px 30px #0ee1ac;
-        background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background for visual appeal */
+     /* 1. Reset Mobile Margin */
+  margin: 2rem auto; /* Center it with top/bottom breathing room on mobile */
+  width: 92;       /* Use the majority of the screen width */
+  
+  /* Standard 8: Deep Sea Glass */
+  background-color: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(14, 225, 172, 0.2);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-sizing: border-box; /* Crucial: ensures padding doesn't add to width */
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
       }
-      .contactForm h3 {
-        color: white; /* White text for contrast on the background */
-        text-align: center; /* Center the form title */
-        margin-bottom: 15px; /* Space between the title and form fields */
+      
+    .contactForm h3 {
+  color: #0ee1ac; /* Brand Highlight */
+  text-align: left; /* Align with spine */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
       }
-      .contactForm div {
-        margin-bottom: 10px; /* Space between form field groups */
-      }
-      .contactForm label {
-        display: block; /* Labels stack above inputs for better readability on small screens */
-        margin-bottom: 5px; /* Space between label and input */
-        color: white; /* White text for contrast */
-      }
+   /* Input Fields - Standardizing the 'Glass' look */
+.contactInput {
+  width: 100%;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
 
-      .contactInput {
-        width: 100%; /* Input fields take the full width of their container */
-        padding: 8px; /* Padding inside input fields */
-        border: 1px solid #ccc; /* Light border for input fields */
-        border-radius: 4px; /* Slightly rounded corners for inputs */
-        box-sizing: border-box; /* Ensures padding and border are included in width */
-        background-color: rgba(255, 255, 255, 0.1); /* Light, transparent background for inputs */
-        color: white; /* White text for contrast */
-      }
-.contactForm textarea.contactInput {
-        resize: vertical; /* Allows vertical resizing of the textarea */
-        min-height: 80px; /* Minimum height for the textarea */
-      }
+.contactInput:focus {
+  outline: none;
+  border-color: #0ee1ac;
+  background-color: rgba(255, 255, 255, 0.1);
+}
 
-    .button {
-        width: 100%; /* Button takes full width of its container */
-        padding: 10px 15px; /* Padding inside the button */
-        background-color: #0ee1ac; /* Primary button color */
-        color: white; /* White text for button */
-        border: none; /* Removes default button border */
-        border-radius: 4px; /* Rounded corners for the button */
-        cursor: pointer; /* Changes cursor to pointer on hover */
-        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-      }
-      .button:hover {
-        background-color: #00b386; /* Darker button color on hover */
-      }
+   
+
       @media (min-width: 600px) {
         .contactForm {
           max-width: 600px; /* Limits form width on larger screens for better readability */
@@ -104,6 +99,21 @@
       Readability: The comments and spacing of the code has been adjusted to increase readability.
       Consistency: The padding, margins, and border radius are all consistent to increase visual harmony.
       */
+      /* Desktop Expansion */
+@media (min-width: 1024px) {
+  .contactForm {
+    /* Utilizing horizontal space without losing the spine */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem; /* Space between columns */
+  }
+  
+  .contactForm h3, 
+  .contactForm div:nth-child(4), /* Message textarea */
+  .button {
+    grid-column: 1 / -1; /* Stretch these across both columns */
+  }
+}
       
       
       
