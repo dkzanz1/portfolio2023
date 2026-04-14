@@ -6,7 +6,7 @@ Standard 1: Single Source of Truth – This document governs all architectural a
 
 Standard 2: Mobile-First Escalation – Target mobile viewports first. Use min-width queries ONLY. max-width media queries are strictly prohibited for layout to prevent "breakpoint snapping."
 
-Standard 3: Semantic HTML – Mandatory use of `<main>, <section>, <article>, and <nav> `for A11y and SEO.
+Standard 3: Semantic HTML – Mandatory use of `<main>, <section>, <article>, and <nav>`for A11y and SEO.
 
 Standard 4: DRY Global Values – Use CSS Variables (--var) for all repeating values (colors, timing, easing). Define in :root. Never hard-code hex codes or speeds twice.
 

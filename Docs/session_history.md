@@ -328,7 +328,7 @@ Design System: Implemented a Split-Level layout (Sticky Title left / Grid right)
 Physics: Added dynamic "Brand Color" glows using CSS variables (--hover-color).
 
 Current Git State: Changes committed to local history (git add . and git commit complete).
-1. The Strategy
+1.The Strategy
 Visuals: Use high-quality SVG icons (via react-icons or Simple Icons).
 
 Standard 8 (Physics): Apply a subtle .95 dampening hover effect. When you hover over the "React" icon, it should slightly "swell" or glow.
@@ -356,18 +356,18 @@ Project State: Portfolio 2026
 
 Completed:
 
-* Replaced Sectionpart with a dynamic SkillsGrid.
-* Deleted height: 1000px dead zone; layout is now fluid.
-* Integrated 10 Tech Icons (React, JS, Node, Mongo, HTML5, CSS3, TS, Git, Tailwind, Vite) with working brand-color glow physics.
-* Implemented Split-Level Layout for wide screens.
+- Replaced Sectionpart with a dynamic SkillsGrid.
+- Deleted height: 1000px dead zone; layout is now fluid.
+- Integrated 10 Tech Icons (React, JS, Node, Mongo, HTML5, CSS3, TS, Git, Tailwind, Vite) with working brand-color glow physics.
+-Implemented Split-Level Layout for wide screens.
 
 Next Task:
 
-* Apply the same 10vw Spine refinement to the ProjectCardList to ensure visual continuity with the new Skills section.
+- Apply the same 10vw Spine refinement to the ProjectCardList to ensure visual continuity with the new Skills section.
 
- [X] No build errors (Brackets closed).
- [X] Layout scales fluidly to 27" without looking like a "strip".
- [X] Hover zoom is smooth and non-stuttering.
+- [X] No build errors (Brackets closed).
+- [X] Layout scales fluidly to 27" without looking like a "strip".
+- [X] Hover zoom is smooth and non-stuttering.
 Immediate Check: Verify the 10vw alignment on the About section and ensure the "Rule of Thirds" (1fr 2fr) looks balanced on your screen.
 
 Definition of Done (DoD) Check
@@ -435,6 +435,3 @@ DoD Check: * [x] Skills Grid: Smooth on mobile.
 [x] Social Links: Standard 8 (pointer-events) applied.
 
 [x] History: Pushed to GitHub.
-
-
-
