@@ -4,7 +4,7 @@ Next Session Kick-off:
 [X]Now that the "Boxes" are back, we should perform the Mobile Safari Stress Test to ensure the glass-blur doesn't tank the frame rate on a physical device.
 Sub-Tasks for this 15-min Sprint:
 
-[ ] Footer/Social: Standard 8 (Interactive Transparency) audit.
+[X] Footer/Social: Standard 8 (Interactive Transparency) audit.
 📐 Physics Constant Reminder
 Work Delivered:
 
@@ -29,3 +29,12 @@ Next Task: * Scroll-Sync Implementation: Replace the hover effect on the sticker
 Replace the "Hover-Zoom" on project stickers with Scroll-based Parallax.
 
 Apply the .95 Dampening to the vertical movement so the images feel like they are floating in the "Deep Sea" background.
+Recommendation: Try the .eslintignore fix first. It’s the "Lead Developer" way to solve the root cause. Once that file is saved, try your git commit again. It should only scan your src files and pass instantly.
+
+Should we look at your .eslintrc file next to make sure it's only targeting the right directories?
+Current Task Status
+[x] Footer/Social Audit: Standard 8 applied.
+
+[x] Mobile Safari Stress Test: Performance verified on XR.
+
+[x] Scroll-Sync Implementation: (Next St

@@ -41,9 +41,9 @@
 
 .projectCardImg {
     position :absolute;
-    inset:0; /* Shorthand for top:0; right:0; bottom:0; left:0; */
-    width:100%;
-    height:100%;
+    inset:-20px; /* Gives "bleed" room so edges don't show */
+ width: calc(100% + 40px);
+    height: calc(100% + 40px);
     object-fit:cover; /* Ensure the image covers the area without distortion */
     
     z-index: 1; /* Ensure the image is behind the text */
