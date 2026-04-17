@@ -38,3 +38,21 @@ Current Task Status
 [x] Mobile Safari Stress Test: Performance verified on XR.
 
 [x] Scroll-Sync Implementation: (Next St
+ession Stop Summary: portfolio2023-main
+Accomplishments:
+
+[x] Standard 8 confirmed (Ghost Layer working).
+
+[x] iPhone XR Stress Test passed (Blur performance is solid).
+
+[x] Parallax logic injected into ProjectCard.jsx.
+
+The "Blocker":
+
+The Scroll Bug: The offset state is being updated, but the visual transform isn't triggering/moving on scroll.
+
+Next Session Starting Point:
+
+Debug the Scroll Listener (Check if window scroll is being hijacked by a parent container's overflow).
+
+Fine-tune the .95 Dampening once the movement is visible.
