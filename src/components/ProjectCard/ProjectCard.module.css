@@ -42,7 +42,7 @@
 .projectCardImg {
     position :absolute;
     inset:-20px; /* Gives "bleed" room so edges don't show */
- width: calc(100% + 40px);
+    width: calc(100% + 40px);
     height: calc(100% + 40px);
     object-fit:cover; /* Ensure the image covers the area without distortion */
     
