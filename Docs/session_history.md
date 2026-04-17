@@ -271,6 +271,7 @@ Ultra-wide (27"+) uses a 3-column "Heavy" cinematic layout.
 
 Next Task: * Scroll-Sync Implementation: Replace the hover effect on the sticker image with a scroll-based parallax/sync.
 
+<<<<<<< Updated upstream
 Audit the "Rule of Thirds" balance one last time on the live build.
 
 ## 2.Sub-Tasks (Execution)
@@ -443,3 +444,6 @@ Definition of Done (DoD) Check
 [x] Desktop: Form mirrors the 10vw spine and expands to a 2-column grid.
 
 [x] Standard 8: Glassmorphism/blur is active on the background.
+=======
+Audit the "Rule of Thirds" balance one last time on the live build.
+>>>>>>> Stashed changes
