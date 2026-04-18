@@ -7,18 +7,20 @@ import PropTypes from "prop-types"; // Import PropType
   visually, passing it here as a prop creates an 'unused variable' error.
 */
 const ProjectCard = ({ title, img, url, description }) => {
+  //1.card ref intialized here
   const cardRef = useRef(null);
   const [offset, setOffset] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
+      // 2. checking  now passes because the ref is attached below
       if (!cardRef.current) return;
 
       // Get the card's position relative to the viewport
       const rect = cardRef.current.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Calculate the center of the card relative to the center of the screen
+      // Calculating the center of the card relative to the center of the screen
       const cardCenter = rect.top + rect.height / 2;
       const screenCenter = viewportHeight / 2;
 
@@ -29,12 +31,13 @@ const ProjectCard = ({ title, img, url, description }) => {
       setOffset(diff);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () =>
-      window.removeEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div className={styles.projectCardContainer}>
+    <div ref={cardRef} className={styles.projectCardContainer}>
       <div
         className={styles.projectCardContentWrapper}
         style={{ "--parallax-offset": `${offset}px` }}
@@ -42,8 +45,11 @@ const ProjectCard = ({ title, img, url, description }) => {
         <img
           className={styles.projectCardImg}
           src={img}
-          alt="project"
-          style={{ transform: `scale(1.2) translateY(${offset}px)` }}
+          alt={title}
+          style={{
+            transform: `scale(1.6) translateY(${offset}px)`,
+            willChange: "transform", // Optimization for smooth parallax
+          }}
         />
         <h2 className={styles.projectCardTitle}>{title}</h2>
         <p className={styles.projectCardInfo}>{description}</p>
