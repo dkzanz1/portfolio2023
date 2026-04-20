@@ -57,3 +57,18 @@ Next Session Starting Point:
 Debug the Scroll Listener (Check if window scroll is being hijacked by a parent container's overflow).
 
 Fine-tune the .95 Dampening once the movement is visible.
+2. Session Stop Protocol
+Following your established protocol, here is the summary to save and the command to close down:
+
+Current Task: Scroll-Sync Implementation
+
+Status: Parallax logic injected; ref attachment pending.
+
+Blocker Cleared: CSS "Unknown word" error and Git merge conflicts resolved.
+
+Next Kick-off: Attach ref={cardRef} to the container and verify .95 dampening feel
+🎯 Primary Task: Visual & Alignment AuditNow that the images are moving, we need to ensure the layout hasn't "drifted" and the aesthetic remains premium.[ ] The 10vw Check: Verify the About section alignment. Ensure the horizontal padding/margins are strictly hitting that 10vw mark to maintain the "Lead Developer" grid.[ ] Rule of Thirds Balance: Audit the ProjectCard content.Does the $1fr$ (text) to $2fr$ (visual) ratio look balanced on your specific monitor?Does the scale(1.2) on the parallax image cause any unwanted clipping at the top or bottom of the card?[ ] Physics Feel Test: * Is the .95 dampening ($0.05$ multiplier) too subtle?Action: If it’s hard to notice, try bumping the multiplier to 0.07 or 0.1 to find the "sweet spot."
+🛠️ Sub-Tasks (15-min Sprint)
+[ ] Mobile Safari Stress Test: Open the build on a physical device. Check if the will-change: transform optimization is keeping the glass-blur effect smooth during the scroll.
+
+[ ] Footer/Social Finalization: Clear the remaining "Fluidity Debt" in the Footer. Ensure the Standard 8 (Interactive Transparency) is applied so no ghost layers are blocking clicks.
