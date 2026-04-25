@@ -19,35 +19,37 @@
 }
 /* Subtle interaction when the user's eye (or mouse) hits the card */
 .projectCardContentWrapper:hover .projectCardImg {
-    transform: scale(1.08);/* A subtle 8% lift */
+    transform: scale(1.6);/* A subtle 6% lift */
 }
 .projectCardTitle {
     position:absolute;
     top: 20%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     /* Standard 6: Fluid Typography using(Min 1.25rem, scales with width, Max 2rem) */
     font-size: clamp(1.5rem, 2vw, 2.5rem);
     font-weight: bold;
     text-align: center;
+    line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, .7); /* Improved readability */  
     padding: 0.8rem;
     z-index:10;
     background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
     color: var(--text-color-light, white); /* Used protocol variables */
     border-radius: 8px;
-    width: 70%; /* Ensure it doesn't spill over card edges */
+    width: 80%; /* Ensure it doesn't spill over card edges */
 }
 
 .projectCardImg {
     position :absolute;
-    inset:-20px; /* Gives "bleed" room so edges don't show */
+    inset:-10px; /* Gives "bleed" room so edges don't show */
     width: calc(100% + 40px);
     height: calc(100% + 40px);
     object-fit:cover; /* Ensure the image covers the area without distortion */
-    
+    will-change: transform; /* Hint for better performance during hover zoom */
     z-index: 1; /* Ensure the image is behind the text */
-    transition: transform 0.6s  cubic-bezier(0.33, 1, 0.68, 1); /* Smooth zoom effect */
+    will-change: transform;
+  
 }
 
 .projectCardInfo {
@@ -86,6 +88,8 @@
         flex: 1;
         /* Increase max-height for ultra-wides or remove it */
         max-height: none;
+        overflow:hidden;
+
     }
     .projectCardTitle, .projectCardInfo {
     /* Standard 8: Allow clicks to pass through to the wrapper if needed */

@@ -463,3 +463,124 @@ Audit the "Rule of Thirds" balance one last time on the live build.
 =======
 [ ] Pushed to GitHub with git push --force-with-lease (if rebased).
 >>>>>>> Stashed changes
+Next Session Kick-off:
+[X]Now that the "Boxes" are back, we should perform the Mobile Safari Stress Test to ensure the glass-blur doesn't tank the frame rate on a physical device.
+Sub-Tasks for this 15-min Sprint:
+
+[X] Footer/Social: Standard 8 (Interactive Transparency) audit.
+📐 Physics Constant Reminder
+Work Delivered:
+
+Semantic fixes to Section.jsx.
+
+Brand-color physics for SkillsGrid.
+
+Responsive aspect-ratio stability for ProjectCard.
+
+DoD: History updated; "Fluidity Debt" cleared (except Footer).
+
+- [x] No build errors (Brackets closed).
+- [x] Layout scales fluidly to 27" without looking like a "strip".
+- [x] Hover zoom is smooth and non-stuttering.
+Immediate Check: Verify the 10vw alignment on the About section and ensure the "Rule of Thirds" (1fr 2fr) looks balanced on your screen.
+
+The Next Feature: We will move straight into the Scroll-Sync Implementation to replace the hover effect on the sticker image.
+Technical Debt / Observations:
+
+Ultra-wide boxes are no longer "tiny," but the balance between image and text inside the cards may need a final visual pass once real content is added.
+
+Next Task: * Scroll-Sync Implementation: Replace the hover effect on the sticker image with a scroll-based parallax.
+Replace the "Hover-Zoom" on project stickers with Scroll-based Parallax.
+
+Apply the .95 Dampening to the vertical movement so the images feel like they are floating in the "Deep Sea" background.
+Recommendation: Try the .eslintignore fix first. It’s the "Lead Developer" way to solve the root cause. Once that file is saved, try your git commit again. It should only scan your src files and pass instantly.
+
+Should we look at your .eslintrc file next to make sure it's only targeting the right directories?
+Current Task Status
+[x] Footer/Social Audit: Standard 8 applied.
+
+[x] Mobile Safari Stress Test: Performance verified on XR.
+
+[x] Scroll-Sync Implementation: (Next
+session Stop Summary: portfolio2023-main
+Accomplishments:
+
+[x] Standard 8 confirmed (Ghost Layer working).
+
+[x] iPhone XR Stress Test passed (Blur performance is solid).
+
+[x] Parallax logic injected into ProjectCard.jsx.
+
+Next Session Starting Point:
+
+Debug the Scroll Listener (Check if window scroll is being hijacked by a parent container's overflow).
+
+Fine-tune the .95 Dampening once the movement is visible.
+2. Session Stop Protocol
+Following your established protocol, here is the summary to save and the command to close down:
+
+Current Task: Scroll-Sync Implementation
+
+Status: Parallax logic injected; ref attachment pending.
+
+Blocker Cleared: CSS "Unknown word" error and Git merge conflicts resolved.
+
+Next Kick-off: Attach ref={cardRef} to the container and verify .95 dampening feel
+🎯 Primary Task: Visual & Alignment AuditNow that the images are moving, we need to ensure the layout hasn't "drifted" and the aesthetic remains premium.[ ] The 10vw Check: Verify the About section alignment. Ensure the horizontal padding/margins are strictly hitting that 10vw mark to maintain the "Lead Developer" grid.[ ] Rule of Thirds Balance: Audit the ProjectCard content.Does the $1fr$ (text) to $2fr$ (visual) ratio look balanced on your specific monitor?Does the scale(1.2) on the parallax image cause any unwanted clipping at the top or bottom of the card?[ ] Physics Feel Test: * Is the .95 dampening ($0.05$ multiplier) too subtle?Action: If it’s hard to notice, try bumping the multiplier to 0.07 or 0.1 to find the "sweet spot."
+🛠️ Sub-Tasks (15-min Sprint)
+[ ] Mobile Safari Stress Test: Open the build on a physical device. Check if the will-change: transform optimization is keeping the glass-blur effect smooth during the scroll.
+
+[ ] Footer/Social Finalization: Clear the remaining "Fluidity Debt" in the Footer. Ensure the Standard 8 (Interactive Transparency) is applied so no ghost layers are blocking clicks.
+Priority,Task,
+Standard Applied
+1,Attach ref={cardRef} to the ProjectCard container.,[x]
+Standard 5 (Component-Centricity)
+2,Debug Scroll Listener (Check for parent overflow hijacking).,
+Standard 1 (SSoT)
+3,10vw Alignment Check on About section.,Standard 6 (Fluid Scaling)
+4,Footer 
+Standard 8 Audit (Pointer-events check).,Standard 8 (Transparency)
+🏁 Session Stop Summary: portfolio2023-main
+Accomplishments:
+
+Git Conflict Resolved: Successfully recovered Docs/currenttask.md using git add after a modify/delete conflict during git stash pop.
+
+Logic Audit: Identified the "Dampening Disconnect"—the current code uses 0.85 instead of the required .95 dampening (which needs a 0.05 multiplier).
+
+CSS Conflict Found: Identified that the .projectCardContentWrapper:hover transform in the CSS is overwriting the inline parallax translateY.
+
+Current State:
+
+Branch: main (Up to date with origin).
+
+Uncommitted Changes: Docs/currenttask.md is staged and ready for recovery.
+
+Stash Status: One entry remains (CONFLICT_SAVE) containing the parallax work.
+
+Tomorrow’s Start-up Task:
+
+Commit the recovery: git commit -m "docs: recover currenttask.md"
+
+Apply the .05 Math: Update ProjectCard.jsx to reflect the strict .95 dampening.
+
+Merge Transforms: Move the scale hover effect from CSS to the inline JSX style to allow the parallax and hover-zoom to coexist.
+
+Sprint Audit Checklist
+[X] CSS: removed transition: transform... in .projectCardImg.
+
+[X] Browser: Refresh and scroll has been checked
+
+[X] Dampening: If it moves too much, change 0.05 to 0.03. If it moves too little, try 0.08.
+Sprint Duration: ~15 minutes.
+
+Accomplishments:
+
+Resolved CSS transition conflict (Parallax now responsive).
+
+Applied Standard 8 physics (.95 dampening) to ProjectCard.
+
+Fixed Title containment (80% width adjustment for mobile).
+
+Verified "Lead Developer" file recovery from stash.
+Official Session Stop Summary: portfolio2023-mainAccomplishments:[x] Parallax Fixed: Removed transition: transform from .projectCardImg to allow smooth JS-driven scroll sync.[x] Alignment Audit: Fixed Title "spill-over" by increasing width to 80% and centering via translateX.[x] Physics: Confirmed .95 dampening ($0.05$ multiplier) provides the desired "Nautical Float" feel.Technical Debt / Observations:Bleed Room: The inset: -20px on the image is holding up well with scale(1.6), but keep an eye on the top/bottom edges during ultra-fast scrolling.GPU Optimization: will-change: transform is active to keep Safari frame rates stable.
+

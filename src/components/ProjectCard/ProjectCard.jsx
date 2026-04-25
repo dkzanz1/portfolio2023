@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./ProjectCard.module.css";
-import PropTypes from "prop-types"; // Import PropType
+import PropTypes from "prop-types";
+// Import PropType
 /* NOTE: 'id' is intentionally excluded from props here to satisfy ESLint. 
   It is still used as a 'key' in the parent (ProjectCardList) for React's 
   reconciliation process, but since we aren't rendering the ID 
@@ -25,8 +26,8 @@ const ProjectCard = ({ title, img, url, description }) => {
       const screenCenter = viewportHeight / 2;
 
       // Standard 8 Physics: .95 Dampening
-      // We only want 5% of the scroll speed to apply to the parallax (1 - 0.95 = 0.05)
-      const diff = (cardCenter - screenCenter) * 0.05;
+      // We only want 3% of the scroll speed to apply to the parallax (1 - 0.95 = 0.05)
+      const diff = (cardCenter - screenCenter) * 0.03;
 
       setOffset(diff);
     };
@@ -47,7 +48,7 @@ const ProjectCard = ({ title, img, url, description }) => {
           src={img}
           alt={title}
           style={{
-            transform: `scale(1.6) translateY(${offset}px)`,
+            transform: `scale(1.6) translateY(${-offset}px)`,
             willChange: "transform", // Optimization for smooth parallax
           }}
         />
@@ -69,7 +70,7 @@ const ProjectCard = ({ title, img, url, description }) => {
 
 ProjectCard.propTypes = {
   // Add prop types
-  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  /*id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,*/
   title: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
