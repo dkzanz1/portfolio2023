@@ -17,10 +17,7 @@
     /* Add a subtle glass border to match the Nav-Glass theme */
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Subtle interaction when the user's eye (or mouse) hits the card */
-.projectCardContentWrapper:hover .projectCardImg {
-    transform: scale(1.6);/* A subtle 6% lift */
-}
+
 .projectCardTitle {
     position:absolute;
     top: 20%;
@@ -42,9 +39,9 @@
 
 .projectCardImg {
     position :absolute;
-    inset:-10px; /* Gives "bleed" room so edges don't show */
-    width: calc(100% + 40px);
-    height: calc(100% + 40px);
+    inset:-15px; /* increasd to 15% to prevent white edges during the float */
+    width: 130%;
+    height: 130%;
     object-fit:cover; /* Ensure the image covers the area without distortion */
     will-change: transform; /* Hint for better performance during hover zoom */
     z-index: 1; /* Ensure the image is behind the text */
