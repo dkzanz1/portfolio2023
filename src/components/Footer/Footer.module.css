@@ -1,15 +1,37 @@
+/* ============================================================
+   5. FOOTER (Standard 2, 3, & 6)
+   ============================================================ */
+
 .footer {
-    /* border: yellow 2px solid; */
-    height: 0px auto;
-    padding-bottom: 30px;
+    width: 100%;
+    /* Standard 6: Fluid padding to match HeroCard's breathability */
+    padding: clamp(1.5rem, 5vh, 3rem) 0;
+    background: transparent; /* Allows water video to show through if overflow isn't hidden */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.footerContent {
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 5%;
+}
+
 .dynocopy {
-        margin: 20px 0;
-        color: rgb(15, 192, 124);
-        text-align: center;
+    /* Standard 4 & 6: Using brand color and fluid typography */
+    margin: 0;
+    color: var(--brand-green, rgb(15, 192, 124));
+    font-size: clamp(0.8rem, 2vw, 1.1rem);
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+/* Tablet/Desktop Escalation */
+@media (min-width: 768px) {
+    .footer {
+        /* Aligning with the "Lead Developer" clean aesthetic */
+        border-top: 1px solid rgba(15, 192, 124, 0.1); 
     }
-.footer {
-        width: 100%;
-        text-align: center;
-        margin: 0 auto;
-    }
+}

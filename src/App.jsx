@@ -5,7 +5,7 @@ import About from "./components/About";
 import HeroCard from "./components/HeroCard";
 import SkillsGrid from "./components/Section";
 import ProjectCardList from "./components/ProjectCard/projectCardList";
-import SocialFollow from "./components/SocialFollow";
+
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import { useTheme } from "./hooks/useTheme.js"; // Corrected import of the custom hook
@@ -41,7 +41,7 @@ function App() {
           <SkillsGrid />
           <ProjectCardList />
           <ContactForm />
-          <SocialFollow />
+
           <Footer />
         </div>
       </div>
