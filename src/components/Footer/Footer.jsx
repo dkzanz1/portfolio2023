@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-import SocialFollow from "../SocialFollow";
+import SocialFollow from "./SocialFollow";
 
 function Footer() {
   return (
