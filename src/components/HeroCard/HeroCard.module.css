@@ -82,6 +82,7 @@
     text-align: center;
     max-width: 15ch; /* Limits width so title doesn't span the whole 27" screen */
     pointer-events: none;
+    z-index: 4;
 }
 
 .HeroBlurb {
@@ -259,9 +260,8 @@
     max-width: 100vw; 
     min-width: 100vw;/* Ensure no cap from parent */
         /* 2. THE BREAKOUT LOGIC: Anchor to center, then pull back half the viewport */
-    /* left: 50%; */
-    left: calc(-50vw + 50%);
-    /* margin-left: -50vw; */
+   margin-left: calc(-50vw + 50%);
+margin-right: calc(-50vw + 50%);
   
     /* 3. Aesthetics */
     border-radius: 0;
@@ -312,11 +312,14 @@
   }
   .circle-img {
     grid-area: image;
-    justify-self: center; /* Centers sticker in its right-hand column */
-    width: 28rem; /* Larger size for desktop */
+    justify-self: end; 
+    margin-right: 10%; /* Replaces the 'right: 10%' absolute positioning */
+    width: clamp(300px, 30vw, 450px);/* Centers sticker in its right-hand column */
+
     height: auto;
     border-width: 12px; /* Thicker "sticker" border for larger size */
     pointer-events: auto;
+    z-index: 10; /* Ensure it stays above the fog overlay */
   }
 
 /* Decorative Boat - A11y: Controlled via JS and aria-hidden */

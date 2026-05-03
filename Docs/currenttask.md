@@ -1,15 +1,9 @@
 Current Task: portfolio2023-main
 Date: 2026-05-02
-Completed Today
-[x] A11y Validation: Fixed nested <footer> within SocialFollow. Added <time> tag and aria-labels for social links.
 
-[x] Path Audit: Verified Barrel File (index.js) for SocialFollow. All imports are now clean and compliant.
+🎯 Next Session Kick-off
+Mobile Safari Performance Check: Use the dist/ folder to verify if backdrop-filter on the HeroCard's glassy layers impacts frame rates on physical iOS devices.
 
-[x] Logic Fix: Synced footerContents naming between JSX and CSS Module.
+About Section Refinement: Apply the "Modular Box" branding to the remaining About section content to mirror the new SkillsGrid aesthetic.
 
-Immediate Priority for Next Session
-[ ] Surgical CSS Breakout: Begin refactoring HeroCard.module.css to isolate layout from theme.
-
-[ ] Physics Calibration: Audit the .95 dampening constant on the new scroll-sync parallax for ProjectCards.
-
-[ ] Git Push: Perform a clean commit with lowercase scope: feat(footer): implement semantic a11y compliant footer.
+The "Float" Calibration: Fine-tune the HeroCard mass/weight variables to ensure the drift feels cinematic at a .95 dampening constant.
