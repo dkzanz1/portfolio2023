@@ -26,3 +26,9 @@ The Footer Balance: Finalizing that visual alignment we discussed today.
 Content Injection: Swapping placeholder "James Q Quick" links for your actual social and project data.
 
 need to discuss when ready whether i am planning to host this on Vercel, Netlify, or GitHub Pages? Knowing the target will help us prep the build command for the final push.
+✅ Major Milestone Archive
+[2026-05-02] Footer Refactor: Resolved naming mismatches (footerContents), verified path audits, and pushed with lowercase scopes.
+
+[2026-04-12] Skills Grid: Replaced static sections with a dynamic SkillsGrid. Integrated brand-color glow physics via CSS variables.
+
+[2026-03-29] Layout Sync: Implemented Bento Grid logic (1fr 2fr) for Ultra-Wide (27"+) monitor balance.

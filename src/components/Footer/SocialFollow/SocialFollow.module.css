@@ -9,7 +9,7 @@
     pointer-events: none;
     }
 .social-container-title {
-        font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
     color: var(--primary-color, rgb(254, 255, 254));
     margin-right: clamp(1.5rem, 3vw, 3rem);
     font-size: clamp(0.8rem, 2vw, 1rem);

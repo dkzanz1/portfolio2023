@@ -6,10 +6,10 @@ function Footer() {
   return (
     <>
       <footer className={styles.footer}>
-        <div className={styles.footercontents}>
+        <div className={styles.footerContents}>
           <SocialFollow />
           <p className={styles.dynocopy}>
-            @{new Date().getFullYear()} All rights reserved
+            @<time>{new Date().getFullYear()}</time> All rights reserved
           </p>
         </div>
       </footer>
