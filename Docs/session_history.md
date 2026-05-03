@@ -583,4 +583,19 @@ Fixed Title containment (80% width adjustment for mobile).
 
 Verified "Lead Developer" file recovery from stash.
 Official Session Stop Summary: portfolio2023-mainAccomplishments:[x] Parallax Fixed: Removed transition: transform from .projectCardImg to allow smooth JS-driven scroll sync.[x] Alignment Audit: Fixed Title "spill-over" by increasing width to 80% and centering via translateX.[x] Physics: Confirmed .95 dampening ($0.05$ multiplier) provides the desired "Nautical Float" feel.Technical Debt / Observations:Bleed Room: The inset: -20px on the image is holding up well with scale(1.6), but keep an eye on the top/bottom edges during ultra-fast scrolling.GPU Optimization: will-change: transform is active to keep Safari frame rates stable.
+Session Stop Summary: [2026-04-29]
+Accomplishments:
 
+Git State: Resolved file duplication in Docs/ caused by a previous pull. Purged ~400 lines of stale data and synced currenttask.md naming.
+
+Architecture: Refactored Footer.jsx to use semantic <footer> tags and dynamic date logic.
+
+Surgical CSS: Applied Standard 6 (Fluid Scaling) to the Footer using clamp() to replace static pixel values.
+
+Encapsulation: Decided to move SocialFollow from App.jsx into the Footer component for better logical hierarchy (Standard 5).
+
+Next Task:
+
+Finalize the physical move of the SocialFollow component into the Footer.
+
+Verify the ProjectCard Audit plan (specifically the "Nautical Float" parallax physics).
