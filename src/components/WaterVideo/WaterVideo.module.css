@@ -8,7 +8,7 @@
     padding: 0;
     top: 0;
     left: 0;
-    z-index: 1; /* Place behind other content */
+    z-index: -1; /* Place behind other content */
 }
 
 .waterVideo { /* This style should be in Video.module.css */
@@ -18,4 +18,9 @@
     /* Standard 8: GPU Acceleration for the water ripples */
     will-change: opacity; 
     filter: brightness(0.8); /* Optional: Darken video in CSS rather than the file */
+}
+.videoElement {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }

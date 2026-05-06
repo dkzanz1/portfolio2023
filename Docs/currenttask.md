@@ -1,9 +1,8 @@
 Current Task: portfolio2023-main
-Date: 2026-05-02
+Next Session Kick-off:
 
-🎯 Next Session Kick-off
-Mobile Safari Performance Check: Use the dist/ folder to verify if backdrop-filter on the HeroCard's glassy layers impacts frame rates on physical iOS devices.
+Task 1: Implement the viewport-centered JS math (using window.innerWidth) for the "Nautical Float" to ensure the drift is cinematic on wide screens.
 
-About Section Refinement: Apply the "Modular Box" branding to the remaining About section content to mirror the new SkillsGrid aesthetic.
+Task 2: Perform the Mobile Safari Performance Audit on the dist/ folder to check for backdrop-filter lag.
 
-The "Float" Calibration: Fine-tune the HeroCard mass/weight variables to ensure the drift feels cinematic at a .95 dampening constant.
+Task 3: Mirror the "Modular Box" branding from SkillsGrid into the remaining About section content.
