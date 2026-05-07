@@ -137,22 +137,26 @@
     height: 100%; /* Spans the entire interactive area */
     z-index: 2; /* Ensure it sits above the video and overlay but below the text */
     pointer-events: none;
+    /* Ensure the boat can't drift outside the hero's "horizon" */
+    overflow: hidden;
 }
 .boat-animation-wrapper {
     /* WHY: This element is positioned absolutely and receives the JS parallax transform. */
     position: absolute; 
     top: 50%; 
     left: 50%;
-    transform: translate3d(-50%, -50%); 
+    transform: translate3d(-50%, -50%, 0); /* Start centered */
     z-index: 5;
     pointer-events: none;/* Ensure it doesn't block mouse events */
     /* transition: transform 5.1s ease-out !important; */
-    will-change: transform;
+    will-change: transform; /* Performance hint for smoother animations */
+   
 }
 .boat {
     width: clamp(30px, 8vw, 80px);
     height: auto;
     animation: bob 4s infinite ease-in-out; /* Adjust timing */
+    backface-visibility: hidden;
 }
     @keyframes bob {
     0% { transform: translateY(0) rotate(0deg); }

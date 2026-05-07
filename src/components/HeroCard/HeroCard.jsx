@@ -25,13 +25,12 @@ function HeroCard() {
     const speed = 0.005;
 
     const handleMouseMove = (e) => {
-      const rect = videoContainer.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const centerY = rect.top + rect.height / 2;
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
 
       // Update where we WANT the boat to go
-      targetX = e.clientX - centerX;
-      targetY = e.clientY - centerY;
+      targetX = (e.clientX - centerX) * 0.75;
+      targetY = (e.clientY - centerY) * 0.75;
     };
 
     const animate = () => {

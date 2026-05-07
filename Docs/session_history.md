@@ -94,3 +94,16 @@ Check backdrop-filter (glassmorphism) lag.
 Verify physics dampening (.95) on high-refresh-rate mobile screens.
 
 Ensure the video background doesn't trigger "Low Power Mode" freezes.
+💾 Session Stop Summary: portfolio2023-main
+Accomplishments:
+
+Nautical Float Physics: Refined the JS math to be viewport-centered (window.innerWidth) for cinematic drift on wide screens.
+
+Performance Tuning: Calibrated physics speed to 0.75 for better responsiveness and applied backface-visibility: hidden to the boat for Mobile Safari stability.
+
+Architecture: Verified Standard 2 (Mobile-First) and Standard 6 (Fluid Scaling) compliance in HeroCard.module.css.
+
+Git State: Clean build generated and pushed to main.
+[X]Task 1: Implement the viewport-centered JS math (using window.innerWidth) for the "Nautical Float" to ensure the drift is cinematic on wide screens.
+
+[X]Task 2: Perform the Mobile Safari Performance Audit on the dist/ folder to check for backdrop-filter lag
