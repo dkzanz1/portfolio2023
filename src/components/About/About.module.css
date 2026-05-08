@@ -1,122 +1,68 @@
-/* About.module.css */
 :root {
-  --section-gap: clamp(4rem, 10vh, 8rem);
+  --primary-color: #00d4ff; 
+  --section-gap: clamp(3rem, 8vh, 6rem);
 }
-/* 2. REFINING THE CONTAINER (Fluidizing the "Hard" pixels) */
+
 .aboutContainer {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border: 1px solid var(--primary-color);
-  box-sizing: border-box; /* stops padding doesn't break the width */
-  /* Conversion: Make the radius and shadow fluid with clamp */
-  border-radius: clamp(15px, 3vw, 30px);
-  box-shadow: clamp(5px, 1vw, 15px) clamp(5px, 1vw, 15px) 20px var(--box-shadow-color);
-  
-  
-    /* STANDARD 6: Fluid Spacing & Width */
-  width: 92%; /* Full width on mobile */
-  margin: var(--section-gap)auto;/* Centered on mobile only */
-  padding: 1.5rem;/* Tight mobile padding */
-
+  width: 94%;
+  margin: var(--section-gap) auto;
   display: grid;
-  grid-template-columns: 1fr; /* Single column for mobile */
-  align-items: center; /* Ensures vertical alignment in the grid */
-  text-align: center; /* Center text for mobile */
-  gap: 2rem; /* Space between image and text on mobile */
-}
-.aboutSection {
-  padding-left: 10vw; /* Standard 6: Fluid Scaling */
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1rem, 5vw, 3rem); /* Fluid gap between elements */
+  grid-template-columns: 1fr; /* Single column mobile */
+  gap: 2rem;
+  align-items: center;
 }
 
-/* 1. THE STICKER CONTAINER */
+/* THE FIX: We turn your Wrapper into the Oval Frame */
 .imageWrapper {
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 2rem;
-}
-/* 1. THE STICKER FRAME (Shared Logic) */
-.stickerFrame {
-  position: relative;
-  /* STANDARD 6: Fluid sizing for the whole circle */
-  width: clamp(180px, 30vw, 340px); 
-  aspect-ratio: 4 / 5; /* Forces the circle shape regardless of viewport */
+  /* This creates the Oval shape for the image inside */
+  width: clamp(160px, 45vw, 220px); 
+  aspect-ratio: 4 / 5; 
   margin: 0 auto;
+  will-change: transform;
 }
-/* 2. THE STICKER ITSELF (Standardized Aesthetic) */
+
 .stickerImg {
-  /* Standard 6: Fluid sizing moved directly to the image */
-  width: clamp(200px, 35vw, 380px); 
-  aspect-ratio: 4 / 5;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-/* border-radius: 50% on a 4:5 ratio creates the perfect Oval sticker */
-  border-radius: 50%;
-  /* BRAND CONSTANTS */
-  border: 8px solid var(--primary-color);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  filter: brightness(1.1) contrast(1.1) saturate(1.2);
-
-  /* STANDARD 8: Cohesive Physics Hover */
-  transition: transform 0.2s ease-out;
-  will-change: transform, box-shadow; /* Optimizes for hover performance */
+  border-radius: 50%; /* Makes it an Oval because parent is 4:5 */
+  border: 6px solid var(--primary-color);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* 3. INTERACTION (Standard 8) */
-.stickerImg:hover {
-  /* This creates a glowing 'ripple' effect around the sticker */
-  box-shadow: 0 0 0 10px rgba(var(--primary-rgb), 0.6), 
-              0 0 0 20px rgba(var(--primary-rgb), 0.1);
-  transform: translateY(-45px);
-  /* Lifts up like it's floating */
-}
-
-/* Explicitly styled the text colors */
+/* THE TEXT BOX */
 .Aboutblurb {
-  color: var(--text-color); 
+  background: rgba(10, 20, 30, 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.Aboutblurb h2 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  margin-bottom: 1rem;
+.sectionTitle {
+  color: var(--primary-color);
+  font-size: clamp(2rem, 5vw, 3rem);
 }
+
 .blurb {
-  /* Fluid Scaling: Min 1.1rem, Scales with viewport, Max 1.6rem */
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  line-height: 1.6; /* Increased for better readability on small screens */
-  max-width: 65ch; /* Standard 6: Readability cap */
-  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
-/* ============================================================
-   DESKTOP GRID (Rule of Thirds)
-   ============================================================ */
+/* DESKTOP: Rule of Thirds */
 @media (min-width: 1024px) {
   .aboutContainer {
-    /* ARCHITECTURAL ALIGNMENT: Lock to the 10vw Hero Line */
-    margin-left: 10vw; 
+    grid-template-columns: 1fr 2fr;
+    margin-left: 10vw;
     margin-right: 5vw;
-    width: auto; /* Let the margins define the width */
-    /* Rule of thirds applied */
-   grid-template-columns: 1fr 2fr; /* Implementation of Rule of Thirds */
+    width: auto;
     text-align: left;
-    gap: 6vw; /* Increased gap for larger screens */
-    padding: 4rem;
-    display: grid; /* Added to ensure grid is active */
   }
-.imageWrapper {
-    justify-content: flex-start; /* Align sticker to the Spine */
-      padding: 0 0 2rem 0;
-    }
-  .stickerImg {
-    /* Scale down the image so it's not "massive" on small laptops */
-    width: clamp(150px, 20vw, 250px); 
+
+  .imageWrapper {
+    margin: 0; /* Align to the 10vw spine */
   }
-  .blurb {
-    margin: 0;
-    /* Standard 6: Ensure the text doesn't stretch too wide for the eye */
-    max-width: 70ch;
-}
 }

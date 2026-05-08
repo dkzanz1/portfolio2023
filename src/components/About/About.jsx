@@ -14,8 +14,10 @@ function About() {
             className={styles.stickerImg}
           />
         </div>
-        <article className={styles.Aboutblurb}>
-          <h2 id="about-title">About:-</h2>
+        <article className={`${styles.Aboutblurb} ${styles.modularBox}`}>
+          <h2 id="about-title" className={styles.sectionTitle}>
+            About
+          </h2>
           <p className={styles.blurb}>
             &quot;Im a dedicated self-taught web developer with a passion for
             building functional and aesthetically pleasing websites. My approach
