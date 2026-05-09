@@ -1,6 +1,4 @@
 Current Task: portfolio2023-main
-Next Session Kick-off:
+Next Task (Immediate Priority):
 
-Move straight to the About Section layout updates.
-
-Monitor performance on mobile to ensure the WaterVideo + Boat Math remains smooth without backdrop-filter.
+Refactor About.jsx and About.module.css to implement the Modular Box aesthetic and apply the .95 Nautical Float to the image wrapper.

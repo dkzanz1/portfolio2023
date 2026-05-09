@@ -107,3 +107,23 @@ Git State: Clean build generated and pushed to main.
 [X]Task 1: Implement the viewport-centered JS math (using window.innerWidth) for the "Nautical Float" to ensure the drift is cinematic on wide screens.
 
 [X]Task 2: Perform the Mobile Safari Performance Audit on the dist/ folder to check for backdrop-filter lag
+🏁 Session Stop Summary: portfolio2023-main
+Accomplishments:
+
+About Section Refactor: Successfully applied the "Modular Box" glass aesthetic to the About text.
+
+The "Massive Image" Fix: Resolved the mobile scaling issue by tightening the clamp logic on the imageWrapper to 220px max.
+
+Oval Logic: Stabilized the 4:5 aspect-ratio on the wrapper to force the 50% border-radius into a perfect oval sticker.
+
+Standard 6 (Spine): Locked the Desktop layout to the 10vw left-alignment for site-wide consistency.
+ate: 2026-05-09
+Status: 🟡 PLANNING COMPLETE / READY FOR EXECUTION
+
+Accomplishments:
+
+Kanban Initialization: Created KanbanRoadmap.md to solve "blind following" and visual track achievements.
+
+Protocol Audit: Validated the .95 Dampening and Modular Box styling as the project's official Design System.
+
+Tooling: Set up a Markdown Viewer on Chromebook (Crostini) for real-time roadmap visualization.
