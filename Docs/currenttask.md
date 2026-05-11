@@ -1,4 +1,7 @@
 Current Task: portfolio2023-main
 Next Task (Immediate Priority):
 
-Refactor About.jsx and About.module.css to implement the Modular Box aesthetic and apply the .95 Nautical Float to the image wrapper.
+
+Finalize the HeroCard refactor to match the new design system (removing legacy #0ee1ac and calc() hacks).
+
+Apply the .95 physics drift to the boat and image wrapper in the Hero.

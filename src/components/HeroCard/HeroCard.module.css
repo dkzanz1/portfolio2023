@@ -17,12 +17,7 @@
 .heroSection {
     position: relative;/* DEFINED ONCE HERE - Inherited by all screen sizes */
     width: 100%;
-    margin: 0;
     min-height: 100dvh;/* Dynamic viewport height for mobile browser bars */
-    overflow:hidden;
-   /* Keep this so it doesn't get too small on tiny phones */
-    /* border-radius: 20px; */
-    box-shadow: 0 10px 30px #0ee1ac;
     background: #000;
     display: flex;
     justify-content: center;
