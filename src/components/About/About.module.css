@@ -1,6 +1,9 @@
 :root {
   --primary-color: #00d4ff; 
   --section-gap: clamp(3rem, 8vh, 6rem);
+  --glass-bg: rgba(10, 20, 30, 0.6); /* 60% Tint */
+  --glass-blur: 15px;
+  --dampening-float: 0.95s; /* Linked to your .95 protocol figure */
 }
 
 .aboutContainer {
@@ -21,8 +24,17 @@
   aspect-ratio: 4 / 5; 
   margin: 0 auto;
   will-change: transform;
+  transition: transform var(--dampening-float) cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-
+/* THE MODULAR BOX STANDARD */
+.modularBox {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
 .stickerImg {
   width: 100%;
   height: 100%;
@@ -30,21 +42,21 @@
   border-radius: 50%; /* Makes it an Oval because parent is 4:5 */
   border: 6px solid var(--primary-color);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  pointer-events: none; /* Standard 8: No interaction hijacking */
 }
 
 /* THE TEXT BOX */
 .Aboutblurb {
-  background: rgba(10, 20, 30, 0.6);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  padding: 2rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+
+
+  padding: clamp(1.5rem, 5vw, 2.5rem); /* Fluid Padding */
+ 
 }
 
 .sectionTitle {
   color: var(--primary-color);
   font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
 }
 
 .blurb {
