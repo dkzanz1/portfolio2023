@@ -2,10 +2,13 @@
 
 /* Define all CSS variables on the :root pseudo-class for global access */
 :root {
+  /* THE GLASS STANDARD (DoD) */
+  --glass-bg: rgba(0, 0, 0, 0.6); 
+  --glass-blur: 15px;
   --background-color: #a6a2a2;
   --text-color: #333333;
   --primary-color: #007bff;
-  --box-shadow-color: rgba(64, 236, 227, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.3);
   /* this sets Global Breakpoint Values */
   --screen-xs: 576px;
   --screen-sm: 768px; /* Your Tablet breakpoint */
