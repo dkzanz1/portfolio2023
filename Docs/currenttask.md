@@ -1,8 +1,6 @@
 Current Task: portfolio2023-main
 Next Task (Immediate Priority):
 
+iOS Physical Validation: Final check of the backdrop-filter rendering on a mobile device.
 
-Immediate Priority:
-Compression Pass: Check the WaterVideo file size. If it's over 2MB, we need to compress it to maintain Standard 6 (Performance).
-
-iOS Final Validation: Open the dev build on a physical iPhone if possible to verify the playsInline and backdrop-filter behavior.
+Current Task: Move to the next item on the Roadmap (potentially the "Skills" layout sync or the 2MB video compression for other assets).

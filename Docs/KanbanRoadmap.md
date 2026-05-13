@@ -1,23 +1,10 @@
 # 🗺️ Project Roadmap: portfolio2023-main
 
-| BACKLOG (Future) | IN PROGRESS (Active) | DONE (Validated) |
-| :--- | :--- | :--- |
-| **Content:** Real Bio & Project Data | **Layout:** About Section "Modular Box" | **Semantics:** HTML & Barrel Files |
-| **Assets:** 2MB Video Compression | **Physics:** .95 Dampening on Oval | **Fluidity:** clamp() & --section-gap |
-| **SEO:** Meta tags & OpenGraph | **Mobile:** backdrop-filter iOS Audit | **Math:** window.innerWidth Logic |
-| **Deploy:** Vercel CI/CD Pipeline | | **Git:** Lowercase scopes & Husky |
-
----
-
-## 🎯 Current Sprint Objective
-**Goal:** Refactor the "About" section to match the "Skills" aesthetic and stabilize the nautical physics.
-
-### Definition of Done (DoD):
-* [x] About Section text is inside a glass-morphism box (60% tint, 15px blur).
-* [x] Nautical Float (.95) is active on the oval image wrapper.
-* [x] No performance lag on mobile dist/ build.
-
 BACKLOG (Future),IN PROGRESS (Active),DONE (Validated)
-Content: Real Bio & Project Data,Assets: 2MB Video Compression,"Layout: About Section ""Modular Box"""
-SEO: Meta tags & OpenGraph,Mobile: iOS backdrop-filter Audit,Physics: .95 Dampening (Hero Final)
-Deploy: Vercel CI/CD Pipeline,,Fluidity: clamp() & Hero Refactor
+Content: Real Bio & Project Data,Mobile: iOS backdrop-filter Audit,"Layout: About Section ""Modular Box"""
+SEO: Meta tags & OpenGraph,Physics: .95 Dampening (Hero Final),Physics: .95 Dampening on Oval
+Deploy: Vercel CI/CD Pipeline,,Fluidity: clamp() & --section-gap
+,,Math: window.innerWidth Logic
+,,Git: Lowercase scopes & Husky
+,,Performance: WaterVideo < 2MB
+Yes, absolutely. To maintain our DoD (Definition of Done) standards and keep the "Lead Developer" state accurate, we should move the completed items to the DONE column and set the next priority.Here is the updated Roadmap based on this session's progress:🗺️ Project Roadmap: portfolio2023-mainBACKLOG (Future)IN PROGRESS (Active)DONE (Validated)Content: Real Bio & Project DataMobile: iOS backdrop-filter AuditLayout: About Section "Modular Box"SEO: Meta tags & OpenGraphPhysics: .95 Dampening (Hero Final)Physics: .95 Dampening on OvalDeploy: Vercel CI/CD PipelineFluidity: clamp() & --section-gapMath: window.innerWidth LogicGit: Lowercase scopes & HuskyPerformance: WaterVideo < 2MB📝 Definition of Done (DoD) Update:[x] About Section text is inside a glass-morphism box (60% tint, 15px blur).[x] Nautical Float (.95) is active on the oval image wrapper.[x] WaterVideo file size validated at 1.8MB.
