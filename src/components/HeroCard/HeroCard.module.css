@@ -30,7 +30,7 @@
     cursor: default;
 }
 
-  .watervideo {
+.watervideo {
     position: absolute;
     inset: 0; /* Shorthand for top: 0; left: 0; right: 0; bottom: 0; */
     /* top:0;
@@ -81,15 +81,14 @@
 }
 
 .HeroBlurb {
-    width: clamp(90%, 800px); 
+    width: clamp(280px, 90%, 800px); 
     margin: 1.2rem auto;
     color: white;
-    font-size: clamp(.7rem, 2.5vw, 1.6rem);
-    line-height: 1.4;
+    font-size: clamp(.9rem, 2.2vw, 1.4rem);
+    line-height: 1.5;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     /* Force centering to override any inherited layout shifts */
-    margin-left: auto;
-    margin-right: auto;
+   
     text-align: center;
 }
 
@@ -185,7 +184,7 @@
 .wheel {
   width: 8px;
   height: 12px;
-  background: #0ee1ac; /* Using your signature green */
+  background: var(--text-primary, #ffffff); /* Purged #0ee1ac */
   border-radius: 3px;
   position: absolute;
   top: 10px;

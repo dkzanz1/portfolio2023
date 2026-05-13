@@ -14,7 +14,7 @@ function About() {
             className={styles.stickerImg}
           />
         </div>
-        <article className={`${styles.Aboutblurb} ${styles.modularBox}`}>
+        <article className={styles.Aboutblurb}>
           <h2 id="about-title" className={styles.sectionTitle}>
             About
           </h2>

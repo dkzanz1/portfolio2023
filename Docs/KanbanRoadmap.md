@@ -13,6 +13,11 @@
 **Goal:** Refactor the "About" section to match the "Skills" aesthetic and stabilize the nautical physics.
 
 ### Definition of Done (DoD):
-* [ ] About Section text is inside a glass-morphism box (60% tint, 15px blur).
-* [ ] Nautical Float (.95) is active on the oval image wrapper.
-* [ ] No performance lag on mobile dist/ build.
+* [x] About Section text is inside a glass-morphism box (60% tint, 15px blur).
+* [x] Nautical Float (.95) is active on the oval image wrapper.
+* [x] No performance lag on mobile dist/ build.
+
+BACKLOG (Future),IN PROGRESS (Active),DONE (Validated)
+Content: Real Bio & Project Data,Assets: 2MB Video Compression,"Layout: About Section ""Modular Box"""
+SEO: Meta tags & OpenGraph,Mobile: iOS backdrop-filter Audit,Physics: .95 Dampening (Hero Final)
+Deploy: Vercel CI/CD Pipeline,,Fluidity: clamp() & Hero Refactor

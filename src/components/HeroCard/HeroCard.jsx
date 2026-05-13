@@ -22,7 +22,7 @@ function HeroCard() {
 
     // 2. NAUTICAL WEIGHT (The "Boat" Feel)
     // 0.02 is heavy/slow catch-up. 0.05 is a bit snappier.
-    const speed = 0.005;
+    const speed = 0.0095;
 
     const handleMouseMove = (e) => {
       const centerX = window.innerWidth / 2;
