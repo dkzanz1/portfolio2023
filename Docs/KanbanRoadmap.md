@@ -1,10 +1,19 @@
 # 🗺️ Project Roadmap: portfolio2023-main
 
-BACKLOG (Future),IN PROGRESS (Active),DONE (Validated)
-Content: Real Bio & Project Data,Mobile: iOS backdrop-filter Audit,"Layout: About Section ""Modular Box"""
-SEO: Meta tags & OpenGraph,Physics: .95 Dampening (Hero Final),Physics: .95 Dampening on Oval
-Deploy: Vercel CI/CD Pipeline,,Fluidity: clamp() & --section-gap
-,,Math: window.innerWidth Logic
-,,Git: Lowercase scopes & Husky
-,,Performance: WaterVideo < 2MB
-Yes, absolutely. To maintain our DoD (Definition of Done) standards and keep the "Lead Developer" state accurate, we should move the completed items to the DONE column and set the next priority.Here is the updated Roadmap based on this session's progress:🗺️ Project Roadmap: portfolio2023-mainBACKLOG (Future)IN PROGRESS (Active)DONE (Validated)Content: Real Bio & Project DataMobile: iOS backdrop-filter AuditLayout: About Section "Modular Box"SEO: Meta tags & OpenGraphPhysics: .95 Dampening (Hero Final)Physics: .95 Dampening on OvalDeploy: Vercel CI/CD PipelineFluidity: clamp() & --section-gapMath: window.innerWidth LogicGit: Lowercase scopes & HuskyPerformance: WaterVideo < 2MB📝 Definition of Done (DoD) Update:[x] About Section text is inside a glass-morphism box (60% tint, 15px blur).[x] Nautical Float (.95) is active on the oval image wrapper.[x] WaterVideo file size validated at 1.8MB.
+### 🔴 BACKLOG (Future)
+* Content: Real Bio & Project Data
+* SEO: Meta tags & OpenGraph
+* Deploy: Vercel CI/CD Pipeline
+
+### 🟡 IN PROGRESS (Active)
+* Layout: About Section "Modular Box" Refinement & Text Sync
+* Physics: Calibrate HeroCard mass/weight variables at .95 constant
+
+### 🟢 DONE (Validated)
+* Layout: About Section "Modular Box" Structure Base
+* Physics: .95 Dampening active on Oval image wrapper
+* Fluidity: clamp() & --section-gap architecture
+* Math: window.innerWidth Logic for Nautical Float
+* Git: Lowercase scopes & Husky implementation
+* Performance: WaterVideo optimized under 2MB (1.8MB verified)
+* Mobile Validation: iOS Safari backdrop-filter & 100dvh curtain menu sync
