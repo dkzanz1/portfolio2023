@@ -265,3 +265,11 @@ iOS Compatibility: Implemented 100dvh for the curtain height and maintained -web
 Physics Sync: Applied the .95 Dampening cubic-bezier transition to the curtain drop for a premium, weighted feel.
 
 A11y & Logic: Integrated Standard 8 (pointer-events: none / auto) to prevent the hidden menu from hijacking interactions with the Hero parallax.
+Final DoD Checklist (Session Close)
+[x] Burger Math: translateY(-50%) is now the standard on main.
+
+[x] iOS Scaling: 100dvh is active for the curtain menu.
+
+[x] Documentation: Kanban, current task, and session history are fully synced.
+
+[x] Git State: Local and Remote are identical.
