@@ -16,4 +16,4 @@
 * Math: window.innerWidth Logic for Nautical Float
 * Git: Lowercase scopes & Husky implementation
 * Performance: WaterVideo optimized under 2MB (1.8MB verified)
-* Mobile Validation: iOS Safari backdrop-filter & 100dvh curtain menu sync
+* Mobile Verified: iOS Safari backdrop-filter & 100dvh curtain menu sync
