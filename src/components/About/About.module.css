@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-/* THE FIX: We turn your Wrapper into the Oval Frame */
+/* THE FIX: i have  turned the Wrapper into the Oval Frame */
 .imageWrapper {
   display: flex;
   justify-content: center;
@@ -35,6 +35,16 @@
   border: 6px solid var(--primary-color);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   pointer-events: none; /* Standard 8: No interaction hijacking */
+}
+/* REUSABLE MODULAR BOX UTILITY */
+.modularBox {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  padding: clamp(1.5rem, 5vw, 2.5rem); /* Fluid Padding */
 }
 
 /* THE TEXT BOX */
