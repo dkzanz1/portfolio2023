@@ -1,4 +1,7 @@
 Current Task: portfolio2023-main
-Next Task (Immediate Priority):
-Next Task: Advance directly to the Skills layout synchronization pass or proceed with asset compression for the remaining secondary imagery.
-Next Task: Move to the Skills layout sync to match this clean modular box style, or run asset compression for secondary images.
+🚀 Next Task (Immediate Priority for Next Session)
+Our next logical target is handling asset optimization or filling out real project metrics.
+
+Option A: Run asset compression on the secondary imagery, specifically focusing on optimization targets like mephoto-DZ4PYfXv.jpg (currently sitting at 405.30 kB) to squeeze maximum loading efficiency out of the mobile pipeline.
+
+Option B: Advance into the Content Pass to purge remaining placeholder strings and wire in authentic project data links.

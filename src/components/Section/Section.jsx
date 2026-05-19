@@ -21,8 +21,8 @@ const SkillsGrid = () => {
         {techStack.map((tech) => (
           <div
             key={tech.id}
-            className={styles.skillCard}
-            style={{ "--hover-color": tech.color }} // Injecting the physics constant
+            className={`${styles.skillCard} modularBox`}
+            style={{ "--hover-color": tech.color }}
           >
             <div className={styles.iconWrapper}>{tech.icon}</div>
             <span className={styles.skillName}>{tech.name}</span>
