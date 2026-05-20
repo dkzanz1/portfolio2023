@@ -60,5 +60,14 @@
   }
 }
 
+  /* 🚀 ULTRA-WIDE ESCALATION: Release the clamp ceiling for immense viewports */
+@media (min-width: 1800px) {
+  .container {
+    /* Expands the safety rails to let your rigid 10vw layout spine work beautifully */
+    max-width: 85vw; 
+    padding: 0 2rem;
+  }
+}
+
 /* NOTE I decided to remove @media (min-width: 1024px) block => the clamp() and max-width: 1400px 
    HANDLES all screens fluidly from 320px to 4000px. */

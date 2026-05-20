@@ -11,7 +11,7 @@
   margin: var(--section-gap) auto;
   display: grid;
   grid-template-columns: 1fr; /* Single column mobile */
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: center;
   /* This creates the Oval shape for the image inside */
-  width: clamp(160px, 45vw, 220px); 
+  width: clamp(180px, 30vw,340px); 
   aspect-ratio: 4 / 5; 
   margin: 0 auto;
   will-change: transform;
@@ -52,12 +52,10 @@
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
-  border-radius: 15px;
+  border-radius: 25px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-
-  padding: clamp(1.5rem, 5vw, 2.5rem); /* Fluid Padding */
- 
+  padding: clamp(1.5rem, 5vw, 4rem); /* Fluid Padding */
 }
 
 .sectionTitle {
@@ -67,18 +65,19 @@
 }
 
 .blurb {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  line-height: 1.65;
 }
 
 /* DESKTOP: Rule of Thirds */
 @media (min-width: 1024px) {
   .aboutContainer {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.2fr 2fr;
     margin-left: 10vw;
     margin-right: 5vw;
     width: auto;
     text-align: left;
+    gap: 4rem;
   }
 
   .imageWrapper {
