@@ -11,22 +11,21 @@ function About() {
         <div className={styles.imageWrapper}>
           <img
             src={myPhoto}
-            alt="Paul - Web Developer"
+            alt="Paul -Full stack web developer"
             className={styles.stickerImg}
           />
         </div>
-        <article className={`${styles.Aboutblurb} ${styles.modularBox}`}>
+        <article className={styles.Aboutblurb}>
           <h2 id="about-title" className={styles.sectionTitle}>
             About
           </h2>
           <p className={styles.blurb}>
-            &quot;I&apos;m a dedicated self-taught web developer with a passion
-            for building functional and aesthetically pleasing websites. My
-            approach combines a keen design sense with strong coding skills,
-            honed through extensive self-study and hands-on projects. I&apos;m
-            proficient in creating responsive layouts and optimizing website
-            performance, and I strive to deliver high-quality results that
-            exceed client expectations.&quot;
+            &quot;I&apos;m a full-stack developer specializing in building
+            production-ready web applications with React, Vite, and rigid modern
+            architectures. Coming from a high-pressure background managing
+            complex operational environments, I translate that fast-paced
+            problem-solving and rigorous systems management directly into highly
+            optimized, clean, and semantic code.&quot;&quot;
           </p>
         </article>
       </section>
