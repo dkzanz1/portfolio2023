@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Burger from "../../components/Burger";
-import img from "../../assets/images/mephoto.jpg";
+import img from "../../assets/images/herophoto.jpg?width=680&quality=75";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
 import WaterVideo from "../WaterVideo/WaterVideo.jsx";

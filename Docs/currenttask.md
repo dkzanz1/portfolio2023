@@ -8,4 +8,6 @@ Option A: Run asset compression pipeline targeting the final launch photo once s
 Option B: Advance into the Content Pass for the remaining site blocks (Skills/Projects) to purge placeholder strings and wire in authentic project data metrics and links.
 
 [x] Option C: Font Sizing & About Text Refactor
-Enforced fluid clamp values across typography, cleaned up .modularBox glass class inheritance duplication, and injected authentic professional background narrative into About.jsx. Verified with a green production build. :done
+Enforced fluid clamp values across typography, 
+cleaned up .modularBox glass class inheritance 
+duplication, and injected authentic professional background narrative into About.jsx. Verified with a green production build. :done

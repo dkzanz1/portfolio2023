@@ -26,6 +26,11 @@
   will-change: transform;
   transition: transform var(--dampening-float) cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+.pictureContainer {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
 
 .stickerImg {
   width: 100%;
