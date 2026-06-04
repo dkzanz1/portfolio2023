@@ -35,8 +35,8 @@ function About() {
             environments, I translate rigorous systems management and calm
             problem-solving into clean, optimized, and semantic code. Beyond
             technical execution, I bring a mature perspective that serves as a
-            force multiplier for engineering teams,minimizing management
-            overhead through strict workflow discipline and effective
+            force multiplier for engineering teams,reducing management overhead
+            through strict workflow discipline and effective
             communication.&quot;&quot;
           </p>
         </article>

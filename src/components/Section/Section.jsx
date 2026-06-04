@@ -6,12 +6,17 @@ const SkillsGrid = () => {
   const techStack = [
     { id: 1, name: "React", icon: <SI.SiReact />, color: "#61DAFB" },
     { id: 2, name: "JavaScript", icon: <SI.SiJavascript />, color: "#F7DF1E" },
-    { id: 3, name: "Node.js", icon: <SI.SiNodedotjs />, color: "#339933" },
-    { id: 4, name: "MongoDB", icon: <SI.SiMongodb />, color: "#47A248" },
-    { id: 5, name: "HTML5", icon: <SI.SiHtml5 />, color: "#E34F26" },
-    { id: 6, name: "Git", icon: <SI.SiGit />, color: "#F05032" },
-    { id: 7, name: "Docker", icon: <SI.SiDocker />, color: "#2496ED" },
-    { id: 8, name: "Vite", icon: <SI.SiVite />, color: "#646CFF" },
+    {
+      id: 3,
+      name: "TypeScript (Transitioning)",
+      icon: <SI.SiTypescript />,
+      color: "#3178C6",
+    },
+    { id: 4, name: "Vite", icon: <SI.SiVite />, color: "#646CFF" },
+    { id: 5, name: "CSS Modules", icon: <SI.SiCssmodules />, color: "#000000" },
+    { id: 6, name: "HTML5 / A11y", icon: <SI.SiHtml5 />, color: "#E34F26" },
+    { id: 7, name: "Git Workflow", icon: <SI.SiGit />, color: "#F05032" },
+    { id: 8, name: "Node.js", icon: <SI.SiNodedotjs />, color: "#339933" },
   ];
 
   return (
