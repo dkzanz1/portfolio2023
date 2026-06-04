@@ -30,10 +30,14 @@ function About() {
           <p className={styles.blurb}>
             &quot;I&apos;m a full-stack developer specializing in building
             production-ready web applications with React, Vite, and rigid modern
-            architectures. Coming from a high-pressure background managing
-            complex operational environments, I translate that fast-paced
-            problem-solving and rigorous systems management directly into highly
-            optimized, clean, and semantic code.&quot;&quot;
+            architectures, currently transitioning my ecosystem to TypeScript.
+            Coming from a high-pressure background managing complex operational
+            environments, I translate rigorous systems management and calm
+            problem-solving into clean, optimized, and semantic code. Beyond
+            technical execution, I bring a mature perspective that serves as a
+            force multiplier for engineering teams,minimizing management
+            overhead through strict workflow discipline and effective
+            communication.&quot;&quot;
           </p>
         </article>
       </section>
