@@ -3,28 +3,31 @@
     height: 100%; /*content ditated the height*/
     padding: 0;
     overflow:visible;
+    width :100%;
 }
 
 .projectCardContentWrapper {
     position: relative;
-    height : 100%;
     width: 100%;
+    min-height: 480px;
     /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
-    aspect-ratio: 4/5;
     border-radius: clamp(15px, 2vw, 25px);   
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
     /* Add a subtle glass border to match the Nav-Glass theme */
     border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Modern internal alignment layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5rem;
+    box-sizing: border-box;
 }
 
 .projectCardTitle {
-    position:absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
     /* Standard 6: Fluid Typography using(Min 1.25rem, scales with width, Max 2rem) */
-    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    font-size: clamp(1.4rem, 2vw, 2.5rem);
     font-weight: bold;
     text-align: center;
     line-height: 1.2;
@@ -34,7 +37,9 @@
     background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
     color: var(--text-color-light, white); /* Used protocol variables */
     border-radius: 8px;
-    width: 80%; /* Ensure it doesn't spill over card edges */
+    width: 100%; 
+    box-sizing: border-box;
+    margin: 0 auto;
 }
 
 .projectCardImg {
@@ -45,26 +50,25 @@
     object-fit:cover; /* Ensure the image covers the area without distortion */
     will-change: transform; /* Hint for better performance during hover zoom */
     z-index: 1; /* Ensure the image is behind the text */
-    will-change: transform;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   
 }
 
 .projectCardInfo {
-    position:absolute;
-    bottom: 10%;
-    left: 50%;
-    transform: translate(-50%);
+    position: relative;
     z-index: 10;
     background-color:var(--overlay-dark, rgba(0, 0, 0, .6));
     color:var(--text-color-light, white);
     /* Standard 6: Fluid body text */
-    font-size: clamp(0.9rem, 2.5vw, 1.25rem);
+    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
     border: solid var(--border-color-light,silver) 1px;   
-    padding: 0.8rem;
+    padding: 1rem;
     border-radius: 8px;
-    width: 90%; /* Ensure it doesn't spill over card edges */
+    width: 100%; 
     box-sizing: border-box; /* Ensure padding doesn't affect overall width */
     text-align: center;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 /* end */
 /* note to self: Use a Media Query for larger screens (e.g., tablets and desktops) */
@@ -79,22 +83,27 @@
     }
     .projectCardContentWrapper {
        /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
-        aspect-ratio: 16/9; /* This lets the Bento grid take over on desktop */
+        
+        min-height: 100%;
         height: 100%;
-        width: 100%;
+       padding: 2rem; /* More breathing room on larger screens */
         flex: 1;
-        /* Increase max-height for ultra-wides or remove it */
-        max-height: none;
-        overflow:hidden;
+       
 
     }
     .projectCardTitle, .projectCardInfo {
     /* Standard 8: Allow clicks to pass through to the wrapper if needed */
     pointer-events: none; 
-    transition: transform 0.4s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .projectCardContentWrapper:hover .projectCardTitle {
-    transform: translate(-50%, -60%); /* Subtle lift on hover */
+    transform: translate(4px); /* Subtle lift on hover */
 }
+.projectCardContentWrapper:hover .projectCardInfo {
+        transform: translateY(-4px);
+    }
+.projectCardContentWrapper:hover .projectCardImg {
+        transform: scale(1.05);
+    }
 }

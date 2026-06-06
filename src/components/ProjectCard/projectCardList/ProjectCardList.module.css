@@ -41,7 +41,7 @@
 .card:hover {
   /* Subtle lift per Standard 8 */
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
 }
 
 .cardImage {
@@ -120,6 +120,17 @@
     grid-column: span 2;
     grid-row: span 2; /* Balance the height against the first card */
   }
+  /* SURGICAL FIX FOR HERO CARD CENTERING */
+  .heroCard [class*= "projectCardContentWrapper"]{
+    justify-content: center !important; /* Overrides space-between */
+    gap: 2.5rem; /* Creates a clean, deliberate separation between title and body */
+  }
+
+  .heroCard .projectCardTitle,
+  .heroCard .projectCardInfo {
+    max-width: 65ch; /* Keeps line length tight and professional inside the wide layout */
+    margin: 0 auto;  /* Perfectly centers the blocks horizontally */
+  }
   .card:nth-child(3) {
     grid-row: span 2; /* Tall box on the far right */
   }
@@ -127,7 +138,17 @@
      thanks to grid-auto-flow: dense */
   .card:nth-child(4) {
     grid-column: span 2;
-    
+  }
+  /* FIX: Wrap the plain text class in :global so the CSS module system leaves it alone */
+  :global(.bento-hero-tile) :global(.projectCardContentWrapper) {
+    justify-content: center !important; 
+    gap: 2.5rem; 
+  }
+
+  :global(.bento-hero-tile) :global(.projectCardTitle),
+  :global(.bento-hero-tile) :global(.projectCardInfo) {
+    max-width: 65ch; 
+    margin: 0 auto;  
   }
 }
    /* ULTRA-WIDE: Utilizing the 27" Real Estate */
