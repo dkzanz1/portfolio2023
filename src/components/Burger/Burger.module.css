@@ -24,7 +24,7 @@
   }
 
   .desktopNav a:hover {
-    color: #0ee1ac; /* Your signature green from the scroll wheel */
+    color: #ffd700; /* Your signature green from the scroll wheel */
   }
   .mobileWrapper {
     display: none; /* Standard 2: Hide mobile elements on desktop */
@@ -103,7 +103,6 @@
   background-color: rgba(10, 20, 30, 0.6);
   backdrop-filter: blur(15px) saturate(160%);
   -webkit-backdrop-filter: blur(15px);
-
   /* Initial State: Pulled up out of view */
   transform: translateY(-100%);
   z-index: 999;
@@ -116,6 +115,7 @@
   pointer-events: none;
   /* Protocol Figure: .95 Dampening */
   /* We use cubic-bezier to simulate that heavy dampening/physics feel */
+  /* Standard 8 Physics: Custom Bezier tracking .95 inertia feel */
   transition: transform 1.2s cubic-bezier(0.175, .885, 0.32, 1.275);
 }
 
