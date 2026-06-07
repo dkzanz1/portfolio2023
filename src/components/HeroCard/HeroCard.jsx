@@ -77,28 +77,28 @@ function HeroCard() {
       <h1 id="hero-heading" className={styles.srOnly}>
         Paul - Full Stack Web Developer Portfolio
       </h1>
-      <WaterVideo className={styles.watervideo} />
+      <WaterVideo className={styles.waterVideo} />
 
       <div className={styles.overlay}>
-        <img src={img} alt="Paul's Avatar" className={styles["circle-img"]} />
+        <img src={img} alt="Paul's Avatar" className={styles.circleImg} />
         <h2 className={styles.name}>
           <span>Hi, </span>
           <span>Im Paul</span>
         </h2>
-        <article className={styles.HeroBlurb}>
+        <article className={styles.heroBlurb}>
           <h3>
             Web Developer who lives by the Sea, I build websites that are as
             refreshing as the sea breeze Dorset
           </h3>
-          <p className={styles.HeroInfo}>
+          <p className={styles.heroInfo}>
             I build Crafted Bespoke Webpages
             <br />
             using <strong>full stack development</strong>
           </p>
         </article>
 
-        <div className={styles["boat-container"]} aria-hidden="true">
-          <div className={styles["boat-animation-wrapper"]} ref={boatRef}>
+        <div className={styles.boatContainer} aria-hidden="true">
+          <div className={styles.boatAnimationWrapper} ref={boatRef}>
             <img src={boatImage} alt="" className={styles.boat} />
           </div>
         </div>

@@ -30,7 +30,7 @@
     cursor: default;
 }
 
-.watervideo {
+.waterVideo {
     position: absolute;
     inset: 0; /* Shorthand for top: 0; left: 0; right: 0; bottom: 0; */
     /* top:0;
@@ -80,7 +80,7 @@
     z-index: 4;
 }
 
-.HeroBlurb {
+.heroBlurb {
     width: clamp(280px, 90%, 800px); 
     margin: 1.2rem auto;
     color: white;
@@ -92,7 +92,7 @@
     text-align: center;
 }
 
-.circle-img {
+.circleImg {
   /* Standard 6: Dynamic width + Brand Aspect Ratio */
     width: clamp(200px, 25vw, 450px);
     aspect-ratio: 4 / 5; /* THE OVAL STANDARD */
@@ -112,17 +112,17 @@
      
 }
 /* Hover effect to make the 'sticker' feel interactive */
-.circle-img:hover {
+.circleImg:hover {
     transform: scale(1.05) rotate(-2deg);
 }
-.HeroInfo {
+.heroInfo {
     text-align: center;
     
   }
   /* ============================================================
    3. INTERACTIVE BOAT (Parallax)
    ============================================================ */
-.boat-container {
+.boatContainer {
     /* CRITICAL FIX 1: Set positioning context */
     position: absolute; /* Placing it over the video/overlay */
     top: 0;
@@ -134,7 +134,7 @@
     /* Ensure the boat can't drift outside the hero's "horizon" */
     overflow: hidden;
 }
-.boat-animation-wrapper {
+.boatAnimationWrapper {
     /* WHY: This element is positioned absolutely and receives the JS parallax transform. */
     position: absolute; 
     top: 50%; 
@@ -234,9 +234,9 @@
   
   .name { font-size: clamp(1.4rem, 8vh, 3rem); }
   
-  .HeroBlurb { font-size: 0.7rem; margin: 0.1rem; }
+  .heroBlurb { font-size: 0.7rem; margin: 0.1rem; }
 
-  .circle-img {
+  .circleImg {
     width: clamp(60px, 35vh, 150px);
     height: auto;
     aspect-ratio: 4 / 5; /* Forces the Oval on short screens */
@@ -300,14 +300,14 @@
     pointer-events: none;
   }
  
-.HeroBlurb {
+.heroBlurb {
   grid-area: blurb;
   text-align: left;
   margin: 1rem 0; /* Remove horizontal auto margin for left alignment */
    /* Increase the ceiling for the sub-headline */
   font-size: clamp(1.2rem, 3vw, 2.5rem);
   }
-  .circle-img {
+  .circleImg {
     grid-area: image;
     justify-self: end; 
     margin-right: 10%; /* Replaces the 'right: 10%' absolute positioning */
@@ -339,7 +339,7 @@
     }
 
     /* 2. Layering Check: Ensure boat stays above overlay fog but below content if needed */
-  .boat-animation-wrapper {
+  .boatAnimationWrapper {
     position: absolute; 
     top: 50%; 
     left: 50%;
