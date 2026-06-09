@@ -11,8 +11,8 @@
     display: flex;
     gap: 3rem;
     z-index: 1000;
-  
   }
+
     .desktopNav a {
     color: #ffffff;
     text-decoration: none;
@@ -26,18 +26,20 @@
   .desktopNav a:hover {
     color: #ffd700; /* Your signature green from the scroll wheel */
   }
-  .mobileWrapper {
-    display: none; /* Standard 2: Hide mobile elements on desktop */
+.mobileWrapper {
+    display: none; /* Hides mobile layout rules on desktop viewports */
   }
+}
   /* 2. Mobile Container Fix */
 .mobileWrapper {
+
   /* CHANGE: Using absolute so it respects the HeroCard's border-radius */
   position: absolute; 
   top: 0;
   left: 0;
   z-index: 1001;
 }
-  }
+  
 
 /* 2. The Burger Trigger (The Button) */
 .burgerTrigger {
