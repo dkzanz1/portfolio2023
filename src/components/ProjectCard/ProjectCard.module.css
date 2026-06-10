@@ -83,13 +83,10 @@
     }
     .projectCardContentWrapper {
        /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
-        
         min-height: 100%;
         height: 100%;
-       padding: 2rem; /* More breathing room on larger screens */
+        padding: 2rem; /* More breathing room on larger screens */
         flex: 1;
-       
-
     }
     .projectCardTitle, .projectCardInfo {
     /* Standard 8: Allow clicks to pass through to the wrapper if needed */
@@ -103,7 +100,5 @@
 .projectCardContentWrapper:hover .projectCardInfo {
         transform: translateY(-4px);
     }
-.projectCardContentWrapper:hover .projectCardImg {
-        transform: scale(1.05);
-    }
+
 }

@@ -38,7 +38,7 @@ const ProjectCard = ({ title, img, url, description }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   return (
-    <div ref={cardRef} className={styles.projectCardContainer}>
+    <article ref={cardRef} className={styles.projectCardContainer}>
       <div
         className={styles.projectCardContentWrapper}
         style={{ "--parallax-offset": `${offset}px` }}
@@ -64,13 +64,13 @@ const ProjectCard = ({ title, img, url, description }) => {
         </a>
         {/* <p className={styles.projectCardId}>{id}</p> */}
       </div>
-    </div>
+    </article>
   );
 };
 
 ProjectCard.propTypes = {
   // Add prop types
-  /*id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,*/
+
   title: PropTypes.string.isRequired,
   img: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
