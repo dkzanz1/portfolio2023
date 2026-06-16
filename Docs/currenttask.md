@@ -2,9 +2,9 @@
 # Current Task: portfolio2023-main
 
 ## [ ] Active Target: Section Layout Handshake Review
-* [ ] Audit the parent list container (`ProjectCardList` or equivalent) enclosing the `ProjectCard` components.
-* [ ] Verify **Standard 2: Desktop Escalation** to ensure the flex/grid layouts shake hands perfectly with the grid slots at `@media (min-width: 1024px)`.
-* [ ] Test the scroll performance of the `.95` parallax dampening layer with multiple cards loaded on screen.
+* [X] Audit the parent list container (`ProjectCardList` or equivalent) enclosing the `ProjectCard` components.
+* [x] Verify **Standard 2: Desktop Escalation** to ensure the flex/grid layouts shake hands perfectly with the grid slots at `@media (min-width: 1024px)`.
+* [x] Test the scroll performance of the `.95` parallax dampening layer with multiple cards loaded on screen.
 
 ---
 
