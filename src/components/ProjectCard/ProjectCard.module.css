@@ -45,8 +45,8 @@
 .projectCardImg {
     position :absolute;
     inset:-15px; /* increasd to 15% to prevent white edges during the float */
-    width: 130%;
-    height: 130%;
+    width: 90%;
+    height: 90%;
     object-fit:cover; /* Ensure the image covers the area without distortion */
     will-change: transform; /* Hint for better performance during hover zoom */
     z-index: 1; /* Ensure the image is behind the text */
@@ -78,7 +78,7 @@
 /* 2. Desktop Escalation (Standard 2) */
 @media (min-width: 1024px) {
     .projectCardContainer {
-        height: 100%; /* Shakes hands with the grid slot */
+       
         display: flex;
     }
     .projectCardContentWrapper {
