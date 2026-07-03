@@ -10,7 +10,7 @@
   /* Standard 8: Deep Sea Glass */
   background-color: rgba(10, 20, 30, 0.6);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(14, 225, 172, 0.2);
+  border: 4px solid rgba(242, 246, 242, 0.2);
   padding: 1.5rem;
   border-radius: 20px;
   box-sizing: border-box; /* Crucial: ensures padding doesn't add to width */
@@ -18,7 +18,7 @@
       }
       
     .contactForm h3 {
-  color: #0ee1ac; /* Brand Highlight */
+  color: var(--primary-color); /* Brand Highlight */
   text-align: left; /* Align with spine */
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 2rem;

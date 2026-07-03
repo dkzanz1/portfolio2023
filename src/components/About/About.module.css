@@ -1,7 +1,7 @@
 :root {
   --primary-color: #00d4ff; 
   --section-gap: clamp(3rem, 8vh, 6rem);
-  --glass-bg: rgba(10, 20, 30, 0.6); /* 60% Tint */
+  --glass-bg: rgba(2, 12, 23, 0.6); /* 60% Tint */
   --glass-blur: 15px;
   --dampening-float: 0.95s; /* Linked to your .95 protocol figure */
 }
