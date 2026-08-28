@@ -1,7 +1,11 @@
 /* File: src/App.module.css */
 .outerContainer {
   width: 100%;
+  min-height: 100hv;
   overflow-x: hidden; /* Standard 8: Prevent parallax scroll leakage */
+  
+  /* 
+
 }
 .container {
   display: flex;
@@ -10,12 +14,12 @@
   /* Min 3rem (mobile) -> Max 8rem (desktop) */
   gap: clamp(.5rem, 10vh, 8rem);
   width: 100%; 
-  /* This ensures the container grows fluidly but stops at 1400px without a media query */
-  max-width: 1400px;
+  max-width: 100%; /* Full bleed: eliminates desktop side boxing */
   margin: 0 auto; 
   /* STANDARD 6: Fluid Horizontal Padding */
   /* Min 1.5rem -> Max 4rem */
   padding: 0 clamp(1.5rem, 5vw, 4rem);
+  background-color:#0c0d0d;
 }
 
 .visuallyHidden {
