@@ -3,12 +3,13 @@
 /* Define all CSS variables on the :root pseudo-class for global access */
 :root {
   /* THE GLASS STANDARD (DoD) */
-  --glass-bg: rgba(10, 9, 9, 0.6); 
+  --glass-bg: rgba(255, 255, 255, 0.75); 
   --glass-blur: 15px;
-  --background-color: #f1f3f5;
-  --text-color: #333333;
-  --primary-color: #007bff;
-  --box-shadow-color: rgba(0, 0, 0, 0.3);
+  --background-color: #f4f6f9;
+  --text-color: #0f172a;
+  --primary-color: #0284c7;
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --box-shadow-color: rgba(0, 0, 0, 0.08);
   /* this sets Global Breakpoint Values */
   --screen-xs: 576px;
   --screen-sm: 768px; /* Your Tablet breakpoint */
@@ -22,14 +23,18 @@
 }
 /* Override variables for the DARK theme on the body selector */
 body[data-theme='dark'] {
-  --background-color: #1a202c;
-  --text-color: #fffffb;
-  --primary-color: #faf9f9e9;
+--background-color: #0a141e;        /* Deep nautical dark base */
+  --text-color: #f1f5f9;              /* Off-white text */
+  --primary-color: #ffd700;           /* Gold accent */
+  --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
+  --glass-border: rgba(255, 255, 255, 0.1);
   --box-shadow-color: rgba(0, 0, 0, 0.5); /* Correctly define the dark shadow color here */
 }
 
+*, *::before, *::after {
+  box-sizing: border-box;
+}
 html, body, #root {
-  box-sizing: border-box; /* 1. Define it at the very top */
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -40,7 +45,6 @@ html, body, #root {
 }
 
 body {
-  box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.2;
