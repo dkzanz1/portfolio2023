@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./About.module.css";
 // Assets imported directly for Vite optimization
-import myPhotoAvif from "../../assets/images/aboutphoto.jpg?format=avif&width=680&quality=70";
-import myPhotoWebp from "../../assets/images/aboutphoto.jpg?format=webp&width=680&quality=80";
-import myPhotoJpg from "../../assets/images/aboutphoto.jpg?width=680&quality=75";
+import myPhotoAvif from "../../assets/images/lighthouse.jpeg?format=avif&width=680&quality=70";
+import myPhotoWebp from "../../assets/images/lighthouse.jpeg?format=webp&width=680&quality=80";
+import myPhotoJpg from "../../assets/images/lighthouse.jpeg?width=680&quality=75";
 function About() {
   return (
     <>
