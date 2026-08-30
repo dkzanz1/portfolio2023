@@ -19,8 +19,8 @@
 .imageWrapper {
   display: flex;
   justify-content: center;
-  /* This creates the Oval shape for the image inside */
-  width: clamp(180px, 30vw,340px); 
+ 
+  width: clamp(260px, 35vw,420px); 
   aspect-ratio: 4 / 5; 
   margin: 0 auto;
   will-change: transform;
@@ -36,9 +36,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%; /* Makes it an Oval because parent is 4:5 */
-  border: 6px solid var(--primary-color);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  border-radius: 16px; /* Makes it an Oval because parent is 4:5 */
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   pointer-events: none; /* Standard 8: No interaction hijacking */
 }
 /* REUSABLE MODULAR BOX UTILITY */

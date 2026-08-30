@@ -37,7 +37,7 @@ function About() {
             technical execution, I bring a mature perspective that serves as a
             force multiplier for engineering teams,reducing management overhead
             through strict workflow discipline and effective
-            communication.&quot;&quot;
+            communication.&quot;
           </p>
         </article>
       </section>
