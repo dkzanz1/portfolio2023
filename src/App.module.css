@@ -1,10 +1,9 @@
 /* File: src/App.module.css */
 .outerContainer {
   width: 100%;
-  min-height: 100hv;
+  min-height: 100vh;
   overflow-x: hidden; /* Standard 8: Prevent parallax scroll leakage */
-  
-  /* 
+   
 
 }
 .container {
@@ -19,7 +18,8 @@
   /* STANDARD 6: Fluid Horizontal Padding */
   /* Min 1.5rem -> Max 4rem */
   padding: 0 clamp(1.5rem, 5vw, 4rem);
-  background-color:#0c0d0d;
+  background-color: var(--background-color);
+  transition: background-color 0.7s ease; /* Matches body transition */
 }
 
 .visuallyHidden {
@@ -31,7 +31,6 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  /* white-space: nowrap; */
   border-width: 0;
 }
 
