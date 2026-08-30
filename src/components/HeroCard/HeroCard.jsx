@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Burger from "../../components/Burger";
-import img from "../../assets/images/halfmehalfAI.jpeg?width=680&quality=75";
+import img from "../../assets/images/halfmehalfrobot.jpeg?width=680&quality=75";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
 import WaterVideo from "../WaterVideo/WaterVideo.jsx";
@@ -80,7 +80,11 @@ function HeroCard() {
       <WaterVideo className={styles.waterVideo} />
 
       <div className={styles.overlay}>
-        <img src={img} alt="Paul's Avatar" className={styles.circleImg} />
+        <img
+          src={img}
+          alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
+          className={styles.circleImg}
+        />
         <h2 className={styles.name}>
           <span>Hi, </span>
           <span>Im Paul</span>
