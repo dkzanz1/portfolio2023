@@ -115,6 +115,38 @@
 .circleImg:hover {
     transform: scale(1.05) rotate(-2deg);
 }
+/* Container holds space for the avatar */
+.avatarWrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    pointer-events: auto;
+}
+
+/* Base Light Image (defines the natural dimensions) */
+.yellowLightImg {
+    display: block;
+}
+
+/* Dark Image overlayed perfectly on top */
+.blueDarkImg {
+    display: none;
+    position: absolute;
+    top: 50;
+    left: 50;
+    width: 100%;
+    height: 100%;
+}
+/* Dark Theme Overrides */
+:global([data-theme='dark']) .yellowLight Img {
+    display: none;
+}
+
+:global([data-theme='light']) .blueDarkImg  {
+    display: block;
+}
 .heroInfo {
     text-align: center;
     

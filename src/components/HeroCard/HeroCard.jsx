@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Burger from "../../components/Burger";
-import img from "../../assets/images/halfmehalfrobot.jpeg?width=680&quality=75";
+import imgYellowLight from "../../assets/images/halfmehalfrobotyellow.jpeg?width=680&quality=75";
+import imgBlueLight from "../../assets/images/halfmehalfrobotblue.jpeg?width=680&quality=75";
 import boatImage from "../../assets/images/boat.svg";
 import styles from "./HeroCard.module.css";
 import WaterVideo from "../WaterVideo/WaterVideo.jsx";
@@ -81,9 +82,14 @@ function HeroCard() {
 
       <div className={styles.overlay}>
         <img
-          src={img}
+          src={imgYellowLight}
           alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
-          className={styles.circleImg}
+          className={`${styles.circleImg} ${styles.yellowLightImg}`}
+        />
+        <img
+          src={imgBlueLight}
+          alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
+          className={`${styles.circleImg} ${styles.blueDarkImg}`}
         />
         <h2 className={styles.name}>
           <span>Hi, </span>
