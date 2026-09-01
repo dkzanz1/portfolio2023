@@ -24,7 +24,7 @@
 /* Override variables for the DARK theme on the body selector */
 body[data-theme='dark'] {
 --background-color: #0a141e;        /* Deep nautical dark base */
-  --text-color: #f1f5f9;              /* Off-white text */
+  --text-color: #dbddde;              /* Off-white text */
   --primary-color: #ffd700;           /* Gold accent */
   --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
   --glass-border: rgba(255, 255, 255, 0.1);
