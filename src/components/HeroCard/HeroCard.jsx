@@ -82,14 +82,14 @@ function HeroCard() {
 
       <div className={styles.overlay}>
         <img
-          src={imgYellowLight}
-          alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
-          className={`${styles.circleImg} ${styles.yellowLightImg}`}
-        />
-        <img
           src={imgBlueLight}
           alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
           className={`${styles.circleImg} ${styles.blueDarkImg}`}
+        />
+        <img
+          src={imgYellowLight}
+          alt="Paul Zolik - Split portrait contrasting hand-drawn sketch with cybernetic AI developer interface"
+          className={`${styles.circleImg} ${styles.yellowLightImg}`}
         />
         <h2 className={styles.name}>
           <span>Hi, </span>

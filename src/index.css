@@ -25,7 +25,7 @@
 body[data-theme='dark'] {
 --background-color: #0a141e;        /* Deep nautical dark base */
   --text-color: #dbddde;              /* Off-white text */
-  --primary-color: #ffd700;           /* Gold accent */
+  --primary-color: #0055ff;           /* Gold accent */
   --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
   --glass-border: rgba(255, 255, 255, 0.1);
   --box-shadow-color: rgba(0, 0, 0, 0.5); /* Correctly define the dark shadow color here */

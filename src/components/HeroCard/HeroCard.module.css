@@ -140,11 +140,11 @@
     height: 100%;
 }
 /* Dark Theme Overrides */
-:global([data-theme='dark']) .yellowLight Img {
+:global([data-theme='dark']) .blueDarkImg {
     display: none;
 }
 
-:global([data-theme='light']) .blueDarkImg  {
+:global([data-theme='light']) .yellowLightImg  {
     display: block;
 }
 .heroInfo {
