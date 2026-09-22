@@ -40,3 +40,9 @@ Deployment Pipeline Setup (1 Hour): Establish hosting environment via Vercel or 
 Tree Status: Working tree is clean. Production build verified green at 8.89 seconds.
 
 Commit Blueprint: docs(milestones): archive projects metrics layer and escalate pipeline to phase 5
+
+Avatar Asset Polish: Generated and refined a bright amber/yellow cybernetic right-eye asset matching the original blue cybernetic split portrait for theme reactivity.
+
+Theme Reactivity Logic: Formulated state-driven fade architecture (sessionActive + 1.2s mount delay) for seamless startup transition into theme-specific eye highlights (blue for dark theme, yellow for light theme).
+
+CSS Cleanup: Rectified HeroCard.module.css avatar class selectors to resolve theme override state conflicts.

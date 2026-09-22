@@ -132,12 +132,7 @@
 
 /* Dark Image overlayed perfectly on top */
 .blueDarkImg {
-    display: block;
-    position: absolute;
-    top: 50;
-    left: 50;
-    width: 100%;
-    height: 100%;
+  display: none;
 }
 /* Dark Theme Overrides */
 :global([data-theme='dark']) .blueDarkImg {
@@ -145,7 +140,7 @@
 }
 
 :global([data-theme='light']) .yellowLightImg  {
-    display: none;
+    display: block;
 }
 .heroInfo {
     text-align: center;

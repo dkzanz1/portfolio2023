@@ -41,3 +41,4 @@
 * **2026-08-28:** Resolved desktop side-bar boxing by setting `.container` max-width to full bleed.
 * **2026-06-10:** Completed clean-up of `ProjectCard.jsx` dead code, fixed semantic HTML structure, and locked down the project blurbs/metrics layer.
 * **2026-06-02:** Build performance optimized to ~8.89s execution threshold.
+Add the avatar eye transition implementation as completed, and log Step 1 (Dark glass reactivity verification across remaining sub-components) as the active target for the next startup.
