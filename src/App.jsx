@@ -34,7 +34,7 @@ function App() {
       <div id="outer-container" className={styles.outerContainer}>
         {/* PHASE 2: CONSTRAINED CONTENT */}
         <div id="page-wrap" className={styles.container}>
-          <HeroCard />
+          <HeroCard theme={theme} />
           {/* Keep the Toggle aligned with the content container */}
           <DarkModeToggle toggleTheme={toggleTheme} theme={theme} />
           <About />
