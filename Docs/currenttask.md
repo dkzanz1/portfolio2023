@@ -1,64 +1,56 @@
 # Current Task: portfolio2023-main
 
 ## 📋 Breadcrumb for Next Startup
-[ ] Step 1: Verify dark glass theme reactivity across all sub-components in light mode.
-[ ] Step 2: Open `src/components/Contact` (or Form Handler) to audit Serverless Form Handler endpoint wire-up.
+* [ ] Step 1: Re-align Mobile-First layout parameters in `HeroCard.module.css` (viewports under 768px).
+* [ ] Step 2: Discuss and refine avatar border thickness and desktop positioning alignment in `HeroCard.module.css`.
+* [ ] Step 3: Conduct final Standard 8 interface audit on Footer/Social interactive overlays (`pointer-events: none`).
+* [ ] Step 4: Open `src/components/Contact` to audit serverless form handler endpoint wire-up.
 
 ---
 
-## 🎯 Active Target: Theme & Wide-Screen Layout Polish
-* [x] Fix light/dark mode background color collision by replacing hardcoded `#0c0d0d` in `App.module.css` with `var(--background-color)`.
+## 🎯 Active Target: Hero Avatar Morph & Layout Refinement
+* [x] Fix light/dark mode background color collision by replacing hardcoded `#0c0d0d` with `var(--background-color)`.
 * [x] Standardize global theme overrides in `src/index.css` using `[data-theme='dark']`.
 * [x] Fix viewport unit typo (`100hv` -> `100vh`) and realign laptop breakpoint to `992px`.
 * [x] Fix wide-screen black side-bar layout bounding in `src/App.module.css`.
-* [x] Modernize light mode palette in `src/index.css` (Frosted Slate override).
-* [x] Verify `git stash pop` integration and dark glass theme reactivity.
+* [x] Synchronize 5-layer avatar morph sequence (`imgBase`, `imgMinBlue`, `imgBlueLight`, `imgMinYel`, `imgYellowLight`) with global theme state.
+* [x] Standardize `.avatarWrapper` to handle oval aspect-ratio clipping and eliminate rogue empty oval artifact on page load.
+* [x] Resolve image stack layer misalignment during scale/hover transforms.
 
 ---
 
 ## ⏳ Project Kanban Roadmap
-* [x] Deep-dive audit of Burger Menu files to verify 100dvh curtain parameters and pointer safety.
-* [x] Refine Burger Menu Dimensions (as per structural requirements).
-* [x] Target Projects Section Metrics layer pass to clear out remaining placeholder strings and inject authentic project links.
-* [x] Refactor `ProjectCard` to semantic `<article>` tag and eliminate hover/scroll transform conflicts.
-* [ ] Final Standard 8 interface audit on Footer/Social interactive overlays (`pointer-events: none`).
+* [x] Audit Burger Menu files to verify 100dvh curtain parameters and pointer safety.
+* [x] Refine Burger Menu dimensions and structural requirements.
+* [x] Inject authentic project links into Projects Section metrics layer.
+* [x] Refactor `ProjectCard` to semantic `<article>` tag and remove transform conflicts.
+* [ ] Standard 8 audit on Footer/Social overlays (`pointer-events: none`).
 * [ ] Deployment pipeline configuration (Vercel / Netlify / GitHub Pages).
 
 ---
 
-## 💾 Latest Session Stop Summary (2026-08-30)
-* **Accomplishments:** 
-  * Theme System Restored: Removed hardcoded `#0c0d0d` background in `App.module.css`, replacing it with `var(--background-color)`.
-  * Global CSS Cleanup: Standardized `index.css` selectors to `[data-theme='dark']` for reliable light/dark mode toggling across viewports.
-  * Typo Fixes: Corrected `100hv` to `100vh` and aligned media query breakpoint to `992px`.
-* **Git State:** Staged changes ready for commit using lowercase scope (`feat(theme)`).
+## 💾 Latest Session Stop Summary (2026-10-04)
+* **Accomplishments:**
+  * **Morphing Avatar Stack Cleared:** Refactored `.avatarWrapper` in `HeroCard.module.css` to act as a single oval clipping container (`border-radius: 9999px`), fixing layer shifting during transitions.
+  * **Rogue Oval Removed:** Eliminated individual `border` and `box-shadow` declarations from stacked `<img>` elements, resolving the empty white border artifact on page load.
+  * **Asset Hygiene:** Renamed `halfmehalfroboty.jpeg` to `halfmehalfrobotyel.jpeg` to match codebase import statements.
+* **Git State:** 
+  * Staged asset renaming and `Docs/currenttask.md`.
+  * Unstaged changes in `src/components/HeroCard/HeroCard.module.css` ready to commit via `fix(hero): align avatar morph stack and eliminate rogue border oval`.
+* **Next Immediate Task:** Address Mobile-First realignment before refining border thickness and desktop positioning.
 
 ---
 
 ## 📜 History & Completed Milestones
+* **2026-10-04:** Synchronized 5-layer avatar morph sequence with global theme state, aligned image stack, and removed rogue empty oval artifact on load.
 * **2026-08-30:** Restored functional theme toggling between light slate and nautical dark base.
-* **2026-08-29:** Completed DoD: Integrated new split avatar asset (`hero-avatar-split`) into the Hero section.
+* **2026-08-29:** Integrated split avatar asset into Hero section.
 * **2026-08-28:** Resolved desktop side-bar boxing by setting `.container` max-width to full bleed.
-* **2026-06-10:** Completed clean-up of `ProjectCard.jsx` dead code, fixed semantic HTML structure, and locked down the project blurbs/metrics layer.
+* **2026-06-10:** Cleaned `ProjectCard.jsx` dead code, fixed semantic HTML structure, and locked project blurbs/metrics layer.
 * **2026-06-02:** Build performance optimized to ~8.89s execution threshold.
+
+---
 
 # Updated Task Alignment
 * **Phase:** Phase 4 & 5 (Hardening & Polish)
-* **Current Task:** Avatar Eye Transition Enhancement
-* **Objectives:**
-  1. Enforce default Dark Mode on initial page load.
-  2. Implement a 10-second transition from the normal avatar image to the dark mode avatar to ease user experience.
-  Session Progress Summary
-Completed Task: Synchronized 5-layer avatar morph sequence in HeroCard with global theme state from App.jsx.
-
-Key Changes:
-
-Added theme prop to HeroCard({ theme }) and passed theme={theme} from App.jsx.
-
-Resolved state conflict between dark-mode blue phases (morphPhase) and light-mode yellow phases (yellowPhase) so blue overlays cleanly drop out when toggled to light theme.
-
-Standardized state-driven active class application (styles.active) across all 5 avatar image layers (imgNoLight, imgMinBlue, imgBlueLight, imgMinYel, imgYellowLight).
-Next session:- 
-1.CORRECT ALIGNMENT OF THE IMAGES AS  THEY STACK AND UNSTACK
-2.WE HAVE A ROGUE EMPTY OVAL WHEN THE PAGE LOADS THAT NEED REMOVAL
-3.
+* **Current Task:** Hero Section Visual & Morph Calibration
