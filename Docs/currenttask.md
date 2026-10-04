@@ -41,4 +41,24 @@
 * **2026-08-28:** Resolved desktop side-bar boxing by setting `.container` max-width to full bleed.
 * **2026-06-10:** Completed clean-up of `ProjectCard.jsx` dead code, fixed semantic HTML structure, and locked down the project blurbs/metrics layer.
 * **2026-06-02:** Build performance optimized to ~8.89s execution threshold.
-Add the avatar eye transition implementation as completed, and log Step 1 (Dark glass reactivity verification across remaining sub-components) as the active target for the next startup.
+
+# Updated Task Alignment
+* **Phase:** Phase 4 & 5 (Hardening & Polish)
+* **Current Task:** Avatar Eye Transition Enhancement
+* **Objectives:**
+  1. Enforce default Dark Mode on initial page load.
+  2. Implement a 10-second transition from the normal avatar image to the dark mode avatar to ease user experience.
+  Session Progress Summary
+Completed Task: Synchronized 5-layer avatar morph sequence in HeroCard with global theme state from App.jsx.
+
+Key Changes:
+
+Added theme prop to HeroCard({ theme }) and passed theme={theme} from App.jsx.
+
+Resolved state conflict between dark-mode blue phases (morphPhase) and light-mode yellow phases (yellowPhase) so blue overlays cleanly drop out when toggled to light theme.
+
+Standardized state-driven active class application (styles.active) across all 5 avatar image layers (imgNoLight, imgMinBlue, imgBlueLight, imgMinYel, imgYellowLight).
+Next session:- 
+1.CORRECT ALIGNMENT OF THE IMAGES AS  THEY STACK AND UNSTACK
+2.WE HAVE A ROGUE EMPTY OVAL WHEN THE PAGE LOADS THAT NEED REMOVAL
+3.

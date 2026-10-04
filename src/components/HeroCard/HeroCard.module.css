@@ -79,7 +79,6 @@
     pointer-events: none;
     z-index: 4;
 }
-
 .heroBlurb {
     width: clamp(280px, 90%, 800px); 
     margin: 1.2rem auto;
@@ -88,60 +87,140 @@
     line-height: 1.5;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     /* Force centering to override any inherited layout shifts */
-   
     text-align: center;
 }
 
-.circleImg {
-  /* Standard 6: Dynamic width + Brand Aspect Ratio */
-    width: clamp(200px, 25vw, 450px);
-    aspect-ratio: 4 / 5; /* THE OVAL STANDARD */
-    height: auto; 
-    border-radius: 100%;
-    object-fit: cover; /* Keeps your image from stretching */
-
-  /* Branding */
-    border: 8px solid #fff;
-    filter: brightness(1.1) contrast(1.2) saturate(1.4); 
-    box-shadow: 0 15px 24px rgba(0, 0, 0, 0.5); /* Deep 'lifted' shadow */
-
-    z-index: 4; /* Above overlay and video */
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    transform: translateZ(0); /* Fixes some mobile rendering issues */
-    pointer-events: auto;
-     
-}
-/* Hover effect to make the 'sticker' feel interactive */
-.circleImg:hover {
-    transform: scale(1.05) rotate(-2deg);
-}
-/* Container holds space for the avatar */
+/* --- AVATAR WRAPPER (Single Oval Frame) --- */
 .avatarWrapper {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 4;
-    pointer-events: auto;
+  position: relative;
+  width: clamp(200px, 25vw, 450px);
+  aspect-ratio: 4 / 5; /* Standard Oval Aspect Ratio */
+  border-radius: 9999px; /* Seamless Oval Clips */
+  border: 8px solid #ffffff;
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Clips all stacked images perfectly */
+  z-index: 4;
+  pointer-events: auto;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: translateZ(0);
 }
 
+.avatarWrapper:hover {
+  transform: scale(1.05) rotate(-2deg);
+}
+
+
+/* Base style for all stacked avatar images */
+.circleImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(1.1) contrast(1.2) saturate(1.4);
+  pointer-events: none;
+  will-change: opacity;
+}
+
+/* Phase 1: Base image always visible at bottom */
+.imgBase {
+  position: relative; /* Establishes natural layout size for .avatarWrapper */
+  z-index: 1;
+  opacity: 1;
+}
+/* Morph Overlay Layers (Positioned identically over .imgBase) */
+.imgMinBlue,
+.imgBlueLight,
+.imgMinYel,
+.imgYellowLight {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Forces initial zero opacity */
+  pointer-events: none;
+  will-change: opacity;
+}
+/* Phase 2: Fades in over 10 seconds */
+.imgMinBlue {
+  z-index: 2;
+  transition: opacity 10s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Phase 3: Fades in over 5 seconds */
+.imgBlueLight {
+  z-index: 3;
+  transition: opacity 5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Phase 4: Light theme initial transition */
+.imgMinYel {
+  z-index: 4;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Phase 5: Light theme secondary 5s morph */
+.imgYellowLight {
+  z-index: 5;
+  transition: opacity 5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active trigger state */
+.circleImg.active {
+  opacity: 1; 
+}
+/* Base Image — Defines natural width/height */
+.noLightImg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height:auto;
+    z-index: 1;
+    opacity :1;
+    transition: opacity 0.4s ease;
+}
+
+
+/* Frame 2: Dark / Blue Light Overlay (10s Slow Morph) */
+.blueDarkImg {
+  position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none; /* Prevents accidental clicks */
+    transition: opacity 10s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
+}
+
+.blueDarkImg.morphActive {
+    opacity: 1;
+}
 /* Base Light Image (defines the natural dimensions) */
 .yellowLightImg {
+   position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     display: none;
+    z-index: 4;
+    pointer-events: none;
+  transition: opacity 0.4s ease;
+  will-change: opacity;
+}
+/* Theme & Action State Locks */
+:global([data-theme='light']) .avatarWrapper[data-action='triggered'] .yellowLightImg {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Dark Image overlayed perfectly on top */
-.blueDarkImg {
-  display: none;
-}
-/* Dark Theme Overrides */
-:global([data-theme='dark']) .blueDarkImg {
-    display: block;
+/* Hide initial/blue frames when yellow action light is active in Light Theme */
+:global([data-theme='light']) .avatarWrapper[data-action='triggered'] .noLightImg,
+:global([data-theme='light']) .avatarWrapper[data-action='triggered'] .blueDarkImg {
+  opacity: 0;
 }
 
-:global([data-theme='light']) .yellowLightImg  {
-    display: block;
-}
 .heroInfo {
     text-align: center;
   }
@@ -257,9 +336,7 @@
    ============================================================ */
 @media (max-height: 700px) {
   .overlay { gap: 0.1rem; } /* Tighten spacing */
-  
   .name { font-size: clamp(1.4rem, 8vh, 3rem); }
-  
   .heroBlurb { font-size: 0.7rem; margin: 0.1rem; }
 
   .circleImg {
@@ -368,7 +445,6 @@
   .boatAnimationWrapper {
     position: absolute; 
     top: 50%; 
-    left: 50%;
-    
+    left: 50%; 
 }
 }
