@@ -54,3 +54,8 @@
 # Updated Task Alignment
 * **Phase:** Phase 4 & 5 (Hardening & Polish)
 * **Current Task:** Hero Section Visual & Morph Calibration
+
+Task today on 6th october 2026 at 6.59pm.
+
+Morph of avatar is good but cant tell until its back in balance
+the original frame has been removed and i have seen an oppotunity to creat a bettewr bordere for it which matches the brand colours of theme 

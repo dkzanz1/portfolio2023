@@ -93,20 +93,27 @@
 /* --- AVATAR WRAPPER (Single Oval Frame) --- */
 .avatarWrapper {
   position: relative;
-  width: clamp(200px, 25vw, 450px);
-  aspect-ratio: 4 / 5; /* Standard Oval Aspect Ratio */
-  border-radius: 9999px; /* Seamless Oval Clips */
-  border: 8px solid #ffffff;
-  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.5);
+  width: clamp(220px, 25vw, 420px);
+  aspect-ratio: 1 / 1; /* Locked 1:1 ratio maintains grid stability */
+  /* Initial Fluid Water-Drop Clip */
+  border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
+  background: var(--color-glass-surface, rgba(255, 255, 255, 0.04));
+  /* Morphing Border Setup */
+  border: 5px solid rgb(2, 2, 47);
+
+
   overflow: hidden; /* Clips all stacked images perfectly */
   z-index: 4;
   pointer-events: auto;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: border-radius 0.8s cubic-bezier(0.25, 1, 0.5, 1);
   transform: translateZ(0);
 }
 
 .avatarWrapper:hover {
-  transform: scale(1.05) rotate(-2deg);
+  border-radius: 40% 50% 60% 30% / 50% 60% 40% 50%;
+  border-color: rgba(86, 83, 83, 0.9);
+  box-shadow: 0 0 25px rgba(55, 52, 52, 0.4), 0 20px 40px rgba(0, 0, 0, 0.7);
+  transform: scale(1.03);
 }
 
 
@@ -117,7 +124,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(1.1) contrast(1.2) saturate(1.4);
+  /* Shifting focus up ensures your chin is not clipped by the bottom curve */
+  object-position: 60% 190%;
+  filter: brightness(1.1) contrast(1.2) saturate(1.8);
   pointer-events: none;
   will-change: opacity;
 }
@@ -396,8 +405,8 @@
     grid-area: image;
     justify-self: end; 
     align-self: center; /* Centers avatar vertically in grid column */
-    margin-top: clamp(3rem, 5vh, 5rem); /* Fine-tune exact top offset here */
-    margin-right: 25%;
+    margin-top: clamp(2rem, 4vh, 5rem); /* Fine-tune exact top offset here */
+    margin-right: 18%;
     width: clamp(280px, 28vw, 420px);
     z-index: 10;
   }
@@ -435,5 +444,4 @@
   width: 100%;
   height: 100%;
 }
-
 }
