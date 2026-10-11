@@ -16,7 +16,6 @@ function HeroCard({ theme }) {
 
   // 1. Morph Phase State ('base' -> 'minBlue' -> 'blueLight')
   const [morphPhase, setMorphPhase] = useState("base");
-  // const [themePhase, setThemePhase] = useState("dark"); // Track theme transitions ('dark' | 'minYel' | 'yellowLight')
   const [yellowPhase, setYellowPhase] = useState("none");
 
   useEffect(() => {
@@ -26,12 +25,12 @@ function HeroCard({ theme }) {
     // PHASE 2: Morph to imgMinBlue (starts almost immediately, transitions over 10s)
     const timer1 = setTimeout(() => {
       setMorphPhase("minBlue");
-    }, 100);
+    }, 60);
 
     // PHASE 3: Morph to imgBlueLight (starts 10s later, transitions over 5s)
     const timer2 = setTimeout(() => {
       setMorphPhase("blueLight");
-    }, 10100);
+    }, 8101);
 
     // LERP Physics logic
     const boat = boatRef.current;
@@ -80,7 +79,7 @@ function HeroCard({ theme }) {
     };
   }, []);
 
-  // 3. PLACE IT HERE -> Theme Prop Listener (Switches off Blue, turns on Yellow)
+  //Theme Prop Listener (Switches off Blue, turns on Yellow)
   useEffect(() => {
     let timer;
 
@@ -97,7 +96,7 @@ function HeroCard({ theme }) {
       // Clear yellow overlays when toggling back to dark mode
       setYellowPhase("none");
 
-      // Restore dark-mode blue state
+      // Restore blue state
       setMorphPhase("blueLight");
     }
 

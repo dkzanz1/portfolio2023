@@ -95,22 +95,37 @@
   position: relative;
   width: clamp(220px, 25vw, 420px);
   aspect-ratio: 1 / 1; /* Locked 1:1 ratio maintains grid stability */
-  /* Initial Fluid Water-Drop Clip */
-  border-radius: 50% 40% 30% 70% / 60% 30% 70% 40%;
+  /* Initial Fluid Water-Drop Clip & Ambient Animation */
   background: var(--color-glass-surface, rgba(255, 255, 255, 0.04));
-  /* Morphing Border Setup */
   border: 5px solid rgb(2, 2, 47);
-
-
-  overflow: hidden; /* Clips all stacked images perfectly */
+  /* Clips all stacked images */
+  overflow: hidden; 
   z-index: 4;
   pointer-events: auto;
-  transition: border-radius 0.8s cubic-bezier(0.25, 1, 0.5, 1);
-  transform: translateZ(0);
-}
 
+  /* Continuous Independent Water Undulation */
+  animation: waterDrift 12s ease-in-out infinite;
+
+  /* transition: border-radius 0.8s cubic-bezier(0.25, 1, 0.5, 1); */
+  transform: translateZ(0);
+  will-change: border-radius;
+}
+/* Smooth, hypnotic organic wave independent of mouse movement */
+@keyframes waterDrift {
+  0% {
+    border-radius: 30% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  33% {
+    border-radius: 40% 60% 70% 30% / 50% 40% 60% 50%;
+  }
+  66% {
+    border-radius: 50% 50% 40% 60% / 60% 50% 40% 50%;
+  }
+  100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
 .avatarWrapper:hover {
-  border-radius: 40% 50% 60% 30% / 50% 60% 40% 50%;
   border-color: rgba(86, 83, 83, 0.9);
   box-shadow: 0 0 25px rgba(55, 52, 52, 0.4), 0 20px 40px rgba(0, 0, 0, 0.7);
   transform: scale(1.03);

@@ -59,3 +59,14 @@ Task today on 6th october 2026 at 6.59pm.
 
 Morph of avatar is good but cant tell until its back in balance
 the original frame has been removed and i have seen an oppotunity to creat a bettewr bordere for it which matches the brand colours of theme 
+Identified Issues / Bugs to Fix Next Session:
+
+Avatar Left Bow: The image/frame weighting is bowing too wide on the left side of the avatar container.
+
+Top-Left Keyframe Glitch: A slight visual jump/snap occurs at the top-left corner during the loop transition between 100% and 0% in the waterDrift keyframes.
+
+Mobile-First Layout Breakdown: The current mobile layout needs a targeted refactor as it has become misaligned.
+Current Task Statement (For Next Startup)
+Priority 1: Correct the waterDrift keyframes so 0% and 100% match seamlessly (eliminating the top-left loop jump).
+Priority 2: Adjust the left-hand spacing/width bow on the avatar container.
+Priority 3: Audit and fix the mobile-first styling across the hero section.
