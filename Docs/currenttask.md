@@ -70,3 +70,8 @@ Current Task Statement (For Next Startup)
 Priority 1: Correct the waterDrift keyframes so 0% and 100% match seamlessly (eliminating the top-left loop jump).
 Priority 2: Adjust the left-hand spacing/width bow on the avatar container.
 Priority 3: Audit and fix the mobile-first styling across the hero section.
+Next Station / Immediate Task on Startup:
+
+Complete and verify the mobile-first layout styling and responsive breakpoints for the hero section.
+
+Standard startup protocol: git stash pop, npm run dev, and review the protocol and currenttask files.
