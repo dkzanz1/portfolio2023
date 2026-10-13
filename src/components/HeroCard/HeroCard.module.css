@@ -95,6 +95,7 @@
 .avatarWrapper {
   position: relative;
   width: clamp(220px, 25vw, 420px);
+  
   aspect-ratio: 1 / 1; /* Locked 1:1 ratio maintains grid stability */
   /* Initial Fluid Water-Drop Clip & Ambient Animation */
   background: var(--color-glass-surface, rgba(255, 255, 255, 0.04));
@@ -110,19 +111,18 @@
   transform: translateZ(0);
   will-change: border-radius;
 }
-/* Smooth, hypnotic organic wave independent of mouse movement */
 @keyframes waterDrift {
-  0% {
-    border-radius: 30% 40% 30% 70% / 60% 30% 70% 40%;
+  0%, 100% {
+    /* Perfectly centered, symmetrical starting and ending point */
+    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
   }
   33% {
+    /* Drifts organically outward */
     border-radius: 40% 60% 70% 30% / 50% 40% 60% 50%;
   }
   66% {
-    border-radius: 50% 50% 40% 60% / 60% 50% 40% 50%;
-  }
-  100% {
-    border-radius: 30% 40% 30% 70% / 60% 30% 70% 40%;
+    /* Shifts counter-weight */
+    border-radius: 60% 40% 40% 60% / 40% 60% 50% 50%;
   }
 }
 .avatarWrapper:hover {
