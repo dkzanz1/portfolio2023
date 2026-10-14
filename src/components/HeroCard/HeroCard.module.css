@@ -401,7 +401,7 @@
       "title image"
       "blurb image";
     align-items: center;
-    padding-left: 0 8vw;
+    padding-left: 0 18vw;
     text-align: left;
     background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%);
     
@@ -413,7 +413,7 @@
     text-align: left;
     font-size: clamp(2.5rem, 10vw, 12rem); /*remove if works better*/
     line-height: 0.9; /* Bring letters closer vertically */
-    margin-top: 0px;
+    margin-top: 30px;
   }  
     /* TARGET THE WRAPPER (NOT .circleImg) */
   .avatarWrapper {
