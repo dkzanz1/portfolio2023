@@ -74,4 +74,3 @@ Next Station / Immediate Task on Startup:
 
 Complete and verify the mobile-first layout styling and responsive breakpoints for the hero section.
 
-Standard startup protocol: git stash pop, npm run dev, and review the protocol and currenttask files.
