@@ -1,84 +1,38 @@
 # Current Task: portfolio2023-main
 
 ## 📋 Breadcrumb for Next Startup
-* [ ] Step 1: Re-align Mobile-First layout parameters in `HeroCard.module.css` (viewports under 768px).
-* [ ] Step 2: Discuss and refine avatar border thickness and desktop positioning alignment in `HeroCard.module.css`.
+* [ ] Step 1: Verify dark glass theme reactivity across sub-components in light mode.
+* [ ] Step 2: Open `src/components/Contact` to audit serverless form handler endpoint wire-up.
 * [ ] Step 3: Conduct final Standard 8 interface audit on Footer/Social interactive overlays (`pointer-events: none`).
-* [ ] Step 4: Open `src/components/Contact` to audit serverless form handler endpoint wire-up.
+* [ ] Step 4: Finalize deployment pipeline configuration (Vercel / Netlify) and test asset distribution.
 
 ---
 
-## 🎯 Active Target: Hero Avatar Morph & Layout Refinement
+## 🎯 Active Target: Sub-Component Glass Reactivity & Form Endpoint Audit
 * [x] Fix light/dark mode background color collision by replacing hardcoded `#0c0d0d` with `var(--background-color)`.
 * [x] Standardize global theme overrides in `src/index.css` using `[data-theme='dark']`.
-* [x] Fix viewport unit typo (`100hv` -> `100vh`) and realign laptop breakpoint to `992px`.
-* [x] Fix wide-screen black side-bar layout bounding in `src/App.module.css`.
 * [x] Synchronize 5-layer avatar morph sequence (`imgBase`, `imgMinBlue`, `imgBlueLight`, `imgMinYel`, `imgYellowLight`) with global theme state.
-* [x] Standardize `.avatarWrapper` to handle oval aspect-ratio clipping and eliminate rogue empty oval artifact on page load.
-* [x] Resolve image stack layer misalignment during scale/hover transforms.
+* [x] Standardize `.avatarWrapper` to handle water-drift clipping and eliminate rogue empty oval artifact on page load.
+* [x] Smooth `waterDrift` keyframes by locking 0% and 100% border-radius values to eliminate top-left loop snap.
+* [x] Re-align Mobile-First layout parameters (`margin: 1.2rem auto 0 auto`, `aspect-ratio: 1/1`) in `HeroCard.module.css` to restore upward balance across mobile viewports.
+* [x] Clean and resolve Git merge conflicts across `Docs/currenttask.md` and `HeroCard.module.css`.
 
 ---
 
 ## ⏳ Project Kanban Roadmap
-* [x] Audit Burger Menu files to verify 100dvh curtain parameters and pointer safety.
-* [x] Refine Burger Menu dimensions and structural requirements.
-* [x] Inject authentic project links into Projects Section metrics layer.
-* [x] Refactor `ProjectCard` to semantic `<article>` tag and remove transform conflicts.
-* [ ] Standard 8 audit on Footer/Social overlays (`pointer-events: none`).
-* [ ] Deployment pipeline configuration (Vercel / Netlify / GitHub Pages).
+* [x] Phase 1: Structural Core (Hero, Burger Menu layout)
+* [x] Phase 2: Design System (.modularBox glass, fluid clamp typography)
+* [x] Phase 3: Glass & Physics Sprint (.95 dampening calibration & Mobile Avatar Balance)
+* [ ] Phase 4 & 5: Hardening & Deployment Pipeline (CURRENT STATION)
 
 ---
 
-## 💾 Latest Session Stop Summary (2026-10-04)
+## 💾 Latest Session Stop Summary
 * **Accomplishments:**
-  * **Morphing Avatar Stack Cleared:** Refactored `.avatarWrapper` in `HeroCard.module.css` to act as a single oval clipping container (`border-radius: 9999px`), fixing layer shifting during transitions.
-  * **Rogue Oval Removed:** Eliminated individual `border` and `box-shadow` declarations from stacked `<img>` elements, resolving the empty white border artifact on page load.
-  * **Asset Hygiene:** Renamed `halfmehalfroboty.jpeg` to `halfmehalfrobotyel.jpeg` to match codebase import statements.
+  * **Git Merge Resolution:** Resolved stash pop merge conflicts in `Docs/currenttask.md` and `HeroCard.module.css`.
+  * **Mobile Avatar Balance:** Centered and balanced `.avatarWrapper` across mobile viewports using `width: clamp(140px, 45vw, 200px)` and `margin: 1.2rem auto 0 auto`.
+  * **Keyframe & Layer Stability:** Unified `circleImg` layer positioning (`object-position: 50% 50%`) and smoothed `waterDrift` keyframe start/end transitions.
+  * **Documentation Sync:** Cleaned, updated, and committed `Master History` and `Milestones` tracking documents (`docs(files): redefined history and milestone file`).
 * **Git State:** 
-  * Staged asset renaming and `Docs/currenttask.md`.
-  * Unstaged changes in `src/components/HeroCard/HeroCard.module.css` ready to commit via `fix(hero): align avatar morph stack and eliminate rogue border oval`.
-* **Next Immediate Task:** Address Mobile-First realignment before refining border thickness and desktop positioning.
-
----
-
-## 📜 History & Completed Milestones
-* **2026-10-04:** Synchronized 5-layer avatar morph sequence with global theme state, aligned image stack, and removed rogue empty oval artifact on load.
-* **2026-08-30:** Restored functional theme toggling between light slate and nautical dark base.
-* **2026-08-29:** Integrated split avatar asset into Hero section.
-* **2026-08-28:** Resolved desktop side-bar boxing by setting `.container` max-width to full bleed.
-* **2026-06-10:** Cleaned `ProjectCard.jsx` dead code, fixed semantic HTML structure, and locked project blurbs/metrics layer.
-* **2026-06-02:** Build performance optimized to ~8.89s execution threshold.
-
----
-
-# Updated Task Alignment
-* **Phase:** Phase 4 & 5 (Hardening & Polish)
-* **Current Task:** Hero Section Visual & Morph Calibration
-
-Task today on 6th october 2026 at 6.59pm.
-
-Morph of avatar is good but cant tell until its back in balance
-the original frame has been removed and i have seen an oppotunity to creat a bettewr bordere for it which matches the brand colours of theme 
-Identified Issues / Bugs to Fix Next Session:
-
-Avatar Left Bow: The image/frame weighting is bowing too wide on the left side of the avatar container.
-
-Top-Left Keyframe Glitch: A slight visual jump/snap occurs at the top-left corner during the loop transition between 100% and 0% in the waterDrift keyframes.
-
-Mobile-First Layout Breakdown: The current mobile layout needs a targeted refactor as it has become misaligned.
-Current Task Statement (For Next Startup)
-Priority 1: Correct the waterDrift keyframes so 0% and 100% match seamlessly (eliminating the top-left loop jump).
-Priority 2: Adjust the left-hand spacing/width bow on the avatar container.
-Priority 3: Audit and fix the mobile-first styling across the hero section.
-Next Station / Immediate Task on Startup:
-
-Complete and verify the mobile-first layout styling and responsive breakpoints for the hero section.
-
-Standard startup protocol: git stash pop, npm run dev, and review the protocol and currenttask files.
-Session Closed: portfolio2023-main
-Session Summary & Progress
-Accomplished Today: Adjusted the large-screen navigation alignment (.name top margin), diagnosed and refactored the morph avatar wrapper styling for mobile viewports (fixing centering with margin: 0 auto and toning down border sizing), and prepared the layout for tomorrow's fine-tuning.
-
-Next Task for Tomorrow: Continue refining the mobile avatar display and layout presentation.
-
-Local State: Closed locally (leaving changes unstaged/uncommitted locally without pushing to GitHub, per your request).
+  * Clean working tree, fully tracked and synchronized with remote `origin/main`.
+* **Next Immediate Task:** Sub-Component Glass Reactivity & Contact Form Wire-Up.
