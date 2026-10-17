@@ -74,8 +74,6 @@ Next Station / Immediate Task on Startup:
 
 Complete and verify the mobile-first layout styling and responsive breakpoints for the hero section.
 
-<<<<<<< Updated upstream
-=======
 Standard startup protocol: git stash pop, npm run dev, and review the protocol and currenttask files.
 Session Closed: portfolio2023-main
 Session Summary & Progress
@@ -84,4 +82,3 @@ Accomplished Today: Adjusted the large-screen navigation alignment (.name top ma
 Next Task for Tomorrow: Continue refining the mobile avatar display and layout presentation.
 
 Local State: Closed locally (leaving changes unstaged/uncommitted locally without pushing to GitHub, per your request).
->>>>>>> Stashed changes
