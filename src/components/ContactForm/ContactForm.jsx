@@ -1,103 +1,108 @@
-//This component is built with react-form-hook
-import React from 'react';
-import { useForm } from 'react-hook-form'
+// This component is built with react-hook-form
+import React from "react";
+import { useForm } from "react-hook-form";
 import styles from "./ContactForm.module.css";
 
 function ContactForm() {
   const {
-    register, 
-    handleSubmit, 
-    formState:{ errors },
+    register,
+    handleSubmit,
+    formState: { errors },
     reset,
-   } = useForm();
+  } = useForm();
 
-const [submissionStatus, setSubmissionStatus] = React.useState(null); // 'success', 'error', null
+  const [submissionStatus, setSubmissionStatus] = React.useState(null); // 'success', 'error', null
 
-const onSubmit = async (data) => {
-    setSubmissionStatus(null); // Reset status
-try {
-    const jsonData = JSON.stringify(data);//Statement converts data to json
-    const response = await fetch('http://localhost:8000/api/contact', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: jsonData,
-    });
-    // console.log(data)
+  const onSubmit = async (data) => {
+    setSubmissionStatus(null);
+    try {
+      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "/api/contact";
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    };
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
 
-    const result = await response.json();
-    //  Displaying Response to User
-    console.log(result);
-    //add success message here
-    setSubmissionStatus('success');
-      reset(); // Clear form on success
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    setSubmissionStatus('error');
-    // Add error message here.
-}
-};
+      const result = await response.json();
+      console.log(result);
+      setSubmissionStatus("success");
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      setSubmissionStatus("error");
+    }
+  };
 
   return (
-  <form onSubmit={handleSubmit(onSubmit)} className = {styles.contactForm}>
-    <h3>Contact form</h3>
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
+      <h3>Contact form</h3>
       <div>
         <label>
-        Name
-        <input
-          className = {styles.contactInput} 
-          type="text"
-          autoComplete="on"
-          {...register("name",{ required: 'Name is required' })}
+          Name
+          <input
+            className={styles.contactInput}
+            type="text"
+            autoComplete="on"
+            {...register("name", { required: "Name is required" })}
           />
-          {errors.name && <span>{errors.name.message}</span>}
+          {errors.name && (
+            <span className={styles.errorText}>{errors.name.message}</span>
+          )}
         </label>
       </div>
 
       <div>
         <label>
-        Email
-        <input
-          className = {styles.contactInput} 
-          type="email"
-          autoComplete="on"
-          // name="email"
-          {...register("email",{
-            required: 'Email is required',
-            pattern: /^\S+@\S+$/i,
-          })}
-        />
-        {/* {errors.email && <span>{errors.email.message}</span>} */}
+          Email
+          <input
+            className={styles.contactInput}
+            type="email"
+            autoComplete="on"
+            {...register("email", {
+              required: "Email is required",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Invalid email address",
+              },
+            })}
+          />
+          {errors.email && (
+            <span className={styles.errorText}>{errors.email.message}</span>
+          )}
         </label>
       </div>
 
       <div>
-        <label >
-        Message
-        <textarea
-        className = {styles.contactInput} 
-        {...register("message",{ required: 'Message is required' })}
-        />
-        {/* {errors.message && <span>{errors.message.message}</span>} */}
+        <label>
+          Message
+          <textarea
+            className={styles.contactInput}
+            {...register("message", { required: "Message is required" })}
+          />
+          {errors.message && (
+            <span className={styles.errorText}>{errors.message.message}</span>
+          )}
         </label>
       </div>
 
-      <button type="submit" className = {styles.button} >
-      Submit
+      <button type="submit" className={styles.button}>
+        Submit
       </button>
-      {submissionStatus === 'success' && (
-        <div style={{ color: 'green', marginTop: '10px' }}>
+
+      {submissionStatus === "success" && (
+        <div style={{ color: "green", marginTop: "10px" }}>
           Thank you! Your message has been sent.
         </div>
       )}
 
-      {submissionStatus === 'error' && (
-        <div style={{ color: 'red', marginTop: '10px' }}>
+      {submissionStatus === "error" && (
+        <div style={{ color: "red", marginTop: "10px" }}>
           An error occurred while sending your message. Please try again.
         </div>
       )}

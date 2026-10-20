@@ -5,7 +5,7 @@
 .contactForm {
      /* 1. Reset Mobile Margin */
   margin: 2rem auto; /* Center it with top/bottom breathing room on mobile */
-  width: 92;       /* Use the majority of the screen width */
+  width: 92%;       /* Use the majority of the screen width */
   
   /* Standard 8: Deep Sea Glass */
   background-color: rgba(10, 20, 30, 0.6);
@@ -35,6 +35,8 @@
   color: white;
   font-family: inherit;
   transition: border-color 0.3s ease;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .contactInput:focus {
@@ -42,7 +44,29 @@
   border-color: #0ee1ac;
   background-color: rgba(255, 255, 255, 0.1);
 }
+.button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary-color, #2563eb);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
 
+.button:hover {
+  opacity: 0.9;
+}
+
+.errorText {
+  color: #f87171;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
    
 
       @media (min-width: 600px) {
@@ -72,34 +96,7 @@
           border-radius: 5px; /* Increased border radius for the button */
         }
       }
-      
-      /* ---------------------------------------------------------------------- */
-      /* WHY GRID IS GENERALLY NOT NEEDED HERE AND FLEXBOX IS SUFFICIENT */
-      /* ---------------------------------------------------------------------- */
-      
-      /* In this specific contact form scenario, Grid is generally overkill.
-         Here's why:
-      
-         1. Simple Linear Layout: The form is a straightforward, single-column layout. Grid excels in two-dimensional layouts (rows and columns), which we don't need here.
-      
-         2. Flexbox for Alignment: Flexbox is excellent for aligning items in a single direction (either row or column). We can use it to easily center items and manage spacing without the complexity of Grid.
-      
-         3. Mobile-First Approach: Flexbox's ability to easily stack items in a column on smaller screens aligns perfectly with a mobile-first approach.
-      
-         4. Reduced Complexity: Using Flexbox keeps the CSS simpler and easier to maintain for this type of form.
-      
-         If your form was more complex, like a multi-column form with different sized elements, grid would be the better option.
-      */
-      /*Key Improvements and Explanations:
-      
-      Detailed Comments: Each section of the CSS is thoroughly commented to explain the purpose of the styles and the reasoning behind them.
-      Mobile-First Clarity: The CSS is clearly structured to show the base mobile styles and the enhancements for larger screens.
-      Reasoning for Flexbox: A detailed explanation is provided to justify why Flexbox is sufficient for this form and why Grid is generally not needed.
-      Professional Standard: The layout is designed to be clean, readable, and visually appealing, adhering to professional web design standards.
-      Readability: The comments and spacing of the code has been adjusted to increase readability.
-      Consistency: The padding, margins, and border radius are all consistent to increase visual harmony.
-      */
-      /* Desktop Expansion */
+         /* Desktop Expansion */
 @media (min-width: 1024px) {
   .contactForm {
     /* Utilizing horizontal space without losing the spine */
