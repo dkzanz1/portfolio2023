@@ -1,4 +1,4 @@
-.icon-container {
+.iconContainer {
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -8,7 +8,7 @@
     /* Standard 8: Let clicks pass through to the background video */
     pointer-events: none;
     }
-.social-container-title {
+.socialContainerTitle {
     font-size: clamp(0.9rem, 2vw, 1.2rem);
     color: var(--primary-color, rgb(254, 255, 254));
     margin-right: clamp(1.5rem, 3vw, 3rem);
@@ -17,14 +17,14 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
     }
-.social-container-icon-link {
+.socialContainerIconLink {
        margin-right: 1.5rem; /* Spacing between the icons themselves */
     pointer-events: auto;
     display: flex;
     align-items: center;
     }
 
-.social-container-icon-link:hover {
+.socialContainerIconLink:hover {
     transform: translateY(-5px) scale(1.1);
     color: var(--hover-color, #00f2ff); /* High-visibility nautical glow */
 }

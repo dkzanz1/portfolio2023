@@ -45,14 +45,14 @@ function SocialFollow() {
 
   return (
     <>
-      <nav className={styles["icon-container"]}>
-        <h3 className={styles["social-container-title"]}>Social media Links</h3>
+      <nav className={styles.iconContainer}>
+        <h3 className={styles.socialContainerTitle}>Social media Links</h3>
         {icons.map((icon) => (
           <a
             key={icon.id}
             href={icon.href}
-            className={styles["social-container-icon-link"]}
-            // aria-label={icon.label}// Accessibility: Provides a label for screen readers
+            className={styles.socialContainerIconLink}
+            aria-label={icon.label} // Accessibility: Provides a label for screen readers
             target="_blank"
             rel="noopener noreferrer" // Standard security for external link
           >
