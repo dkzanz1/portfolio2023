@@ -1,34 +1,37 @@
 /* Global styles only in this file */
 
 /* Define all CSS variables on the :root pseudo-class for global access */
+/* Define default DARK theme variables on the :root pseudo-class */
 :root {
-  /* THE GLASS STANDARD (DoD) */
-  --glass-bg: rgba(255, 255, 255, 0.75); 
+  /* THE GLASS STANDARD (DoD) - Default Dark Mode */
+  --background-color: #0a141e;        /* Deep nautical dark base */
+  --text-color: #dbddde;              /* Off-white text */
+  --primary-color: #0055ff;           /* Nautical blue accent */
+  --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --box-shadow-color: rgba(0, 0, 0, 0.5);
+
   --glass-blur: 15px;
-  --background-color: #f4f6f9;
-  --text-color: #1e293b;
-  --primary-color:#0f172a;
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --box-shadow-color: rgba(0, 0, 0, 0.08);
-  /* this sets Global Breakpoint Values */
+
+  /* Global Breakpoint Values */
   --screen-xs: 576px;
-  --screen-sm: 768px; /* Your Tablet breakpoint */
-  --screen-md: 992px; /* Your Desktop breakpoint */
-  --screen-lg: 1200px; /* Your Large Desktop breakpoint */
+  --screen-sm: 768px; /* Tablet breakpoint */
+  --screen-md: 992px; /* Desktop breakpoint */
+  --screen-lg: 1200px; /* Large Desktop breakpoint */
   --screen-xl: 1536px; /* Professional standard for large screens */
-  --screen-xxl: 2560px; /* For the ultra-wide crowd */
+  --screen-xxl: 2560px; /* Ultra-wide */
 }
 *, *::before, *::after {
   box-sizing: inherit;
 }
-/* Override variables for the DARK theme on the body selector */
-body[data-theme='dark'] {
---background-color: #0a141e;        /* Deep nautical dark base */
-  --text-color: #dbddde;              /* Off-white text */
-  --primary-color: #0055ff;           /* Gold accent */
-  --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --box-shadow-color: rgba(0, 0, 0, 0.5); /* Correctly define the dark shadow color here */
+/* Override variables for the LIGHT theme */
+[data-theme='light'] {
+  --background-color: #fdfbf7;        /* Warm cream base */
+  --text-color: #1a1917;              /* Deep slate/charcoal text */
+  --primary-color: #d97706;           /* Warm amber accent */
+  --glass-bg: rgba(255, 253, 248, 0.85); 
+  --glass-border: rgba(217, 119, 6, 0.15);
+  --box-shadow-color: rgba(180, 83, 9, 0.08);
 }
 
 *, *::before, *::after {
