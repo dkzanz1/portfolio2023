@@ -87,3 +87,5 @@ need to explain this to me simply before we start
 Update body[data-theme='dark'] to general [data-theme='dark'] scoping in src/index.css.
 
 Audit top-level layout component styles (e.g., App.module.css) to ensure hardcoded hex backgrounds aren't overriding var(--background-color)
+
+Docs/currenttask.md: Update the active target section and record the Session Stop Summary at the bottom so we can pick up immediately in our next session.

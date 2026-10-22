@@ -95,3 +95,5 @@ Fixed mobile upward balance on the morphing avatar container by adjusting vertic
 Refined waterDrift keyframe loop jump by aligning 0% and 100% border-radius values to guarantee a smooth, organic infinite wave loop.
 
 Integrated standard .95 dampening factor into the boat LERP physics mouse-tracking loop.
+
+Docs/history.md: Append a concise entry under your project history/dev log recording the theme architecture refactor (feat(index)).
