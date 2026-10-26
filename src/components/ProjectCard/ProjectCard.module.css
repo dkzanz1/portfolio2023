@@ -15,7 +15,7 @@
     overflow: hidden;
     isolation: isolate; /* Q.Creating new stacking context for z-index */
     /* Add a subtle glass border to match the Nav-Glass theme */
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
     /* Modern internal alignment layout */
     display: flex;
     flex-direction: column;
@@ -35,7 +35,7 @@
     padding: 0.8rem;
     z-index:10;
     background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
-    color: var(--text-color-light, white); /* Used protocol variables */
+    color: var(--primary-color);
     border-radius: 8px;
     width: 100%; 
     box-sizing: border-box;
@@ -58,7 +58,8 @@
     position: relative;
     z-index: 10;
     background-color:var(--overlay-dark, rgba(0, 0, 0, .6));
-    color:var(--text-color-light, white);
+    /* color:var(--text-color-light, white); */
+    color: var(--primary-color);
     /* Standard 6: Fluid body text */
     font-size: clamp(0.95rem, 1.5vw, 1.25rem);
     border: solid var(--border-color-light,silver) 1px;   
