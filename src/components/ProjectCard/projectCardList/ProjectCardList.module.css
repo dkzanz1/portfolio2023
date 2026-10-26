@@ -74,6 +74,7 @@
 .cardTitle {
   font-size: clamp(1.8rem, 3vw, 3rem); /* Standard 6 Typography */
   color: var(--primary-color);
+  color: var(--text-color);
   line-height: 1.2;
   margin: 0;
 }

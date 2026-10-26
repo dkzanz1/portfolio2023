@@ -26,8 +26,8 @@
   justify-content: center;
   padding: clamp(1.5rem, 3vw, 2.5rem);
 
-  background: rgba(10, 20, 30, 0.6); /* Nautical Glass */
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--glass-bg); /* Nautical Glass */
+  border: 1px solid var(--glass-border);
   border-radius: 16px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px); /* Crucial safe layer for iOS hardware validation */
@@ -40,8 +40,7 @@
 /* Standard 8 Physics: The Hover "Swell" */
 .skillCard:hover {
   transform: scale(1.08); /* .95 Dampening Feel */
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--primary-color);
   box-shadow: 0 15px 35px -10px var(--hover-color);
 }
 /* Optional: Adding a glow effect using the variable */
@@ -90,20 +89,22 @@
   font-size: clamp(2rem, 4vw, 3rem);
   margin-bottom: 1rem;
   transition: transform 0.4s cubic-bezier(0.33, 1, 0.68, 1), color 0.4s ease, filter 0.4s ease;
-  color: rgba(255, 255, 255, 0.7);
+  color:var(--text-color);
+  opacity: 0.7;
 }
 /* Dynamic Brand Glow - Lead Dev Style */
 .skillCard:hover .iconWrapper {
   transform: translateY(-5px);
-  /* The color is passed via inline style in JSX */
-  color: var(--hover-color);
+  color: var(--hover-color, var(--primary-color));
   filter: drop-shadow(0 0 15px var(--hover-color));
 }
 .skillName {
+  color: var(--text-color);
   font-size: clamp(0.2rem, 0.8vw, 0.85rem);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 600;
+  color: var(--text-color); /* Theme-reactive text color */
   opacity: 0.7;
   text-align: center; /* Ensures the text remains dead-center */
 }
