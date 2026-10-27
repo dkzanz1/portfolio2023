@@ -57,6 +57,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    color: #fdfbf7;
 }
 /* ============================================================
    2. CONTENT ELEMENTS
@@ -66,7 +67,7 @@
     font-size: clamp(2.5rem, 10vw, 8.5rem); 
     font-weight: 800;
     line-height: 1.0;
-    color: var(--text-primary, #ffffff);
+    color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: -0.02em;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -81,10 +82,10 @@
 .heroBlurb {
     width: clamp(280px, 90%, 800px); 
     margin: 1.2rem auto;
-    color: white;
+    color: var(--primary-color);
     font-size: clamp(.9rem, 2.2vw, 1.4rem);
     line-height: 1.5;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 2px 8px rgba(247, 244, 244, 0.3);
     /* Force centering to override any inherited layout shifts */
     text-align: center;
 }
@@ -93,17 +94,13 @@
 .avatarWrapper {
   position: relative;
   width: clamp(160px, 25vw, 280px);
-  aspect-ratio: 1 / 1; /* Locked 1:1 ratio maintains grid stability */
-  /* Initial Fluid Water-Drop Clip & Ambient Animation */
-  background: var(--color-glass-surface, rgba(255, 255, 255, 0.04));
-  border: 2px solid rgba(14, 225, 172, 0.25);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(14, 225, 172, 0.1);
+  aspect-ratio: 1 / 1;
+  background: var(--glass-bg);
+  border: 2px solid var(--primary-color); /* CHANGED to use brand primary */
+  box-shadow: 0 10px 30px var(--box-shadow-color), inset 0 0 15px var(--glass-border);
   overflow: hidden; 
   z-index: 4;
   pointer-events: auto;
-  /* Continuous Independent Water Undulation */
-  animation: waterDrift 12s ease-in-out infinite;
-  /* transition: border-radius 0.8s cubic-bezier(0.25, 1, 0.5, 1); */
   animation: waterDrift 12s ease-in-out infinite;
   transform: translateZ(0);
   will-change: border-radius;
