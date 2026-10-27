@@ -18,7 +18,7 @@ Current Task: portfolio2023-main
 
 
 ## 🎨 Layout & Visual Polish Sprint
-* [ ] **Sub-task 1 (Hero Brand Alignment):** Refactor Hero section action elements, buttons, and text highlights to use `--brand-primary` / global theme variables.
+* [x] **Sub-task 1 (Hero Brand Alignment):** Refactor Hero section action elements, buttons, and text highlights to use `--brand-primary` / global theme variables.
 * [ ] **Sub-task 2 (Ultra-Wide Boundary):** Add dynamic container capping (`max-width` + fluid side padding) to keep right-hand text off ultra-wide screen edges.
 * [ ] **Sub-task 3 (Footer Copyright Color):** Replace hardcoded green copyright text with theme-reactive brand variable.
 * [ ] **Sub-task 4 (Icon Alignment):** Apply `inline-flex`, `align-items: center`, and `justify-content: center` to link icon containers for perfect centering.
