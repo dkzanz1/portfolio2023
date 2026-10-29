@@ -21,7 +21,7 @@ Current Task: portfolio2023-main
 * [x] **Sub-task 1 (Hero Brand Alignment):** Refactor Hero section action elements, buttons, and text highlights to use `--brand-primary` / global theme variables.
 * [x] **Sub-task 2 (Ultra-Wide Boundary):** Add dynamic container capping (`max-width` + fluid side padding) to keep right-hand text off ultra-wide screen edges.
 * [x] **Sub-task 3 (Footer Copyright Color):** Replace hardcoded green copyright text with theme-reactive brand variable.
-* [ ] **Sub-task 4 (Icon Alignment):** Apply `inline-flex`, `align-items: center`, and `justify-content: center` to link icon containers for perfect centering.
+* [x] **Sub-task 4 (Icon Alignment):** Apply `inline-flex`, `align-items: center`, and `justify-content: center` to link icon containers for perfect centering.
 * [ ] **Sub-task 5 (Light Theme & Video Harmony):** Refine light mode color palette (soft nautical cream/slate) to complement dark ocean video background.
 * [ ] **Sub-task 6 (Lighthouse Graphic Tint):** Adapt lighthouse SVG/graphic colors to match brand system accents.
 * [ ] **Sub-task 7 (Avatar Fluid Scaling):** Verify `.avatarWrapper` sizing using `clamp()` against hero typography hierarchy across mobile and desktop.
