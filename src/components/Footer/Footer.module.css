@@ -21,7 +21,7 @@
 .dynocopy {
     /* Standard 4 & 6: Using brand color and fluid typography */
     margin: 0;
-    color: var(--brand-green, rgb(15, 192, 124));
+    color: var(--primary-color, rgb(254, 255, 254));
     font-size: clamp(0.8rem, 2vw, 1.1rem);
     text-align: center;
     letter-spacing: 0.05em;
