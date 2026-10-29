@@ -375,7 +375,7 @@
   }
 }
 
-/* Desktop: 27-inch "Full-Bleed" Breakout */
+/* Desktop: 27-inch "Full-Bleed" Breakout with capped inner boundry*/
 @media (min-width: 1200px) {
 .heroSection {
        /* 1. Reset Mobile Width */
@@ -398,7 +398,14 @@
       "title image"
       "blurb image";
     align-items: center;
-    padding-left: 10vh 18vw;
+
+    /* SUB-TASK 2: Capped boundary + fluid horizontal/vertical padding */
+    width: 100%;
+    max-width: 1950px; /* Stops content from stretching too far on ultra-wide screens */
+    margin-inline: auto; /* Centers the capped container */
+    padding-inline: clamp(.8rem, 8vw, 10rem); /* Fluid side padding replacing the malformed shorthand */
+    padding-block: clamp(2rem, 1vh, 1rem);
+    
     text-align: left;
     background: linear-gradient(90deg, rgba(0,0,0,0.7) 0%, transparent 60%);
     
