@@ -24,7 +24,7 @@
     align-items: center;
     transition: all 0.5s ease-in-out;
 /* CRITICAL: Keeps boat/video clipped and fixes z-index layering */
-    overflow:hidden;
+    /* overflow:hidden; */
     isolation: isolate;
     pointer-events: auto; /* Ensure the container is interactive */
     cursor: default;
@@ -64,9 +64,9 @@
    ============================================================ */
 /* Mobile-first styles (no media query) */
 .name {
-    font-size: clamp(2.5rem, 10vw, 8.5rem); 
-    font-weight: 800;
-    line-height: 1.0;
+    font-size: clamp(1.0rem, 10vw, 6.5rem); 
+    /* font-weight: 600;
+    line-height: 2.5; */
     color: var(--primary-color);
     text-transform: uppercase;
     letter-spacing: -0.02em;
@@ -80,14 +80,20 @@
     z-index: 4;
 }
 .heroBlurb {
-    width: clamp(280px, 90%, 800px); 
-    margin: 1.2rem auto;
+    width: clamp(100px, 90%, 900px); 
+    margin: 1.0rem auto;
     color: var(--primary-color);
-    font-size: clamp(.9rem, 2.2vw, 1.4rem);
-    line-height: 1.5;
+    font-size: clamp(1.0rem, 1.0vw, 1.0rem);
+    line-height: 1.2;
     text-shadow: 0 2px 8px rgba(247, 244, 244, 0.3);
     /* Force centering to override any inherited layout shifts */
     text-align: center;
+}
+.heroInfo {
+    color: var(--primary-color);
+    font-size: clamp(1.6rem, 1.0vw, 1.0rem);
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(247, 244, 244, 0.3);
 }
 
 /* --- AVATAR WRAPPER (Single Oval Frame) --- */

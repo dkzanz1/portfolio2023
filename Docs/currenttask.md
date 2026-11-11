@@ -45,4 +45,5 @@ Current Task: portfolio2023-main
 * [x] **Phase 2:** Design System
 * [x] **Phase 3:** Glass & Physics Sprint
 * [▶] **Phase 4 & 5:** Hardening & Deployment Pipeline (**CURRENT STATION**)
-[▶] Phase 4 & 5: Hardening & Deployment Pipeline (CURRENT STATION)
+[▶] Phase 4 & 5: Hardening & Deployment Pipeline (CURRENT STATION)Immediate Priority for Next Session: Resizing hero font and typography hierarchy so all text stays fully visible within the hero viewport bounds without crowding the video or avatar.
+expalin how clamp effect my page and trext
