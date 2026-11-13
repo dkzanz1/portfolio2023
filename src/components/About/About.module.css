@@ -41,6 +41,24 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
   pointer-events: none; /* Standard 8: No interaction hijacking */
 }
+
+
+.stickerImg {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px; /* Optional, depending on your container look */
+ 
+  transition: filter 0.5s ease, opacity 0.5s ease, border-color 0.5s ease;
+  filter: drop-shadow(0 0 15px rgba(14, 225, 172, 0.2));
+}
+
+/* Light Theme: Shifts the blue lighthouse graphic into warm orange/amber tones */
+:global([data-theme='light']) .stickerImg {
+  /* hue-rotate(320deg) or hue-rotate(-40deg) shifts cyan/blue directly into warm orange/amber */
+  filter: hue-rotate(210deg) saturate(1.8) brightness(0.95);
+ 
+}
 /* REUSABLE MODULAR BOX UTILITY */
 .modularBox {
   background: var(--glass-bg);
