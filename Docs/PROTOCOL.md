@@ -1,50 +1,58 @@
 # The ACE Protocol: portfolio2023-main
 
-## 1. Standard Enforcement (Architectural Control)
-* **Standard 1: Single Source of Truth** – This document governs all architectural and logical decisions.
-* **Standard 2: Mobile-First Escalation** – Target mobile viewports first. Use min-width queries ONLY. max-width media queries are strictly prohibited for layout.
-* **Standard 3: Semantic HTML** – Mandatory use of <main>, <section>, <article>, and <nav> for A11y and SEO.
-* **Standard 4: DRY Global Values** – Use CSS Variables (--var) for all repeating values. Define in :root.
-* **Standard 5: Component-Centricity** – Mandatory use of Barrel Files (index.js) inside every component folder.
-* **Standard 6: Fluid Scaling** – Use clamp(), vw, or vh for typography and major layout margins.
-* **Standard 7: Property Lean Inheritance** – Define layout at the Mobile level; do not redeclare in @media unless values change.
-* **Standard 8: Interactive Transparency** – Overlays must use pointer-events: none to prevent interaction hijacking.
-* **Standard 9: Linting Enforcement** – All commits must pass commitlint (lowercase scopes) and husky hooks.
-* **Standard 10: JavaScript-Ready Casing (camelCase)** — All class names in CSS Modules must strictly use camelCase (e.g., `.waterVideo`, `.boatContainer`) rather than kebab-case (`.water-video`). This guarantees clean JavaScript dot notation (`styles.waterVideo`) inside React modules and avoids syntax friction.
+## 1. Architectural Standards
+
+* **Standard 1: Single Source of Truth** — This document governs all architectural, styling, and structural decisions.
+* **Standard 2: Mobile-First Escalation** — Target mobile viewports first. Use `min-width` queries only. `max-width` queries are strictly prohibited for layout structure.
+* **Standard 3: Semantic HTML** — Mandatory use of `<main>`, `<section>`, `<article>`, and `<nav>` for accessibility (A11y) and SEO.
+* **Standard 4: DRY Global Values** — Centralize all design tokens and colors via CSS Variables (`var(--name)`) defined in `:root`.
+* **Standard 5: Component-Centricity** — Mandatory use of barrel export files (`index.js`) inside every component folder.
+* **Standard 6: Fluid Scaling** — Use `clamp()`, `vw`, or `vh` for typography, spacing, and major layout dimensions.
+* **Standard 7: Property Lean Inheritance** — Define base layout properties at the mobile level; redeclare in `@media` blocks only when values change.
+* **Standard 8: Interactive Transparency & Physics** — Visual overlays must use `pointer-events: none` to prevent pointer hijacking. Interactive physics must strictly follow the `0.95` dampening factor or a `0.6s` cubic-bezier timing.
+* **Standard 9: Linting & Commit Standards** — All commits must pass Husky hooks and Commitlint with strictly lowercase scopes (e.g., `feat(hero): description`).
+* **Standard 10: JavaScript Casing (camelCase)** — Class names in CSS Modules must strictly use `camelCase` (e.g., `.waterVideo`, `.aboutContainer`) to ensure native JavaScript dot-notation (`styles.waterVideo`).
+
+---
+
 ## 2. Technology Stack & Environment
-* **Core:** React + Vite (Functional Components & Hooks).
-* **Styling:** CSS Modules (.module.css) + Custom Properties.
-* **Commits:** type(scope): description (Scopes MUST be lowercase).
 
-## 3. Sequential Daily Routine (Logic Order)
-1. **Sync:** `git pull origin main`
-2. **Maintenance:** `npm install` + Verify local tree.
-3. **State Protection:** `git checkout -b <type>/<description>`
-4. **Execution:** `npm run dev`
-5. **Context Control:** Use "Open session" and "Close session" to manage AI state.
+* **Core Engine:** React + Vite (Functional Components & Custom Hooks)
+* **Styling Layer:** CSS Modules (`*.module.css`) + Custom CSS Properties
+* **Version Control:** Git with Conventional Commits (`type(scope): description`)
 
-## 4. Conflict Resolution (The Git Protocol)
-1. **Save State:** `git stash push -m "CONFLICT_SAVE"`
-2. **Validation Gate:** Run `npm run build`. Do not proceed if the app is crashed.
-3. **Stage:** `git add filename`
-4. **Resume:** `git rebase --continue` (or `merge --continue`).
-5. **Push:** `git push --force-with-lease` (required for rebasing).
+---
 
-## 5. Architectural Decisions
-* **Decision (2026-04-13):** Deprecating Hover-Zoom for ProjectCard stickers in favor of Scroll-Sync Parallax.
-* **Rationale:** To achieve the "Nautical Float" objective; visual movement must be tied to scrolling for consistency across Desktop and Mobile Safari.
-* **Physics Standard:** Interaction must maintain the 0.95 Dampening constant to ensure the parallax feels "heavy" and fluid, not "jittery".
-# Engineering Protocols Reference
+## 3. Sequential Daily Routine
 
-## UI Layout Standards
-- Standard 2: Desktop Escalation requires layout handshakes with the grid slot.
-- Standard 6: Fluid scaling utilizes clamp functions and aspect ratios without strict layout snapping.
-- Standard 8: Interactive physics constants use a strict .95 dampening or 0.6s cubic-bezier timing.
+1. **Sync State:** `git pull origin main`
+2. **Environment Verification:** `npm install` + verify workspace tree
+3. **Branch Protection:** `git checkout -b <type>/<description>`
+4. **Dev Execution:** `npm run dev`
+5. **Session Management:** Execute official "Session Start" and "Session Stop" protocols to manage context.
 
-## Git Workflow Standards
-- All examples provided must utilize lowercase scopes within commit messages to prevent Commitlint pipeline failures.
+---
 
-[X] Phase 1: Structural Core (Hero, Burger Menu layout)
-[X] Phase 2: Design System (.modularBox glass, fluid clamp typography)
-[X] Phase 3: Glass & Physics Sprint (.95 dampening calibration)
-[▶] Phase 4 & 5: Hardening & Deployment (CURRENT STATION)
+## 4. Git Conflict Resolution Protocol
+
+1. **Save Current State:** `git stash push -m "CONFLICT_SAVE"`
+2. **Build Gate Verification:** Run `npm run build` to confirm baseline integrity.
+3. **Stage Fixed Dependencies:** `git add <filename>`
+4. **Resume Process:** `git rebase --continue` (or `git merge --continue`)
+5. **Safe Push:** `git push --force-with-lease`
+
+---
+
+## 5. Architectural Decisions & Milestones
+
+* **Scroll-Sync Parallax Decision:** Deprecated hover-zoom for `ProjectCard` stickers in favor of scroll-sync parallax for consistent behavior across touch and desktop interfaces.
+* **Physics Constant:** All floating and interactive elements operate with a `0.95` dampening multiplier to deliver a heavy, fluid feel.
+
+---
+
+## 6. Project Roadmap Status
+
+* [x] **Phase 1: Structural Core** (Hero, Burger Menu layout)
+* [x] **Phase 2: Design System** (`.modularBox` glassmorphism, fluid `clamp()` typography)
+* [x] **Phase 3: Glass & Physics Sprint** (`0.95` dampening calibration, mobile avatar physics)
+* [▶] **Phase 4 & 5: Hardening & Deployment Pipeline** (CURRENT STATION)
