@@ -2,8 +2,7 @@
 
 ## 🎯 Active Target: Phase 4 & 5 — Hardening & Deployment Pipeline
 
-### Immediate Priority
-- [ ] **About Section Transition:** Revisit and apply the isolated `::after` pseudo-element approach for the bottom gradient fade on the About section.
+
 - [ ] **Hero Viewport & Typography Audit:** Fine-tune `clamp()` scale bounds on Hero header and subheadline to guarantee full visibility across viewports without crowding the avatar or video container.
 - [ ] **Step 4 (Deployment Pipeline):** Finalize production build verification (`npm run build`) and configure Vercel/Netlify pipeline.
 
