@@ -24,3 +24,9 @@
 - [x] **Phase 2: Design System** (.modularBox glass, fluid clamp typography)
 - [x] **Phase 3: Glass & Physics Sprint** (.95 dampening calibration, mobile avatar physics)
 - [▶] **Phase 4 & 5: Hardening & Deployment Pipeline** (CURRENT STATION)
+## 🎯 Active Target: Phase 4 & 5 — Hardening & Deployment Pipeline
+
+### Immediate Priority for Next Session:
+- [ ] **Stash Pop:** Run `git stash pop` on startup to restore the refactored `HeroCard.module.css`.
+- [ ] **Hero Viewport Audit (Nest Hub & iPad Verification):** Verify the 1100px desktop grid threshold and `clamp(120px, 25vh, 220px)` avatar bounds on standard iPad and Nest Hub (600px height) viewports.
+- [ ] **Step 4 (Deployment Gate):** Run `npm run build` verification and finalize pipeline configuration (Vercel / Netlify).
