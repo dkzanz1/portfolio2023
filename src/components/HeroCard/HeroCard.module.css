@@ -283,7 +283,32 @@
   50% { opacity: 1; }
   100% { opacity: 0; transform: rotate(45deg) translate(4px, 4px); }
 }
+/* ============================================================
+   5. TABLET & HUB ESCALATION (min-width: 768px)
+   ============================================================ */
+@media (min-width: 768px) {
+  .overlay {
+    padding: clamp(1.5rem, 4vh, 3rem) clamp(2rem, 5vw, 4rem);
+  }
 
+  .avatarWrapper {
+    width: clamp(160px, 26vh, 250px);
+  }
+
+  .name {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-top: 0.75rem;
+  }
+
+  .heroBlurb {
+    width: min(85%, 740px);
+    font-size: clamp(1.05rem, 1.5vw + 0.5rem, 1.4rem);
+  }
+
+  .heroInfo {
+    font-size: clamp(0.9rem, 1.1vw + 0.4rem, 1.15rem);
+  }
+}
 /* ============================================================
    5. DESKTOP ESCALATION (Standard 2: Min-Width ONLY)
    ============================================================ */
