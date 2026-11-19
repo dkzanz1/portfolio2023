@@ -64,3 +64,9 @@ Base styles: Mobile layout (0px upwards).
 @media (min-width: 1200px): Full desktop 2-column grid.
 
 That way, every screen size is handled smoothly, and we stay 100% compliant with our min-width protocol standard.
+Session Wrap-Up Summary
+Mobile-First Progression: Kept the fluid mobile baseline (0px+), dedicated @media (min-width: 768px) tier, and @media (min-width: 1024px) two-column grid without min-height gating.
+
+Grid & Spacing Fixes: Fixed the invalid minmax(3.0, 1.3fr) track to minmax(0, 1.3fr), tightened vertical alignment/spacing across .name, .heroBlurb, and .heroInfo, and stepped up .avatarWrapper (clamp(240px, 31vw, 350px)).
+
+Next Up Whenever You Return: Final deployment pipeline configuration (Vercel / Netlify) and testing asset distribution, plus revisiting Nest Hub and ultrawide scaling if you want another pass later.
