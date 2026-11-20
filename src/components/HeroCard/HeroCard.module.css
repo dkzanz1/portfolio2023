@@ -312,7 +312,7 @@
 /* ============================================================
    5. DESKTOP ESCALATION (Standard 2: Min-Width ONLY)
    ============================================================ */
-@media (min-width: 1024px)  {
+@media (min-width: 1100px)  {
   .heroSection {
     width: 100vw;
     max-width: 100vw; 
@@ -327,9 +327,9 @@
   .overlay {
     display: grid;
     grid-template-columns: minmax(3.0, 1.3fr) minmax(260px, 1fr);
-    gap: clamp(1rem, 4vw, 5rem);
+    gap: clamp(1.5rem, 4vw, 5rem);
 /* FIXED: Separated row-gap (tight vertically) from column-gap (between text and avatar) */
-    row-gap: 0.35rem;
+    row-gap: 0.5rem;
     column-gap: clamp(2.5rem, 5vw, 7rem);
 
     grid-template-areas: 
@@ -339,7 +339,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 2560px;
+    max-width: 1800px;
     margin-inline: auto;
     padding-inline: clamp(2rem, 5vw, 8rem);
     padding-block: clamp(2rem, 4vh, 4rem);
@@ -399,5 +399,55 @@ margin-top: 0.5rem;
     pointer-events: auto;
     z-index: 10;
     object-position: 50% 50%;
+  }
+}
+
+/* ============================================================
+   7. ULTRAWIDE CORRECTION (min-width: 1600px)
+   ============================================================ */
+@media (min-width: 1600px) {
+  .heroSection {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  .overlay {
+    width: 100%;
+    max-width: none;
+    grid-template-columns: minmax(0, 1.45fr) minmax(420px, 540px);
+    column-gap: clamp(4rem, 6vw, 9rem);
+    padding-inline: clamp(4rem, 8vw, 12rem);
+  }
+
+  .name {
+    font-size: clamp(4.5rem, 5vw, 7rem);
+  }
+
+  .heroBlurb {
+    max-width: 65ch;
+    font-size: clamp(1.35rem, 1.5vw, 2rem);
+  }
+
+  .heroInfo {
+    font-size: clamp(1.25rem, 1.2vw, 1.45rem);
+  }
+
+  .avatarWrapper {
+    width: clamp(320px, 27vw, 520px);
+  }
+}
+/* ============================================================
+   8. SUPER-ULTRAWIDE ESCALATION (min-width: 2200px)
+   ============================================================ */
+@media (min-width: 2200px) {
+  .name {
+    font-size: clamp(5rem, 4.5vw, 8rem);
+  }
+
+  .avatarWrapper {
+    width: clamp(460px, 25vw, 600px);
   }
 }
