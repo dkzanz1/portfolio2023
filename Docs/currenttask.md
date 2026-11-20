@@ -1,70 +1,20 @@
-Current Task: portfolio2023-main
-🎯 Active Target: Final Hardening & Deployment Pipeline
-The ACE Protocol: portfolio2023-main
+# Current Task: portfolio2023-main
 
-## 1. Architectural Standards
+🎯 Active Target: Step 4 — Deployment Pipeline Configuration (Vercel / Netlify)
 
-[ ] **Hero Viewport & Typography Audit:** Fine-tune `clamp()` scale bounds on Hero header and subheadline to guarantee full visibility across viewports without crowding the avatar or video container.
-[ ] **Step 4 (Deployment Pipeline):** Finalize production build verification (`npm run build`) and configure Vercel/Netlify pipeline.
-
----
-
-## 2. Technology Stack & Environment
-
-* **Core Engine:** React + Vite (Functional Components & Custom Hooks)
-* **Styling Layer:** CSS Modules (`*.module.css`) + Custom CSS Properties
-* **Version Control:** Git with Conventional Commits (`type(scope): description`)
+## Completed in Last Sprint
+- [x] **Hero Viewport & Typography Audit:** Scaled fluid `clamp()` bounds and upgraded media queries (`1100px+`, `1600px+`, `2200px+`) for seamless multi-tier layouts across iPad Pro 13", Nest Hub, and Ultrawide displays.
+- [x] **Production Build Gate Verification:** Executed `npm run build` cleanly (31.35s build, 82 modules transformed, zero bundle errors). Verified asset pipeline bundling for AVIF/WebP/JPEG lighthouse images and 1.86 MB `videobg.mp4`.
+- [x] **Git State Sync:** Clean working tree; committed (`c3c6655`) and pushed to `origin/main`.
 
 ---
 
-## 3. Sequential Daily Routine
-
-1. **Sync State:** `git pull origin main`
-2. **Environment Verification:** `npm install` + verify workspace tree
-3. **Branch Protection:** `git checkout -b <type>/<description>`
-4. **Dev Execution:** `npm run dev`
-5. **Session Management:** Execute official "Session Start" and "Session Stop" protocols to manage context.
+## Immediate Next Actions
+- [ ] **Step 4 (Local Preview Check):** Run `npm run serve` (or `vite preview`) to audit bundled video streaming, theme morph transitions, and smooth rendering from `dist/`.
+- [ ] **Step 4 (Deployment Pipeline):** Configure build settings (`build command: npm run build`, `output directory: dist`) and deployment configuration (Vercel / Netlify) with SPA fallback routing.
 
 ---
 
-## 4. Git Conflict Resolution Protocol
-
-1. **Save Current State:** `git stash push -m "CONFLICT_SAVE"`
-2. **Build Gate Verification:** Run `npm run build` to confirm baseline integrity.
-3. **Stage Fixed Dependencies:** `git add <filename>`
-4. **Resume Process:** `git rebase --continue` (or `git merge --continue`)
-5. **Safe Push:** `git push --force-with-lease`
-
----
-
-## 5. Architectural Decisions & Milestones
-
-* **Scroll-Sync Parallax Decision:** Deprecated hover-zoom for `ProjectCard` stickers in favor of scroll-sync parallax for consistent behavior across touch and desktop interfaces.
-* **Physics Constant:** All floating and interactive elements operate with a `0.95` dampening multiplier to deliver a heavy, fluid feel.
-
----
-
-## 6. Project Roadmap Status
-
-- [x] **Phase 1: Structural Core** (Hero layout, Burger Menu)
-- [x] **Phase 2: Design System** (.modularBox glass, fluid clamp typography)
-- [x] **Phase 3: Glass & Physics Sprint** (.95 dampening calibration, mobile avatar physics)
-- [▶] **Phase 4 & 5: Hardening & Deployment Pipeline** (CURRENT STATION)
-current task first thing 
-
-
-For example, sticking purely to min-width escalation:
-
-Base styles: Mobile layout (0px upwards).
-
-@media (min-width: 768px): Tablet tier (stacked or balanced spacing, perfect for Nest Hub and iPads).
-
-@media (min-width: 1200px): Full desktop 2-column grid.
-
-That way, every screen size is handled smoothly, and we stay 100% compliant with our min-width protocol standard.
-Session Wrap-Up Summary
-Mobile-First Progression: Kept the fluid mobile baseline (0px+), dedicated @media (min-width: 768px) tier, and @media (min-width: 1024px) two-column grid without min-height gating.
-
-[ ] Grid & Spacing Fixes: Fixed the invalid minmax(3.0, 1.3fr) track to minmax(0, 1.3fr), tightened vertical alignment/spacing across .name, .heroBlurb, and .heroInfo, and stepped up .avatarWrapper (clamp(240px, 31vw, 350px)).
-
-Next Up Whenever You Return: Final deployment pipeline configuration (Vercel / Netlify) and testing asset distribution, plus revisiting Nest Hub and ultrawide scaling if you want another pass later.
+## Session Wrap-Up Anchors
+- **Current Station:** Phase 4 & 5 — Hardening & Deployment Pipeline
+- **Branch State:** `main` (up to date with `origin/main`)

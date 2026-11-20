@@ -175,15 +175,16 @@ function HeroCard({ theme }) {
         </div>
         <h2 className={styles.name}>
           <span>Hi, </span>
-          <span>Im Paul</span>
+          <span>I&apos;m Paul</span>
         </h2>
         <article className={styles.heroBlurb}>
           <h3>
-            Web Developer who lives by the Sea, I build websites that are as
-            refreshing as the sea breeze Dorset
+            Full-Stack Web Developer based on the Dorset coast, building
+            high-performance, mobile-first web applications.
           </h3>
           <p className={styles.heroInfo}>
-            I build Crafted Bespoke Webpages
+            Specializing in React, modern JavaScript, and clean component
+            architecture
             <br />
             using <strong>full stack development</strong>
           </p>
