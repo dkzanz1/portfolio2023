@@ -1,179 +1,34 @@
-Master Project History: portfolio2023-main
-Current Version: 2.9 (Liquid Physics & ACE Compliant) | Status: BUILD GREEN
+# Session History: portfolio2023-main
 
-🏛️ Architectural Core (Locked Standards)
-Pattern: Component-Centric Barrel Pattern (index.js).
-
-Semantics: Mandatory , , , ,  (A11y/SEO optimized).
-
-Fluidity: Global clamp() typography & --section-gap. Zero max-width layout media queries (Fluid Scaling Standard 6).
-
-The Spine: Rigid 10vw vertical alignment across About, Skills, and Projects sections.
-
-Naming Standard: Strict camelCase CSS Module classes and JSX properties (Standard 10).
-
-Commit Standard: Strict lowercase scope (e.g., feat(theme):, docs(skills):).
-
-⚙️ Engineering & Physics Constraints
-Dampening: 0.95 (UI tracking, cinematic inertia & menu bezier transition)
-
-Multiplier: 0.05 (Applied to dampening for "Heavy" feel)
-
-Vertical Math: rect.height / 2 (Viewport centering logic for active scroll triggers)
-
-Hover Scale: 1.08 (Subtle element "Swell" effect - Standard 8 compliant)
-
-Aspect Ratio: 4:5 (Mob) / 16:9 (Desk) (Core layout wrapper & asset stability)
-
-Video Target: < 2.0MB (videobg.mp4 compressed to 1.8MB - verified)
-
-🏁 Phase Tracking & Milestones
-[x] Phase 1: Structural Core
-
-[x] Phase 2: Design System
-
-[x] Phase 3: Glass & Physics Sprint
-
-[x] Phase 4: Hardening & Validation (In Progress)
-
-[ ] Phase 5: Deployment Pipeline (Pending)
-
-🏆 Completed Component Milestones
-HeroCard: Purged legacy neon colors (#0ee1ac). Applied 100vw breakout layout, fluid clamp() text scaling, vite-imagetools pipeline asset injection (herophoto.jpg), split avatar asset (hero-avatar-split), and calibrated custom JS boat drift. Resolved mobile upward balance and refined the waterDrift keyframe loop to maintain a seamless, symmetrical 50% start/end point.
-
-About Section: Applied .modularBox dark glass utility (rgba(10, 20, 30, 0.6) + 15px backdrop blur). Upgraded desktop grid ratio to 1.2fr 2fr. Shifted body copy (.blurb) to clamp(1.1rem, 1vw, 1.3rem). Replaced legacy photo with optimized WebP/AVIF aboutphoto.jpg (< 8 kB) inside  elements to eliminate CLS. Surgically corrected Aboutblurb to aboutBlurb.
-
-Burger Menu: Reengineered to full curtain layout (100dvh). Symmetrically aligned rotation math via translateY(-50%) and applied Standard 8 pointer-events protection. Refined dimensions and media query nesting trap in Burger.module.css. Hover accent set to #ffd700.
-
-Skills Section: Propagated .modularBox dark glass design system across grid. Calibrated hover scaling to 1.08. Bound text overflow via .skillName.
-
-ProjectCard & List: Converted internal card architecture to adaptive Flexbox column model. Introduced .heroCard [class*="projectCardContentWrapper"] for Bento tile vertical text centering. Updated project descriptions with 2026 technical metrics (8.89s build optimization, AVIF/WebP image pipeline). Upgraded card container to semantic . Purged hover/scroll transform conflicts to protect .95 dampening.
-
-Footer: Synced .footerContents, integrated semantic  tags, and moved social navigation inline.
-
-Theme System: Replaced hardcoded background with var(--background-color) in App.module.css. Standardized [data-theme='dark'] in index.css. Corrected 100hv viewport typo to 100vh.
-
-iOS Hardware Audit: Tested via Crostini Port 4173. Zero dropped frames, zero CLS, stable -webkit-backdrop-filter.
-
-📋 Current Task Log & Startup Backlog
-[x] Avatar Image Alignment: Correct image stack alignment during dynamic stack/unstack sequences in HeroCard.
-
-[x] Rogue Oval Removal: Diagnose and eliminate the rogue empty oval element rendering on initial page load.
-
-[x] Mobile Avatar Balance: Calibrated .avatarWrapper vertical margins and unified image layer positioning across mobile viewports.
-
-[ ] Sub-Component Glass Reactivity: Verify dark glass theme reactivity across all sub-components in light mode.
-
-[ ] Serverless Form Handler: Open src/components/Contact (or Form Handler) to audit endpoint wire-up.
-
-[ ] Standard 8 Interface Audit: Final cross-browser overlay compliance check on Footer/Social interactive layers (pointer-events: none).
-
-[ ] Deployment Pipeline: Finalize hosting platform selection (Vercel / Netlify / GitHub Pages) and asset pipeline tests.
-
-💾 Environment & Git State Protocol
-Startup Protocol:
-
-git stash pop
-
-npm run dev
-
-Load protocol and currenttask files.
-
-Build Verification: npm run build green (~8.89s threshold, zero compiler/PostCSS warnings).
-
-Working Tree: Clean, tracked, synchronized with remote origin/main.
-
-📝 Recent Session Summaries
-Phase & Focus: Phase 4 (Hardening & Polish) – Hero Section Visual & Morph Calibration
-
-Key Accomplishments:
-
-Resolved git merge conflicts in Docs/currenttask.md and src/components/HeroCard/HeroCard.module.css.
-
-Fixed mobile upward balance on the morphing avatar container by adjusting vertical spacing (1.2rem auto 0 auto) and layout dimensions.
-
-Refined waterDrift keyframe loop jump by aligning 0% and 100% border-radius values to guarantee a smooth, organic infinite wave loop.
-
-Integrated standard .95 dampening factor into the boat LERP physics mouse-tracking loop.
-
-Docs/history.md: Append a concise entry under your project history/dev log recording the theme architecture refactor (feat(index)).
-Session Stop Summary: portfolio2023-main
-Accomplishments & Progress:
-
-Completed Sub-task 2 (Ultra-Wide Boundary): Added dynamic container capping (max-width: 1950px + fluid side padding) to keep right-hand text balanced on widescreen displays (style(hero)).
-
-Completed Sub-task 3 (Footer Copyright Color): Replaced hardcoded accent colors with theme-reactive brand system variables (style(footer)).
-
-Completed Sub-task 4 (Icon Alignment): Refactored the social icon links using inline-flex, explicit square click targets (40px), parent gap, and synced the container padding to the 12.5vw vertical page spine (style(sociallinks)).
-
-Successfully advanced the Layout & Visual Polish Sprint through Sub-task 4, with Sub-task 5 (Light Theme & Video Harmony) up next
-Current Task: portfolio2023-main
-🎯 Active Target: Final Hardening & Deployment Pipeline
-The ACE Protocol: portfolio2023-main
-
-## 1. Architectural Standards
-
-[ ] **Hero Viewport & Typography Audit:** Fine-tune `clamp()` scale bounds on Hero header and subheadline to guarantee full visibility across viewports without crowding the avatar or video container.
-[ ] **Step 4 (Deployment Pipeline):** Finalize production build verification (`npm run build`) and configure Vercel/Netlify pipeline.
+**Current Version:** 2.9 (Liquid Physics & ACE Compliant)  
+**Build & Git Baseline:** `npm run build` green (~8.89s, zero warnings) | `main` synced with `origin/main`  
+**Current Phase:** Phase 4 — Hardening & Validation (In Progress) → Phase 5 — Deployment Pipeline (Pending)
 
 ---
 
-## 2. Technology Stack & Environment
-
-* **Core Engine:** React + Vite (Functional Components & Custom Hooks)
-* **Styling Layer:** CSS Modules (`*.module.css`) + Custom CSS Properties
-* **Version Control:** Git with Conventional Commits (`type(scope): description`)
-
----
-
-## 3. Sequential Daily Routine
-
-1. **Sync State:** `git pull origin main`
-2. **Environment Verification:** `npm install` + verify workspace tree
-3. **Branch Protection:** `git checkout -b <type>/<description>`
-4. **Dev Execution:** `npm run dev`
-5. **Session Management:** Execute official "Session Start" and "Session Stop" protocols to manage context.
+## Locked Engineering & Physics Standards
+* **Architecture & Semantics:** React + Vite, CSS Modules (`*.module.css`) + CSS Custom Properties, component barrel pattern (`index.js`), semantic HTML elements (`<article>`, `<section>`, `<nav>`, `<footer>`, etc.), and strict `camelCase` CSS Module class names.
+* **Fluid & Mobile-First Layout:** Global `clamp()` typography and `--section-gap`, mobile-first `min-width` media query escalation (including `1600px+` and `2200px+` tiers), and `10vw` vertical alignment spine across `About`, `Skills`, and `Projects`.
+* **Physics & Media Targets:** `0.95` dampening factor (UI tracking, boat LERP drift, menu transitions) with `0.05` multiplier, `rect.height / 2` viewport centering math, `1.08` hover scale, `4:5` (mobile) / `16:9` (desktop) aspect ratios, `<picture>` AVIF/WebP/JPEG pipelines, and `< 2.0MB` `videobg.mp4` (`1.8MB` verified).
+* **Commits & Startup Routine:** Lowercase Commitlint scopes (`feat(...)`, `style(...)`, `docs(...)`); startup sequence: `git stash pop` → `npm run dev` → load `protocolIRC.md` and `currenttask`.
 
 ---
 
-## 4. Git Conflict Resolution Protocol
+## Completed Milestones & Sprints
 
-1. **Save Current State:** `git stash push -m "CONFLICT_SAVE"`
-2. **Build Gate Verification:** Run `npm run build` to confirm baseline integrity.
-3. **Stage Fixed Dependencies:** `git add <filename>`
-4. **Resume Process:** `git rebase --continue` (or `git merge --continue`)
-5. **Safe Push:** `git push --force-with-lease`
+### Core Layout, Theme & Navigation
+* **Hero (`HeroCard`):** Removed legacy `#0ee1ac` accents; added `100vw` breakout, fluid `clamp()` typography, `vite-imagetools` (`herophoto.jpg`), split avatar asset, `0.95` boat LERP drift, symmetrical `50%` `waterDrift` loop, mobile spacing balance, and professional copy (`I&apos;M` entity escaping).
+* **About Section:** Applied `.modularBox` glass styling (`rgba(10, 20, 30, 0.6)` + `15px` backdrop blur), `1.2fr 2fr` desktop grid ratio, `clamp(1.1rem, 1vw, 1.3rem)` `.blurb` scaling, `<picture>` AVIF/WebP/JPEG assets (`aboutphoto.jpg` < 8 kB), and fixed `aboutBlurb` casing.
+* **Burger Menu:** Built `100dvh` curtain layout, `translateY(-50%)` rotation alignment, `#ffd700` hover accent, and `pointer-events` protection; resolved media query nesting issues.
+* **Skills & Projects:** Applied `.modularBox` and `1.08` hover scale across the skills grid; converted `ProjectCard` to a Flexbox column layout with scroll-sync parallax, Bento tile text centering, and 2026 build/asset metrics.
+* **Footer & Theme System:** Updated `.footerContents` and social links (`40px` targets, `inline-flex`, `12.5vw` alignment); standardized `var(--background-color)`, `[data-theme='dark']`, and `100vh` (fixing `100hv`).
 
----
+### Recent Sprint & Session Highlights
+* **Multi-Tier Viewport Polish:** Added `1600px+` and `2200px+` scaling tiers, ultrawide capping (`max-width: 1950px` + fluid side padding), light-theme lighthouse adaptation, and `min-width` progression (`0px+`, `768px`, `1024px+`) with invalid `minmax(3.0, 1.3fr)` fixed to `minmax(0, 1.3fr)`.
+* **Hero Avatar & Merge Hygiene:** Resolved merge conflicts across `Docs/currenttask.md` and `HeroCard.module.css`, eliminated the initial rogue oval artifact, calibrated avatar wrapper margins (`1.2rem auto 0 auto`), and aligned `waterDrift` start/end keyframes.
+* **Build & Hardware Verification:** Verified production builds (`npm run build`), local preview serving (`npm run serve` / port `4173`), and smooth UI/backdrop behavior across viewports.
 
-## 5. Architectural Decisions & Milestones
-
-* **Scroll-Sync Parallax Decision:** Deprecated hover-zoom for `ProjectCard` stickers in favor of scroll-sync parallax for consistent behavior across touch and desktop interfaces.
-* **Physics Constant:** All floating and interactive elements operate with a `0.95` dampening multiplier to deliver a heavy, fluid feel.
-
----
-
-## 6. Project Roadmap Status
-
-- [x] **Phase 1: Structural Core** (Hero layout, Burger Menu)
-- [x] **Phase 2: Design System** (.modularBox glass, fluid clamp typography)
-- [x] **Phase 3: Glass & Physics Sprint** (.95 dampening calibration, mobile avatar physics)
-- [▶] **Phase 4 & 5: Hardening & Deployment Pipeline** (CURRENT STATION)
-current task first thing 
-
-
-For example, sticking purely to min-width escalation:
-
-Base styles: Mobile layout (0px upwards).
-
-@media (min-width: 768px): Tablet tier (stacked or balanced spacing, perfect for Nest Hub and iPads).
-
-@media (min-width: 1200px): Full desktop 2-column grid.
-
-That way, every screen size is handled smoothly, and we stay 100% compliant with our min-width protocol standard.
-Session Wrap-Up Summary
-Mobile-First Progression: Kept the fluid mobile baseline (0px+), dedicated @media (min-width: 768px) tier, and @media (min-width: 1024px) two-column grid without min-height gating.
-
-[X] Grid & Spacing Fixes: Fixed the invalid minmax(3.0, 1.3fr) track to minmax(0, 1.3fr), tightened vertical alignment/spacing across .name, .heroBlurb, and .heroInfo, and stepped up .avatarWrapper (clamp(240px, 31vw, 350px)).
-
-Next Up Whenever You Return: Final deployment pipeline configuration (Vercel / Netlify) and testing asset distribution, plus revisiting Nest Hub and ultrawide scaling if you want another pass later.
+## Carry-Over Items (Handed to Current Task)
+* Verify dark/light theme glass reactivity across all sub-components.
+* Wire and validate the serverless contact form handler (`ContactForm.jsx` / endpoint) and environment variables.
+* Complete final `pointer-events` / overlay checks and configure hosting (`Vercel` / `Netlify`) with SPA routing rules.
