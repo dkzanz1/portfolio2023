@@ -40,7 +40,11 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={styles.contactForm}>
+    <form
+      id="contact"
+      onSubmit={handleSubmit(onSubmit)}
+      className={styles.contactForm}
+    >
       <h3>Contact form</h3>
       <div>
         <label>

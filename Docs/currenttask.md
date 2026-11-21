@@ -5,9 +5,9 @@
 ## Active Backlog & Next Immediate Actions
 
 ### 1. Navigation & Dropdown Fixes
-- [ ] Add explicit `id` attributes to main section containers (`#about`, `#projects`, `#skills`, `#contact`).
-- [ ] Wire mobile/burger dropdown links (`handleNavClick`) to smooth-scroll handlers and close mobile overlay state on click.
-- [ ] Ensure `html { scroll-behavior: smooth; }` is active in global CSS.
+- [x] Add explicit `id` attributes to main section containers (`#about`, `#projects`, `#skills`, `#contact`).
+- [X] Wire mobile/burger dropdown links (`handleNavClick`) to smooth-scroll handlers and close mobile overlay state on click.
+- [x] Ensure `html { scroll-behavior: smooth; }` is active in global CSS.
 
 ### 2. Contact Form & Theme Hardening
 - [ ] Audit dark/light theme glass reactivity across sub-components in light mode.

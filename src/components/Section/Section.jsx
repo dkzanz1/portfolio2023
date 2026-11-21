@@ -20,7 +20,7 @@ const SkillsGrid = () => {
   ];
 
   return (
-    <section className={styles.skillsSection}>
+    <section id="skills" className={styles.skillsSection}>
       <h2 className={styles.title}>Professional Stack</h2>
       <div className={styles.grid}>
         {techStack.map((tech) => (

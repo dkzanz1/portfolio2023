@@ -7,7 +7,7 @@ import styles from "./ProjectCardList.module.css";
 const ProjectCardRender = () => {
   return (
     // Apply the grid layout class here
-    <section className={styles.projectsGrid}>
+    <section id="projects" className={styles.projectsGrid}>
       {projectInfo.map((project, index) => {
         // Dynamically add the heroCard class to the very first card item
         const cardClassName =

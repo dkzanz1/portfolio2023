@@ -7,7 +7,11 @@ import myPhotoJpg from "../../assets/images/lighthouse.jpeg?width=680&quality=75
 function About() {
   return (
     <>
-      <section className={styles.aboutContainer} aria-labelledby="about-title">
+      <section
+        id="about"
+        className={styles.aboutContainer}
+        aria-labelledby="about-title"
+      >
         {/* The New Image Column */}
         <div className={styles.imageWrapper}>
           <picture className={styles.pictureContainer}>
@@ -35,7 +39,7 @@ function About() {
             environments, I translate rigorous systems management and calm
             problem-solving into clean, optimized, and semantic code. Beyond
             technical execution, I bring a mature perspective that serves as a
-            force multiplier for engineering teams,reducing management overhead
+            force multiplier for engineering teams, reducing management overhead
             through strict workflow discipline and effective
             communication.&quot;
           </p>
