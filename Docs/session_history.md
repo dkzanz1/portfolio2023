@@ -32,3 +32,4 @@
 * Verify dark/light theme glass reactivity across all sub-components.
 * Wire and validate the serverless contact form handler (`ContactForm.jsx` / endpoint) and environment variables.
 * Complete final `pointer-events` / overlay checks and configure hosting (`Vercel` / `Netlify`) with SPA routing rules.
+Completed This Session: Audited dark/light theme glass reactivity across HeroCard.module.css, About.module.css, Projects.module.css, Skills.module.css, and ContactForm.module.css, moved hardcoded colors/shadows/borders onto CSS custom properties, cleaned up duplicate rules, and fixed light-mode contrast on the hero scroll indicator.

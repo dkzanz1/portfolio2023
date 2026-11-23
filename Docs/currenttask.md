@@ -5,12 +5,12 @@
 ## Active Backlog & Next Immediate Actions
 
 ### 1. Navigation & Dropdown Fixes
-- [x] Add explicit `id` attributes to main section containers (`#about`, `#projects`, `#skills`, `#contact`).
+- [x] Add explicit `id` attributes to main section containers (`#about`, `#projects`,`#skills`,`#contact`).
 - [X] Wire mobile/burger dropdown links (`handleNavClick`) to smooth-scroll handlers and close mobile overlay state on click.
 - [x] Ensure `html { scroll-behavior: smooth; }` is active in global CSS.
 
 ### 2. Contact Form & Theme Hardening
-- [ ] Audit dark/light theme glass reactivity across sub-components in light mode.
+- [x] Audit dark/light theme glass reactivity across sub-components in light mode.
 - [ ] Obtain Web3Forms Access Key from web3forms.com.
 - [ ] Create/update local `.env` with `VITE_WEB3FORMS_ACCESS_KEY` (and verify `.env` is in `.gitignore`).
 - [ ] Update `ContactForm.jsx` to post JSON payload asynchronously to `https://api.web3forms.com/submit`.

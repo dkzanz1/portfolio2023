@@ -1,79 +1,74 @@
 /* 1. Mobile-First Default: Single Column Stacking */
 
 .projectsGrid {
-  /* Set up the parent container as a grid */
   display: grid;
-  /* STANDARD 6: Fluid scaling without snapping*/
-  /* This creates 1 column by default, but automatically switches to 4 
-     when there is enough space for each card to be at least 320px. 
-     No media query required for the basic shift. */
-  grid-template-columns:1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
-  padding:1.5rem;/* MOBILE DEFAULT: 1.5rem padding (Standard 2) */
-  max-width: 2800px; /* Increased to allow more spread */
+  padding: 1.5rem;
+  max-width: 2800px;
   margin: 0 auto;
   width: 100%;
-  /* 2. THE SECRET SAUCE: 'dense' fills the gaps created by large cards */
   grid-auto-flow: dense;
+}
 
-    }
+/* CHANGE: Added glass fallback, backdrop-filter, and theme-reactive border via --glass-border / --primary-color. */
 .card {
-  height: auto; /* Force the wrapper to match the grid row height */
-/* Fix: Give it a baseline height for mobile */
+  height: auto;
   min-height: 450px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--primary-color);
-  border-radius: clamp(10px, 2vw, 20px); /* Fluid rounding */
+  background-color: var(--card-bg, var(--glass-bg));
+  backdrop-filter: blur(var(--glass-blur, 15px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 15px));
+  border: 1px solid var(--glass-border, var(--primary-color));
+  border-radius: clamp(10px, 2vw, 20px);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  /* STANDARD 8: Cohesive Physics (Matches your .95 bounce) */
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  position: relative; /* Anchor for the absolute children */
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1),
+    border-color 0.4s ease;
+  position: relative;
 }
+
 .card > * {
-  height: 100%; /* Force the ProjectCard component to match the wrapper */
-  flex: 1; /* This tells the ProjectCard component to grow to fill the .card wrapper */
+  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.card:hover {
-  /* Subtle lift per Standard 8 */
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.35);
-}
-
-.cardImage {
-  width: 100%;
- flex: 1; /* Allow the image to grow and fill the available space */
-  /* Use aspect-ratio instead of fixed height: 200px */
-  aspect-ratio: 16/9; 
-  object-fit: cover;
-  border-bottom: 1px solid var(--primary-color);
-/* Ensure the image inside also respects the physics */
-  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-.card:hover .cardImage {
-  transform: scale(1.08); /* The .95 dampening zoom effect */
-}
+/* CHANGE: Consolidated duplicate .card:hover blocks and routed box-shadow through --box-shadow-color. */
 .card:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+  border-color: var(--primary-color);
+  box-shadow: 0 30px 60px var(--box-shadow-color, rgba(0, 0, 0, 0.3));
 }
+
+/* CHANGE: Routed card image divider border through --glass-border / --primary-color. */
+.cardImage {
+  width: 100%;
+  flex: 1;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--glass-border, var(--primary-color));
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card:hover .cardImage {
+  transform: scale(1.08);
+}
+
 .cardBody {
-  padding: clamp(2rem, 5vw, 4rem); /* Fluid breathing room */
+  padding: clamp(2rem, 5vw, 4rem);
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 4vw, 3rem);
-  /* To Ensure content pushes to the top */
-  height :100%;
+  height: 100%;
   justify-content: center;
 }
 
+/* CHANGE: Removed redundant color: var(--primary-color) line that was immediately overridden by var(--text-color). */
 .cardTitle {
-  font-size: clamp(1.8rem, 3vw, 3rem); /* Standard 6 Typography */
-  color: var(--primary-color);
+  font-size: clamp(1.8rem, 3vw, 3rem);
   color: var(--text-color);
   line-height: 1.2;
   margin: 0;
@@ -84,79 +79,72 @@
   line-height: 1.8;
   color: var(--text-color);
   opacity: 0.9;
-  /* Standard 6: Prevent lines from getting too long within the card */
   max-width: 45ch;
 }
 
-
 /* 2. Large Screen Exception: Two-by-Two Stacking */
-
-/* Use a Media Query to switch the layout ONLY when the screen is wide enough.
-   We'll use 922px to match the breakpoint you mentioned earlier. */
 @media (min-width: 768px) {
- .projectsGrid {
+  .projectsGrid {
     grid-template-columns: 1fr 1fr;
     padding: 2rem 5vw;
   }
-}   
+}
+
 /* --- BENTO LOGIC: Feature scaling ---(Bento Entry & The 10vw Spine) */
 @media (min-width: 1024px) {
   .projectsGrid {
-/* 3 Columns creates the "Rule of Thirds" balance */
     grid-template-columns: repeat(3, 1fr);
-    /* We define a base row height so 'span 2' actually looks tall */
     grid-auto-rows: minmax(400px, auto);
-    padding-left: 10vw; /* Standard 6: Spine Alignment */
+    padding-left: 10vw;
     padding-right: 5vw;
     gap: 3rem;
   }
+
   .card {
-    height: 100%; /* The Handshake only happens here */
+    height: 100%;
     min-height: 0;
   }
 
-  /* bento feature Make the first project stand out as a 'Hero' tile */
-
   .card:nth-child(1) {
     grid-column: span 2;
-    grid-row: span 2; /* Balance the height against the first card */
+    grid-row: span 2;
   }
-  /* SURGICAL FIX FOR HERO CARD CENTERING */
-  .heroCard [class*= "projectCardContentWrapper"]{
-    justify-content: center !important; /* Overrides space-between */
-    gap: 2.5rem; /* Creates a clean, deliberate separation between title and body */
+
+  .heroCard [class*="projectCardContentWrapper"] {
+    justify-content: center !important;
+    gap: 2.5rem;
   }
 
   .heroCard .projectCardTitle,
   .heroCard .projectCardInfo {
-    max-width: 65ch; /* Keeps line length tight and professional inside the wide layout */
-    margin: 0 auto;  /* Perfectly centers the blocks horizontally */
+    max-width: 65ch;
+    margin: 0 auto;
   }
+
   .card:nth-child(3) {
-    grid-row: span 2; /* Tall box on the far right */
+    grid-row: span 2;
   }
-  /* FOURTH CARD: Will automatically fill the gap under the 1st card 
-     thanks to grid-auto-flow: dense */
+
   .card:nth-child(4) {
     grid-column: span 2;
   }
-  /* FIX: Wrap the plain text class in :global so the CSS module system leaves it alone */
+
   :global(.bento-hero-tile) :global(.projectCardContentWrapper) {
-    justify-content: center !important; 
-    gap: 2.5rem; 
+    justify-content: center !important;
+    gap: 2.5rem;
   }
 
   :global(.bento-hero-tile) :global(.projectCardTitle),
   :global(.bento-hero-tile) :global(.projectCardInfo) {
-    max-width: 65ch; 
-    margin: 0 auto;  
+    max-width: 65ch;
+    margin: 0 auto;
   }
 }
-   /* ULTRA-WIDE: Utilizing the 27" Real Estate */
+
+/* ULTRA-WIDE: Utilizing the 27" Real Estate */
 @media (min-width: 1800px) {
   .projectsGrid {
-
-    grid-auto-rows: minmax(400px, auto); /* Taller rows for bigger screens */
+    grid-auto-rows: minmax(400px, auto);
     gap: 6rem;
+  }
 }
-} 

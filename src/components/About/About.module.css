@@ -1,86 +1,71 @@
-:root {
-  --primary-color: #00d4ff; 
-  --section-gap: clamp(3rem, 8vh, 6rem);
-  --glass-bg: rgba(2, 12, 23, 0.6); /* 60% Tint */
-  --glass-blur: 15px;
-  --dampening-float: 0.95s; /* Linked to your .95 protocol figure */
-}
-
+/* CHANGE: Removed stray :root block from inside About.module.css and added fallback to --section-gap. */
 .aboutContainer {
   width: 94%;
-  margin: var(--section-gap) auto;
+  margin: var(--section-gap, clamp(3rem, 8vh, 6rem)) auto;
   display: grid;
-  grid-template-columns: 1fr; /* Single column mobile */
+  grid-template-columns: 1fr;
   gap: 2.5rem;
   align-items: center;
 }
 
-/* THE FIX: i have  turned the Wrapper into the Oval Frame */
+/* CHANGE: Added fallback to --dampening-float. */
 .imageWrapper {
   display: flex;
   justify-content: center;
- 
-  width: clamp(260px, 35vw,420px); 
-  aspect-ratio: 4 / 5; 
+  width: clamp(260px, 35vw, 420px);
+  aspect-ratio: 4 / 5;
   margin: 0 auto;
   will-change: transform;
-  transition: transform var(--dampening-float) cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform var(--dampening-float, 0.95s) cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
 .pictureContainer {
   width: 100%;
   height: 100%;
   display: block;
 }
 
+/* CHANGE: Merged duplicate .stickerImg rules, kept height: 100% and border-radius: 16px, and moved shadow/glow onto variables. */
 .stickerImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 16px; /* Makes it an Oval because parent is 4:5 */
+  border-radius: 16px;
   border: 1px solid var(--primary-color);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  pointer-events: none; /* Standard 8: No interaction hijacking */
-}
-
-
-.stickerImg {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px; /* Optional, depending on your container look */
- 
+  box-shadow: 0 8px 32px var(--box-shadow-color, rgba(0, 0, 0, 0.4));
+  pointer-events: none;
   transition: filter 0.5s ease, opacity 0.5s ease, border-color 0.5s ease;
-  filter: drop-shadow(0 0 15px rgba(14, 225, 172, 0.2));
+  filter: drop-shadow(0 0 15px var(--sticker-glow, rgba(14, 225, 172, 0.2)));
 }
 
 /* Light Theme: Shifts the blue lighthouse graphic into warm orange/amber tones */
 :global([data-theme='light']) .stickerImg {
-  /* hue-rotate(320deg) or hue-rotate(-40deg) shifts cyan/blue directly into warm orange/amber */
   filter: hue-rotate(210deg) saturate(1.8) brightness(0.95);
- 
 }
+
 /* REUSABLE MODULAR BOX UTILITY */
+/* CHANGE: Replaced invisible white border on light surfaces with --glass-border / --primary-color and used --box-shadow-color. */
 .modularBox {
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur, 15px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 15px));
   border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-  padding: clamp(1.5rem, 5vw, 2.5rem); /* Fluid Padding */
+  border: 1px solid var(--glass-border, var(--primary-color));
+  box-shadow: 0 8px 32px 0 var(--box-shadow-color, rgba(0, 0, 0, 0.3));
+  padding: clamp(1.5rem, 5vw, 2.5rem);
 }
 
 /* THE TEXT BOX */
+/* CHANGE: Replaced white border/shadow with theme variables and added color: var(--text-color) for light-mode legibility. */
 .Aboutblurb {
   background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur, 15px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 15px));
   border-radius: 25px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-/* Specific styling overrides for the narrative box */
-  border-radius: 25px;
-  padding: clamp(1.5rem, 5vw, 4rem); /* Generous text container padding */
+  border: 1px solid var(--glass-border, var(--primary-color));
+  box-shadow: 0 8px 32px 0 var(--box-shadow-color, rgba(0, 0, 0, 0.3));
+  color: var(--text-color);
+  padding: clamp(1.5rem, 5vw, 4rem);
 }
 
 .sectionTitle {
@@ -89,7 +74,9 @@
   margin-bottom: 1rem;
 }
 
+/* CHANGE: Added explicit color: var(--text-color) so body text responds cleanly in light mode. */
 .blurb {
+  color: var(--text-color);
   font-size: clamp(1.1rem, 1vw, 1.3rem);
   line-height: 1.65;
 }
@@ -106,6 +93,6 @@
   }
 
   .imageWrapper {
-    margin: 0; /* Align to the 10vw spine */
+    margin: 0;
   }
 }

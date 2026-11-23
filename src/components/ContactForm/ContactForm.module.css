@@ -1,117 +1,121 @@
 /* ContactForm.module.css - Mobile-First Approach */
-/* /* only kebab style notation to be used */
-/* ---------------------------------------------------------------------- */
-/* BASE STYLES (Mobile) - Applied to all screen sizes initially */
+
+/* CHANGE: Replaced hardcoded dark rgba(10, 20, 30, 0.6) and white border with --glass-bg, --glass-border, and --text-color. */
 .contactForm {
-     /* 1. Reset Mobile Margin */
-  margin: 2rem auto; /* Center it with top/bottom breathing room on mobile */
-  width: 92%;       /* Use the majority of the screen width */
-  
-  /* Standard 8: Deep Sea Glass */
-  background-color: rgba(10, 20, 30, 0.6);
-  backdrop-filter: blur(15px);
-  border: 4px solid rgba(242, 246, 242, 0.2);
+  margin: 2rem auto;
+  width: 92%;
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur, 15px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 15px));
+  border: 2px solid var(--glass-border, var(--primary-color));
   padding: 1.5rem;
   border-radius: 20px;
-  box-sizing: border-box; /* Crucial: ensures padding doesn't add to width */
-  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
-      }
-      
-    .contactForm h3 {
-  color: var(--primary-color); /* Brand Highlight */
-  text-align: left; /* Align with spine */
+  box-sizing: border-box;
+  color: var(--text-color);
+  transition: transform 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.contactForm h3 {
+  color: var(--primary-color);
+  text-align: left;
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   margin-bottom: 2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-      }
-   /* Input Fields - Standardizing the 'Glass' look */
+}
+
+/* CHANGE: Replaced white-tinted input glass, hardcoded color: white, and missing box-sizing with theme tokens. */
 .contactInput {
   width: 100%;
   padding: 12px;
-  background-color: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--input-bg, var(--glass-bg));
+  border: 1px solid var(--glass-border, var(--primary-color));
   border-radius: 8px;
-  color: white;
+  color: var(--text-color);
   font-family: inherit;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
+  box-sizing: border-box;
 }
 
+/* CHANGE: Replaced hardcoded #0ee1ac and white focus fill with --primary-color and --glass-bg. */
 .contactInput:focus {
   outline: none;
-  border-color: #0ee1ac;
-  background-color: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-color);
+  background-color: var(--glass-bg);
 }
+
+/* CHANGE: Replaced hardcoded color: white with --button-text-color / --text-color fallback for contrast safety. */
 .button {
   width: 100%;
   padding: 12px;
-  background-color: var(--primary-color, #2563eb);
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--button-text-color, var(--text-color));
   border: none;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .button:hover {
   opacity: 0.9;
 }
 
+/* CHANGE: Routed error text color through --error-color with a high-contrast fallback. */
 .errorText {
-  color: #f87171;
+  color: var(--error-color, #dc2626);
   font-size: 0.85rem;
   display: block;
   margin-top: -0.5rem;
   margin-bottom: 1rem;
 }
-   
 
-      @media (min-width: 600px) {
-        .contactForm {
-          max-width: 600px; /* Limits form width on larger screens for better readability */
-          margin: 50px auto; /* Centers the form horizontally, adds top margin */
-          padding: 20px; /* Increased padding for larger screens */
-          border-radius: 10px; /* Increased border radius for larger screens */
-          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
-        }
-      
-        .contactForm h3 {
-          margin-bottom: 20px; /* Increased margin for the title */
-        }
-      
-        .contactInput {
-          padding: 10px; /* Increased padding for inputs */
-          border-radius: 5px; /* Increased border radius for inputs */
-        }
-      
-        .contactForm textarea.contactInput {
-          min-height: 100px; /* Increased height for textarea */
-        }
-      
-        .button {
-          padding: 10px 20px; /* Increased padding for the button */
-          border-radius: 5px; /* Increased border radius for the button */
-        }
-      }
-         /* Desktop Expansion */
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
+  /* CHANGE: Routed desktop shadow through --box-shadow-color fallback. */
   .contactForm {
-    /* Utilizing horizontal space without losing the spine */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem; /* Space between columns */
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px var(--box-shadow-color, rgba(0, 0, 0, 0.1));
   }
-  
-  .contactForm h3, 
-  .contactForm div:nth-child(4), /* Message textarea */
+
+  .contactForm h3 {
+    margin-bottom: 20px;
+  }
+
+  .contactInput {
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .contactForm textarea.contactInput {
+    min-height: 100px;
+  }
+
   .button {
-    grid-column: 1 / -1; /* Stretch these across both columns */
+    padding: 10px 20px;
+    border-radius: 5px;
   }
 }
-      
+
+@media (min-width: 1024px) {
+  .contactForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .contactForm h3,
+  .contactForm div:nth-child(4),
+  .button {
+    grid-column: 1 / -1;
+  }
+}
       
       
       

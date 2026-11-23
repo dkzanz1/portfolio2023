@@ -16,11 +16,12 @@
 /* ============================================================
    1. CORE CONTAINER (Mobile-First)
    ============================================================ */
+/* CHANGE: Added --hero-bg fallback so dark hero stage can react if overridden by theme tokens. */
 .heroSection {
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  background: #000;
+  background: var(--hero-bg, #000000);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,13 +40,13 @@
   z-index: 1;
 }
 
+/* CHANGE: Routed overlay gradient and text color through --hero-overlay-bg and --hero-text with safe fallbacks. */
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom, 
-    rgba(0, 0, 0, 0.4) 0%, 
-    rgba(0, 0, 0, 0.85) 100%
+  background: var(
+    --hero-overlay-bg,
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.85) 100%)
   );
   z-index: 3;
   pointer-events: none;
@@ -54,19 +55,20 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fdfbf7;
+  color: var(--hero-text, #fdfbf7);
   padding: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 4vw, 2rem);
 }
 
 /* ============================================================
    2. CONTENT ELEMENTS (Fluid Mobile Baseline)
    ============================================================ */
+/* CHANGE: Replaced hardcoded shadow rgba with --box-shadow-color fallback. */
 .name {
-  font-size: clamp(2rem, 7vw + 1rem, 4.5rem); 
+  font-size: clamp(2rem, 7vw + 1rem, 4.5rem);
   color: var(--primary-color);
   text-transform: uppercase;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 12px var(--box-shadow-color, rgba(0, 0, 0, 0.4));
   margin: 0.5rem 0 0 0;
   text-align: center;
   max-width: 15ch;
@@ -74,34 +76,38 @@
   z-index: 4;
 }
 
+/* CHANGE: Replaced hardcoded shadow rgba with --box-shadow-color fallback. */
 .heroBlurb {
-  width: min(90%, 800px); 
+  width: min(90%, 800px);
   margin: 0.75rem auto;
   color: var(--primary-color);
   font-size: clamp(0.95rem, 1.5vw + 0.5rem, 1.25rem);
   line-height: 1.35;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px var(--box-shadow-color, rgba(0, 0, 0, 0.5));
   text-align: center;
 }
 
+/* CHANGE: Replaced hardcoded shadow rgba with --box-shadow-color fallback. */
 .heroInfo {
   color: var(--primary-color);
   font-size: clamp(0.85rem, 1vw + 0.4rem, 1.1rem);
   line-height: 1.3;
   margin-top: 0.5rem;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 8px var(--box-shadow-color, rgba(0, 0, 0, 0.5));
   text-align: center;
 }
 
 /* --- AVATAR WRAPPER --- */
+/* CHANGE: Added explicit fallbacks on --box-shadow-color and --glass-border so avatar glass border/shadow never break. */
 .avatarWrapper {
   position: relative;
   width: clamp(140px, 35vh, 240px);
   aspect-ratio: 1 / 1;
   background: var(--glass-bg);
   border: 2px solid var(--primary-color);
-  box-shadow: 0 10px 30px var(--box-shadow-color), inset 0 0 15px var(--glass-border);
-  overflow: hidden; 
+  box-shadow: 0 10px 30px var(--box-shadow-color, rgba(0, 0, 0, 0.4)),
+    inset 0 0 15px var(--glass-border, rgba(255, 255, 255, 0.15));
+  overflow: hidden;
   z-index: 4;
   pointer-events: auto;
   animation: waterDrift 12s ease-in-out infinite;
@@ -121,9 +127,11 @@
   }
 }
 
+/* CHANGE: Replaced hardcoded grey/black hover border and shadows with --primary-color, --glass-border, and --box-shadow-color. */
 .avatarWrapper:hover {
-  border-color: rgba(86, 83, 83, 0.9);
-  box-shadow: 0 0 25px rgba(55, 52, 52, 0.4), 0 20px 40px rgba(0, 0, 0, 0.7);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 25px var(--glass-border, rgba(255, 255, 255, 0.2)),
+    0 20px 40px var(--box-shadow-color, rgba(0, 0, 0, 0.6));
   transform: scale(1.03);
 }
 
@@ -143,7 +151,6 @@
 }
 
 .imgBase {
-  position: absolute;
   z-index: 1;
   opacity: 1;
 }
@@ -184,7 +191,7 @@
 }
 
 .circleImg.active {
-  opacity: 1; 
+  opacity: 1;
 }
 
 /* ============================================================
@@ -202,8 +209,8 @@
 }
 
 .boatAnimationWrapper {
-  position: absolute; 
-  top: 50%; 
+  position: absolute;
+  top: 50%;
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   z-index: 5;
@@ -220,9 +227,9 @@
 
 @keyframes bob {
   0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(10px) rotate(5deg); }  
-  100% { transform: translateY(0px) rotate(0deg); }  
-} 
+  50% { transform: translateY(10px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
 
 /* ============================================================
    4. SCROLL INDICATOR
@@ -241,18 +248,20 @@
   opacity: 0.85;
 }
 
+/* CHANGE: Added --hero-indicator-color defaulting to #ffffff so the mouse & arrows stay bright over the dark hero overlay in light mode. */
 .mouse {
   width: 30px;
   height: 50px;
-  border: 2px solid #ffffff;
+  border: 2px solid var(--hero-indicator-color, var(--indicator-color, #ffffff));
   border-radius: 20px;
   position: relative;
 }
 
+/* CHANGE: Matched scroll wheel fill to --hero-indicator-color so it remains clearly visible in light mode. */
 .wheel {
   width: 6px;
   height: 10px;
-  background: var(--text-primary, #ffffff);
+  background: var(--hero-indicator-color, var(--indicator-color, #ffffff));
   border-radius: 3px;
   position: absolute;
   top: 8px;
@@ -261,12 +270,13 @@
   animation: scrollWheel 2.5s infinite ease-in-out;
 }
 
+/* CHANGE: Matched arrow borders to --hero-indicator-color so bounce chevrons stay sharp in light mode. */
 .arrow span {
   display: block;
   width: 12px;
   height: 12px;
-  border-bottom: 3px solid #ffffff;
-  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid var(--hero-indicator-color, var(--indicator-color, #ffffff));
+  border-right: 3px solid var(--hero-indicator-color, var(--indicator-color, #ffffff));
   transform: rotate(45deg);
   margin: -4px;
   animation: arrowBounce 2s infinite;
@@ -283,6 +293,7 @@
   50% { opacity: 1; }
   100% { opacity: 0; transform: rotate(45deg) translate(4px, 4px); }
 }
+
 /* ============================================================
    5. TABLET & HUB ESCALATION (min-width: 768px)
    ============================================================ */
@@ -309,13 +320,14 @@
     font-size: clamp(0.9rem, 1.1vw + 0.4rem, 1.15rem);
   }
 }
+
 /* ============================================================
-   5. DESKTOP ESCALATION (Standard 2: Min-Width ONLY)
+   6. DESKTOP ESCALATION (Standard 2: Min-Width ONLY)
    ============================================================ */
-@media (min-width: 1100px)  {
+@media (min-width: 1100px) {
   .heroSection {
     width: 100vw;
-    max-width: 100vw; 
+    max-width: 100vw;
     min-width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-right: calc(-50vw + 50%);
@@ -324,18 +336,17 @@
     margin-bottom: 0;
   }
 
+  /* CHANGE: Fixed invalid minmax(3.0, ...) unit to minmax(0, ...) and moved desktop gradient to --hero-desktop-overlay-bg. */
   .overlay {
     display: grid;
-    grid-template-columns: minmax(3.0, 1.3fr) minmax(260px, 1fr);
+    grid-template-columns: minmax(0, 1.3fr) minmax(260px, 1fr);
     gap: clamp(1.5rem, 4vw, 5rem);
-/* FIXED: Separated row-gap (tight vertically) from column-gap (between text and avatar) */
     row-gap: 0.5rem;
     column-gap: clamp(2.5rem, 5vw, 7rem);
-
-    grid-template-areas: 
+    grid-template-areas:
       "title image"
       "blurb image";
-    align-content: center;  
+    align-content: center;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -344,12 +355,10 @@
     padding-inline: clamp(2rem, 5vw, 8rem);
     padding-block: clamp(2rem, 4vh, 4rem);
     text-align: left;
-    background: linear-gradient(
-      90deg,
-     rgba(0,0,0,0.75) 0%,
-        rgba(0,0,0,0.2) 60%, 
-        transparent 100%
-        );
+    background: var(
+      --hero-desktop-overlay-bg,
+      linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%)
+    );
   }
 
   .name {
@@ -360,11 +369,11 @@
     line-height: 1.1;
     margin: 0;
     max-width: none;
-  }  
+  }
 
   .avatarWrapper {
     grid-area: image;
-    justify-self: end; 
+    justify-self: end;
     align-self: center;
     margin: 0;
     width: clamp(240px, 31vw, 350px);
@@ -379,12 +388,14 @@
     font-size: clamp(1.1rem, 1.5vw, 1.75rem);
     line-height: 1.35;
   }
-.heroBlurb h3 {
+
+  .heroBlurb h3 {
     margin: 0;
   }
+
   .heroInfo {
     text-align: left;
-margin-top: 0.5rem;
+    margin-top: 0.5rem;
     font-size: clamp(0.95rem, 1.1vw, 1.3rem);
     line-height: 1.35;
   }
@@ -439,6 +450,7 @@ margin-top: 0.5rem;
     width: clamp(320px, 27vw, 520px);
   }
 }
+
 /* ============================================================
    8. SUPER-ULTRAWIDE ESCALATION (min-width: 2200px)
    ============================================================ */
