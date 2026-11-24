@@ -73,6 +73,25 @@
   margin-top: -0.5rem;
   margin-bottom: 1rem;
 }
+.successMessage {
+  color: var(--success-color, var(--primary-color, #16a34a));
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+.errorMessage {
+  color: var(--error-color, #dc2626);
+  margin-top: 0.75rem;
+  font-weight: 500;
+}
+
+@media (min-width: 1024px) {
+  .successMessage,
+  .errorMessage {
+    grid-column: 1 / -1;
+    margin-top: 0;
+  }
+}
 
 @media (min-width: 600px) {
   /* CHANGE: Routed desktop shadow through --box-shadow-color fallback. */

@@ -7,7 +7,7 @@ function ContactForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     reset,
   } = useForm();
 
@@ -16,23 +16,36 @@ function ContactForm() {
   const onSubmit = async (data) => {
     setSubmissionStatus(null);
     try {
-      const endpoint = import.meta.env.VITE_CONTACT_ENDPOINT || "/api/contact";
-      const response = await fetch(endpoint, {
+      const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      if (!accessKey) {
+        throw new Error(
+          "Web3Forms access key is missing from environment variables.",
+        );
+      }
+
+      const payload = {
+        access_key: accessKey,
+        ...data,
+      };
+
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
       const result = await response.json();
-      console.log(result);
-      setSubmissionStatus("success");
-      reset();
+
+      if (result.success) {
+        setSubmissionStatus("success");
+        reset();
+      } else {
+        console.error("Web3Forms error response:", result);
+        setSubmissionStatus("error");
+      }
     } catch (error) {
       console.error("Error submitting form:", error);
       setSubmissionStatus("error");
@@ -95,18 +108,18 @@ function ContactForm() {
         </label>
       </div>
 
-      <button type="submit" className={styles.button}>
-        Submit
+      <button type="submit" className={styles.button} disabled={isSubmitting}>
+        {isSubmitting ? "Sending..." : "Submit"}
       </button>
 
       {submissionStatus === "success" && (
-        <div style={{ color: "green", marginTop: "10px" }}>
-          Thank you! Your message has been sent.
+        <div className={styles.successMessage}>
+          Thank you! Your message has been sent successfully.
         </div>
       )}
 
       {submissionStatus === "error" && (
-        <div style={{ color: "red", marginTop: "10px" }}>
+        <div className={styles.errorMessage}>
           An error occurred while sending your message. Please try again.
         </div>
       )}
