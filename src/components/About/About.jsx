@@ -27,7 +27,7 @@ function About() {
             />
           </picture>
         </div>
-        <article className={styles.Aboutblurb}>
+        <article className={styles.aboutBlurb}>
           <h2 id="about-title" className={styles.sectionTitle}>
             About
           </h2>

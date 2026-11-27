@@ -64,3 +64,8 @@
 * **Layout Spine Alignment:** `10vw` vertical alignment margin
 * **Hover Transform Scale:** `1.08`
 * **Media Asset Limits:** Video background `< 2.0MB` (`1.8MB` actual), About image `< 8KB`
+### 1. Burger Menu & Layout Alignment
+- [x] Align `Burger.module.css` and `Burger.jsx` trigger/nav rules to the `10vw` layout spine.
+- [x] Fix mobile touch target size floor to `44px` minimum (`clamp(44px, 6vw, 56px)`).
+- [x] Remove `100vw` horizontal overflow and replace overlay bounds with `position: fixed; inset: 0;`.
+- [x] Clean up JSX comment syntax errors and standardize colors to CSS custom properties (`var(--accent-gold)`).

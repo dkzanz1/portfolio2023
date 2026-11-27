@@ -31,7 +31,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--lighthouse-border, var(--primary-color));
   box-shadow: 0 8px 32px var(--box-shadow-color, rgba(0, 0, 0, 0.4));
   pointer-events: none;
   transition: filter 0.5s ease, opacity 0.5s ease, border-color 0.5s ease;
@@ -40,7 +40,9 @@
 
 /* Light Theme: Shifts the blue lighthouse graphic into warm orange/amber tones */
 :global([data-theme='light']) .stickerImg {
-  filter: hue-rotate(210deg) saturate(1.8) brightness(0.95);
+  border-color: 1px solid var(--lighthouse-border);
+  filter: hue-rotate(210deg) saturate(1.8) brightness(0.95)
+  drop-shadow(0 8px 20px var(--box-shadow-color, rgba(0, 0, 0, 0.18)));
 }
 
 /* REUSABLE MODULAR BOX UTILITY */
@@ -57,7 +59,7 @@
 
 /* THE TEXT BOX */
 /* CHANGE: Replaced white border/shadow with theme variables and added color: var(--text-color) for light-mode legibility. */
-.Aboutblurb {
+.aboutBlurb {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur, 15px));
   -webkit-backdrop-filter: blur(var(--glass-blur, 15px));
