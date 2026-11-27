@@ -4,13 +4,13 @@
 
 ---
 
-## 1. Quick CSS & Theme Reactivity Wins
-- [ ] **Task 1.1: Fix Lighthouse Border Theme Switch (Item 2)**
-  * Audit border styling on the lighthouse photo container in `About.module.css` / `HeroCard.module.css`.
-  * Replace hardcoded blue borders with a theme-aware CSS custom property (`var(--border-color, ...)` or `[data-theme='light']`).
+## 1. CSS & Theme Reactivity audit
+- [x] **Task 1.1: Fix Lighthouse Border Theme Switch (Item 2)**
+  * Audit border styling on the lighthouse photo container in `About.module.css`.
+  * Replace hardcoded blue border with a theme-aware CSS custom property via  index.css and set standard colors([data-theme='light']`).
   * Verify border transitions smoothly between dark and light themes without getting stuck on blue.
 
-- [ ] **Task 1.2: Upgrade Projects Text & Title Contrast (Item 3)**
+- [x] **Task 1.2: Upgrade Projects Text & Title Contrast (Item 3)**
   * Audit typography and background tint rules inside `Projects.module.css`.
   * Set project card body text to crisp high-contrast light text (`var(--text-primary)` / `#ffffff`).
   * Highlight project card titles with the signature blue accent while maintaining a 4.5:1 minimum accessibility contrast ratio.

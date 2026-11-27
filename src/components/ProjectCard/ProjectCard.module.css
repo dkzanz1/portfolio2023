@@ -1,105 +1,107 @@
-/* PARENT CONTAINER */
 .projectCardContainer {
-    height: 100%; /*content ditated the height*/
-    padding: 0;
-    overflow:visible;
-    width :100%;
+  height: 100%;
+  padding: 0;
+  overflow: visible;
+  width: 100%;
 }
 
 .projectCardContentWrapper {
-    position: relative;
-    width: 100%;
-    min-height: 480px;
-    /* Standard 6: Responsive Ratio - Square on mobile, Wide on desktop giving more room for text and image*/
-    border-radius: clamp(15px, 2vw, 25px);   
-    overflow: hidden;
-    isolation: isolate; /* Q.Creating new stacking context for z-index */
-    /* Add a subtle glass border to match the Nav-Glass theme */
-    border: 1px solid var(--glass-border);
-    /* Modern internal alignment layout */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem;
-    box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  border-radius: clamp(15px, 2vw, 25px);
+  overflow: hidden;
+  isolation: isolate;
+  border: 1px solid var(--glass-border, var(--primary-color));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  background-color: var(--overlay-dark, rgba(10, 15, 28, 0.85));
 }
 
 .projectCardTitle {
-    position: relative;
-    /* Standard 6: Fluid Typography using(Min 1.25rem, scales with width, Max 2rem) */
-    font-size: clamp(1.4rem, 2vw, 2.5rem);
-    font-weight: bold;
-    text-align: center;
-    line-height: 1.2;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, .7); /* Improved readability */  
-    padding: 0.8rem;
-    z-index:10;
-    background-color: var(--overlay-dark, rgba(0, 0, 0, .6)); /* Used protocol variables */
-    color: var(--primary-color);
-    border-radius: 8px;
-    width: 100%; 
-    box-sizing: border-box;
-    margin: 0 auto;
+  position: relative;
+  font-size: clamp(1.4rem, 2vw, 2.5rem);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.2;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85);
+  padding: 0.8rem 1rem;
+  z-index: 10;
+  background-color: rgba(10, 15, 28, 0.78);
+  color: var(--primary-color);
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .projectCardImg {
-    position :absolute;
-    inset:-15px; /* increasd to 15% to prevent white edges during the float */
-    width: 90%;
-    height: 90%;
-    object-fit:cover; /* Ensure the image covers the area without distortion */
-    will-change: transform; /* Hint for better performance during hover zoom */
-    z-index: 1; /* Ensure the image is behind the text */
-    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  opacity: 0.45;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .projectCardInfo {
-    position: relative;
-    z-index: 10;
-    background-color:var(--overlay-dark, rgba(0, 0, 0, .6));
-    /* color:var(--text-color-light, white); */
-    color: var(--primary-color);
-    /* Standard 6: Fluid body text */
-    font-size: clamp(0.95rem, 1.5vw, 1.25rem);
-    border: solid var(--border-color-light,silver) 1px;   
-    padding: 1rem;
-    border-radius: 8px;
-    width: 100%; 
-    box-sizing: border-box; /* Ensure padding doesn't affect overall width */
-    text-align: center;
-    margin: 0 auto;
-    line-height: 1.6;
+  position: relative;
+  z-index: 10;
+  background-color: rgba(10, 15, 28, 0.82);
+  color: #ffffff;
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.25));
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  line-height: 1.6;
 }
-/* end */
-/* note to self: Use a Media Query for larger screens (e.g., tablets and desktops) */
-/* However, the clamp function handles scaling for different screen sizes */
 
-/*===== Styles for laptops=====*/
-/* 2. Desktop Escalation (Standard 2) */
+.projectCardLink {
+  position: relative;
+  z-index: 10;
+  align-self: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgba(10, 15, 28, 0.85);
+  border: 1px solid var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
 @media (min-width: 1024px) {
-    .projectCardContainer {
-       
-        display: flex;
-    }
-    .projectCardContentWrapper {
-       /* FIX: Remove the fixed ratio so it can expand to fill Card 1's 2-row span */
-        min-height: 100%;
-        height: 100%;
-        padding: 2rem; /* More breathing room on larger screens */
-        flex: 1;
-    }
-    .projectCardTitle, .projectCardInfo {
-    /* Standard 8: Allow clicks to pass through to the wrapper if needed */
-    pointer-events: none; 
+  .projectCardContainer {
+    display: flex;
+  }
+
+  .projectCardContentWrapper {
+    min-height: 100%;
+    height: 100%;
+    padding: 2rem;
+    flex: 1;
+  }
+
+  .projectCardTitle,
+  .projectCardInfo,
+  .projectCardLink {
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
+  }
 
-.projectCardContentWrapper:hover .projectCardTitle {
-    transform: translate(4px); /* Subtle lift on hover */
-}
-.projectCardContentWrapper:hover .projectCardInfo {
-        transform: translateY(-4px);
-    }
+  .projectCardContentWrapper:hover .projectCardTitle {
+    transform: translateY(-4px);
+  }
 
+  .projectCardContentWrapper:hover .projectCardInfo {
+    transform: translateY(-4px);
+  }
 }

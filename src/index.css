@@ -5,7 +5,7 @@
 :root {
   /* THE GLASS STANDARD (DoD) - Default Dark Mode */
   --background-color: #0a141e;        /* Deep nautical dark base */
-  --text-color: #dbddde;              /* Off-white text */
+  --text-color: #f7f9fb;              /* Off-white text */
   --primary-color: #0055ff;           /* Nautical blue accent */
   --glass-bg: rgba(10, 20, 30, 0.6);   /* Dark glass utility */
   --glass-border: rgba(255, 255, 255, 0.1);
@@ -27,7 +27,7 @@
 /* Override variables for the LIGHT theme */
 [data-theme='light'] {
   --background-color: rgb(246, 217, 57);        /* Warm cream base */
-  --text-color: #1a1917;              /* Deep slate/charcoal text */
+  --text-color: #1a1919;              /* Deep slate/charcoal text */
   --primary-color: #d97706; 
   --lighthouse-border: #eab085;       /* Warm amber accent */
   --glass-bg: rgba(255, 253, 248, 0.85); 
