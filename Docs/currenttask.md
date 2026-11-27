@@ -1,28 +1,35 @@
 # Current Task: portfolio2023-main
 
-🎯 Active Target: Step 4 — Form Handler Integration, Nav Audit & Deployment
+## Session Wrap-Up Anchors
+- **Current Station:** Phase 4 & 5 — Hardening, Form & Navigation Setup
+- **Branch State:** `main` (up to date with `origin/main`)
+Session Protocol & Next Startup Task
+Current Task Status: Step 4 (Production Deployment) complete.
+
+Next Startup Priority:
+
+Add vercel.json SPA rewrite file to local root if not already committed, and push to GitHub.
+
+Verify live ContactForm.jsx submissions against VITE_WEB3FORMS_ACCESS_KEY.
+
+Perform final responsive viewport QA across mobile, Chromebook, and desktop viewports.
+# Current Task: portfolio2023-main
+
+🎯 Active Target: Step 4 — Live QA, Burger Menu Refinements & Production Polish
 
 ## Active Backlog & Next Immediate Actions
 
-### 1. Navigation & Dropdown Fixes
-- [x] Add explicit `id` attributes to main section containers (`#about`, `#projects`,`#skills`,`#contact`).
-- [x] Wire mobile/burger dropdown links (`handleNavClick`) to smooth-scroll handlers and close mobile overlay state on click.
-- [x] Ensure `html { scroll-behavior: smooth; }` is active in global CSS.
+### 1. Live Burger Menu & Layout Spine Refinement
+- [ ] Audit `Burger.module.css` overlay dimensions, padding, and font scaling against `10vw` layout spine on live viewports.
+- [ ] Verify tap target heights (minimum 44px) and spacing on small mobile screens (320px–390px).
 
-### 2. Contact Form & Theme Hardening
-- [x] Audit dark/light theme glass reactivity across sub-components in light mode.
-- [x] Obtain Web3Forms Access Key from web3forms.com.
-- [x] Create/update local `.env` with `VITE_WEB3FORMS_ACCESS_KEY` (and verify `.env` is in `.gitignore`).
-- [x] Update `ContactForm.jsx` to post JSON payload asynchronously to `https://api.web3forms.com/submit`.
-- [x] Complete final `pointer-events` / overlay interaction checks on interactive layers.
-
-### 3. Production Deployment & Hosting
-- [ ] Create `vercel.json` (or `public/_redirects`) for SPA fallback routing.
-- [ ] Configure environment variable (`VITE_WEB3FORMS_ACCESS_KEY`) in host dashboard (Vercel/Netlify).
-- [ ] Run final `npm run build` gate and push to trigger automated deployment.
+### 2. Live Production QA
+- [ ] Perform live form test on `ContactForm.jsx` to verify `VITE_WEB3FORMS_ACCESS_KEY` integration on the live host.
+- [ ] Deep-link/refresh test live sub-routes to confirm SPA fallback rewrite (`vercel.json`).
+- [ ] Run final cross-browser and viewport checks across mobile, Chromebook, and desktop.
 
 ---
 
 ## Session Wrap-Up Anchors
-- **Current Station:** Phase 4 & 5 — Hardening, Form & Navigation Setup
-- **Branch State:** `main` (up to date with `origin/main`)
+- **Current Station:** Step 4 — Live Production QA & Micro-Refinements
+- **Branch State:** `main` (deployed)
